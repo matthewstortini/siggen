@@ -13,6 +13,7 @@ def make_source(geometry_list):
         new_file = "siggen/PySiggen_%s.pxi" % geom
         copyfile(source_file, new_file)
 
-        with fileinput.FileInput(new_file, inplace=True) as file:
-            for line in file:
-                print(line.replace("{DetectorType}", geom), end='')
+        f = fileinput.FileInput(new_file, inplace=True)
+        for line in f:
+            print(line.replace("{DetectorType}", geom), end='')
+        f.close()
