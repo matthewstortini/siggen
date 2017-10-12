@@ -71,16 +71,19 @@ if __name__ == "__main__":
     builtins.__SIGGEN_SETUP__ = True
     import siggen
 
+    requirements=[
+      'numpy',
+      'scipy',
+      'Cython'
+    ]
+
     setup(
         name="siggen",
         version=siggen.__version__,
         author="Ben Shanks",
         author_email="benjamin.shanks@gmail.com",
         packages=["siggen"],
-        install_requires=[
-          'numpy',
-          'scipy',
-          'cython'
-        ],
+        install_requires=requirements,
+        setup_requires=requirements,
         ext_modules=extensions,
     )
