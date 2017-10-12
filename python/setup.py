@@ -7,13 +7,15 @@ try:
 except ImportError:
     from distutils.core import setup, Extension
 
+USE_CYTHON = True
+try:
+    from Cython.Build import cythonize
+except ImportError:
+    USE_CYTHON = False
 
 if __name__ == "__main__":
     import sys
-
-
     import numpy
-    from Cython.Build import cythonize
     from MakeGeometrySource import make_source
 
     geometry_list = ["PPC", "ICPC", "GEM"]
@@ -44,11 +46,13 @@ if __name__ == "__main__":
         "VelocityLookup.cpp",
         "VelocityModel.cpp"
     ]]
+
+    ext = '.pyx' if USE_CYTHON else '.cpp'
     src += [
-        os.path.join("siggen", "_siggen.pyx"),
+        os.path.join("siggen", "_siggen" + ext),
     ]
 
-    ext = Extension(
+    extensions = [Extension(
         "siggen._siggen",
         sources=src,
         language="c++",
@@ -59,8 +63,10 @@ if __name__ == "__main__":
                             "-Wno-uninitialized",
                             "-DNO_THREADS"],
         extra_link_args=["-std=c++11"],
-    )
-    extensions = cythonize([ext])
+    )]
+
+    if USE_CYTHON:
+        extensions = cythonize(extensions)
 
     # Hackishly inject a constant into builtins to enable importing of the
     # package before the library is built.
@@ -72,14 +78,15 @@ if __name__ == "__main__":
     import siggen
 
     requirements=[
-      'numpy',
-      'scipy',
-      'Cython'
+      "numpy",
+      "scipy",
+      "cython"
     ]
 
     setup(
         name="siggen",
         version=siggen.__version__,
+        waste="of_time",
         author="Ben Shanks",
         author_email="benjamin.shanks@gmail.com",
         packages=["siggen"],
