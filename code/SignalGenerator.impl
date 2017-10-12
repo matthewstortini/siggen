@@ -1,0 +1,431 @@
+#include <math.h>
+#include <fstream>
+#include <sstream>
+#include <iostream>
+#include "Utils.h"
+#include "point.h"
+
+#define HOLE_CHARGE 1.0
+#define ELECTRON_CHARGE -1.0
+
+#define WP_THRESH 0.55
+#define WP_THRESH_ELECTRONS 1e-4 /*electrons are considered collected if
+				   they stop drifting where the wp is < this*/
+
+/* the following is the diffusion coefficient for holes in Ge at 77K
+               at low field (~ 100 V/cm)
+   the diffusion coefficient drops at higher fields, and higher temperatures
+   see Jacoboni et al., Phys. Rev. B24, 2 (1981) 1014-1026.
+   size sigma = sqrt(2Dt), t = time, D = mu*k*T/e
+   mu = mobility, k = Boltzmann const., T = temp, e = electron charge
+   mu_h = 4e4 cm^2/V/s, mu_e = 5e4 cm^2/V/s at 77K, so
+   D_h = 265 cm^2/s, D_e = 332 cm^2/s
+   and goes down roughly as 1/Temp (since mu goes as T^-1.7 or T^-2.3)
+
+   we also convert (2Dt) from sigma-squared to FWHM-squared
+
+   for Si at 300K,
+   mu_h = 450 cm^2/V/s, mu_e = 1500 cm^2/V/s, so
+   D_h = 12 cm^2/s, D_e = 39 cm^2/s
+*/
+/*  here are some definitions used for an old method, where I calculated FWHM-squared:
+// germanium:  2Dt = sigma^2; we want  FWHM^2 in mm^2 / ns
+#define TWO_TIMES_DIFFUSION_COEF_H \
+        (2.0 * 2.355*2.355 * 2.65e-5 * step_time_calc * 77.0/setup.xtal_temp)
+#define TWO_TIMES_DIFFUSION_COEF_E \
+        (2.0 * 2.355*2.355 * 3.32e-5 * step_time_calc * 77.0/setup.xtal_temp)
+// silicon:
+#define TWO_TIMES_DIFFUSION_COEF_H_Si \
+        (1.3e-5 * step_time_calc * 300.0/setup.xtal_temp)
+#define TWO_TIMES_DIFFUSION_COEF_E_Si \
+        (4.3e-5 * step_time_calc * 300.0/setup.xtal_temp)
+*/
+/* In the new method, I use dsigma/dt = D/sigma to calculate FWHM */
+#define DIFFUSION_COEF   (v_over_E * 0.67)
+/* above is my own approximate parameterization of measurements of Jacoboni et al.
+   0.67 = 2.355 * 2.355 * 0.12    to get D in mm2/s, and scaled to FWHM2/sigma2
+   v_over_E = drift velocity / electric field   ~  mu
+   note that Einstein's equation is D = mu*kT/e
+   kT/e ~ 0.007/V ~ 0.07 mm/Vcm, => close enough to 0.12, okay
+ */
+
+namespace Siggen
+{
+
+template<class GeometryType>
+SignalGenerator<GeometryType>::SignalGenerator(Detector<GeometryType>* detector, Setup& setup_in):
+detector(detector),
+nsegments(detector->get_nsegments()),
+impurity_z0(detector->get_impurity()
+)
+{
+  //parse the setup parameters
+  parse_setup(setup_in.siggen_map);
+  ntsteps_out = time_steps_calc / lrintf(step_time_out/step_time_calc);
+  initialize_arrays();
+
+  TELL_NORMAL("Will use %d time steps in calculations, each %.2f ns long;\n"
+        "the output signals will have %d time steps, each %.2f ns long\n",
+        time_steps_calc, step_time_calc,
+        ntsteps_out, step_time_out);
+
+  //TODO: include diffusion params... preamp effects?
+}
+
+template<class GeometryType>
+void SignalGenerator<GeometryType>::initialize_arrays(){
+  wpot.resize(nsegments);
+  wpot_old.resize(nsegments);
+  dwpot.resize(nsegments);
+  signal_arr.resize(time_steps_calc*nsegments);
+  sum.resize(time_steps_calc*nsegments);
+  tmp.resize(time_steps_calc*nsegments);
+  dpath_e.resize(time_steps_calc);
+  dpath_h.resize(time_steps_calc);
+}
+
+template<class GeometryType>
+void SignalGenerator<GeometryType>::parse_setup(std::map<std::string, std::string>& param_map){
+  for (auto const& x : param_map)
+  {
+    std::stringstream valstream(x.second);
+    std::string key =  x.first;
+
+    if (key == "time_steps_calc"){
+      valstream >> time_steps_calc;
+    }else if (key == "step_time_calc"){
+      valstream >> step_time_calc;
+    }else if (key == "step_time_out"){
+      valstream >> step_time_out;
+    }else if (key == "charge_cloud_size"){
+      valstream >> charge_cloud_size;
+    }else if (key == "use_diffusion"){
+      valstream >> use_diffusion;
+    }else if (key == "energy"){
+      valstream >> energy;
+    }else if (key == "charge_trapping_per_step"){
+      valstream >> charge_trapping_per_step;
+    }else if (key == "preamp_tau"){
+      valstream >> preamp_tau;
+    }else{
+      std::cout << "ERROR; unrecognized signal generator keyword " << key << "\n";
+    }
+  }
+
+}
+
+template<class GeometryType>
+int SignalGenerator<GeometryType>::get_signal(point pt, float* signal_out)
+{
+  char  tmpstr[MAX_LINE];
+  int   j, k,  err, comp_f;
+  //for diffusion
+  // float w, x, y;
+  // int l, dt;
+
+  std::fill(signal_arr.begin(), signal_arr.end(), 0.);
+  std::fill(sum.begin(), sum.end(), 0.);
+  std::fill(tmp.begin(), tmp.end(), 0.);
+
+  if (detector->outside_detector(pt)) {
+    TELL_CHATTY("Point %s is outside detector!\n", pt_to_str(tmpstr, MAX_LINE, pt));
+    return -1;
+  }
+
+  err = make_signal(pt, &signal_arr[0], ELECTRON_CHARGE);
+  err = make_signal(pt, &signal_arr[0], HOLE_CHARGE);
+  /* make_signal returns 0 for success; require hole signal but not electron */
+
+  /* change from current signal to charge signal, i.e.
+     each time step contains the summed signals of all previous time steps */
+   for (k=0; k < nsegments; k++){
+     for (j = 1; j < time_steps_calc; j++){
+        signal_arr[k*time_steps_calc +j] += signal_arr[k*time_steps_calc + j-1];
+      }
+    }
+
+  //TODO: I took out the diffusion code
+
+  if (signal_out!= NULL) {
+    /* now, compress the signal and place it in the signal_out array;
+       truncate the signal if time_steps_calc % ntsteps_out != 0 */
+    comp_f = time_steps_calc/ntsteps_out;
+
+    for (j = 0; j < ntsteps_out*nsegments; j++) signal_out[j] = 0.;
+
+    for (j = 0; j < ntsteps_out*comp_f; j++){
+      for (k=0; k < nsegments; k++)signal_out[j/comp_f + k*ntsteps_out] += signal_arr[j+ k*time_steps_calc]/comp_f;
+    }
+
+    /* do RC integration for preamp risetime */
+    // if (setup.preamp_tau/step_time_out >= 0.1f)
+    //   rc_integrate(signal_out, signal_out, setup.preamp_tau/step_time_out, ntsteps_out);
+ }
+
+  /* make_signal returns 0 for success; require hole signal but not electron */
+  if (err) return -1;
+
+  return 1;
+}
+
+
+template<class GeometryType>
+int SignalGenerator<GeometryType>::make_signal(point pt, float* signal_in, float q)
+{
+  char   tmpstr[MAX_LINE];
+  point  new_pt;
+  vector v, dx;
+  float  vel0, vel1, dv_dE, v_over_E = 0;
+  // double diffusion_coeff;
+  double repulsion_fact = 0.0, ds2, ds3, dv, ds_dt;
+  int    i, j, t, n, collect2pc, largest_wp_seg, low_field=0;
+  (q > 0)?(last_hole_drift_time=0):(last_electron_drift_time=0);
+
+  new_pt = pt;
+  collect2pc = ((q > 0 && impurity_z0 < 0) ||  // holes for p-type
+		(q < 0 && impurity_z0 > 0));   // electrons for n-type
+  /*
+  if (q > 0) {
+    diffusion_coeff = TWO_TIMES_DIFFUSION_COEF_H;
+  } else {
+    diffusion_coeff = TWO_TIMES_DIFFUSION_COEF_E;
+  }
+  */
+
+  for (t = 0; detector->drift_velocity(new_pt, q,  v_over_E,dv_dE,  &v) >= 0; t++) {
+    (q > 0)?(dpath_h[t] = new_pt):(dpath_e[t] = new_pt);
+
+    if (collect2pc) {
+      if (t == 0) {
+      	vel1 = final_vel = initial_vel = vector_length(v);
+      	final_charge_size = charge_cloud_size;
+      	if (use_diffusion) {
+      	  if (final_charge_size < 0.01) final_charge_size = 0.01;
+      	  /* for a spherically symmetric charge cloud, the equivalent
+      	     delta-E at a distance of 1 sigma from the cloud center is
+      	     dE = Q/(4*pi*epsilon*sigma^2)  (Q is charge inside the 3D 1-sigma envelope)
+      	     dE (V/cm) = Q (C) * 1/(4*pi*epsilon) (N m2 / C2) / sigma2 (mm2)
+      	     1 V/m = 1 N/C
+      	     dE (V/cm) = Q (C) * 1/(4*pi*epsilon) (V m / C) / sigma2 (mm2)
+      	     dE (V/cm) = repulsion_fact * FWHM/sigma / (FWHM^2) (mm2), so
+      	     repulsion_fact = (FWHM/sigma)^3 * Q (C) * 1/(4*pi*epsilon) (V m / C) * mm/m * mm/cm
+      	  */
+        	  if (energy > 0.1) {  // set up charge cloud self-repulsion
+        	    repulsion_fact = energy * 0.67*0.67*0.67 / 0.003; // charge in 1 sigma (3D)
+        	    repulsion_fact /= 6.241e18;        // convert to Coulombs
+        	    repulsion_fact *= 9.0e13/16.0;     // 1/(4*pi*epsilon)  (N m2 / C2) * 1e4
+        	    repulsion_fact *= 2.355*2.355*2.355;      // convert FWHM to sigma
+        	  }//if energy
+        	}//if (use_diffusion)
+
+        	TELL_CHATTY("initial v: %f (%e %e %e)\n",
+        		    initial_vel, v.x, v.y, v.z);
+      } else if (use_diffusion){
+      	vel0 = vel1;
+      	vel1 = vector_length(v);
+      	final_charge_size *= vel1/vel0;  // effect of acceleration
+      	// include effects of acceleration and diffusion on cloud size
+      	dv = repulsion_fact * dv_dE /        // effect of repulsion
+      	        (final_charge_size*final_charge_size);
+      	// FIXME? this next line could more more fine-grained
+      	if (dv > 0.05) dv = 0.05;  // on account of drift velocity saturation
+      	 ds_dt = dv + DIFFUSION_COEF/final_charge_size;  // effect of diffusion
+      	if (ds_dt > 0.05 || ds_dt * step_time_calc > 0.1) {
+      	  // nonlinear growth due to small size; need more careful calculation
+      	  TELL_CHATTY("ds_dt = %.2f; size = %.2f", ds_dt, final_charge_size);
+      	  // ds_dt = 0.05;  // artificially limit nonlinear growth
+      	  ds2 = 2.0 * DIFFUSION_COEF * step_time_calc; // increase^2 from diff.
+      	  ds3 = (final_charge_size*final_charge_size *
+      		 (final_charge_size +
+      		  3.0 * dv * step_time_calc));         // FWHM^3 after repulsion
+      	  final_charge_size = sqrt(ds2 + pow(ds3, 0.6667));
+      	  TELL_CHATTY(" -> %.2f\n", final_charge_size);
+      	} else {
+    	     final_charge_size +=  ds_dt * step_time_calc;  // effect of diff. + rep.
+      	}//if (ds_dt > 0.05 || ds_dt * step_time_calc > 0.1)
+      }//if t==0
+    }//if collect2pc
+
+    TELL_CHATTY("pt: (%.2f %.2f %.2f), v: (%e %e %e) ",
+	   new_pt.x, new_pt.y, new_pt.z, v.x, v.y, v.z);
+
+    if (t >= time_steps_calc - 2) {
+      if (collect2pc || wpot[0] > WP_THRESH_ELECTRONS) {
+      	/* for p-type, this is hole or electron+high wp */
+      	TELL_CHATTY("\nExceeded maximum number of time steps (%d)\n", time_steps_calc);
+      	low_field = 1;
+      	// return -1;
+      }
+      break;
+    }
+    if (detector->wpotential(new_pt, wpot) != 0) {
+      TELL_NORMAL("\nCan calculate velocity but not WP at %s!\n",
+  	  pt_to_str(tmpstr, MAX_LINE, new_pt));
+      return -1;
+    }
+
+    // TELL_CHATTY(" -> wp: %.4f\n", wpot);
+
+    // printf("\ntime step %d: \n", t);
+    for (i = 0; i < nsegments; i++){
+      // if (wpot[i] < 0.0) wpot[i] = 0.0;
+      // if (wpot[i] < 0.0) wpot[i] = 0.0;
+      // if (wpot[i] > 1.0) wpot[i] = 1.0;
+
+      if (t > 0) signal_in[i*time_steps_calc+t] += q*(wpot[i] - wpot_old[i]);
+      wpot_old[i] = wpot[i];
+      // printf("          wpot %d: %f\n", i,wpot[i]);
+    }
+    // exit(0);
+
+    // FIXME? Hack added by DCR to deal with undepleted point contact
+    if (nsegments==1){
+      if (wpot[0] >= 0.999 && (wpot[0] - wpot_old[0]) < 0.0002) {
+        // low_field = 1;
+        // std::cout << "low field break2?  wpot is " << wpot[0] <<"\n";
+        break;
+      }
+    }
+
+    wpot_old = wpot;
+
+    dx = vector_scale(v, step_time_calc);
+    new_pt = vector_add(new_pt, dx);
+    // do charge trapping
+    q *= charge_trapping_per_step;
+
+  }//for (t = 0; detector->drift_velocity(new_pt, q, &v) >= 0; t++)
+
+  //Bookkeeping after drift is done
+
+  if (t == 0) {
+    TELL_NORMAL("The starting point %s is outside the field.\n",
+		pt_to_str(tmpstr, MAX_LINE, pt));
+    return -1;
+  }
+
+  if (low_field) {
+    TELL_CHATTY("Too many time steps or low field; this may or may not be a problem.\n");
+  } else {
+    TELL_CHATTY("Drifted to edge of field grid, point: %s q: %.2f\n",
+		pt_to_str(tmpstr, MAX_LINE, new_pt), q);
+
+    /* now we are outside the electric grid. figure out how much we must
+       drift to get to the crystal boundary */
+    for (n = 0; n+t < time_steps_calc; n++){
+      new_pt = vector_add(new_pt, dx);
+      (q > 0)?(dpath_h[t] = new_pt):(dpath_e[t] = new_pt);
+      if (detector->outside_detector(new_pt)) break;
+      //TODO: needs to work also for segmented
+    }
+
+    if (n == 0) n = 1; /* always drift at least one more step */
+    // TELL_CHATTY(
+    TELL_NORMAL("q: %.1f t: %d n: %d ((%.2f %.2f %.2f)=>(%.2f %.2f %.2f))\n",
+		q, t, n, pt.x, pt.y, pt.z, new_pt.x, new_pt.y, new_pt.z);
+
+    if (n + t >= time_steps_calc){
+      if (q > 0 || wpot[0] > WP_THRESH_ELECTRONS) { /* hole or electron+high wp */
+      	TELL_NORMAL("Exceeded maximum number of time steps (%d)\n", time_steps_calc);
+      	return -1;  /* FIXME DCR: does this happen? could this be improved? */
+      }
+      n = time_steps_calc -t;
+    }
+
+
+    //TODO: pretty crass, should be able to make seg. and PPC the same
+    if (nsegments == 1){
+      /* make WP go gradually to 1 or 0 */
+      if (wpot[0] > 0.3) {
+        dwpot[0] = (1.0 - wpot[0])/n;
+      } else {
+        dwpot[0] = - wpot[0]/n;
+      }
+    } else{
+      /*weighting pot. is 1 at edge for hit segment, 0 for other segments.
+        Make it so, gradually if applicable*/
+      largest_wp_seg = segment_max_wp(wpot, WP_THRESH);
+      for (i = 0; i < nsegments; i++){
+        dwpot[i] = ((i == largest_wp_seg) - wpot[i])/n;
+      }
+    }//if nsegments==1
+
+    /*now drift the final n steps*/
+    dx = vector_scale(v, step_time_calc);
+    for (i = 0; i < n; i++){
+      for (j = 0; j < nsegments; j++){
+        signal_in[j*time_steps_calc +i+t-1] += q*dwpot[j];
+      }
+      // do charge trapping
+      q *= charge_trapping_per_step;
+    }
+
+  }//if lowfield
+
+  TELL_CHATTY("q:%.2f pt: %s\n", q, pt_to_str(tmpstr, MAX_LINE, pt));
+  if (collect2pc) final_vel = vector_length(v);
+
+  (q > 0)?(last_hole_drift_time=t+n):(last_electron_drift_time=t+n);
+  return 0;
+}
+
+template<class GeometryType>
+int SignalGenerator<GeometryType>::segment_max_wp(std::vector<float>& wp, float thresh){
+  int n, i;
+  int segno;
+  float wpmax;
+
+  n = 0;
+  for (i = 0; i < nsegments; i++){
+    if (wp[i] > thresh) {
+      segno = i;
+      n++;
+      TELL_CHATTY( " segment %d over threshold\n", i);
+    }
+  }
+  if (n == 1) return segno;
+  if (n > 1){
+    error(" %d segments over threshold. Your weigthing potential is broken\n",
+	  n);
+    return -1;
+  }
+  n = 0;
+  wpmax = thresh/10; //OK? -- FIXME
+  for (i = 0; i < nsegments; i++){
+    if (wp[i] > wpmax){
+      segno = i;
+      wpmax = wp[i];
+      n++;
+    }
+  }
+  if (n){
+    TELL_CHATTY( "largest wp for segment %d\n", segno);
+    return segno;
+  }
+  TELL_CHATTY( "segment_max_wp: no charge collected!\n");
+  return -1;
+}
+
+template<class GeometryType>
+int SignalGenerator<GeometryType>::rc_integrate(std::vector<float>& s_in, std::vector<float>& s_out, float tau, int time_steps)
+{
+  int   j;
+  float s_in_old, s;  /* DCR: added so that it's okay to
+       call this function with s_out == s_in */
+
+  if (tau < 1.0f) {
+    for (j = time_steps-1; j > 0; j--) s_out[j] = s_in[j-1];
+    s_out[0] = 0.0;
+  } else {
+    s_in_old = s_in[0];
+    s_out[0] = 0.0;
+    for (j = 1; j < time_steps; j++) {
+      s = s_out[j-1] + (s_in_old - s_out[j-1])/tau;
+      s_in_old = s_in[j];
+      s_out[j] = s;
+    }
+  }
+  return 0;
+}
+
+} // namespace Siggen

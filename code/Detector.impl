@@ -1,0 +1,158 @@
+#include <math.h>
+#include "Utils.h"
+#include <sstream>
+#include <iostream>
+
+namespace Siggen
+{
+
+template<class GeometryType>
+Detector<GeometryType>::Detector(Setup& setup):
+geometry(setup),
+xtal_radius(setup.xtal_radius),
+xtal_length(setup.xtal_length)
+{
+  parse_setup(setup.detector_map);
+
+  velocity_lookup.set_drift_name(drift_name);
+  velocity_lookup.set_xtal_temp(xtal_temp);
+
+  rmin  = 0;
+  rmax  = xtal_radius;
+  rstep = xtal_grid;
+  zmin  = 0;
+  zmax  = xtal_length;
+  zstep = xtal_grid;
+
+  // TELL_CHATTY("r: %.2f  z: %.2f\n", xtal_radius, xtal_length);
+}
+
+template<class GeometryType>
+void Detector<GeometryType>::parse_setup(std::map<std::string, std::string>& detector_params){
+  for (auto const& x : detector_params)
+  {
+    std::stringstream valstream(x.second);
+    std::string key =  x.first;
+
+    if (key == "Li_thickness"){
+      valstream >> Li_thickness;
+    }else if (key == "xtal_temp"){
+      valstream >> xtal_temp;
+    }else if (key == "drift_name"){
+      valstream >> drift_name;
+    }else if (key == "use_velo_model"){
+      valstream >> use_velo_model;
+
+    //FieldGenerator params... here for now?
+    }else if (key == "xtal_grid"){
+      valstream >> xtal_grid;
+    }else if (key == "phistep"){
+      valstream >> phistep;
+    }else if (key == "impurity_z0"){
+      valstream >> impurity_z0;
+    }else if (key == "impurity_gradient"){
+      valstream >> impurity_gradient;
+    }else if (key == "impurity_quadratic"){
+      valstream >> impurity_quadratic;
+    }else if (key == "impurity_surface"){
+      valstream >> impurity_surface;
+    }else if (key == "impurity_radial_add"){
+      valstream >> impurity_radial_add;
+    }else if (key == "impurity_radial_mult"){
+      valstream >> impurity_radial_mult;
+    }else if (key == "xtal_HV"){
+      valstream >> xtal_HV;
+    }else if (key == "drift_name"){
+      valstream >> drift_name;
+    }else if (key == "field_name"){
+      valstream >> field_name;
+    }else if (key == "wp_name"){
+      valstream >> wp_name;
+    }else if (key == "write_field"){
+      valstream >> write_field;
+    }else if (key == "max_iterations"){
+      valstream >> max_iterations;
+    }else if (key == "write_WP"){
+      valstream >> write_WP;
+    }else if (key == "use_velo_model"){
+      valstream >> use_velo_model;
+    }else{
+      std::cout << "ERROR; unrecognized detector keyword " << key << "\n";
+    }
+  }
+
+}
+
+template<class GeometryType>
+int Detector<GeometryType>::drift_velocity(point pt, float q, float& v_over_E, float& dv_dE, vector *velo)
+{
+  point  cart_en;
+  float abse;
+  cyl_pt e = {0,0,0};
+  cyl_pt en, cyl;
+
+  /*  DCR: replaced this with faster code below, saves calls to atan and tan
+  cyl = cart_to_cyl(pt);
+  if (nearest_field_grid_index(cyl, &ipt, setup) < 0) return -1;
+  e = efield(cyl, ipt, setup);
+  abse = vector_norm_cyl(e, &en);
+  en.phi = cyl.phi;
+  cart_en = cyl_to_cart(en);
+  */
+  cyl.r = sqrt(pt.x*pt.x + pt.y*pt.y);
+  cyl.z = pt.z;
+  cyl.phi = 0;
+  if (geometry.efield(cyl, e) > 0) return -1;
+  // e = efield(cyl, ipt);
+  abse = vector_norm_cyl(e, &en);
+  if (cyl.r > 0.001) {
+    cart_en.x = en.r * pt.x/cyl.r;
+    cart_en.y = en.r * pt.y/cyl.r;
+  } else {
+    cart_en.x = cart_en.y = 0;
+  }
+  cart_en.z = en.z;
+
+  //find velocity using lookup table
+  if (!use_velo_model) return velocity_lookup.drift_velocity(cart_en, abse, q, v_over_E, dv_dE, velo);
+  else return velocity_model.drift_velocity(cart_en, abse, q, v_over_E, dv_dE, velo);
+}
+
+/* field_setup
+   given a field directory file, read electic field and weighting
+   potential tables from files listed in directory
+   returns 0 for success
+*/
+template<class GeometryType>
+int Detector <GeometryType>::field_setup(){
+
+  TELL_NORMAL("rmin: %.2f rmax: %.2f, rstep: %.2f\n"
+	      "zmin: %.2f zmax: %.2f, zstep: %.2f\n"
+	      "Detector temperature is set to %.1f K\n",
+	      rmin, rmax, rstep,
+	      zmin, zmax, zstep,
+	      xtal_temp);
+
+  if (!use_velo_model){
+    if (velocity_lookup.setup_velo() != 0){
+      error("Failed to read drift velocity data from file: %s\n",
+      drift_name.c_str());
+      return -1;
+    }
+  }
+  if (geometry.setup_efield() != 0){
+    error("Failed to read electric field data from file: %s\n",
+	  field_name.c_str());
+    return -1;
+  }
+  if (geometry.setup_wp() != 0){
+    error("Failed to read weighting potential from file %s\n",
+	  wp_name.c_str());
+    return -1;
+  }
+
+  return 0;
+}
+
+
+} // namespace Siggen

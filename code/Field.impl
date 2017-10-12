@@ -1,0 +1,362 @@
+#include "Utils.h"
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <sstream>
+
+namespace Siggen
+{
+
+template<class PointType>
+void Field<PointType>::set_grid(int rlen_in, int zlen_in, int philen_in,
+                                float rstep_in, float zstep_in, float phistep_in,
+                                float rmin_in, float zmin_in, float phimin_in)
+{
+  rlen = rlen_in;
+  zlen = zlen_in;
+  philen = philen_in;
+  rstep = rstep_in;
+  zstep = zstep_in;
+  phistep = phistep_in;
+  rmin= rmin_in;
+  zmin = zmin_in;
+  phimin = phimin_in;
+
+  field_data.resize(rlen*zlen*philen);
+}
+
+/*For 2D fields */
+template<class PointType>
+void Field<PointType>::set_grid(int rlen_in, int zlen_in, float rstep_in, float zstep_in, float rmin_in, float zmin_in)
+{
+  rlen = rlen_in;
+  zlen = zlen_in;
+  philen = 1;
+  rstep = rstep_in;
+  zstep = zstep_in;
+  phistep = 1;
+  rmin= rmin_in;
+  zmin = zmin_in;
+  phimin = 0;
+
+  field_data.resize(rlen*zlen*philen);
+}
+
+template<class PointType>
+template<class GeometryType>
+int Field<PointType>::read_data(std::string file_name,  GeometryType& geom){
+
+  int lineno=0, npts=0;
+  std::string line;
+
+  std::ifstream file(file_name);
+  if(!file){
+    std::cout <<"\nERROR: failed to open electric field table: " << file_name << "\n";
+    return 1;
+  }
+  std::cout << "\nReading field data from file: " << file_name << "\n";
+
+  while(getline(file, line))
+  {
+    lineno++;
+    PointType point_data;
+    cyl_pt  cyl;
+    point cart;
+    int i,j,k=0;
+
+    // ignore comments and blank lines
+    if (line.length() <3 || line.find_first_not_of(' ') == line.npos || line[0] == '#') continue;
+
+    std::stringstream line_stream(line);
+
+    //pull in position: r,z for 2d, r,phi,z for 3d
+    if (philen == 1){ // 2D for sure (could make this explicit somwhere...)
+      line_stream >> cyl.r >> cyl.z;
+      cyl.phi=0;
+    }else{ // 3D
+      line_stream >> cyl.r >> cyl.phi >> cyl.z;
+    }
+
+    //parse the point parameters (ie, EField or WP)
+    line_stream >> point_data;
+
+    if (line_stream.fail()){
+      error("failed to read electric field data from line no %d\n"
+      "of file %s\n", lineno, file_name.c_str());
+      return 1;
+    }
+
+    npts++;
+    cyl.phi /= 180.0/3.14159265;  // degrees to radians
+    i = 0.5 + (cyl.r - rmin)/rstep; // round up
+    j = 0.5 + (cyl.z - zmin)/zstep;
+    if (philen>1) k = 0.5 + (cyl.phi - phimin)/phistep;
+
+    if (i < 0 || i >= rlen || j < 0 || j >= zlen || k < 0 || k >= philen ){
+      continue;
+    }
+
+    cart = cyl_to_cart(cyl);
+    if (geom.outside_detector(cart)) continue;
+
+    field_data.at(i*zlen*philen+j*philen+k) = point_data;
+  }
+
+  //for 3d, copy min phi value over to maxvalue (cause its a circle)
+  int philen_idx = philen;
+  if (philen_idx >1){
+    --philen_idx;
+    for (int i=0; i<rlen; i++) {
+      for (int j=0; j<zlen; j++) {
+        field_data.at(i*zlen*philen+j*philen+philen-1) = field_data.at(i*zlen*philen+j*philen+0);
+      }
+    }
+  }
+
+  if (npts != rlen*zlen*philen_idx) {
+    error("number of points read (%d) != expected (%d*%d*%d)\n",
+	  npts, rlen, zlen, philen_idx);
+    return 1;
+  }
+
+  // TELL_CHATTY(
+  //      "i, j, rlen, zlen, npts: %d %d %d %d %d %d\n", i, j, rlen, zlen, philen, npts);
+  TELL_NORMAL( "Done reading %d lines of field data\n", lineno);
+  return 0;
+
+}
+
+/*find existing integer field grid index closest to pt*/
+/* added DCR */
+template<class PointType>
+template<class GeometryType>
+int Field<PointType>::nearest_field_grid_index(cyl_pt pt, cyl_int_pt *ipt, GeometryType& geometry){
+  /* returns <0 if outside crystal or too far from a valid grid point
+              0 if interpolation is okay
+              1 if we can find a point but extrapolation is needed
+  */
+  cyl_pt new_pt;
+  int r, z;
+  float d[3] = {0.0, -1.0, 1.0};
+  point cart;
+
+  if (last_ret != -99 && pt.r == last_pt.r && pt.z == last_pt.z && pt.phi == last_pt.phi) {
+    *ipt = last_ipt;
+    return last_ret;
+  }
+  last_pt = pt;
+  last_ret = -2;
+
+  cart = cyl_to_cart(pt);
+  if (geometry.outside_detector(cart) == 1) {
+    last_ret = -1;
+  } else{
+    new_pt.phi = pt.phi;
+    for (z=0; z<3; z++) {
+      new_pt.z = pt.z + d[z]*zstep;
+      for (r=0; r<3; r++) {
+        new_pt.r = pt.r + d[r]*rstep;
+        if (geometry.efield_exists(new_pt)) {
+          *ipt = last_ipt = field_grid_index(new_pt);
+          if (r == 0 && z == 0) {
+            last_ret = 0;
+          } else {
+            last_ret = 1;
+          }
+          return last_ret;
+        }
+      }
+    }
+  }
+
+  return last_ret;
+}
+
+template<class PointType>
+template<class GeometryType>
+int Field<PointType>::field_exists(cyl_pt pt, GeometryType& geometry){
+  int flag;
+  char ptstr[MAX_LINE];
+  int i, j;
+  int ir, iz;
+  cyl_int_pt ipt;
+  point cart;
+
+  sprintf(ptstr, "(%.1f,%.1f %.1f)", pt.r, pt.phi, pt.z);
+  cart = cyl_to_cart(pt);
+
+  flag = geometry.outside_detector(cart);
+  if (flag == 1){
+    TELL_CHATTY( "point %s is outside crystal\n", ptstr);
+    return 0;
+  }else{
+    TELL_CHATTY( "point %s is in crystal\n", ptstr);
+  }
+  ipt = field_grid_index(pt);
+
+  if (ipt.r < 0 || ipt.r + 1 >= rlen ||
+      ipt.z < 0 || ipt.z + 1 >= zlen){
+    TELL_CHATTY( "point %s is outside wp table\n", ptstr);
+    return 0;
+  }
+  for (i = 0; i < 2 ; i++){
+    ir = ipt.r + i;
+    for (j = 0; j < 2; j++){
+      iz = ipt.z + j;
+      try{
+        if ((*this)(ir,iz) == 0.0f ) {
+        	TELL_CHATTY( "point %s has no field\n", ptstr);
+        	return 0;
+        }
+      }catch(const std::out_of_range& oor){
+        printf("caught vector error in field exists...\n");
+        printf("ir %d, rlen %d, iz %d, zlen %d\n", ir, rlen, iz, zlen );
+      }
+    }
+  }
+  return 1;
+}
+
+/*find integer field _ index corresponding to pt*/
+template<class PointType>
+cyl_int_pt Field<PointType>::field_grid_index(cyl_pt pt){
+  cyl_int_pt ipt;
+
+  ipt.r = (pt.r - rmin)/rstep;
+  ipt.phi = (pt.phi - phimin)/phistep;
+  ipt.z = (pt.z - zmin)/zstep;
+  return ipt;
+}
+
+
+/* Find weights for 8 voxel corner points around pt for e/wp field*/
+/* DCR: modified to work for both interpolation and extrapolation */
+template<class PointType>
+void Field<PointType>::position_weights(cyl_pt pt, cyl_int_pt ipt, float out[2][2][2]){
+  float r, z, phi;
+  r = (pt.r - rmin)/rstep - ipt.r;
+  z = (pt.z - zmin)/zstep - ipt.z;
+  phi = (pt.phi - phimin)/phistep - ipt.phi;
+
+  trilinear_interpolate(r,phi,z,out);
+}
+
+template<class PointType>
+void Field<PointType>::interp_position2D(cyl_pt pt, cyl_int_pt ipt, PointType& d){
+  int i,j;
+  float r, z, w[2][2];
+  PointType d_ref;
+
+  r = (pt.r - rmin)/rstep - ipt.r;
+  z = (pt.z - zmin)/zstep - ipt.z;
+  bilinear_interpolate(r,z,w);
+
+  for (i = 0; i < 2; i++){
+    for (j = 0; j < 2; j++){
+      d_ref = get_point( ipt.r + i, 0, ipt.z +j);
+      d += d_ref*(w[i][j]);
+    }
+  }
+}
+
+// template<class PointType>
+// PointType Field<PointType>::interp_position3D(cyl_pt pt, cyl_int_pt ipt, PointType& d){
+//   int i,j,k;
+//   float r, z, w[2][2][2];
+//   PointType d_ref;
+//
+//   r = (pt.r - rmin)/rstep - ipt.r;
+//   z = (pt.z - zmin)/zstep - ipt.z;
+//   bilinear_interpolate(r,z,w);
+//
+//   for (i = 0; i < 2; i++){
+//     for (j = 0; j < 2; j++){
+//       d_ref = get_point( ipt.r + i, 0, ipt.z +j)
+//       d += d_ref*(w[i][j]+w[i][j]); // ignore angle, no dependence
+//     }
+//   }
+//   return d;
+// }
+
+
+template<class PointType>
+void Field<PointType>::trilinear_interpolate(float a, float b, float c, float out[2][2][2]){
+  out[0][0][0] = (1.0 - a) * (1.0 - b) * (1.0 - c);
+  out[0][1][0] = (1.0 - a) *        b  * (1.0 - c);
+  out[1][0][0] =        a  * (1.0 - b) * (1.0 - c);
+  out[1][1][0] =        a  *        b  * (1.0 - c);
+
+  out[0][0][1] = (1.0 - a) * (1.0 - b) * c;
+  out[0][1][1] = (1.0 - a) *        b  * c;
+  out[1][0][1] =        a  * (1.0 - b) * c;
+  out[1][1][1] =        a  *        b  * c;
+}
+
+template<class PointType>
+void Field<PointType>::bilinear_interpolate(float a, float b,  float out[2][2]){
+
+  out[0][0] = (1.0 - a) * (1.0 - b);
+  out[0][1] = (1.0 - a) *         b;
+  out[1][0] =        a  * (1.0 - b);
+  out[1][1] =        a  *         b;
+}
+
+template<class PointType>
+PointType& Field<PointType>::operator()(int ir, int iz){
+  if (philen > 1){
+    error("Reading 3D Field as a 2D field\n");
+  }
+  if (ir>=rlen || iz>=zlen){
+    std::cout << "ERROR: accessing point beyond field grid.\n";
+    std::cout << "--> ir:   " << ir << " (rlen " << rlen <<")\n";
+    std::cout << "--> iz:   " << iz << " (zlen " << zlen <<")\n";
+    exit(0);
+  }
+
+  // assume iphi = 0
+  try{
+    return field_data.at(ir * philen * zlen + iz*philen +0);
+  } catch(const std::out_of_range& oor){
+    std::cout << "Error in field:  accessing (" << ir << "," <<iz <<")\n";
+    std::cout << "-->rlen: "<<rlen<<", zlen: " << zlen <<std::endl;
+    exit(0);
+  }
+}
+
+template<class PointType>
+PointType& Field<PointType>::get_point(int ir, int iphi, int iz){
+  if (ir>=rlen || iphi >=philen || iz>=zlen){
+    std::cout << "ERROR: accessing point beyond field grid.\n";
+    std::cout << "--> ir:   " << ir << " (rlen " << rlen <<")\n";
+    std::cout << "--> iphi: " << iphi << " (philen " << philen <<")\n";
+    std::cout << "--> iz:   " << iz << " (zlen " << zlen <<")\n";
+    exit(0);
+  }
+  return field_data.at(ir * philen * zlen + iz*philen +iphi);
+}
+
+template<class PointType>
+PointType& Field<PointType>::operator()(int ir, int iphi, int iz){
+  return field_data.at(ir * philen * zlen + iz*philen +iphi);
+}
+
+/* This is 2D-only for now, because For 3D (ie, segmented...) fields,
+   we generally want to be able to re-use ipt and intepolation data  */
+template<class PointType>
+template<class GeometryType>
+int Field<PointType>::get_point_interp(cyl_pt cyl, PointType& data, GeometryType& geometry){
+  if (philen > 1){
+    error("Reading 3D Field as a 2D field: get_point_data only supported for 2D fields\n");
+  }
+  int    res;
+  cyl_int_pt ipt;
+
+  res = nearest_field_grid_index(cyl, &ipt, geometry);
+  if (res < 0) return -1;
+
+  interp_position2D(cyl, ipt, data);
+
+  return 0;
+}
+
+} // namespace Siggen
