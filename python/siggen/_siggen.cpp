@@ -4,10 +4,10 @@
 {
     "distutils": {
         "depends": [
-            "/Users/bs0/Dev/packages/siggen/code/GEM.h",
-            "/Users/bs0/Dev/packages/siggen/code/ICPC.h",
-            "/Users/bs0/Dev/packages/siggen/code/PPC.h",
-            "/Users/bs0/Dev/packages/siggen/code/Siggen.h",
+            "../code/GEM.h",
+            "../code/ICPC.h",
+            "../code/PPC.h",
+            "../code/Siggen.h",
             "/usr/local/lib/python3.6/site-packages/numpy/core/include/numpy/arrayobject.h",
             "/usr/local/lib/python3.6/site-packages/numpy/core/include/numpy/ufuncobject.h"
         ],
@@ -21,26 +21,22 @@
             "-std=c++11"
         ],
         "include_dirs": [
-            "siggen",
-            "/Users/bs0/Dev/packages/siggen/code",
+            "../code/",
             "/usr/local/lib/python3.6/site-packages/numpy/core/include"
         ],
         "language": "c++",
-        "libraries": [
-            "m"
-        ],
         "name": "siggen._siggen",
         "sources": [
             "siggen/_siggen.pyx",
-            "/Users/bs0/Dev/packages/siggen/code/cyl_point.cpp",
-            "/Users/bs0/Dev/packages/siggen/code/point.cpp",
-            "/Users/bs0/Dev/packages/siggen/code/GEM.cpp",
-            "/Users/bs0/Dev/packages/siggen/code/ICPC.cpp",
-            "/Users/bs0/Dev/packages/siggen/code/PPC.cpp",
-            "/Users/bs0/Dev/packages/siggen/code/Setup.cpp",
-            "/Users/bs0/Dev/packages/siggen/code/Utils.cpp",
-            "/Users/bs0/Dev/packages/siggen/code/VelocityLookup.cpp",
-            "/Users/bs0/Dev/packages/siggen/code/VelocityModel.cpp"
+            "../code/cyl_point.cpp",
+            "../code/point.cpp",
+            "../code/GEM.cpp",
+            "../code/ICPC.cpp",
+            "../code/PPC.cpp",
+            "../code/Setup.cpp",
+            "../code/Utils.cpp",
+            "../code/VelocityLookup.cpp",
+            "../code/VelocityModel.cpp"
         ]
     },
     "module_name": "siggen._siggen"
@@ -55,7 +51,7 @@ END: Cython Metadata */
     #error Cython requires Python 2.6+ or Python 3.3+.
 #else
 #define CYTHON_ABI "0_27_1"
-#define CYTHON_FUTURE_DIVISION 1
+#define CYTHON_FUTURE_DIVISION 0
 #include <stddef.h>
 #ifndef offsetof
   #define offsetof(type, member) ( (size_t) & ((type*)0) -> member )

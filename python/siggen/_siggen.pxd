@@ -1,5 +1,4 @@
 # distutils: language = c++
-from __future__ import division
 
 from libcpp.vector cimport vector
 
