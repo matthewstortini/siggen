@@ -4,7 +4,7 @@ try:
     from scipy import  signal, interpolate, ndimage
 except ImportError:
     pass
-        
+
 from ._siggen import PySiggen_GEM, PySiggen_PPC, PySiggen_ICPC
 
 #Does all the interfacing with siggen for you, stores/loads lookup tables, and does electronics shaping
@@ -33,8 +33,8 @@ class Detector:
     self.signal_array_flat = np.zeros(self.nsegments*self.num_steps_out , dtype='f4', order="C")
 
     self.num_steps_calc = self.siggenInst.GetNumStepsCalc()
-    self.calc_array = np.zeros( (self.nsegments, t0_padding+self.num_steps_out), dtype='f4', order="C")
-    self.calc_array_flat = np.zeros(self.nsegments*self.num_steps_out , dtype='f4', order="C")
+    self.calc_array = np.zeros( (self.nsegments, t0_padding+self.num_steps_calc), dtype='f4', order="C")
+    self.calc_array_flat = np.zeros(self.nsegments*self.num_steps_calc , dtype='f4', order="C")
 
     self.t0_padding = t0_padding
     self.verbose = verbose
@@ -100,7 +100,7 @@ class Detector:
     if calcFlag == -1:
         if self.verbose: print ("Holes out of crystal alert! (%0.3f,%0.3f,%0.3f).  IsInDetector: %d" % (r,phi,z, self.IsInDetector(r,phi,z)))
         return None
-    self.calc_array[:,self.t0_padding:] = self.calc_array_flat.reshape((self.nsegments,self.num_steps_out))
+    self.calc_array[:,self.t0_padding:] = self.calc_array_flat.reshape((self.nsegments,self.num_steps_calc))
     return self.calc_array
 
   #summed waveform of both charge types
