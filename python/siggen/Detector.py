@@ -1,8 +1,10 @@
 #!/usr/local/bin/python
-
 import numpy as np
-from scipy import  signal, interpolate, ndimage
-
+try:
+    from scipy import  signal, interpolate, ndimage
+except ImportError:
+    pass
+        
 from ._siggen import PySiggen_GEM, PySiggen_PPC, PySiggen_ICPC
 
 #Does all the interfacing with siggen for you, stores/loads lookup tables, and does electronics shaping

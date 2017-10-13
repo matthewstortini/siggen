@@ -5,9 +5,10 @@ except ImportError:
 
 import os
 
-do_cython = True
+do_cython = False
 try:
     from Cython.Build import cythonize
+    do_cython = True
 except ImportError:
     do_cython = False
 
@@ -31,6 +32,7 @@ src = [os.path.join("..", "code", fn) for fn in [
 ]]
 
 ext = ".pyx" if do_cython else ".cpp"
+
 src +=  [os.path.join("siggen", "_siggen" + ext)]
 
 extensions = [
@@ -46,6 +48,9 @@ extensions = [
 ]
 
 if do_cython:
+    from MakeGeometrySource import make_source
+    geometry_list = ["PPC", "ICPC", "GEM"]
+    make_source(geometry_list)
     extensions =  cythonize(extensions)
 
 setup(
@@ -55,5 +60,5 @@ setup(
     author_email="benjamin.shanks@gmail.com",
     ext_modules =extensions,
     packages=["siggen"],
-    install_requires=["numpy", "scipy"]
+    install_requires=["numpy"]
 )

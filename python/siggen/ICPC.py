@@ -1,7 +1,10 @@
 #!/usr/local/bin/python
 
 import numpy as np
-from scipy import  signal, interpolate, ndimage
+try:
+    from scipy import  signal, interpolate, ndimage
+except ImportError:
+    pass
 
 from .Detector import Detector
 
