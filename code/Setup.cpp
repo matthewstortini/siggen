@@ -25,7 +25,7 @@ int Setup::read_config(std::string config_file_name) {
   */
 
   int n=0;
-  std::string line, key, value, conf_set;
+  std::string line, key, value, conf_set, conf_path;
   std::map<std::string,std::string>* currentMap;
 
   std::ifstream file(config_file_name);
@@ -33,8 +33,13 @@ int Setup::read_config(std::string config_file_name) {
     std::cout <<"\nERROR: config file " << config_file_name << " does not exist?\n";
     return 1;
   }
-  std::cout << "\nReading values from config file " << config_file_name << "\n";
 
+  //Figure out the path of the config file
+  size_t found;
+  found=config_file_name.find_last_of("/\\");
+  conf_path = config_file_name.substr(0,found+1);
+
+  std::cout << "\nReading values from config file " << config_file_name << "\n";
 
   while(getline(file, line))
   {
@@ -42,7 +47,7 @@ int Setup::read_config(std::string config_file_name) {
 
     // ignore comments and blank lines
     if (line.length() <3 || line.find_first_not_of(' ') == line.npos || line[line.find_first_not_of(' ')] == '#') continue;
-    
+
     //look for lines that start with "[", which denote a new group
     int first_idx = line.find_first_not_of(" ");
     if (line[first_idx] == '['){
@@ -82,8 +87,10 @@ int Setup::read_config(std::string config_file_name) {
       valstream >> xtal_grid;
     }else if (key == "field_name"){
       valstream >> field_name;
+      field_name = conf_path + field_name;
     }else if (key == "wp_name"){
       valstream >> wp_name;
+      wp_name = conf_path + wp_name;
     }
 
     (*currentMap)[key] = value;
