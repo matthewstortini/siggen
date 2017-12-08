@@ -18,8 +18,9 @@ cdef class PySiggen_PPC:
     del self.detector
     del self.siggen
 
+
   @cython.boundscheck(False)
-  def MakeSignal(self, float x, float y, float z, float q, np.ndarray[np.float32_t, ndim=1] signal_array not None):
+  def MakeSignal(self, float x, float y, float z, double q, np.ndarray[np.float32_t, ndim=1] signal_array not None):
     cdef point pt
     cdef int val
     pt.x=x
@@ -31,6 +32,8 @@ cdef class PySiggen_PPC:
 
     for j in range(1, self.GetNumStepsCalc()):
       signal_array[j] += signal_array[j-1]
+
+    # signal_array = np.cumsum(signal_array)
 
     return val
 
@@ -77,6 +80,8 @@ cdef class PySiggen_PPC:
     return self.siggen.get_calc_length()
   def GetLastDriftTime(self, float q):
     return self.siggen.get_last_drifttime(q)
+  def GetCalcTimeStep(self):
+    return self.siggen.get_calc_timestep()
 
   def GetEfield(self, float r, float z):
     cdef cyl_pt e
@@ -108,6 +113,19 @@ cdef class PySiggen_PPC:
       wp_numpy[i] = wp.at(i)
     return wp_numpy
 
+  def GetDWpot(self, float q):
+    cdef vector[float] dwpot
+    dwpot = self.siggen.get_dwpot()
+    nt = self.GetNumStepsCalc()
+    dt = self.siggen.get_last_drifttime(q)
+    nsegs = self.GetNumSegments()
+    dwp_np = np.ones((nsegs,dt))*np.nan
+
+    for i in range(dt):
+      for j in range(nsegs):
+        dwp_np[j,i] = dwpot[j*nt+i]
+    return dwp_np
+
   def GetPath(self, float q):
     cdef vector[point] dp
     dp = self.siggen.get_driftpath(q)
@@ -123,3 +141,42 @@ cdef class PySiggen_PPC:
       else: dp_np[:,i] = dp.at(i).x, dp.at(i).y, dp.at(i).z
 
     return dp_np
+
+  def SetTrapping(self, double trap_const):
+    self.detector.set_trapping(trap_const)
+
+  def SetCalcTimestep(self, float dt):
+    self.siggen.set_calc_timestep( dt)
+
+  def SetCalcLength(self, int nt):
+    self.siggen.set_calc_length( nt)
+
+  def SetImpurityAvg(self, float imp, float grad):
+    self.detector.set_impurity_avg( imp,  grad)
+
+  def SetImpurityZ0(self, float imp, float grad):
+    self.detector.set_impurity_z0( imp,  grad)
+
+  def save_efield(self, mat_full, efld_name):
+    cdef EFieldPoint e_pt
+    cdef cyl_pt c_pt
+
+    cdef ofstream* outputter
+    # use try ... finally to ensure destructor is called
+    outputter = new ofstream(efld_name.encode(), binary)
+
+    # mat_full = solve_efield()
+
+    for i in range(mat_full.shape[0]):
+      for j in range(mat_full.shape[1]):
+        for k in range(mat_full.shape[2]):
+          for m in range(mat_full.shape[3]):
+            voltage, e, e_r, e_z = mat_full[i,j,k,m,:]
+            c_pt.r = e_r
+            c_pt.z = e_z
+            c_pt.phi = 0
+            e_pt.set_field(c_pt)
+            e_pt.set_voltage(voltage)
+            e_pt.serialize(outputter)
+
+    del outputter

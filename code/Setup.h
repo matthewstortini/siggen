@@ -29,6 +29,9 @@ class Setup
     std::string field_name;
     std::string wp_name;
 
+    float grad_min, grad_max, imp_min, imp_max;
+    int grad_num =1;
+    int imp_num=1;
 
     // float xtal_length=0;          // z length
     // float xtal_radius=0;          // radius

@@ -10,6 +10,7 @@
 
 #include "Detector.h"
 #include "Field.h"
+#include "Interpolator.h"
 #include "Setup.h"
 #include "SignalGenerator.h"
 #include "Utils.h"

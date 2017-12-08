@@ -81,8 +81,9 @@ VelocityModel::VelocityModel()
   //may as well also calculate Gamma_0 & n_j/n parameters
   double gamma_E[4][3];
   double EgammaE[4];
-
   double E_100[3] = {1,0,0};
+  Gamma_0 = 0;
+  
   for (i = 0; i<4;++i){
     dot(gamma_j[i], E_100, gamma_E[i]);
     EgammaE[i] = dot(E_100, gamma_E[i]);
@@ -108,6 +109,10 @@ VelocityModel::VelocityModel()
   coeff_1 = coeffs[3]; //and the one we're pointed in
 
   n1_ov_n = sqrt(EgammaE[3]) / nsum; //for direction we're pointed in
+
+
+  std::cout << "Gamma_0: " << Gamma_0 << ", coeff_111: " << coeff_111 <<", coeff_1: " << coeff_1<< ", n1_ov_n: " << n1_ov_n << "\n";
+
 }
 
 int VelocityModel::drift_velocity(point cart_en, float abse, float q, float& v_over_E, float& dv_dE, vector *velo)
@@ -125,6 +130,8 @@ int VelocityModel::drift_velocity(point cart_en, float abse, float q, float& v_o
   else{
     flag = electron_velocity(abse, theta, phi, velo );
   }
+
+  TELL_CHATTY(" abse: %f, ", abse);
 
   if (flag == -1){
     velo->x = 0;
@@ -197,7 +204,6 @@ int VelocityModel::electron_velocity(float field, float theta, float phi,vector 
   n2 = (v_111_x/A_E - coeff_1)/(coeff_111 - 3*coeff_1);
   n1 = 1.-3.*n2;
   R_E = (n1-.25) / (  n1_ov_n -0.25);
-  // printf("field: %f R_E: %f\n", field, R_E);
 
   nsum = 0;
   for (i = 0; i<4;++i){

@@ -10,9 +10,25 @@ PPC::PPC(Setup& setup):
 field_name(setup.field_name), wp_name(setup.wp_name),
 rmin(0),rmax(setup.xtal_radius),rstep(setup.xtal_grid),
 zmin(0),zmax(setup.xtal_length),zstep(setup.xtal_grid),
+impmin(setup.imp_min),impmax(setup.imp_max),impnum(setup.imp_num),
+gradmin(setup.grad_min),gradmax(setup.grad_max),gradnum(setup.grad_num),
 nsegs(1)
 {
   parse_setup(setup.geometry_map);
+
+  if (gradnum > 1) gradstep = (gradmax - gradmin) / (gradnum-1);
+  if (impnum > 1) impstep = (impmax - impmin) / (impnum-1);
+
+  // std::cout <<"impmax: " << impmax <<"\n";
+  // std::cout <<"impmin: " << impmin <<"\n";
+  // std::cout <<"impstep: " << impstep <<"\n";
+  // std::cout <<"impnum: " << impnum <<"\n";
+  //
+  // std::cout <<"gradmax: " << gradmax <<"\n";
+  // std::cout <<"gradmin: " << gradmin <<"\n";
+  // std::cout <<"gradstep: " << gradstep <<"\n";
+  // std::cout <<"gradnum: " << gradnum <<"\n";
+
 }
 
 void PPC::parse_setup(std::map<std::string,std::string>& geometry_params){
@@ -60,7 +76,9 @@ int PPC::setup_efield(){
   zlen = lrintf((zmax - zmin)/zstep) + 1;
   TELL_CHATTY("rlen, zlen: %d, %d\n", rlen, zlen);
 
-  efld.set_grid(rlen, zlen, rstep,zstep, rmin, zmin);
+  efld.set_grid(rlen, zlen, 1, impnum, gradnum,
+                rstep,zstep, 1, impstep, gradstep,
+                rmin, zmin,0, impmin, gradmin);
   efld.read_data(field_name, *this);
   return 0;
 }
@@ -91,11 +109,11 @@ int PPC::wpotential(point pt, std::vector<float>& wp){
 
 /* Find (interpolated or extrapolated) electric field for this point */
 //0 for success, 1 for fail
-int PPC::efield(cyl_pt pt, cyl_pt& e){
+int PPC::efield(cyl_pt pt, float imp_avg, float imp_grad, cyl_pt& e){
   e.r=0, e.z=0;
   int flag=0;
   EFieldPoint efld_pt;
-  flag = efld.get_point_interp(pt, efld_pt, *this);
+  flag = efld.get_point_interp(pt, imp_avg, imp_grad, efld_pt, *this);
   if (flag <0) return 1;
 
   e.r = efld_pt.r();

@@ -39,8 +39,8 @@ class ICPC
        at point pt. These values are stored in wp.
        returns 0 for success, 1 on failure.
     */
-    int wpotential(point pt, std::vector<float>& wp);
-    int efield(cyl_pt pt, cyl_pt& e);
+    int wpotential(point pt,  std::vector<float>& wp);
+    int efield(cyl_pt pt, float imp_z0, float imp_grad,cyl_pt& e);
     int in_crystal(point pt);
 
     int setup_efield();

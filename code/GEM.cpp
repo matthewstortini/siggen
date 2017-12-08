@@ -102,12 +102,12 @@ int GEM::setup_wp(){
 }
 
 //0 for success, 1 for fail
-int GEM::wpotential(point pt, std::vector<float>& wp){
+int GEM::wpotential(point pt,std::vector<float>& wp){
   wp[0] = 0;
   int flag=0;
   cyl_pt cyl;
   cyl = cart_to_cyl(pt);
-  flag = wpot.get_point_interp(cyl, wp[0], *this);
+  flag = wpot.get_point_interp(cyl,  wp[0], *this);
   if (flag <0) return 1;
 
   return 0;
@@ -115,11 +115,11 @@ int GEM::wpotential(point pt, std::vector<float>& wp){
 
 /* Find (interpolated or extrapolated) electric field for this point */
 //0 for success, 1 for fail
-int GEM::efield(cyl_pt pt, cyl_pt& e){
+int GEM::efield(cyl_pt pt, float imp_z0, float imp_grad,cyl_pt& e){
   e.r=0,e.phi=0,e.z=0;
   int flag=0;
   EFieldPoint efld_pt;
-  flag = efld.get_point_interp(pt, efld_pt, *this);
+  flag = efld.get_point_interp(pt, imp_z0, imp_grad,efld_pt, *this);
   if (flag <0) return 1;
 
   e.r = efld_pt.r();

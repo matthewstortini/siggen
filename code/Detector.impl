@@ -16,6 +16,7 @@ xtal_length(setup.xtal_length)
 
   velocity_lookup.set_drift_name(drift_name);
   velocity_lookup.set_xtal_temp(xtal_temp);
+  set_impurity_z0(impurity_z0, impurity_gradient);
 
   rmin  = 0;
   rmax  = xtal_radius;
@@ -42,6 +43,8 @@ void Detector<GeometryType>::parse_setup(std::map<std::string, std::string>& det
       valstream >> drift_name;
     }else if (key == "use_velo_model"){
       valstream >> use_velo_model;
+    }else if (key == "trapping_constant"){
+      valstream >> trapping_constant;
 
     //FieldGenerator params... here for now?
     }else if (key == "xtal_grid"){
@@ -74,8 +77,6 @@ void Detector<GeometryType>::parse_setup(std::map<std::string, std::string>& det
       valstream >> max_iterations;
     }else if (key == "write_WP"){
       valstream >> write_WP;
-    }else if (key == "use_velo_model"){
-      valstream >> use_velo_model;
     }else{
       std::cout << "ERROR; unrecognized detector keyword " << key << "\n";
     }
@@ -102,7 +103,7 @@ int Detector<GeometryType>::drift_velocity(point pt, float q, float& v_over_E, f
   cyl.r = sqrt(pt.x*pt.x + pt.y*pt.y);
   cyl.z = pt.z;
   cyl.phi = 0;
-  if (geometry.efield(cyl, e) > 0) return -1;
+  if (efield(cyl,  e) > 0) return -1;
   // e = efield(cyl, ipt);
   abse = vector_norm_cyl(e, &en);
   if (cyl.r > 0.001) {
@@ -154,5 +155,22 @@ int Detector <GeometryType>::field_setup(){
   return 0;
 }
 
+template<class GeometryType>
+void Detector <GeometryType>::set_impurity_avg(float impavg, float impgrad){
+  impurity_avg = impavg;
+  impurity_gradient = impgrad;
+  impurity_z0 = impurity_avg - 0.5 * impurity_gradient * xtal_length/10.;
+  // std::cout << "impurity_z0: "<< impurity_z0 << ", impurity_avg: " << impurity_avg << "\n";
+  // std::cout << "impurity_gradient: "<< impurity_gradient << ", xtal_length: " << xtal_length << "\n";
+}
+
+template<class GeometryType>
+void Detector <GeometryType>::set_impurity_z0(float impz0, float impgrad){
+  impurity_z0 = impz0;
+  impurity_gradient = impgrad;
+  impurity_avg = impurity_z0 + 0.5 * impurity_gradient * xtal_length/10.;
+  // std::cout << "impurity_z0: "<< impurity_z0 << ", impurity_avg: " << impurity_avg << "\n";
+  // std::cout << "impurity_gradient: "<< impurity_gradient << ", xtal_length: " << xtal_length << "\n";
+}
 
 } // namespace Siggen

@@ -24,6 +24,7 @@ src = [os.path.join("..", "code", fn) for fn in [
     "point.cpp",
     "GEM.cpp",
     "ICPC.cpp",
+    "Interpolator.cpp",
     "PPC.cpp",
     "Setup.cpp",
     "Utils.cpp",
@@ -33,7 +34,9 @@ src = [os.path.join("..", "code", fn) for fn in [
 
 ext = ".pyx" if do_cython else ".cpp"
 
-src +=  [os.path.join("siggen", "_siggen" + ext)]
+src +=  [os.path.join("siggen", "_siggen" + ext),
+        #  os.path.join("siggen", "fields" + ext)
+        ]
 
 extensions = [
     Extension("siggen._siggen", sources=src,

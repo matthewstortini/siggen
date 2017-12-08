@@ -22,6 +22,7 @@ class SignalGenerator
 
     //for make_signal
     std::vector<float> wpot, wpot_old, dwpot;
+    std::vector<float> dwpot_hist;
 		std::vector<float> signal_arr, sum, tmp;
     std::vector<point> dpath_e, dpath_h;
     // std::vector<Point> dpath_e, dpath_h;
@@ -35,7 +36,7 @@ class SignalGenerator
     int last_electron_drift_time=0;
 
     //Charge trapping
-    float charge_trapping_per_step = 1.0;
+    double charge_trapping_per_step = 1.0;
 
     //Preamp
     float preamp_tau = 0.;
@@ -68,15 +69,21 @@ class SignalGenerator
 		SignalGenerator(Detector<GeometryType>* detector, Setup& setup_in);
 
     int get_signal(point pt, float* signal_out);
-    int make_signal(point pt, float* signal, float q);
+    int make_signal(point pt, float* signal, double q);
     int rc_integrate(std::vector<float>& s_in, std::vector<float>& s_out, float tau, int time_steps);
 
     inline int get_output_length(){return ntsteps_out;}
     inline int get_calc_length(){return time_steps_calc;}
     inline int get_nsegments(){return nsegments;}
+    inline float get_calc_timestep(){return step_time_calc;}
 
+    inline std::vector<float>& get_dwpot(){return dwpot_hist; }
     inline std::vector<point>& get_driftpath(float q){return (q > 0)?(dpath_h):(dpath_e); }
     inline int get_last_drifttime(float q){return (q > 0)?(last_hole_drift_time):(last_electron_drift_time); }
+
+    inline void set_calc_timestep(float dt){step_time_calc = dt;}
+    void set_calc_length(int nt);
+
 };
 
 } // namespace Siggen

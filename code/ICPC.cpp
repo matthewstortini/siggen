@@ -152,10 +152,10 @@ int ICPC::wpotential(point pt, std::vector<float>& wp){
 
 /* Find (interpolated or extrapolated) electric field for this point */
 //0 for success, 1 for fail
-int ICPC::efield(cyl_pt pt, cyl_pt& e){
+int ICPC::efield(cyl_pt pt,float imp_z0, float imp_grad, cyl_pt& e){
   int flag=0;
   EFieldPoint efld_pt;
-  flag = efld.get_point_interp(pt, efld_pt, *this);
+  flag = efld.get_point_interp(pt, imp_z0, imp_grad,efld_pt, *this);
   if (flag <0) return 1;
 
   e.r = efld_pt.r();

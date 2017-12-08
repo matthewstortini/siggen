@@ -1,6 +1,30 @@
 # distutils: language = c++
 
 from libcpp.vector cimport vector
+from libcpp cimport bool
+
+cdef extern from "<iostream>" namespace "std":
+    cdef cppclass ostream:
+        ostream& write(const char*, int) except +
+    cdef cppclass istream:
+        istream& read(char*, int) except +
+
+cdef extern from "<iostream>" namespace "std::ios_base":
+    cdef cppclass open_mode:
+        pass
+    cdef open_mode binary
+    # you can define other constants as needed
+
+cdef extern from "<fstream>" namespace "std":
+    cdef cppclass ofstream(ostream):
+        # constructors
+        ofstream(const char*) except +
+        ofstream(const char*, open_mode) except+
+    cdef cppclass ifstream(istream):
+        # constructors
+        ifstream(const char*) except +
+        ifstream(const char*, open_mode) except+
+        bool eof() const
 
 cdef extern from "Siggen.h" namespace "Siggen":
 
@@ -12,6 +36,19 @@ cdef extern from "Siggen.h" namespace "Siggen":
     float r
     float phi
     float z
+
+  cdef cppclass EFieldPoint:
+    EFieldPoint()
+    float r()
+    float phi()
+    float z()
+    float get_voltage()
+
+    cyl_pt get_field()
+    void set_field(cyl_pt new_field)
+    void set_voltage(float volt)
+    void serialize(ofstream* stream)
+    void deserialize(ifstream* stream)
 
   cdef cppclass Setup:
     Setup (char* conf_file)
@@ -29,6 +66,9 @@ cdef extern from "Siggen.h" namespace "Siggen":
     int wpotential(point pt, vector[float] wp)
     int get_nsegments()
 
+    void set_trapping(double trap_c)
+    void set_impurity_z0(float imp, float grad)
+    void set_impurity_avg(float imp, float grad)
     void set_holes(float mu0_100, float beta_100, float E_0_100,
                    float mu0_111, float beta_111, float E_0_111)
     void set_electrons(float mu0_100, float beta_100, float E_0_100, float mu_n_100,
@@ -38,11 +78,18 @@ cdef extern from "Siggen.h" namespace "Siggen":
     SignalGenerator(Detector[T]* detector, Setup setup)
 
     int get_signal(point pt, float* signal_out)
-    int make_signal(point pt, float* signal, float q)
+    int make_signal(point pt, float* signal, double q)
+
     int get_output_length()
     int get_calc_length()
+    float get_calc_timestep()
+
     int get_last_drifttime(float q)
     vector[point] get_driftpath(float q)
+    vector[float] get_dwpot()
+
+    void set_calc_timestep(float dt)
+    void set_calc_length(int nt)
 
 cdef extern from "PPC.h":
   cdef cppclass PPC:

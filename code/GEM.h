@@ -40,7 +40,7 @@ class GEM
     void parse_setup(std::map<std::string,std::string>& geometry_params);
 
     int wpotential(point pt, std::vector<float>& wp);
-    int efield(cyl_pt pt, cyl_pt& e);
+    int efield(cyl_pt pt, float imp_z0, float imp_grad,cyl_pt& e);
     int outside_detector(point pt);
 
     int setup_efield();

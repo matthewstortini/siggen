@@ -8,9 +8,17 @@ namespace Siggen
 {
 
 template<class PointType>
-void Field<PointType>::set_grid(int rlen_in, int zlen_in, int philen_in,
-                                float rstep_in, float zstep_in, float phistep_in,
-                                float rmin_in, float zmin_in, float phimin_in)
+Field<PointType>::Field():
+imp_position(0),
+grad_position(0),
+interp()
+{};
+
+template<class PointType>
+void Field<PointType>::set_grid(int rlen_in, int zlen_in, int philen_in, int implen_in, int gradlen_in,
+                                float rstep_in, float zstep_in, float phistep_in, float impstep_in, float gradstep_in,
+                                float rmin_in, float zmin_in, float phimin_in, float impmin_in, float gradmin_in
+                              )
 {
   rlen = rlen_in;
   zlen = zlen_in;
@@ -22,29 +30,115 @@ void Field<PointType>::set_grid(int rlen_in, int zlen_in, int philen_in,
   zmin = zmin_in;
   phimin = phimin_in;
 
-  field_data.resize(rlen*zlen*philen);
+  implen = implen_in;
+  gradlen = gradlen_in;
+  impstep = impstep_in;
+  gradstep = gradstep_in;
+  impmin = impmin_in;
+  gradmin = gradmin_in;
+
+  field_data.resize(rlen*zlen*philen*implen*gradlen);
 }
+
+template<class PointType>
+void Field<PointType>::set_grid(int rlen_in, int zlen_in, int philen_in,
+                                float rstep_in, float zstep_in, float phistep_in,
+                                float rmin_in, float zmin_in, float phimin_in
+                              )
+{
+  set_grid(rlen_in, zlen_in, philen_in, 1,1,
+           rstep_in, zstep_in, phistep_in,1,1,
+           rmin_in, zmin_in, phimin_in,0,0);
+}
+
 
 /*For 2D fields */
 template<class PointType>
 void Field<PointType>::set_grid(int rlen_in, int zlen_in, float rstep_in, float zstep_in, float rmin_in, float zmin_in)
 {
-  rlen = rlen_in;
-  zlen = zlen_in;
-  philen = 1;
-  rstep = rstep_in;
-  zstep = zstep_in;
-  phistep = 1;
-  rmin= rmin_in;
-  zmin = zmin_in;
-  phimin = 0;
-
-  field_data.resize(rlen*zlen*philen);
+  set_grid(rlen_in, zlen_in, 1, rstep_in, zstep_in, 1, rmin_in, zmin_in, 0);
 }
 
 template<class PointType>
 template<class GeometryType>
 int Field<PointType>::read_data(std::string file_name,  GeometryType& geom){
+
+  std::string file_ext = file_name.substr(file_name.find_last_of(".") + 1);
+
+  if(file_ext == "dat") {
+    return read_text_data(file_name, geom);
+  } else if (file_ext == "field"){
+    return read_binary_data(file_name, geom);
+  } else{
+    std::cout << "\nField file extension must be either .dat (for text) or .field (for binary): " << file_name << "\n";
+    return 1;
+  }
+}
+
+template<class PointType>
+template<class GeometryType>
+int Field<PointType>::read_binary_data(std::string file_name,  GeometryType& geom){
+  //Currently only works for 2D data
+  std::ifstream is;
+  int ir, iz,iimp,igrad,iphi;
+  cyl_pt cyl;
+  point cart;
+
+  std::cout << "\nReading field data from file: " << file_name << "...";
+  is.open(file_name, std::ios::binary);
+
+  int count = 0;
+  PointType junk;
+
+  while (!is.eof()){
+    if (count >= field_data.size()){
+      is.read((char *) &junk, sizeof(junk));
+      count++;
+      continue;
+    }
+
+    //find the (r,z) corresponding to this point
+
+    igrad = count % (gradlen);
+    iimp = ((count - igrad) / gradlen) % implen ;
+    iz = ((count - iimp*gradlen - igrad) / (gradlen*implen)) % zlen ;
+    iphi = ((count - iz*gradlen*implen - iimp*gradlen - igrad) / (zlen*gradlen*implen)) % philen ;
+    ir = ((count - iphi*zlen*gradlen*implen -iz*gradlen*implen - iimp*gradlen - igrad) /
+          (philen*zlen*gradlen*implen)) % rlen ;
+
+    cyl.r = rmin + ir*rstep;
+    cyl.z = zmin + iz*zstep;
+    cyl.phi = 0;
+    cart = cyl_to_cart(cyl);
+
+    if (geom.outside_detector(cart)){
+      is.read((char *) &junk, sizeof(junk));
+      // field_data.at(count) = 0.;
+      // std::cout << "r: " << cyl.r << ", z: " << cyl.z << ": " << field_data.at(count) << std::endl;
+      count++;
+      continue;
+    }
+
+    is.read((char *) &get_point(ir,iphi,iz,iimp,igrad), sizeof(get_point(ir,0,iz,iimp,igrad)));
+    // std::cout << "r: " << cyl.r << ", z: " << cyl.z << ": " << field_data.at(count) << std::endl;
+
+    count++;
+  }
+  //You end up with one extra because of the dumb loop I wrote
+  count--;
+
+  if (count != rlen*zlen*philen*implen*gradlen) {
+    error("number of points read (%d) != expected (%d*%d*%d*%d*%d)\n",
+    count, rlen, zlen, philen, implen, gradlen);
+    return 1;
+  }
+  std::cout << " done successfully!\n";
+  return 0;
+}
+
+template<class PointType>
+template<class GeometryType>
+int Field<PointType>::read_text_data(std::string file_name,  GeometryType& geom){
 
   int lineno=0, npts=0;
   std::string line;
@@ -99,7 +193,7 @@ int Field<PointType>::read_data(std::string file_name,  GeometryType& geom){
     cart = cyl_to_cart(cyl);
     if (geom.outside_detector(cart)) continue;
 
-    field_data.at(i*zlen*philen+j*philen+k) = point_data;
+    get_point(i,k,j) = point_data;
   }
 
   //for 3d, copy min phi value over to maxvalue (cause its a circle)
@@ -108,7 +202,7 @@ int Field<PointType>::read_data(std::string file_name,  GeometryType& geom){
     --philen_idx;
     for (int i=0; i<rlen; i++) {
       for (int j=0; j<zlen; j++) {
-        field_data.at(i*zlen*philen+j*philen+philen-1) = field_data.at(i*zlen*philen+j*philen+0);
+      get_point(i, philen-1, j) = get_point(i,0,j);
       }
     }
   }
@@ -238,7 +332,7 @@ void Field<PointType>::position_weights(cyl_pt pt, cyl_int_pt ipt, float out[2][
   z = (pt.z - zmin)/zstep - ipt.z;
   phi = (pt.phi - phimin)/phistep - ipt.phi;
 
-  trilinear_interpolate(r,phi,z,out);
+  interp.trilinear_interpolate(r,phi,z,out);
 }
 
 template<class PointType>
@@ -249,12 +343,62 @@ void Field<PointType>::interp_position2D(cyl_pt pt, cyl_int_pt ipt, PointType& d
 
   r = (pt.r - rmin)/rstep - ipt.r;
   z = (pt.z - zmin)/zstep - ipt.z;
-  bilinear_interpolate(r,z,w);
+  interp.bilinear_interpolate(r,z,w);
 
   for (i = 0; i < 2; i++){
     for (j = 0; j < 2; j++){
       d_ref = get_point( ipt.r + i, 0, ipt.z +j);
       d += d_ref*(w[i][j]);
+    }
+  }
+}
+
+template<class PointType>
+void Field<PointType>::interp_impurity(cyl_pt pt, cyl_int_pt ipt, float imp_z0, float imp_grad, PointType& d){
+  int  i_imp, i_grad,i,j;
+  float imp, grad, w[2][2];
+  PointType d_ref;
+
+  if ((imp_grad < gradmin) || (imp_grad > gradmin + gradstep*(gradlen-1) )){
+    std::cout << "ERROR: grad "<< imp_grad <<" must be between " <<gradmin << " and " << gradmin + gradstep*(gradlen-1) <<"\n";
+  }
+  if ((imp_z0 < impmin) || (imp_z0 > impmin + impstep*(implen-1))){
+    std::cout << "ERROR: impurity "<< imp_z0 <<" must be between " <<impmin << " and " << impmin + impstep*(implen-1) <<"\n";
+  }
+
+  i_imp = ( imp_z0 - impmin )/ impstep ;
+  i_grad = ( imp_grad - gradmin  )/ gradstep  ;
+
+  imp = (imp_z0 - impmin)/impstep - i_imp;
+  grad = (imp_grad- gradmin)/gradstep - i_grad;
+
+  interp.bilinear_interpolate(imp,grad,w);
+
+  // std::cout <<"imp_avg: " << imp_z0 <<"\n";
+  // std::cout <<"impmin: " << impmin <<"\n";
+  // std::cout <<"impstep: " << impstep <<"\n";
+  // std::cout <<"imp: " << imp <<"\n";
+  // std::cout <<"i_imp: " << i_imp <<"\n";
+  //
+  // std::cout <<"imp_grad: " << imp_grad <<"\n";
+  // std::cout <<"gradmin: " << gradmin <<"\n";
+  // std::cout <<"gradstep: " << gradstep <<"\n";
+  // std::cout <<"i_grad: " << i_grad <<"\n";
+  // std::cout <<"grad: " << grad <<"\n";
+  //
+  // std::cout << "start: " << d << "\n";
+  for (i = 0; i < 2; i++){
+    for (j = 0; j < 2; j++){
+      //I think I'd rather the get_point just operated with a given i_grad and i_imp
+      d_ref = 0;
+      imp_position = i_imp + i;
+      grad_position = i_grad + j;
+
+      interp_position2D(pt, ipt, d_ref);
+      d += d_ref*(w[i][j]);
+      // std::cout << "  imp_position: " << imp_position <<", grad_position: " << grad_position << "\n";
+      // std::cout << "  i: " << i <<", j: "<< j <<", w: "<<  w[i][j] << "\n";
+      // std::cout << "  d:" << d << "\n";
     }
   }
 }
@@ -280,28 +424,6 @@ void Field<PointType>::interp_position2D(cyl_pt pt, cyl_int_pt ipt, PointType& d
 
 
 template<class PointType>
-void Field<PointType>::trilinear_interpolate(float a, float b, float c, float out[2][2][2]){
-  out[0][0][0] = (1.0 - a) * (1.0 - b) * (1.0 - c);
-  out[0][1][0] = (1.0 - a) *        b  * (1.0 - c);
-  out[1][0][0] =        a  * (1.0 - b) * (1.0 - c);
-  out[1][1][0] =        a  *        b  * (1.0 - c);
-
-  out[0][0][1] = (1.0 - a) * (1.0 - b) * c;
-  out[0][1][1] = (1.0 - a) *        b  * c;
-  out[1][0][1] =        a  * (1.0 - b) * c;
-  out[1][1][1] =        a  *        b  * c;
-}
-
-template<class PointType>
-void Field<PointType>::bilinear_interpolate(float a, float b,  float out[2][2]){
-
-  out[0][0] = (1.0 - a) * (1.0 - b);
-  out[0][1] = (1.0 - a) *         b;
-  out[1][0] =        a  * (1.0 - b);
-  out[1][1] =        a  *         b;
-}
-
-template<class PointType>
 PointType& Field<PointType>::operator()(int ir, int iz){
   if (philen > 1){
     error("Reading 3D Field as a 2D field\n");
@@ -315,7 +437,7 @@ PointType& Field<PointType>::operator()(int ir, int iz){
 
   // assume iphi = 0
   try{
-    return field_data.at(ir * philen * zlen + iz*philen +0);
+    return this->get_point(ir, 0, iz);
   } catch(const std::out_of_range& oor){
     std::cout << "Error in field:  accessing (" << ir << "," <<iz <<")\n";
     std::cout << "-->rlen: "<<rlen<<", zlen: " << zlen <<std::endl;
@@ -324,27 +446,71 @@ PointType& Field<PointType>::operator()(int ir, int iz){
 }
 
 template<class PointType>
+PointType& Field<PointType>::operator()(int ir, int iphi, int iz){
+  return this->get_point(ir, iphi, iz);
+  // return field_data.at(ir * philen * zlen + iz*philen +iphi);
+}
+
+template<class PointType>
+PointType& Field<PointType>::get_point(int ir, int iphi, int iz, int iimp, int igrad){
+  imp_position = iimp;
+  grad_position = igrad;
+  return get_point(ir,iphi,iz);
+}
+
+template<class PointType>
 PointType& Field<PointType>::get_point(int ir, int iphi, int iz){
-  if (ir>=rlen || iphi >=philen || iz>=zlen){
+  if (ir>=rlen || iphi >=philen || iz>=zlen || imp_position > implen || grad_position > gradlen){
     std::cout << "ERROR: accessing point beyond field grid.\n";
     std::cout << "--> ir:   " << ir << " (rlen " << rlen <<")\n";
     std::cout << "--> iphi: " << iphi << " (philen " << philen <<")\n";
     std::cout << "--> iz:   " << iz << " (zlen " << zlen <<")\n";
+    std::cout << "--> imp_position:   " << imp_position << " (implen " << implen <<")\n";
+    std::cout << "--> grad_position:   " << grad_position << " (gradlen " << gradlen <<")\n";
     exit(0);
   }
-  return field_data.at(ir * philen * zlen + iz*philen +iphi);
-}
 
-template<class PointType>
-PointType& Field<PointType>::operator()(int ir, int iphi, int iz){
-  return field_data.at(ir * philen * zlen + iz*philen +iphi);
+  try{
+    return field_data.at(ir * philen * zlen * implen*gradlen
+                         + iz*philen*implen*gradlen
+                         + iphi * implen*gradlen
+                         + imp_position*gradlen
+                         + grad_position
+                        );
+  }catch(const std::out_of_range& oor){
+    std::cout << "caught vector error in get_point...\n";
+    std::cout << "--> ir:   " << ir << " (rlen " << rlen <<")\n";
+    std::cout << "--> iphi: " << iphi << " (philen " << philen <<")\n";
+    std::cout << "--> iz:   " << iz << " (zlen " << zlen <<")\n";
+    std::cout << "--> imp_position:   " << imp_position << " (implen " << implen <<")\n";
+    std::cout << "--> grad_position:   " << grad_position << " (gradlen " << gradlen <<")\n";
+    exit(0);
+  }
 }
 
 /* This is 2D-only for now, because For 3D (ie, segmented...) fields,
    we generally want to be able to re-use ipt and intepolation data  */
 template<class PointType>
 template<class GeometryType>
-int Field<PointType>::get_point_interp(cyl_pt cyl, PointType& data, GeometryType& geometry){
+int Field<PointType>::get_point_interp(cyl_pt cyl, float imp_z0, float imp_grad, PointType& data, GeometryType& geometry){
+  if (philen > 1){
+    error("Reading 3D Field as a 2D field: get_point_data only supported for 2D fields\n");
+  }
+  int    res;
+  cyl_int_pt ipt;
+
+  res = nearest_field_grid_index(cyl, &ipt, geometry);
+  if (res < 0) return -1;
+
+  if (implen == 1) interp_position2D(cyl, ipt, data);
+  else interp_impurity(cyl, ipt, imp_z0, imp_grad, data);
+  // std::cout << "average imp: " <<  imp_z0 <<std::endl;
+  return 0;
+}
+
+template<class PointType>
+template<class GeometryType>
+int Field<PointType>::get_point_interp(cyl_pt cyl,  PointType& data, GeometryType& geometry){
   if (philen > 1){
     error("Reading 3D Field as a 2D field: get_point_data only supported for 2D fields\n");
   }
@@ -358,5 +524,6 @@ int Field<PointType>::get_point_interp(cyl_pt cyl, PointType& data, GeometryType
 
   return 0;
 }
+
 
 } // namespace Siggen

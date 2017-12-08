@@ -32,11 +32,15 @@ class Detector
     std::string drift_name;
     float xtal_temp = 0.;
 
+    //charge trapping -- exponential in time model (q = q_0 * e^(-t/tau))
+    double trapping_constant = -1; // -1: no trapping
+
     float Li_thickness = 0; //Literally nothing is using this right now, I'll stick it here for now.
 
     //field-gen related...
     float xtal_grid=0;            // grid size in mm for field files (either 0.5 or 0.1 mm)
     float impurity_z0=0;          // net impurity concentration at Z=0, in 1e10 e/cm3
+    float impurity_avg=0;          // net impurity concentration at Z=0.5*xtal_length, in 1e10 e/cm3
     float impurity_gradient=0;    // net impurity gradient, in 1e10 e/cm4
     float impurity_quadratic=0;   // net impurity difference from linear, at z=L/2, in 1e10 e/cm3
     float impurity_surface=0;     // surface impurity of passivation layer, in 1e10 e/cm2
@@ -77,12 +81,17 @@ class Detector
 
     //Pass thru to the geometry info
     inline int wpotential(point pt, std::vector<float>& wp){return geometry.wpotential( pt,  wp);}
-    inline int efield(cyl_pt pt, cyl_pt& ret_pt){return geometry.efield( pt,  ret_pt);}
+    inline int efield(cyl_pt pt, cyl_pt& ret_pt){return geometry.efield( pt, impurity_avg, impurity_gradient,  ret_pt);}
     inline int outside_detector(point pt){return geometry.outside_detector( pt);  }
     // inline int outside_detector_cyl(cyl_pt pt){return geometry.outside_detector_cyl( pt);  }
 
-    float get_impurity(){return impurity_z0;}
-    float get_nsegments(){return geometry.get_nsegments();}
+    inline float get_impurity(){return impurity_z0;}
+    inline float get_nsegments(){return geometry.get_nsegments();}
+    inline float get_trapping(){return trapping_constant;  }
+    inline void set_trapping(double trap_c){ trapping_constant = trap_c;  }
+
+    void set_impurity_avg(float imp, float impgrad);
+    void set_impurity_z0(float imp, float impgrad);
 
 };
 

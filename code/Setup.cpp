@@ -91,12 +91,23 @@ int Setup::read_config(std::string config_file_name) {
     }else if (key == "wp_name"){
       valstream >> wp_name;
       wp_name = conf_path + wp_name;
+    }else if (key == "imp_min"){
+      valstream >> imp_min;
+    }else if (key == "imp_max"){
+      valstream >> imp_max;
+    }else if (key == "imp_num"){
+      valstream >> imp_num;
+    }else if (key == "grad_min"){
+      valstream >> grad_min;
+    }else if (key == "grad_max"){
+      valstream >> grad_max;
+    }else if (key == "grad_num"){
+      valstream >> grad_num;
     }
 
     (*currentMap)[key] = value;
 
   }
-
 
   std::cout << "Done reading file\n";
   return 0;

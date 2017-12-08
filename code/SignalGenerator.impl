@@ -72,6 +72,8 @@ impurity_z0(detector->get_impurity()
   //TODO: include diffusion params... preamp effects?
 }
 
+
+
 template<class GeometryType>
 void SignalGenerator<GeometryType>::initialize_arrays(){
   wpot.resize(nsegments);
@@ -82,6 +84,13 @@ void SignalGenerator<GeometryType>::initialize_arrays(){
   tmp.resize(time_steps_calc*nsegments);
   dpath_e.resize(time_steps_calc);
   dpath_h.resize(time_steps_calc);
+  dwpot_hist.resize(time_steps_calc*nsegments);
+}
+
+template<class GeometryType>
+void SignalGenerator<GeometryType>::set_calc_length(int nt){
+  time_steps_calc = nt;
+  initialize_arrays();
 }
 
 template<class GeometryType>
@@ -170,7 +179,7 @@ int SignalGenerator<GeometryType>::get_signal(point pt, float* signal_out)
 
 
 template<class GeometryType>
-int SignalGenerator<GeometryType>::make_signal(point pt, float* signal_in, float q)
+int SignalGenerator<GeometryType>::make_signal(point pt, float* signal_in, double q)
 {
   char   tmpstr[MAX_LINE];
   point  new_pt;
@@ -191,6 +200,12 @@ int SignalGenerator<GeometryType>::make_signal(point pt, float* signal_in, float
     diffusion_coeff = TWO_TIMES_DIFFUSION_COEF_E;
   }
   */
+  std::fill(wpot_old.begin(), wpot_old.end(), 0.);
+  std::fill(dwpot_hist.begin(), dwpot_hist.end(), 0.);
+
+  //get the charge trapping parameter
+  float trapping_constant = detector->get_trapping();
+  charge_trapping_per_step = (trapping_constant==-1)  ? 1. : exp((double)  -step_time_calc / (trapping_constant*1000));
 
   for (t = 0; detector->drift_velocity(new_pt, q,  v_over_E,dv_dE,  &v) >= 0; t++) {
     (q > 0)?(dpath_h[t] = new_pt):(dpath_e[t] = new_pt);
@@ -272,7 +287,10 @@ int SignalGenerator<GeometryType>::make_signal(point pt, float* signal_in, float
       // if (wpot[i] < 0.0) wpot[i] = 0.0;
       // if (wpot[i] > 1.0) wpot[i] = 1.0;
 
-      if (t > 0) signal_in[i*time_steps_calc+t] += q*(wpot[i] - wpot_old[i]);
+      if (t > 0){
+        signal_in[i*time_steps_calc+t] += q*(wpot[i] - wpot_old[i]);
+        dwpot_hist[i*time_steps_calc +t ] = wpot[i] - wpot_old[i];
+      }
       wpot_old[i] = wpot[i];
       // printf("          wpot %d: %f\n", i,wpot[i]);
     }
@@ -293,6 +311,7 @@ int SignalGenerator<GeometryType>::make_signal(point pt, float* signal_in, float
     new_pt = vector_add(new_pt, dx);
     // do charge trapping
     q *= charge_trapping_per_step;
+    // printf("%0.10f,",q);
 
   }//for (t = 0; detector->drift_velocity(new_pt, q, &v) >= 0; t++)
 
@@ -341,6 +360,7 @@ int SignalGenerator<GeometryType>::make_signal(point pt, float* signal_in, float
       } else {
         dwpot[0] = - wpot[0]/n;
       }
+      // printf("drifting final %d steps (starting at %d) over dwpot %f\n", n,t, dwpot[0]*n);
     } else{
       /*weighting pot. is 1 at edge for hit segment, 0 for other segments.
         Make it so, gradually if applicable*/
@@ -351,17 +371,20 @@ int SignalGenerator<GeometryType>::make_signal(point pt, float* signal_in, float
     }//if nsegments==1
 
     /*now drift the final n steps*/
+
     dx = vector_scale(v, step_time_calc);
     for (i = 0; i < n; i++){
       for (j = 0; j < nsegments; j++){
         signal_in[j*time_steps_calc +i+t-1] += q*dwpot[j];
+        dwpot_hist[j*time_steps_calc +i+t-1] += dwpot[j];
       }
       // do charge trapping
       q *= charge_trapping_per_step;
+      // printf("%0.10f,",q);
     }
 
   }//if lowfield
-
+  // printf("\n\n\n,");
   TELL_CHATTY("q:%.2f pt: %s\n", q, pt_to_str(tmpstr, MAX_LINE, pt));
   if (collect2pc) final_vel = vector_length(v);
 
