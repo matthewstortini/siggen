@@ -16,6 +16,7 @@ class ICPC
     float zmin, zmax, zstep;
     float phimin, phimax, phistep;
 
+    float xtal_radius, xtal_length;
     float bullet_radius; /*bulletization radius @ front of det (z=zmax)*/
     float contact_l, contact_r; /*length, radius of central contact*/
     float central_hole_l, central_hole_r; /*length and radius of central hole*/
@@ -58,6 +59,9 @@ class ICPC
     inline int get_zen(){return zlen;}
     inline int get_nsegments(){return nsegs;}
     inline int efield_exists(cyl_pt pt){return efld.field_exists(pt, *this);}
+
+    inline float get_xtal_radius(){return xtal_radius;}
+    inline float get_xtal_length(){return xtal_length;}
 
 };
 

@@ -63,7 +63,7 @@ class Detector
 
 	public:
 		// Detector () {};
-    Detector (Setup& setup);
+    Detector (GeometryType& geometry, Setup& setup);
 
     int field_setup();
 

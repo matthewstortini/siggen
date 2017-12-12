@@ -68,7 +68,7 @@ void GEM::parse_setup(std::map<std::string,std::string>& geometry_params){
     }else if (key == "taper_angle"){
       valstream >> taper_angle;
     }else{
-      std::cout << "ERROR; unrecognized geometry keyword " << key << "\n";
+      std::cout << "WARNING: unrecognized geometry keyword " << key << "\n";
     }
   }
 }

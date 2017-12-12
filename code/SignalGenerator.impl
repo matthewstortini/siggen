@@ -117,7 +117,7 @@ void SignalGenerator<GeometryType>::parse_setup(std::map<std::string, std::strin
     }else if (key == "preamp_tau"){
       valstream >> preamp_tau;
     }else{
-      std::cout << "ERROR; unrecognized signal generator keyword " << key << "\n";
+      std::cout << "WARNING: unrecognized signal generator keyword " << key << "\n";
     }
   }
 

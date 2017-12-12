@@ -8,6 +8,7 @@ using namespace Siggen;
 
 ICPC::ICPC(Setup& setup):
 field_name(setup.field_name), wp_name(setup.wp_name),
+xtal_radius(setup.xtal_radius), xtal_length(setup.xtal_length),
 rmin(0),rmax(setup.xtal_radius),rstep(setup.xtal_grid),
 zmin(0),zmax(setup.xtal_length),zstep(setup.xtal_grid),
 phimin(0),phimax(359.),phistep(1),
@@ -54,7 +55,7 @@ void ICPC::parse_setup(std::map<std::string,std::string>& geometry_params){
     }else if (key == "taper_dr"){
       valstream >> taper_dr;
     }else{
-      std::cout << "ERROR; unrecognized geometry keyword " << key << "\n";
+      std::cout << "WARNING: unrecognized geometry keyword " << key << "\n";
     }
   }
 }

@@ -147,7 +147,7 @@ int Setup::read_config(std::string config_file_name) {
 
 
   	// } else {
-  	//   printf("ERROR; unrecognized keyword %s\n", key_word[i]);
+  	//   printf("WARNING: unrecognized keyword %s\n", key_word[i]);
   	//   return 1;
   	// }
     //

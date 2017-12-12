@@ -7,10 +7,10 @@ import fileinput
 
 def make_source(geometry_list):
 
-    source_file = "siggen/PySiggen.pyi.src"
+    source_file = "siggen/geometries/TemplateWrapper.pxi.src"
 
     for geom in geometry_list:
-        new_file = "siggen/PySiggen_%s.pxi" % geom
+        new_file = "siggen/geometries/TemplateWrapper_%s.pxi" % geom
         copyfile(source_file, new_file)
 
         f = fileinput.FileInput(new_file, inplace=True)

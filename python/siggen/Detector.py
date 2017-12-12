@@ -11,22 +11,24 @@ try:
 except ImportError:
     pass
 
-from ._siggen import PySiggen_GEM, PySiggen_PPC, PySiggen_ICPC
+from ._siggen import PySiggen #PySiggen_GEM, PySiggen_PPC, PySiggen_ICPC
 
 #Does all the interfacing with siggen for you, stores/loads lookup tables, and does electronics shaping
 
 class Detector:
   def __init__(self,  detector_geometry, conf_file, num_steps_calc=None, wf_padding=0, maxWfOutputLength = 1000, verbose=False):
 
-    if detector_geometry == "GEM":
-        self.siggenInst = PySiggen_GEM(conf_file)#PyICPC(conf_file)
-    elif detector_geometry == "ICPC":
-        self.siggenInst = PySiggen_ICPC(conf_file)
-    elif detector_geometry == "PPC":
-        self.siggenInst = PySiggen_PPC(conf_file)
-    else:
-        print("Detector geometry %s is not implemented!" % detector_geometry)
-        exit(0)
+    self.siggenInst = PySiggen(detector_geometry, conf_file)
+
+    # if detector_geometry == "GEM":
+    #     self.siggenInst = PySiggen_GEM(conf_file)#PyICPC(conf_file)
+    # elif detector_geometry == "ICPC":
+    #     self.siggenInst = PySiggen_ICPC(conf_file)
+    # elif detector_geometry == "PPC":
+    #     self.siggenInst = PySiggen_PPC(conf_file)
+    # else:
+    #     print("Detector geometry %s is not implemented!" % detector_geometry)
+    #     exit(0)
 
     if num_steps_calc is not None:
         self.siggenInst.SetCalcLength(int(num_steps_calc))
@@ -137,82 +139,12 @@ class Detector:
     self.signal_array[:,self.wf_padding:] = self.signal_array_flat.reshape((self.nsegments,self.num_steps_out))
     return self.signal_array
 
-# ###########################################################################################################################
-#   def GetSimWaveform(self, r,phi,z,scale, align_point,  numSamples, smoothing=None):
-#     sig_wf = self.GetRawSiggenWaveform(r, phi, z)
-#     if sig_wf is None:
-#       return None
-#
-#     sig_wf *= scale
-#
-#     #only do gaussian filtering of PC signal
-#     if smoothing is not None:
-#       ndimage.filters.gaussian_filter1d(sig_wf[self.pc_idx,:], smoothing, output=sig_wf[self.pc_idx,:])
-#
-#     sim_wf = self.ProcessWaveform(sig_wf, align_point,  numSamples)
-#
-#     return sim_wf
-#
-# ########################################################################################################
-#   def ProcessWaveform(self, siggen_wf,  align_point, outputLength):
-#     #low-pass filter (non-ppc)
-#     temp_wf_sig = np.zeros_like(siggen_wf)
-#     for i in range(self.nsegments):
-#         temp_wf_sig[i,:] = signal.lfilter(self.lp_num[i], self.lp_den[i], siggen_wf[i,:])
-#         # print(temp_wf_sig[i,:])
-#         # print(self.lp_num[i] ,self.lp_den[i], np.sum(self.lp_den[i]))
-#         temp_wf_sig[i,:] /= (np.sum(self.lp_num[i])/np.sum(self.lp_den[i]))
-#
-#     #RC filter for core
-#     if self.core_rc > 0:
-#         temp_wf_sig[-1,:] = signal.lfilter(self.core_num, self.core_den, siggen_wf[-1,:])
-#     #hi-pass filter
-#     temp_wf_sig= signal.lfilter(self.hp_num, self.hp_den, temp_wf_sig, axis=-1)
-#
-#     #uh, downsample it
-#     temp_wf = temp_wf_sig[:,::self.data_to_siggen_size_ratio]
-#
-#     #enforces t0 time-alignment to the align_point
-#     siggen_offset = self.t0_padding/self.data_to_siggen_size_ratio
-#     first_idx= 0
-#
-#     num_wfs = self.nsegments
-#     num_samples = self.total_steps/self.data_to_siggen_size_ratio
-#
-#     #find the first index after the align point
-#     align_point_ceil = np.int( np.ceil(align_point) )
-#     start_idx = align_point_ceil - first_idx
-#     #and make sure its above 0!
-#     if start_idx <0:
-#         print("bad start idx")
-#         return None
-#
-#     siggen_interp_fn = interpolate.interp1d(np.arange(num_samples), temp_wf, kind=self.interpType, copy="False", assume_sorted="True")
-#
-#     num_samples_to_fill = outputLength - start_idx
-#     offset = align_point_ceil - align_point
-#     sampled_idxs = np.arange(num_samples_to_fill) + offset + siggen_offset
-#
-#     processed_siggen_data = np.zeros((num_wfs, outputLength))
-#     coarse_vals =   siggen_interp_fn(sampled_idxs)
-#
-#     try:
-#         processed_siggen_data[:, start_idx:start_idx+num_samples_to_fill] = coarse_vals
-#     except ValueError:
-#         print( len(processed_siggen_data) )
-#         print( start_idx)
-#         print( num_samples_to_fill)
-#         print( sampled_idxs)
-#         exit(0)
-#
-#     return processed_siggen_data
-
   def solve_fields(self, meshmult, xtal_HV, impAvgRange, gradientRange, wp_name = "wpot.field", ef_name="ev.field", num_cpu=1):
 
-      from multiprocessing import Pool, cpu_count
-
-      max_cpu = cpu_count()
-      if (num_cpu < 1 or num_cpu >  max_cpu): cpu_count = max_cpu
+    #   from multiprocessing import Pool, cpu_count
+      #
+    #   max_cpu = cpu_count()
+    #   if (num_cpu < 1 or num_cpu >  max_cpu): cpu_count = max_cpu
 
       boundary_pc, boundary_n = self.GetBoundaryConditions()
 

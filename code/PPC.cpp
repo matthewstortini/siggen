@@ -60,7 +60,7 @@ void PPC::parse_setup(std::map<std::string,std::string>& geometry_params){
     }else if (key == "taper_length"){
       valstream >> taper_length;
     }else{
-      std::cout << "ERROR; unrecognized geometry keyword " << key << "\n";
+      std::cout << "WARNING: unrecognized geometry keyword " << key << "\n";
     }
   }
 }

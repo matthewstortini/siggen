@@ -16,7 +16,7 @@ class PPC
     float xtal_length,xtal_radius;
     float top_bullet_radius, bottom_bullet_radius;
     float pc_length, pc_radius;
-    float bulletize_PC;
+    bool bulletize_PC;
     float wrap_around_radius;
     float ditch_depth,ditch_thickness;
     float taper_length;
@@ -48,6 +48,28 @@ class PPC
     inline int get_zen(){return zlen;}
     inline int get_nsegments(){return nsegs;}
     inline int efield_exists(cyl_pt pt){return efld.field_exists(pt, *this);}
+
+    inline float get_xtal_radius(){return xtal_radius;}
+    inline float get_xtal_length(){return xtal_length;}
+    inline float get_pc_length(){return pc_length;}
+    inline float get_pc_radius(){return pc_radius;}
+    inline float get_wrap_around_radius(){return wrap_around_radius;}
+    inline float get_top_bullet_radius(){return top_bullet_radius;}
+    inline float get_bottom_bullet_radius(){return bottom_bullet_radius;}
+    inline float get_ditch_depth(){return ditch_depth;}
+    inline float get_ditch_thickness(){return ditch_thickness;}
+    inline float get_taper_length(){return taper_length;}
+
+    inline void set_xtal_radius(float val){xtal_radius = val;}
+    inline void set_xtal_length(float val){xtal_length = val;}
+    inline void set_pc_length(float val){pc_length = val;}
+    inline void set_pc_radius(float val){pc_radius = val;}
+    inline void set_wrap_around_radius(float val){wrap_around_radius = val;}
+    inline void set_top_bullet_radius(float val){top_bullet_radius = val;}
+    inline void set_bottom_bullet_radius(float val){bottom_bullet_radius = val;}
+    inline void set_ditch_depth(float val){ditch_depth = val;}
+    inline void set_ditch_thickness(float val){ditch_thickness = val;}
+    inline void set_taper_length(float val){taper_length = val;}
 
 };
 

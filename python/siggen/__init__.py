@@ -8,10 +8,7 @@ except NameError:
 if not __SIGGEN_SETUP__:
     __all__ = ["Detector"]
 
-    # from ._siggen import PyICPC,PyGEM, PyPPC
-    # from .PyDetector import PyDetector
     from .Detector import Detector
-    from .ICPC import ICPC
     from .PPC import PPC
+    from .ICPC import ICPC
     from .GEM import GEM
-    # from .make_fields import read_fields

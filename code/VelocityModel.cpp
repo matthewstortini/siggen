@@ -83,7 +83,7 @@ VelocityModel::VelocityModel()
   double EgammaE[4];
   double E_100[3] = {1,0,0};
   Gamma_0 = 0;
-  
+
   for (i = 0; i<4;++i){
     dot(gamma_j[i], E_100, gamma_E[i]);
     EgammaE[i] = dot(E_100, gamma_E[i]);
@@ -111,7 +111,7 @@ VelocityModel::VelocityModel()
   n1_ov_n = sqrt(EgammaE[3]) / nsum; //for direction we're pointed in
 
 
-  std::cout << "Gamma_0: " << Gamma_0 << ", coeff_111: " << coeff_111 <<", coeff_1: " << coeff_1<< ", n1_ov_n: " << n1_ov_n << "\n";
+  // std::cout << "Gamma_0: " << Gamma_0 << ", coeff_111: " << coeff_111 <<", coeff_1: " << coeff_1<< ", n1_ov_n: " << n1_ov_n << "\n";
 
 }
 

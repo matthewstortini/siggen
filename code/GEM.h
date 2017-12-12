@@ -51,6 +51,9 @@ class GEM
     inline int get_nsegments(){return nsegs;}
     inline int efield_exists(cyl_pt pt){return efld.field_exists(pt, *this);}
 
+    inline float get_xtal_radius(){return xtal_radius;}
+    inline float get_xtal_length(){return xtal_length;}
+
 };
 
 

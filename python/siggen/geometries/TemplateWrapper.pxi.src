@@ -1,0 +1,121 @@
+from cython.operator cimport dereference
+import cython
+import numpy as np
+cimport numpy as np
+
+cdef class DetectorWrapper_{DetectorType}:
+  cdef Detector[{DetectorType}]* cobj
+
+  def __cinit__(self, {DetectorType}Geometry geometry, PySetup setup):
+    self.cobj = new Detector[{DetectorType}](dereference(geometry.cobj), dereference(setup.cobj))
+
+  def __dealloc__(self):
+    del self.cobj
+
+  def field_setup(self):
+    return self.cobj.field_setup()
+
+  def outside_detector(self, point pt):
+    return self.cobj.outside_detector(pt)
+
+  def efield(self, float r, float z):
+
+    cdef cyl_pt e
+    cdef cyl_pt pt
+
+    e.r=0.
+    e.phi=0.
+    e.z=0.
+
+    pt.r = r;
+    pt.phi=0.;
+    pt.z=z;
+
+    val = self.cobj.efield(pt,e)
+
+    return (e.r, e.phi, e.z, val)
+
+  def wpotential(self, point pt, np.ndarray[np.float32_t, ndim=1] wp_np):
+    # print (pt.x, pt.z, wp[0])
+    cdef vector[float] wp
+    wp.resize(wp_np.size)
+
+    val = self.cobj.wpotential(pt,wp)
+
+    for i in range(wp_np.size):
+      wp_np[i] = wp[i]
+    return val
+
+  def set_holes(self, mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111):
+    return self.cobj.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
+
+  def set_electrons(self, float mu0_100, float beta_100, float E_0_100,float mu_n_100,
+                float mu0_111, float beta_111, float E_0_111, float mu_n_111):
+    return self.cobj.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)
+
+  def set_impurity_z0(self, float imp, float grad):
+    return self.cobj.set_impurity_z0(imp,grad)
+
+  def set_impurity_avg(self, float imp, float grad):
+    return self.cobj.set_impurity_avg(imp,grad)
+
+  #Getters and setters
+
+  property xtal_radius:
+    def __get__(self):
+      return self.cobj.get_nsegments()
+
+  property nsegments:
+    def __get__(self):
+      return self.cobj.get_nsegments()
+    # def __set__(self, int var):
+    #     self.cobj.some_var = var
+
+  property trapping_constant:
+    # def __get__(self):
+    #   return self.cobj.get_output_length()
+    def __set__(self, double trap_const):
+      self.cobj.set_trapping(trap_const)
+
+
+
+cdef class SignalGeneratorWrapper_{DetectorType}:
+  cdef SignalGenerator[{DetectorType}]* cobj
+
+  def __cinit__(self, DetectorWrapper_{DetectorType} detector, PySetup setup):
+    self.cobj = new SignalGenerator[{DetectorType}](detector.cobj, dereference(setup.cobj))
+
+  def __dealloc__(self):
+    del self.cobj
+
+  def make_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array, double q):
+    return self.cobj.make_signal(pt, &signal_array[0], q)
+
+  def get_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array):
+    return self.cobj.get_signal(pt, &signal_array[0])
+
+  def get_last_drifttime(self, float q):
+    return self.cobj.get_last_drifttime(q)
+  def get_dwpot(self):
+    return self.cobj.get_dwpot()
+  def get_driftpath(self, float q):
+    return self.cobj.get_driftpath(q)
+  property output_length:
+    def __get__(self):
+      return self.cobj.get_output_length()
+    # def __set__(self, int var):
+    #     self.cobj.some_var = var
+
+  property calc_timestep:
+    def __get__(self):
+      return self.cobj.get_calc_timestep()
+
+    def __set__(self, float ts):
+       self.cobj.set_calc_timestep(ts)
+
+  property calc_length:
+    def __get__(self):
+      return self.cobj.get_calc_length()
+
+    def __set__(self, int nt):
+       self.cobj.set_calc_length(nt)

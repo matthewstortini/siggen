@@ -7,8 +7,8 @@ namespace Siggen
 {
 
 template<class GeometryType>
-Detector<GeometryType>::Detector(Setup& setup):
-geometry(setup),
+Detector<GeometryType>::Detector(GeometryType& geom, Setup& setup):
+geometry(geom),
 xtal_radius(setup.xtal_radius),
 xtal_length(setup.xtal_length)
 {
@@ -78,7 +78,7 @@ void Detector<GeometryType>::parse_setup(std::map<std::string, std::string>& det
     }else if (key == "write_WP"){
       valstream >> write_WP;
     }else{
-      std::cout << "ERROR; unrecognized detector keyword " << key << "\n";
+      std::cout << "WARNING: unrecognized detector keyword " << key << "\n";
     }
   }
 

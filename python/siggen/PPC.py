@@ -195,14 +195,24 @@ class PPC(Detector):
 
 ########################################################################################################
   def GetBoundaryConditions(self):
-      xtal_radius = self.detector_radius
-      xtal_length = self.detector_length
+      xtal_radius           = self.siggenInst.geometry.xtal_radius
+      xtal_length           = self.siggenInst.geometry.xtal_length
+      pc_length             = self.siggenInst.geometry.pc_length
+      pc_radius             = self.siggenInst.geometry.pc_radius
 
-      pc_length=    1.7  # point contact length
-      pc_radius=    2.5  # point contact radius
+      bottom_bullet_radius  = self.siggenInst.geometry.bottom_bullet_radius
+      top_bullet_radius     = self.siggenInst.geometry.top_bullet_radius
 
-          # Define Dirichlet boundary (x = 0 or x = 1)
+      wrap_around_radius    = self.siggenInst.geometry.wrap_around_radius
+      ditch_thickness       = self.siggenInst.geometry.ditch_thickness
+      ditch_depth           = self.siggenInst.geometry.ditch_depth
+
+      taper_length          = self.siggenInst.geometry.taper_length
+
+
       def boundary_pc(x):
+          #Currently the PC is modeled as not-quite hemispherical: its circularly-rounded in whichever corner has the smaller radius
+          #TODO: matt busch thinks a hemisphere is a better idea
           if x[0] > pc_radius or x[1] > pc_length: return False
 
           if pc_radius < pc_length:
@@ -219,10 +229,25 @@ class PPC(Detector):
               else:return False
 
       def boundary_n(x):
+          #Rectangular boundary
           if x[0] > xtal_radius - DOLFIN_EPS or x[1] > xtal_length - DOLFIN_EPS:
               return True
-          if x[0] >= x[1] + xtal_radius - 4.5:
+          #Ditch
+          elif x[0] < wrap_around_radius + DOLFIN_EPS and x[0] > wrap_around_radius - ditch_thickness - DOLFIN_EPS and x[1] < ditch_depth + DOLFIN_EPS:
               return True
+          #Taper
+          elif x[0] >= x[1] + xtal_radius - taper_length:
+                  return True
+          #Top bullet radius
+          elif (x[0] > xtal_radius -top_bullet_radius - DOLFIN_EPS) and (x[1] > xtal_length -top_bullet_radius - DOLFIN_EPS):
+              if ((x[0] - xtal_radius +top_bullet_radius)  **2 + (x[1] - xtal_length +top_bullet_radius)**2) > top_bullet_radius**2 - DOLFIN_EPS:
+                  return True
+              else: return False
+          #Bottom bullet radius
+          elif taper_length == 0 and x[0] > (xtal_radius - bottom_bullet_radius - DOLFIN_EPS) and (x[1] < bottom_bullet_radius + DOLFIN_EPS):
+            if ((x[0] - xtal_radius + bottom_bullet_radius)  **2 + (x[1] - bottom_bullet_radius)**2) > bottom_bullet_radius**2 - DOLFIN_EPS:
+                return True
+            else: return False
           else:
               return False
 

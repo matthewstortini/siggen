@@ -58,7 +58,7 @@ cdef extern from "Siggen.h" namespace "Siggen":
     int nsegments
 
   cdef cppclass Detector[T]:
-    Detector(Setup setup)
+    Detector(T geometry, Setup setup)
 
     int outside_detector(point pt)
     int field_setup()
@@ -91,12 +91,15 @@ cdef extern from "Siggen.h" namespace "Siggen":
     void set_calc_timestep(float dt)
     void set_calc_length(int nt)
 
-cdef extern from "PPC.h":
-  cdef cppclass PPC:
-    PPC(Setup setup);
+
 cdef extern from "ICPC.h":
   cdef cppclass ICPC:
     ICPC(Setup setup);
+    float get_xtal_radius()
+    float get_xtal_length()
+
 cdef extern from "GEM.h":
   cdef cppclass GEM:
     GEM(Setup setup);
+    float get_xtal_radius()
+    float get_xtal_length()
