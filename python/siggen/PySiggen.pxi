@@ -150,20 +150,30 @@ class PySiggen:
 
     return dp_np
 
-  def save_efield(self, mat_full, efld_name):
+  def save_efield(self, mat_full, efld_name, header_bytes):
     cdef EFieldPoint e_pt
     cdef cyl_pt c_pt
-
     cdef ofstream* outputter
+    cdef unsigned int header_size
     # use try ... finally to ensure destructor is called
     outputter = new ofstream(efld_name.encode(), binary)
 
+    r_num = mat_full.shape[0]
+    z_num = mat_full.shape[1]
+    imp_num = mat_full.shape[2]
+    grad_num = mat_full.shape[3]
+
+    header_size = np.uint32(len(header_bytes))
+
+    outputter.write(<char*> & header_size,4);
+    outputter.write(header_bytes, header_size);
+
     # mat_full = solve_efield()
 
-    for i in range(mat_full.shape[0]):
-      for j in range(mat_full.shape[1]):
-        for k in range(mat_full.shape[2]):
-          for m in range(mat_full.shape[3]):
+    for i in range(r_num):
+      for j in range(z_num):
+        for k in range(imp_num):
+          for m in range(grad_num):
             voltage, e, e_r, e_z = mat_full[i,j,k,m,:]
             c_pt.r = e_r
             c_pt.z = e_z

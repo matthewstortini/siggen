@@ -140,28 +140,58 @@ class Detector:
     return self.signal_array
 
   def solve_fields(self, meshmult, xtal_HV, impAvgRange, gradientRange, wp_name = "wpot.field", ef_name="ev.field", num_cpu=1):
+    import xml.etree.ElementTree as ET
 
-    #   from multiprocessing import Pool, cpu_count
-      #
-    #   max_cpu = cpu_count()
-    #   if (num_cpu < 1 or num_cpu >  max_cpu): cpu_count = max_cpu
+    boundary_pc, boundary_n = self.GetBoundaryConditions()
 
-      boundary_pc, boundary_n = self.GetBoundaryConditions()
+    nr = int(self.detector_radius*meshmult+1)
+    nz = int(self.detector_length*meshmult+1)
+    ngrad = len(gradientRange)
+    nimp = len(impAvgRange)
 
-      print("Solving WP...")
-      wp_mat = self.solve_wp(meshmult,boundary_pc, boundary_n)
-      # with open(wpot_name, 'wb') as out:
-      wp_mat.tofile(wp_name)
+    #create some self-descriptive xml
+    header_tree = ET.Element('field')
 
-      nr = int(self.detector_radius*meshmult+1)
-      nz = int(self.detector_length*meshmult+1)
-      ngrad = len(gradientRange)
-      nimp = len(impAvgRange)
+    r = ET.SubElement(header_tree, 'variable')
+    r.set("name", "radialDimension")
+    ET.SubElement(r, 'min').text = "{}".format(0)
+    ET.SubElement(r, 'max').text = "{}".format(self.detector_radius)
+    ET.SubElement(r, 'num').text = "{}".format(nr)
 
-      efield_args = []
+    l = ET.SubElement(header_tree, 'variable')
+    l.set("name", "axialDimension")
+    ET.SubElement(l, 'min').text = "{}".format(0)
+    ET.SubElement(l, 'max').text = "{}".format(self.detector_length)
+    ET.SubElement(l, 'num').text = "{}".format(nz)
 
-      efield = np.zeros((nr,nz,nimp,ngrad,4), dtype=np.object)
-      for i,avg in enumerate(impAvgRange):
+    i = ET.SubElement(header_tree, 'variable')
+    i.set("name", "impurity_avg")
+    ET.SubElement(i, 'min').text = "{}".format(impAvgRange[0])
+    ET.SubElement(i, 'max').text = "{}".format(impAvgRange[-1])
+    ET.SubElement(i, 'num').text = "{}".format(len(impAvgRange))
+    ET.SubElement(g, 'num').text = "{}".format(len(gradientRange))
+
+    g = ET.SubElement(header_tree, 'variable')
+    g.set("name", "impurity_grad")
+    ET.SubElement(g, 'min').text = "{}".format(gradientRange[0])
+    ET.SubElement(g, 'max').text = "{}".format(gradientRange[-1])
+    ET.SubElement(g, 'num').text = "{}".format(len(gradientRange))
+    ET.SubElement(g, 'num').text = "{}".format(len(gradientRange))
+
+    header_bytes = ET.tostring(header_tree, encoding='ascii', method='xml')
+
+    print("Solving WP...")
+    wp_mat = self.solve_wp(meshmult,boundary_pc, boundary_n)
+
+    with open(wp_name, 'wb') as out:
+        out.write(np.int32(len(header_bytes)))
+        out.write(header_bytes)
+        out.write(wp_mat.tobytes())
+
+    efield_args = []
+
+    efield = np.zeros((nr,nz,nimp,ngrad,4), dtype=np.object)
+    for i,avg in enumerate(impAvgRange):
         for j,grad in enumerate(gradientRange):
             print("Solving EF {} of {}... imp {}, grad {}".format(i*ngrad +j + 1, ngrad*nimp, avg, grad))
             if num_cpu  == 1:
@@ -169,7 +199,7 @@ class Detector:
             else:
                 efield_args.append[ (meshmult, xtal_HV, avg, grad, boundary_pc, boundary_n)  ]
 
-      self.siggenInst.save_efield(efield, ef_name)
+    self.siggenInst.save_efield(efield, ef_name, header_bytes)
 
   def avg_to_z0(self, impurity_avg, impurity_gradient):
     return impurity_avg - impurity_gradient * (self.detector_length/10) / 2
