@@ -16,7 +16,7 @@ from ._siggen import PySiggen #PySiggen_GEM, PySiggen_PPC, PySiggen_ICPC
 #Does all the interfacing with siggen for you, stores/loads lookup tables, and does electronics shaping
 
 class Detector:
-  def __init__(self,  detector_geometry, conf_file, num_steps_calc=None, wf_padding=0, maxWfOutputLength = 1000, verbose=False):
+  def __init__(self,  detector_geometry, conf_file, num_steps_calc=None, wf_padding=0, maxWfOutputLength = 1000, verbose=False, doInit=True):
 
     self.siggenInst = PySiggen(detector_geometry, conf_file)
 
@@ -33,7 +33,8 @@ class Detector:
     if num_steps_calc is not None:
         self.siggenInst.SetCalcLength(int(num_steps_calc))
 
-    self.siggenInst.InitializeFields()
+    if doInit==True:
+        self.siggenInst.InitializeFields()
 
     self.nsegments=self.siggenInst.GetNumSegments()
     self.detector_radius = self.siggenInst.GetMaxRadius()
@@ -169,7 +170,7 @@ class Detector:
     ET.SubElement(i, 'min').text = "{}".format(impAvgRange[0])
     ET.SubElement(i, 'max').text = "{}".format(impAvgRange[-1])
     ET.SubElement(i, 'num').text = "{}".format(len(impAvgRange))
-    ET.SubElement(g, 'num').text = "{}".format(len(gradientRange))
+    ET.SubElement(i, 'num').text = "{}".format(len(impAvgRange))
 
     g = ET.SubElement(header_tree, 'variable')
     g.set("name", "impurity_grad")
