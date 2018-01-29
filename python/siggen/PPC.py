@@ -27,6 +27,10 @@ class PPC(Detector):
 
     self.padded_siggen_data = np.zeros(self.total_steps, dtype='f4', order="C")
 
+  def GetWaveform(self, r, phi, z, energy=1):
+      #Overload Detector method to return a 1-D vector (since we only have one electrode)
+      return super().GetWaveform(r,phi,z,energy)[0,:]
+
   def GetRadLims(self,theta):
       theta_eq = np.arctan(self.detector_length/self.detector_radius)
       theta_taper = np.arctan(self.taper_length/self.detector_radius)
