@@ -4,6 +4,7 @@
 #include <string>
 #include <sstream>
 #include <stdlib.h>
+#include <stdexcept>
 
 #include "rapidxml.hpp"
 using namespace rapidxml;
