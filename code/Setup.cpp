@@ -28,7 +28,7 @@ int Setup::read_config(std::string config_file_name) {
   std::string line, key, value, conf_set, conf_path;
   std::map<std::string,std::string>* currentMap;
 
-  std::ifstream file(config_file_name);
+  std::ifstream file(config_file_name.c_str());
   if(!file){
     std::cout <<"\nERROR: config file " << config_file_name << " does not exist?\n";
     return 1;
