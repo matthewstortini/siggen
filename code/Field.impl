@@ -89,7 +89,7 @@ int Field<PointType>::read_binary_data(std::string file_name,  GeometryType& geo
   point cart;
 
   std::cout << "\nReading field data from file: " << file_name << "...";
-  is.open(file_name, std::ios::binary);
+  is.open(file_name.c_str(), std::ios::binary);
 
   //Starts with an xml header:
   unsigned int header_len;
@@ -201,7 +201,7 @@ int Field<PointType>::read_text_data(std::string file_name,  GeometryType& geom)
   int lineno=0, npts=0;
   std::string line;
 
-  std::ifstream file(file_name);
+  std::ifstream file(file_name.c_str());
   if(!file){
     std::cout <<"\nERROR: failed to open electric field table: " << file_name << "\n";
     return 1;
