@@ -64,6 +64,11 @@ class PySiggen:
 
   #Transparent setters/getters
 
+  def UseVeloModel(self, bool usemodel):
+    self.detector.set_use_velo_model(usemodel)
+  def SetTemp(self, float temp):
+    self.detector.set_temp(temp)
+
   def SetHoles(self,float mu0_100, float beta_100, float E_0_100,
                  float mu0_111, float beta_111, float E_0_111):
        self.detector.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)

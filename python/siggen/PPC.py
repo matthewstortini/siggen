@@ -29,7 +29,9 @@ class PPC(Detector):
 
   def GetWaveform(self, r, phi, z, energy=1):
       #Overload Detector method to return a 1-D vector (since we only have one electrode)
-      return super().GetWaveform(r,phi,z,energy)[0,:]
+      wf = super().GetWaveform(r,phi,z,energy)
+      if wf is None: return wf
+      return wf[0,:]
 
   def GetRadLims(self,theta):
       theta_eq = np.arctan(self.detector_length/self.detector_radius)

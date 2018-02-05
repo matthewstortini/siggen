@@ -20,16 +20,6 @@ class Detector:
 
     self.siggenInst = PySiggen(detector_geometry, conf_file)
 
-    # if detector_geometry == "GEM":
-    #     self.siggenInst = PySiggen_GEM(conf_file)#PyICPC(conf_file)
-    # elif detector_geometry == "ICPC":
-    #     self.siggenInst = PySiggen_ICPC(conf_file)
-    # elif detector_geometry == "PPC":
-    #     self.siggenInst = PySiggen_PPC(conf_file)
-    # else:
-    #     print("Detector geometry %s is not implemented!" % detector_geometry)
-    #     exit(0)
-
     if num_steps_calc is not None:
         self.siggenInst.SetCalcLength(int(num_steps_calc))
 

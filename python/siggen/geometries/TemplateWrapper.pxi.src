@@ -15,6 +15,12 @@ cdef class DetectorWrapper_{DetectorType}:
   def field_setup(self):
     return self.cobj.field_setup()
 
+  def set_temp(self, float temp):
+    return self.cobj.set_temp(temp)
+    
+  def set_use_velo_model(self, bool usemodel):
+    return self.cobj.set_use_velo_model(usemodel)
+
   def outside_detector(self, point pt):
     return self.cobj.outside_detector(pt)
 

@@ -1141,7 +1141,7 @@ struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC {
 };
 
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":82
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":88
  * 
  * 
  * cdef class SignalGeneratorWrapper_PPC:             # <<<<<<<<<<<<<<
@@ -1167,7 +1167,7 @@ struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM {
 };
 
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":82
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":88
  * 
  * 
  * cdef class SignalGeneratorWrapper_GEM:             # <<<<<<<<<<<<<<
@@ -1193,7 +1193,7 @@ struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC {
 };
 
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":82
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":88
  * 
  * 
  * cdef class SignalGeneratorWrapper_ICPC:             # <<<<<<<<<<<<<<
@@ -2040,6 +2040,7 @@ static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_ones[] = "ones";
 static const char __pyx_k_self[] = "self";
 static const char __pyx_k_size[] = "size";
+static const char __pyx_k_temp[] = "temp";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_dp_np[] = "dp_np";
 static const char __pyx_k_dtype[] = "dtype";
@@ -2071,6 +2072,7 @@ static const char __pyx_k_E_0_111[] = "E_0_111";
 static const char __pyx_k_GetMaxZ[] = "GetMaxZ";
 static const char __pyx_k_GetPath[] = "GetPath";
 static const char __pyx_k_GetWpot[] = "GetWpot";
+static const char __pyx_k_SetTemp[] = "SetTemp";
 static const char __pyx_k_imp_num[] = "imp_num";
 static const char __pyx_k_mu0_100[] = "mu0_100";
 static const char __pyx_k_mu0_111[] = "mu0_111";
@@ -2090,7 +2092,9 @@ static const char __pyx_k_mat_full[] = "mat_full";
 static const char __pyx_k_mu_n_100[] = "mu_n_100";
 static const char __pyx_k_mu_n_111[] = "mu_n_111";
 static const char __pyx_k_qualname[] = "__qualname__";
+static const char __pyx_k_set_temp[] = "set_temp";
 static const char __pyx_k_setstate[] = "__setstate__";
+static const char __pyx_k_usemodel[] = "usemodel";
 static const char __pyx_k_wp_numpy[] = "wp_numpy";
 static const char __pyx_k_GetEfield[] = "GetEfield";
 static const char __pyx_k_GetSignal[] = "GetSignal";
@@ -2122,6 +2126,7 @@ static const char __pyx_k_xtal_radius[] = "xtal_radius";
 static const char __pyx_k_GetMaxRadius[] = "GetMaxRadius";
 static const char __pyx_k_RuntimeError[] = "RuntimeError";
 static const char __pyx_k_SetElectrons[] = "SetElectrons";
+static const char __pyx_k_UseVeloModel[] = "UseVeloModel";
 static const char __pyx_k_header_bytes[] = "header_bytes";
 static const char __pyx_k_signal_array[] = "signal_array";
 static const char __pyx_k_SetCalcLength[] = "SetCalcLength";
@@ -2146,6 +2151,7 @@ static const char __pyx_k_InitializeFields[] = "InitializeFields";
 static const char __pyx_k_PySiggen_GetMaxZ[] = "PySiggen.GetMaxZ";
 static const char __pyx_k_PySiggen_GetPath[] = "PySiggen.GetPath";
 static const char __pyx_k_PySiggen_GetWpot[] = "PySiggen.GetWpot";
+static const char __pyx_k_PySiggen_SetTemp[] = "PySiggen.SetTemp";
 static const char __pyx_k_outside_detector[] = "outside_detector";
 static const char __pyx_k_set_impurity_avg[] = "set_impurity_avg";
 static const char __pyx_k_PySiggen_GetDWpot[] = "PySiggen.GetDWpot";
@@ -2156,6 +2162,7 @@ static const char __pyx_k_PySiggen_GetSignal[] = "PySiggen.GetSignal";
 static const char __pyx_k_PySiggen_InCrystal[] = "PySiggen.InCrystal";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_get_last_drifttime[] = "get_last_drifttime";
+static const char __pyx_k_set_use_velo_model[] = "set_use_velo_model";
 static const char __pyx_k_PySiggen_MakeSignal[] = "PySiggen.MakeSignal";
 static const char __pyx_k_siggen_PySiggen_pxi[] = "siggen/PySiggen.pxi";
 static const char __pyx_k_PySiggen_GetNumSteps[] = "PySiggen.GetNumSteps";
@@ -2163,6 +2170,7 @@ static const char __pyx_k_PySiggen_SetTrapping[] = "PySiggen.SetTrapping";
 static const char __pyx_k_PySiggen_save_efield[] = "PySiggen.save_efield";
 static const char __pyx_k_PySiggen_GetMaxRadius[] = "PySiggen.GetMaxRadius";
 static const char __pyx_k_PySiggen_SetElectrons[] = "PySiggen.SetElectrons";
+static const char __pyx_k_PySiggen_UseVeloModel[] = "PySiggen.UseVeloModel";
 static const char __pyx_k_PySiggen_SetCalcLength[] = "PySiggen.SetCalcLength";
 static const char __pyx_k_PySiggen_SetImpurityZ0[] = "PySiggen.SetImpurityZ0";
 static const char __pyx_k_PySiggen_GetNumSegments[] = "PySiggen.GetNumSegments";
@@ -2246,7 +2254,9 @@ static PyObject *__pyx_n_s_PySiggen_SetElectrons;
 static PyObject *__pyx_n_s_PySiggen_SetHoles;
 static PyObject *__pyx_n_s_PySiggen_SetImpurityAvg;
 static PyObject *__pyx_n_s_PySiggen_SetImpurityZ0;
+static PyObject *__pyx_n_s_PySiggen_SetTemp;
 static PyObject *__pyx_n_s_PySiggen_SetTrapping;
+static PyObject *__pyx_n_s_PySiggen_UseVeloModel;
 static PyObject *__pyx_n_s_PySiggen___init;
 static PyObject *__pyx_n_s_PySiggen_save_efield;
 static PyObject *__pyx_n_s_RuntimeError;
@@ -2256,8 +2266,10 @@ static PyObject *__pyx_n_s_SetElectrons;
 static PyObject *__pyx_n_s_SetHoles;
 static PyObject *__pyx_n_s_SetImpurityAvg;
 static PyObject *__pyx_n_s_SetImpurityZ0;
+static PyObject *__pyx_n_s_SetTemp;
 static PyObject *__pyx_n_s_SetTrapping;
 static PyObject *__pyx_n_s_TypeError;
+static PyObject *__pyx_n_s_UseVeloModel;
 static PyObject *__pyx_n_s_ValueError;
 static PyObject *__pyx_n_s_beta_100;
 static PyObject *__pyx_n_s_beta_111;
@@ -2362,6 +2374,8 @@ static PyObject *__pyx_kp_s_set_not_implemented_for_top_bull;
 static PyObject *__pyx_kp_s_set_not_implemented_for_wrap_aro;
 static PyObject *__pyx_kp_s_set_not_implemented_for_xtal_len;
 static PyObject *__pyx_kp_s_set_not_implemented_for_xtal_rad;
+static PyObject *__pyx_n_s_set_temp;
+static PyObject *__pyx_n_s_set_use_velo_model;
 static PyObject *__pyx_n_s_setstate;
 static PyObject *__pyx_n_s_setstate_cython;
 static PyObject *__pyx_n_s_setup;
@@ -2371,11 +2385,13 @@ static PyObject *__pyx_kp_s_siggen_PySiggen_pxi;
 static PyObject *__pyx_n_s_siggen__siggen;
 static PyObject *__pyx_n_s_signal_array;
 static PyObject *__pyx_n_s_size;
+static PyObject *__pyx_n_s_temp;
 static PyObject *__pyx_n_s_test;
 static PyObject *__pyx_n_s_trap_const;
 static PyObject *__pyx_n_s_trapping_constant;
 static PyObject *__pyx_n_s_uint32;
 static PyObject *__pyx_kp_u_unknown_dtype_code_in_numpy_pxd;
+static PyObject *__pyx_n_s_usemodel;
 static PyObject *__pyx_kp_s_utf_8;
 static PyObject *__pyx_n_s_val;
 static PyObject *__pyx_n_s_voltage;
@@ -2392,18 +2408,20 @@ static PyObject *__pyx_n_s_zeros;
 static int __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC___cinit__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, struct __pyx_obj_6siggen_7_siggen_PPCGeometry *__pyx_v_geometry, struct __pyx_obj_6siggen_7_siggen_PySetup *__pyx_v_setup); /* proto */
 static void __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_2__dealloc__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_4field_setup(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_6outside_detector(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, struct Siggen::point __pyx_v_pt); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_r, float __pyx_v_z); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10wpotential(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_wp_np); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_12set_holes(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, PyObject *__pyx_v_mu0_100, PyObject *__pyx_v_beta_100, PyObject *__pyx_v_E_0_100, PyObject *__pyx_v_mu0_111, PyObject *__pyx_v_beta_111, PyObject *__pyx_v_E_0_111); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_14set_electrons(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_16set_impurity_z0(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_18set_impurity_avg(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_6set_temp(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_temp); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8set_use_velo_model(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, bool __pyx_v_usemodel); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10outside_detector(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, struct Siggen::point __pyx_v_pt); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_12efield(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_r, float __pyx_v_z); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_14wpotential(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_wp_np); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_16set_holes(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, PyObject *__pyx_v_mu0_100, PyObject *__pyx_v_beta_100, PyObject *__pyx_v_E_0_100, PyObject *__pyx_v_mu0_111, PyObject *__pyx_v_beta_111, PyObject *__pyx_v_E_0_111); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_18set_electrons(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_20set_impurity_z0(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_22set_impurity_avg(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_11xtal_radius___get__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_9nsegments___get__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self); /* proto */
 static int __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_17trapping_constant___set__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, double __pyx_v_trap_const); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_20__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_22__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_24__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_26__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC___cinit__(struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_PPC *__pyx_v_self, struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_detector, struct __pyx_obj_6siggen_7_siggen_PySetup *__pyx_v_setup); /* proto */
 static void __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_2__dealloc__(struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_PPC *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_4make_signal(struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_PPC *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_signal_array, double __pyx_v_q); /* proto */
@@ -2421,18 +2439,20 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_16__sets
 static int __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM___cinit__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, struct __pyx_obj_6siggen_7_siggen_GEMGeometry *__pyx_v_geometry, struct __pyx_obj_6siggen_7_siggen_PySetup *__pyx_v_setup); /* proto */
 static void __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_2__dealloc__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_4field_setup(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_6outside_detector(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, struct Siggen::point __pyx_v_pt); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_r, float __pyx_v_z); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10wpotential(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_wp_np); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_12set_holes(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, PyObject *__pyx_v_mu0_100, PyObject *__pyx_v_beta_100, PyObject *__pyx_v_E_0_100, PyObject *__pyx_v_mu0_111, PyObject *__pyx_v_beta_111, PyObject *__pyx_v_E_0_111); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_14set_electrons(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_16set_impurity_z0(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_18set_impurity_avg(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_6set_temp(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_temp); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8set_use_velo_model(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, bool __pyx_v_usemodel); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10outside_detector(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, struct Siggen::point __pyx_v_pt); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_12efield(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_r, float __pyx_v_z); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_14wpotential(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_wp_np); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_16set_holes(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, PyObject *__pyx_v_mu0_100, PyObject *__pyx_v_beta_100, PyObject *__pyx_v_E_0_100, PyObject *__pyx_v_mu0_111, PyObject *__pyx_v_beta_111, PyObject *__pyx_v_E_0_111); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_18set_electrons(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_20set_impurity_z0(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_22set_impurity_avg(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_11xtal_radius___get__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_9nsegments___get__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self); /* proto */
 static int __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_17trapping_constant___set__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, double __pyx_v_trap_const); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_20__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_22__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_24__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_26__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM___cinit__(struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_GEM *__pyx_v_self, struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_detector, struct __pyx_obj_6siggen_7_siggen_PySetup *__pyx_v_setup); /* proto */
 static void __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_2__dealloc__(struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_GEM *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_4make_signal(struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_GEM *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_signal_array, double __pyx_v_q); /* proto */
@@ -2450,18 +2470,20 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_16__sets
 static int __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC___cinit__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, struct __pyx_obj_6siggen_7_siggen_ICPCGeometry *__pyx_v_geometry, struct __pyx_obj_6siggen_7_siggen_PySetup *__pyx_v_setup); /* proto */
 static void __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_2__dealloc__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_4field_setup(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_6outside_detector(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, struct Siggen::point __pyx_v_pt); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_r, float __pyx_v_z); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10wpotential(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_wp_np); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_12set_holes(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, PyObject *__pyx_v_mu0_100, PyObject *__pyx_v_beta_100, PyObject *__pyx_v_E_0_100, PyObject *__pyx_v_mu0_111, PyObject *__pyx_v_beta_111, PyObject *__pyx_v_E_0_111); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_14set_electrons(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_16set_impurity_z0(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_18set_impurity_avg(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_6set_temp(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_temp); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8set_use_velo_model(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, bool __pyx_v_usemodel); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10outside_detector(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, struct Siggen::point __pyx_v_pt); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_12efield(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_r, float __pyx_v_z); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_14wpotential(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_wp_np); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_16set_holes(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, PyObject *__pyx_v_mu0_100, PyObject *__pyx_v_beta_100, PyObject *__pyx_v_E_0_100, PyObject *__pyx_v_mu0_111, PyObject *__pyx_v_beta_111, PyObject *__pyx_v_E_0_111); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_18set_electrons(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_20set_impurity_z0(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_22set_impurity_avg(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_11xtal_radius___get__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_9nsegments___get__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self); /* proto */
 static int __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_17trapping_constant___set__(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, double __pyx_v_trap_const); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_20__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_22__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_24__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_26__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
 static int __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC___cinit__(struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_ICPC *__pyx_v_self, struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_detector, struct __pyx_obj_6siggen_7_siggen_PySetup *__pyx_v_setup); /* proto */
 static void __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_2__dealloc__(struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_ICPC *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_4make_signal(struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_ICPC *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_signal_array, double __pyx_v_q); /* proto */
@@ -2517,25 +2539,27 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_2MakeSignal(CYTHON_UNUSED P
 static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_4GetSignal(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_x, float __pyx_v_y, float __pyx_v_z, PyArrayObject *__pyx_v_signal_array); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_6InitializeFields(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_8InCrystal(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_x, float __pyx_v_y, float __pyx_v_z); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_10SetHoles(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_12SetElectrons(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_14GetMaxRadius(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_16GetMaxZ(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_18GetNumSegments(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_20GetNumSteps(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_22GetNumStepsCalc(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_24SetCalcLength(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, int __pyx_v_nt); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_26GetCalcTimeStep(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_28SetCalcTimestep(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_dt); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_30SetTrapping(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, double __pyx_v_trap_const); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_32SetImpurityAvg(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_34SetImpurityZ0(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_36GetLastDriftTime(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_q); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_r, float __pyx_v_z); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_r, float __pyx_v_z); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_q); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_q); /* proto */
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_mat_full, PyObject *__pyx_v_efld_name, PyObject *__pyx_v_header_bytes); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_10UseVeloModel(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, bool __pyx_v_usemodel); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_12SetTemp(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_temp); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_14SetHoles(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_16SetElectrons(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_18GetMaxRadius(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_20GetMaxZ(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_22GetNumSegments(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_24GetNumSteps(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_26GetNumStepsCalc(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_28SetCalcLength(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, int __pyx_v_nt); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_30GetCalcTimeStep(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_32SetCalcTimestep(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_dt); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_34SetTrapping(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, double __pyx_v_trap_const); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_36SetImpurityAvg(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38SetImpurityZ0(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetLastDriftTime(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_q); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetEfield(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_r, float __pyx_v_z); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetWpot(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_r, float __pyx_v_z); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46GetDWpot(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_q); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_48GetPath(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_q); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_50save_efield(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_mat_full, PyObject *__pyx_v_efld_name, PyObject *__pyx_v_header_bytes); /* proto */
 static int __pyx_pf_6siggen_7_siggen_7PySetup___cinit__(struct __pyx_obj_6siggen_7_siggen_PySetup *__pyx_v_self, PyObject *__pyx_v_conf_file); /* proto */
 static void __pyx_pf_6siggen_7_siggen_7PySetup_2__dealloc__(struct __pyx_obj_6siggen_7_siggen_PySetup *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_7PySetup_4__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_PySetup *__pyx_v_self); /* proto */
@@ -2618,6 +2642,8 @@ static PyObject *__pyx_tuple__79;
 static PyObject *__pyx_tuple__81;
 static PyObject *__pyx_tuple__83;
 static PyObject *__pyx_tuple__85;
+static PyObject *__pyx_tuple__87;
+static PyObject *__pyx_tuple__89;
 static PyObject *__pyx_codeobj__40;
 static PyObject *__pyx_codeobj__42;
 static PyObject *__pyx_codeobj__44;
@@ -2642,6 +2668,8 @@ static PyObject *__pyx_codeobj__80;
 static PyObject *__pyx_codeobj__82;
 static PyObject *__pyx_codeobj__84;
 static PyObject *__pyx_codeobj__86;
+static PyObject *__pyx_codeobj__88;
+static PyObject *__pyx_codeobj__90;
 
 /* "siggen/geometries/TemplateWrapper_PPC.pxi":9
  *   cdef Detector[PPC]* cobj
@@ -2822,7 +2850,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_4field_setup(st
  *   def field_setup(self):
  *     return self.cobj.field_setup()             # <<<<<<<<<<<<<<
  * 
- *   def outside_detector(self, point pt):
+ *   def set_temp(self, float temp):
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->field_setup()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 16, __pyx_L1_error)
@@ -2853,49 +2881,49 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_4field_setup(st
 /* "siggen/geometries/TemplateWrapper_PPC.pxi":18
  *     return self.cobj.field_setup()
  * 
- *   def outside_detector(self, point pt):             # <<<<<<<<<<<<<<
- *     return self.cobj.outside_detector(pt)
+ *   def set_temp(self, float temp):             # <<<<<<<<<<<<<<
+ *     return self.cobj.set_temp(temp)
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_7outside_detector(PyObject *__pyx_v_self, PyObject *__pyx_arg_pt); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_7outside_detector(PyObject *__pyx_v_self, PyObject *__pyx_arg_pt) {
-  struct Siggen::point __pyx_v_pt;
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_7set_temp(PyObject *__pyx_v_self, PyObject *__pyx_arg_temp); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_7set_temp(PyObject *__pyx_v_self, PyObject *__pyx_arg_temp) {
+  float __pyx_v_temp;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("outside_detector (wrapper)", 0);
-  assert(__pyx_arg_pt); {
-    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(__pyx_arg_pt); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 18, __pyx_L3_error)
+  __Pyx_RefNannySetupContext("set_temp (wrapper)", 0);
+  assert(__pyx_arg_temp); {
+    __pyx_v_temp = __pyx_PyFloat_AsFloat(__pyx_arg_temp); if (unlikely((__pyx_v_temp == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 18, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_PPC.outside_detector", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_PPC.set_temp", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_6outside_detector(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_pt);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_6set_temp(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), ((float)__pyx_v_temp));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_6outside_detector(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, struct Siggen::point __pyx_v_pt) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_6set_temp(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_temp) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("outside_detector", 0);
+  __Pyx_RefNannySetupContext("set_temp", 0);
 
   /* "siggen/geometries/TemplateWrapper_PPC.pxi":19
  * 
- *   def outside_detector(self, point pt):
- *     return self.cobj.outside_detector(pt)             # <<<<<<<<<<<<<<
+ *   def set_temp(self, float temp):
+ *     return self.cobj.set_temp(temp)             # <<<<<<<<<<<<<<
  * 
- *   def efield(self, float r, float z):
+ *   def set_use_velo_model(self, bool usemodel):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->outside_detector(__pyx_v_pt)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_temp(__pyx_v_temp)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -2903,6 +2931,146 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_6outside_detect
 
   /* "siggen/geometries/TemplateWrapper_PPC.pxi":18
  *     return self.cobj.field_setup()
+ * 
+ *   def set_temp(self, float temp):             # <<<<<<<<<<<<<<
+ *     return self.cobj.set_temp(temp)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_PPC.set_temp", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":21
+ *     return self.cobj.set_temp(temp)
+ * 
+ *   def set_use_velo_model(self, bool usemodel):             # <<<<<<<<<<<<<<
+ *     return self.cobj.set_use_velo_model(usemodel)
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_9set_use_velo_model(PyObject *__pyx_v_self, PyObject *__pyx_arg_usemodel); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_9set_use_velo_model(PyObject *__pyx_v_self, PyObject *__pyx_arg_usemodel) {
+  bool __pyx_v_usemodel;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("set_use_velo_model (wrapper)", 0);
+  assert(__pyx_arg_usemodel); {
+    __pyx_v_usemodel = __Pyx_PyObject_IsTrue(__pyx_arg_usemodel); if (unlikely((__pyx_v_usemodel == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_PPC.set_use_velo_model", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8set_use_velo_model(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), ((bool)__pyx_v_usemodel));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8set_use_velo_model(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, bool __pyx_v_usemodel) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("set_use_velo_model", 0);
+
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":22
+ * 
+ *   def set_use_velo_model(self, bool usemodel):
+ *     return self.cobj.set_use_velo_model(usemodel)             # <<<<<<<<<<<<<<
+ * 
+ *   def outside_detector(self, point pt):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_use_velo_model(__pyx_v_usemodel)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 22, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":21
+ *     return self.cobj.set_temp(temp)
+ * 
+ *   def set_use_velo_model(self, bool usemodel):             # <<<<<<<<<<<<<<
+ *     return self.cobj.set_use_velo_model(usemodel)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_PPC.set_use_velo_model", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":24
+ *     return self.cobj.set_use_velo_model(usemodel)
+ * 
+ *   def outside_detector(self, point pt):             # <<<<<<<<<<<<<<
+ *     return self.cobj.outside_detector(pt)
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_11outside_detector(PyObject *__pyx_v_self, PyObject *__pyx_arg_pt); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_11outside_detector(PyObject *__pyx_v_self, PyObject *__pyx_arg_pt) {
+  struct Siggen::point __pyx_v_pt;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("outside_detector (wrapper)", 0);
+  assert(__pyx_arg_pt); {
+    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(__pyx_arg_pt); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 24, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_PPC.outside_detector", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10outside_detector(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_pt);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10outside_detector(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, struct Siggen::point __pyx_v_pt) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("outside_detector", 0);
+
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":25
+ * 
+ *   def outside_detector(self, point pt):
+ *     return self.cobj.outside_detector(pt)             # <<<<<<<<<<<<<<
+ * 
+ *   def efield(self, float r, float z):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->outside_detector(__pyx_v_pt)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 25, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":24
+ *     return self.cobj.set_use_velo_model(usemodel)
  * 
  *   def outside_detector(self, point pt):             # <<<<<<<<<<<<<<
  *     return self.cobj.outside_detector(pt)
@@ -2920,7 +3088,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_6outside_detect
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":21
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":27
  *     return self.cobj.outside_detector(pt)
  * 
  *   def efield(self, float r, float z):             # <<<<<<<<<<<<<<
@@ -2929,8 +3097,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_6outside_detect
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_9efield(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_9efield(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_13efield(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_13efield(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   float __pyx_v_r;
   float __pyx_v_z;
   PyObject *__pyx_r = 0;
@@ -2959,11 +3127,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_9efield(PyObjec
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_z)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("efield", 1, 2, 2, 1); __PYX_ERR(0, 21, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("efield", 1, 2, 2, 1); __PYX_ERR(0, 27, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "efield") < 0)) __PYX_ERR(0, 21, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "efield") < 0)) __PYX_ERR(0, 27, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -2971,25 +3139,25 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_9efield(PyObjec
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_r = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_r == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
-    __pyx_v_z = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_z == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 21, __pyx_L3_error)
+    __pyx_v_r = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_r == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 27, __pyx_L3_error)
+    __pyx_v_z = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_z == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 27, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("efield", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 21, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("efield", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 27, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_PPC.efield", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_r, __pyx_v_z);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_12efield(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_r, __pyx_v_z);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_r, float __pyx_v_z) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_12efield(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_r, float __pyx_v_z) {
   struct Siggen::cyl_pt __pyx_v_e;
   struct Siggen::cyl_pt __pyx_v_pt;
   int __pyx_v_val;
@@ -3002,7 +3170,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct 
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("efield", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":26
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":32
  *     cdef cyl_pt pt
  * 
  *     e.r=0.             # <<<<<<<<<<<<<<
@@ -3011,7 +3179,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct 
  */
   __pyx_v_e.r = 0.;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":27
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":33
  * 
  *     e.r=0.
  *     e.phi=0.             # <<<<<<<<<<<<<<
@@ -3020,7 +3188,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct 
  */
   __pyx_v_e.phi = 0.;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":28
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":34
  *     e.r=0.
  *     e.phi=0.
  *     e.z=0.             # <<<<<<<<<<<<<<
@@ -3029,7 +3197,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct 
  */
   __pyx_v_e.z = 0.;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":30
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":36
  *     e.z=0.
  * 
  *     pt.r = r;             # <<<<<<<<<<<<<<
@@ -3038,7 +3206,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct 
  */
   __pyx_v_pt.r = __pyx_v_r;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":31
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":37
  * 
  *     pt.r = r;
  *     pt.phi=0.;             # <<<<<<<<<<<<<<
@@ -3047,7 +3215,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct 
  */
   __pyx_v_pt.phi = 0.;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":32
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":38
  *     pt.r = r;
  *     pt.phi=0.;
  *     pt.z=z;             # <<<<<<<<<<<<<<
@@ -3056,7 +3224,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct 
  */
   __pyx_v_pt.z = __pyx_v_z;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":34
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":40
  *     pt.z=z;
  * 
  *     val = self.cobj.efield(pt,e)             # <<<<<<<<<<<<<<
@@ -3065,7 +3233,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct 
  */
   __pyx_v_val = __pyx_v_self->cobj->efield(__pyx_v_pt, __pyx_v_e);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":36
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":42
  *     val = self.cobj.efield(pt,e)
  * 
  *     return (e.r, e.phi, e.z, val)             # <<<<<<<<<<<<<<
@@ -3073,15 +3241,15 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct 
  *   def wpotential(self, point pt, np.ndarray[np.float32_t, ndim=1] wp_np):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_e.r); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_e.r); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_e.phi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_e.phi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_e.z); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_e.z); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_val); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_val); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 36, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -3099,7 +3267,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct 
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":21
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":27
  *     return self.cobj.outside_detector(pt)
  * 
  *   def efield(self, float r, float z):             # <<<<<<<<<<<<<<
@@ -3122,7 +3290,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct 
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":38
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":44
  *     return (e.r, e.phi, e.z, val)
  * 
  *   def wpotential(self, point pt, np.ndarray[np.float32_t, ndim=1] wp_np):             # <<<<<<<<<<<<<<
@@ -3131,8 +3299,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_8efield(struct 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_11wpotential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_11wpotential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_15wpotential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_15wpotential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct Siggen::point __pyx_v_pt;
   PyArrayObject *__pyx_v_wp_np = 0;
   PyObject *__pyx_r = 0;
@@ -3161,11 +3329,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_11wpotential(Py
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_wp_np)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("wpotential", 1, 2, 2, 1); __PYX_ERR(0, 38, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("wpotential", 1, 2, 2, 1); __PYX_ERR(0, 44, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "wpotential") < 0)) __PYX_ERR(0, 38, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "wpotential") < 0)) __PYX_ERR(0, 44, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3173,19 +3341,19 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_11wpotential(Py
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 38, __pyx_L3_error)
+    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 44, __pyx_L3_error)
     __pyx_v_wp_np = ((PyArrayObject *)values[1]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("wpotential", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 38, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("wpotential", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 44, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_PPC.wpotential", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_wp_np), __pyx_ptype_5numpy_ndarray, 1, "wp_np", 0))) __PYX_ERR(0, 38, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10wpotential(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_pt, __pyx_v_wp_np);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_wp_np), __pyx_ptype_5numpy_ndarray, 1, "wp_np", 0))) __PYX_ERR(0, 44, __pyx_L1_error)
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_14wpotential(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_pt, __pyx_v_wp_np);
 
   /* function exit code */
   goto __pyx_L0;
@@ -3196,7 +3364,7 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_11wpotential(Py
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10wpotential(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_wp_np) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_14wpotential(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_wp_np) {
   std::vector<float>  __pyx_v_wp;
   int __pyx_v_val;
   PyObject *__pyx_v_i = NULL;
@@ -3217,29 +3385,29 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10wpotential(st
   __pyx_pybuffernd_wp_np.rcbuffer = &__pyx_pybuffer_wp_np;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_wp_np.rcbuffer->pybuffer, (PyObject*)__pyx_v_wp_np, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 38, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_wp_np.rcbuffer->pybuffer, (PyObject*)__pyx_v_wp_np, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 44, __pyx_L1_error)
   }
   __pyx_pybuffernd_wp_np.diminfo[0].strides = __pyx_pybuffernd_wp_np.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_wp_np.diminfo[0].shape = __pyx_pybuffernd_wp_np.rcbuffer->pybuffer.shape[0];
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":41
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":47
  *     # print (pt.x, pt.z, wp[0])
  *     cdef vector[float] wp
  *     wp.resize(wp_np.size)             # <<<<<<<<<<<<<<
  * 
  *     val = self.cobj.wpotential(pt,wp)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_wp_np), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_wp_np), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_2 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 41, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_2 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 47, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   try {
     __pyx_v_wp.resize(__pyx_t_2);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(0, 41, __pyx_L1_error)
+    __PYX_ERR(0, 47, __pyx_L1_error)
   }
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":43
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":49
  *     wp.resize(wp_np.size)
  * 
  *     val = self.cobj.wpotential(pt,wp)             # <<<<<<<<<<<<<<
@@ -3248,30 +3416,30 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10wpotential(st
  */
   __pyx_v_val = __pyx_v_self->cobj->wpotential(__pyx_v_pt, __pyx_v_wp);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":45
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":51
  *     val = self.cobj.wpotential(pt,wp)
  * 
  *     for i in range(wp_np.size):             # <<<<<<<<<<<<<<
  *       wp_np[i] = wp[i]
  *     return val
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_wp_np), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_wp_np), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_3 = __pyx_t_1; __Pyx_INCREF(__pyx_t_3); __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 45, __pyx_L1_error)
+    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 51, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 45, __pyx_L1_error)
+    __pyx_t_5 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 51, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -3279,17 +3447,17 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10wpotential(st
       if (likely(PyList_CheckExact(__pyx_t_3))) {
         if (__pyx_t_4 >= PyList_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 45, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 51, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_4 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 45, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(0, 51, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 45, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 51, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -3299,7 +3467,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10wpotential(st
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 45, __pyx_L1_error)
+          else __PYX_ERR(0, 51, __pyx_L1_error)
         }
         break;
       }
@@ -3308,20 +3476,20 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10wpotential(st
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "siggen/geometries/TemplateWrapper_PPC.pxi":46
+    /* "siggen/geometries/TemplateWrapper_PPC.pxi":52
  * 
  *     for i in range(wp_np.size):
  *       wp_np[i] = wp[i]             # <<<<<<<<<<<<<<
  *     return val
  * 
  */
-    __pyx_t_6 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_6 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 46, __pyx_L1_error)
-    __pyx_t_1 = PyFloat_FromDouble((__pyx_v_wp[__pyx_t_6])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 46, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_6 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(0, 52, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble((__pyx_v_wp[__pyx_t_6])); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 52, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_wp_np), __pyx_v_i, __pyx_t_1) < 0)) __PYX_ERR(0, 46, __pyx_L1_error)
+    if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_wp_np), __pyx_v_i, __pyx_t_1) < 0)) __PYX_ERR(0, 52, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "siggen/geometries/TemplateWrapper_PPC.pxi":45
+    /* "siggen/geometries/TemplateWrapper_PPC.pxi":51
  *     val = self.cobj.wpotential(pt,wp)
  * 
  *     for i in range(wp_np.size):             # <<<<<<<<<<<<<<
@@ -3331,7 +3499,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10wpotential(st
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":47
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":53
  *     for i in range(wp_np.size):
  *       wp_np[i] = wp[i]
  *     return val             # <<<<<<<<<<<<<<
@@ -3339,13 +3507,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10wpotential(st
  *   def set_holes(self, mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_val); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 47, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_val); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":38
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":44
  *     return (e.r, e.phi, e.z, val)
  * 
  *   def wpotential(self, point pt, np.ndarray[np.float32_t, ndim=1] wp_np):             # <<<<<<<<<<<<<<
@@ -3375,7 +3543,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10wpotential(st
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":49
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":55
  *     return val
  * 
  *   def set_holes(self, mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111):             # <<<<<<<<<<<<<<
@@ -3384,8 +3552,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_10wpotential(st
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_13set_holes(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_13set_holes(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_17set_holes(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_17set_holes(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_mu0_100 = 0;
   PyObject *__pyx_v_beta_100 = 0;
   PyObject *__pyx_v_E_0_100 = 0;
@@ -3426,35 +3594,35 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_13set_holes(PyO
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 1); __PYX_ERR(0, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 1); __PYX_ERR(0, 55, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 2); __PYX_ERR(0, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 2); __PYX_ERR(0, 55, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 3); __PYX_ERR(0, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 3); __PYX_ERR(0, 55, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 4); __PYX_ERR(0, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 4); __PYX_ERR(0, 55, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 5); __PYX_ERR(0, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 5); __PYX_ERR(0, 55, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_holes") < 0)) __PYX_ERR(0, 49, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_holes") < 0)) __PYX_ERR(0, 55, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 6) {
       goto __pyx_L5_argtuple_error;
@@ -3475,20 +3643,20 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_13set_holes(PyO
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 49, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 55, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_PPC.set_holes", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_12set_holes(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_16set_holes(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_12set_holes(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, PyObject *__pyx_v_mu0_100, PyObject *__pyx_v_beta_100, PyObject *__pyx_v_E_0_100, PyObject *__pyx_v_mu0_111, PyObject *__pyx_v_beta_111, PyObject *__pyx_v_E_0_111) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_16set_holes(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, PyObject *__pyx_v_mu0_100, PyObject *__pyx_v_beta_100, PyObject *__pyx_v_E_0_100, PyObject *__pyx_v_mu0_111, PyObject *__pyx_v_beta_111, PyObject *__pyx_v_E_0_111) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   float __pyx_t_1;
@@ -3500,7 +3668,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_12set_holes(str
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("set_holes", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":50
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":56
  * 
  *   def set_holes(self, mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111):
  *     return self.cobj.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)             # <<<<<<<<<<<<<<
@@ -3508,19 +3676,19 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_12set_holes(str
  *   def set_electrons(self, float mu0_100, float beta_100, float E_0_100,float mu_n_100,
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_PyFloat_AsFloat(__pyx_v_mu0_100); if (unlikely((__pyx_t_1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 50, __pyx_L1_error)
-  __pyx_t_2 = __pyx_PyFloat_AsFloat(__pyx_v_beta_100); if (unlikely((__pyx_t_2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 50, __pyx_L1_error)
-  __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_v_E_0_100); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 50, __pyx_L1_error)
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_v_mu0_111); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 50, __pyx_L1_error)
-  __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_v_beta_111); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 50, __pyx_L1_error)
-  __pyx_t_6 = __pyx_PyFloat_AsFloat(__pyx_v_E_0_111); if (unlikely((__pyx_t_6 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 50, __pyx_L1_error)
-  __pyx_t_7 = __Pyx_void_to_None(__pyx_v_self->cobj->set_holes(__pyx_t_1, __pyx_t_2, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 50, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsFloat(__pyx_v_mu0_100); if (unlikely((__pyx_t_1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsFloat(__pyx_v_beta_100); if (unlikely((__pyx_t_2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_v_E_0_100); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_v_mu0_111); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_v_beta_111); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_t_6 = __pyx_PyFloat_AsFloat(__pyx_v_E_0_111); if (unlikely((__pyx_t_6 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_void_to_None(__pyx_v_self->cobj->set_holes(__pyx_t_1, __pyx_t_2, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6)); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_r = __pyx_t_7;
   __pyx_t_7 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":49
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":55
  *     return val
  * 
  *   def set_holes(self, mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111):             # <<<<<<<<<<<<<<
@@ -3539,7 +3707,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_12set_holes(str
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":52
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":58
  *     return self.cobj.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
  * 
  *   def set_electrons(self, float mu0_100, float beta_100, float E_0_100,float mu_n_100,             # <<<<<<<<<<<<<<
@@ -3548,8 +3716,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_12set_holes(str
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_15set_electrons(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_15set_electrons(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_19set_electrons(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_19set_electrons(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   float __pyx_v_mu0_100;
   float __pyx_v_beta_100;
   float __pyx_v_E_0_100;
@@ -3596,47 +3764,47 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_15set_electrons
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 1); __PYX_ERR(0, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 1); __PYX_ERR(0, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 2); __PYX_ERR(0, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 2); __PYX_ERR(0, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu_n_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 3); __PYX_ERR(0, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 3); __PYX_ERR(0, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 4); __PYX_ERR(0, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 4); __PYX_ERR(0, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 5); __PYX_ERR(0, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 5); __PYX_ERR(0, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
         if (likely((values[6] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 6); __PYX_ERR(0, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 6); __PYX_ERR(0, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  7:
         if (likely((values[7] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu_n_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 7); __PYX_ERR(0, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 7); __PYX_ERR(0, 58, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_electrons") < 0)) __PYX_ERR(0, 52, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_electrons") < 0)) __PYX_ERR(0, 58, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 8) {
       goto __pyx_L5_argtuple_error;
@@ -3650,37 +3818,37 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_15set_electrons
       values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
       values[7] = PyTuple_GET_ITEM(__pyx_args, 7);
     }
-    __pyx_v_mu0_100 = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_mu0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 52, __pyx_L3_error)
-    __pyx_v_beta_100 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_beta_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 52, __pyx_L3_error)
-    __pyx_v_E_0_100 = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_E_0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 52, __pyx_L3_error)
-    __pyx_v_mu_n_100 = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_mu_n_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 52, __pyx_L3_error)
-    __pyx_v_mu0_111 = __pyx_PyFloat_AsFloat(values[4]); if (unlikely((__pyx_v_mu0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L3_error)
-    __pyx_v_beta_111 = __pyx_PyFloat_AsFloat(values[5]); if (unlikely((__pyx_v_beta_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L3_error)
-    __pyx_v_E_0_111 = __pyx_PyFloat_AsFloat(values[6]); if (unlikely((__pyx_v_E_0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L3_error)
-    __pyx_v_mu_n_111 = __pyx_PyFloat_AsFloat(values[7]); if (unlikely((__pyx_v_mu_n_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 53, __pyx_L3_error)
+    __pyx_v_mu0_100 = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_mu0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 58, __pyx_L3_error)
+    __pyx_v_beta_100 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_beta_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 58, __pyx_L3_error)
+    __pyx_v_E_0_100 = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_E_0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 58, __pyx_L3_error)
+    __pyx_v_mu_n_100 = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_mu_n_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 58, __pyx_L3_error)
+    __pyx_v_mu0_111 = __pyx_PyFloat_AsFloat(values[4]); if (unlikely((__pyx_v_mu0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 59, __pyx_L3_error)
+    __pyx_v_beta_111 = __pyx_PyFloat_AsFloat(values[5]); if (unlikely((__pyx_v_beta_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 59, __pyx_L3_error)
+    __pyx_v_E_0_111 = __pyx_PyFloat_AsFloat(values[6]); if (unlikely((__pyx_v_E_0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 59, __pyx_L3_error)
+    __pyx_v_mu_n_111 = __pyx_PyFloat_AsFloat(values[7]); if (unlikely((__pyx_v_mu_n_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 59, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 52, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 58, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_PPC.set_electrons", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_14set_electrons(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_18set_electrons(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_14set_electrons(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_18set_electrons(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("set_electrons", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":54
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":60
  *   def set_electrons(self, float mu0_100, float beta_100, float E_0_100,float mu_n_100,
  *                 float mu0_111, float beta_111, float E_0_111, float mu_n_111):
  *     return self.cobj.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)             # <<<<<<<<<<<<<<
@@ -3688,13 +3856,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_14set_electrons
  *   def set_impurity_z0(self, float imp, float grad):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_electrons(__pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 54, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_electrons(__pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":52
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":58
  *     return self.cobj.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
  * 
  *   def set_electrons(self, float mu0_100, float beta_100, float E_0_100,float mu_n_100,             # <<<<<<<<<<<<<<
@@ -3713,7 +3881,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_14set_electrons
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":56
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":62
  *     return self.cobj.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)
  * 
  *   def set_impurity_z0(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -3722,8 +3890,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_14set_electrons
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_17set_impurity_z0(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_17set_impurity_z0(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_21set_impurity_z0(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_21set_impurity_z0(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   float __pyx_v_imp;
   float __pyx_v_grad;
   PyObject *__pyx_r = 0;
@@ -3752,11 +3920,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_17set_impurity_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_grad)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_impurity_z0", 1, 2, 2, 1); __PYX_ERR(0, 56, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_impurity_z0", 1, 2, 2, 1); __PYX_ERR(0, 62, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_impurity_z0") < 0)) __PYX_ERR(0, 56, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_impurity_z0") < 0)) __PYX_ERR(0, 62, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3764,31 +3932,31 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_17set_impurity_
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L3_error)
-    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 56, __pyx_L3_error)
+    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 62, __pyx_L3_error)
+    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 62, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_impurity_z0", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 56, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_impurity_z0", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 62, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_PPC.set_impurity_z0", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_16set_impurity_z0(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_imp, __pyx_v_grad);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_20set_impurity_z0(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_imp, __pyx_v_grad);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_16set_impurity_z0(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_20set_impurity_z0(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("set_impurity_z0", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":57
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":63
  * 
  *   def set_impurity_z0(self, float imp, float grad):
  *     return self.cobj.set_impurity_z0(imp,grad)             # <<<<<<<<<<<<<<
@@ -3796,13 +3964,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_16set_impurity_
  *   def set_impurity_avg(self, float imp, float grad):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_impurity_z0(__pyx_v_imp, __pyx_v_grad)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_impurity_z0(__pyx_v_imp, __pyx_v_grad)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":56
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":62
  *     return self.cobj.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)
  * 
  *   def set_impurity_z0(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -3821,7 +3989,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_16set_impurity_
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":59
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":65
  *     return self.cobj.set_impurity_z0(imp,grad)
  * 
  *   def set_impurity_avg(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -3830,8 +3998,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_16set_impurity_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_19set_impurity_avg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_19set_impurity_avg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_23set_impurity_avg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_23set_impurity_avg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   float __pyx_v_imp;
   float __pyx_v_grad;
   PyObject *__pyx_r = 0;
@@ -3860,11 +4028,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_19set_impurity_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_grad)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_impurity_avg", 1, 2, 2, 1); __PYX_ERR(0, 59, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_impurity_avg", 1, 2, 2, 1); __PYX_ERR(0, 65, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_impurity_avg") < 0)) __PYX_ERR(0, 59, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_impurity_avg") < 0)) __PYX_ERR(0, 65, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -3872,31 +4040,31 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_19set_impurity_
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 59, __pyx_L3_error)
-    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 59, __pyx_L3_error)
+    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 65, __pyx_L3_error)
+    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 65, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_impurity_avg", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 59, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_impurity_avg", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 65, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_PPC.set_impurity_avg", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_18set_impurity_avg(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_imp, __pyx_v_grad);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_22set_impurity_avg(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), __pyx_v_imp, __pyx_v_grad);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_18set_impurity_avg(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_22set_impurity_avg(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("set_impurity_avg", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":60
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":66
  * 
  *   def set_impurity_avg(self, float imp, float grad):
  *     return self.cobj.set_impurity_avg(imp,grad)             # <<<<<<<<<<<<<<
@@ -3904,13 +4072,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_18set_impurity_
  *   #Getters and setters
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_impurity_avg(__pyx_v_imp, __pyx_v_grad)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_impurity_avg(__pyx_v_imp, __pyx_v_grad)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":59
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":65
  *     return self.cobj.set_impurity_z0(imp,grad)
  * 
  *   def set_impurity_avg(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -3929,7 +4097,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_18set_impurity_
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":65
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":71
  * 
  *   property xtal_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -3956,7 +4124,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_11xtal_radius__
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":66
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":72
  *   property xtal_radius:
  *     def __get__(self):
  *       return self.cobj.get_nsegments()             # <<<<<<<<<<<<<<
@@ -3964,13 +4132,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_11xtal_radius__
  *   property nsegments:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_nsegments()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 66, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_nsegments()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":65
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":71
  * 
  *   property xtal_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -3989,7 +4157,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_11xtal_radius__
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":69
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":75
  * 
  *   property nsegments:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -4016,7 +4184,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_9nsegments___ge
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":70
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":76
  *   property nsegments:
  *     def __get__(self):
  *       return self.cobj.get_nsegments()             # <<<<<<<<<<<<<<
@@ -4024,13 +4192,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_9nsegments___ge
  *     #     self.cobj.some_var = var
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_nsegments()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 70, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_nsegments()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":69
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":75
  * 
  *   property nsegments:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -4049,7 +4217,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_9nsegments___ge
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":77
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":83
  *     # def __get__(self):
  *     #   return self.cobj.get_output_length()
  *     def __set__(self, double trap_const):             # <<<<<<<<<<<<<<
@@ -4065,7 +4233,7 @@ static int __pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_17trapping_constant_1
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_trap_const); {
-    __pyx_v_trap_const = __pyx_PyFloat_AsDouble(__pyx_arg_trap_const); if (unlikely((__pyx_v_trap_const == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 77, __pyx_L3_error)
+    __pyx_v_trap_const = __pyx_PyFloat_AsDouble(__pyx_arg_trap_const); if (unlikely((__pyx_v_trap_const == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 83, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4085,7 +4253,7 @@ static int __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_17trapping_constant__
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":78
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":84
  *     #   return self.cobj.get_output_length()
  *     def __set__(self, double trap_const):
  *       self.cobj.set_trapping(trap_const)             # <<<<<<<<<<<<<<
@@ -4094,7 +4262,7 @@ static int __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_17trapping_constant__
  */
   __pyx_v_self->cobj->set_trapping(__pyx_v_trap_const);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":77
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":83
  *     # def __get__(self):
  *     #   return self.cobj.get_output_length()
  *     def __set__(self, double trap_const):             # <<<<<<<<<<<<<<
@@ -4115,19 +4283,19 @@ static int __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_17trapping_constant__
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_21__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_21__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_25__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_25__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_20__reduce_cython__(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self));
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_24__reduce_cython__(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_20__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_24__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4169,19 +4337,19 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_20__reduce_cyth
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_23__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_23__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_27__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_27__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_22__setstate_cython__(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_26__setstate_cython__(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_22__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_26__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_PPC *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -4215,7 +4383,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_PPC_22__setstate_cy
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":85
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":91
  *   cdef SignalGenerator[PPC]* cobj
  * 
  *   def __cinit__(self, DetectorWrapper_PPC detector, PySetup setup):             # <<<<<<<<<<<<<<
@@ -4254,11 +4422,11 @@ static int __pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_1__cinit__(PyO
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_setup)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(0, 85, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(0, 91, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 85, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(0, 91, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -4271,14 +4439,14 @@ static int __pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_1__cinit__(PyO
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 85, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 91, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.SignalGeneratorWrapper_PPC.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_detector), __pyx_ptype_6siggen_7_siggen_DetectorWrapper_PPC, 1, "detector", 0))) __PYX_ERR(0, 85, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_setup), __pyx_ptype_6siggen_7_siggen_PySetup, 1, "setup", 0))) __PYX_ERR(0, 85, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_detector), __pyx_ptype_6siggen_7_siggen_DetectorWrapper_PPC, 1, "detector", 0))) __PYX_ERR(0, 91, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_setup), __pyx_ptype_6siggen_7_siggen_PySetup, 1, "setup", 0))) __PYX_ERR(0, 91, __pyx_L1_error)
   __pyx_r = __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC___cinit__(((struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_PPC *)__pyx_v_self), __pyx_v_detector, __pyx_v_setup);
 
   /* function exit code */
@@ -4295,7 +4463,7 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC___cinit__(stru
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":86
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":92
  * 
  *   def __cinit__(self, DetectorWrapper_PPC detector, PySetup setup):
  *     self.cobj = new SignalGenerator[PPC](detector.cobj, dereference(setup.cobj))             # <<<<<<<<<<<<<<
@@ -4304,7 +4472,7 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC___cinit__(stru
  */
   __pyx_v_self->cobj = new Siggen::SignalGenerator<PPC> (__pyx_v_detector->cobj, (*__pyx_v_setup->cobj));
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":85
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":91
  *   cdef SignalGenerator[PPC]* cobj
  * 
  *   def __cinit__(self, DetectorWrapper_PPC detector, PySetup setup):             # <<<<<<<<<<<<<<
@@ -4318,7 +4486,7 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC___cinit__(stru
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":88
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":94
  *     self.cobj = new SignalGenerator[PPC](detector.cobj, dereference(setup.cobj))
  * 
  *   def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -4341,7 +4509,7 @@ static void __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_2__dealloc__(
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":89
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":95
  * 
  *   def __dealloc__(self):
  *     del self.cobj             # <<<<<<<<<<<<<<
@@ -4350,7 +4518,7 @@ static void __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_2__dealloc__(
  */
   delete __pyx_v_self->cobj;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":88
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":94
  *     self.cobj = new SignalGenerator[PPC](detector.cobj, dereference(setup.cobj))
  * 
  *   def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -4362,7 +4530,7 @@ static void __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_2__dealloc__(
   __Pyx_RefNannyFinishContext();
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":91
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":97
  *     del self.cobj
  * 
  *   def make_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array, double q):             # <<<<<<<<<<<<<<
@@ -4404,17 +4572,17 @@ static PyObject *__pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_5make_si
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_signal_array)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, 1); __PYX_ERR(0, 91, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, 1); __PYX_ERR(0, 97, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_q)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, 2); __PYX_ERR(0, 91, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, 2); __PYX_ERR(0, 97, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "make_signal") < 0)) __PYX_ERR(0, 91, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "make_signal") < 0)) __PYX_ERR(0, 97, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -4423,19 +4591,19 @@ static PyObject *__pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_5make_si
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 91, __pyx_L3_error)
+    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L3_error)
     __pyx_v_signal_array = ((PyArrayObject *)values[1]);
-    __pyx_v_q = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_q == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 91, __pyx_L3_error)
+    __pyx_v_q = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_q == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 91, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 97, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.SignalGeneratorWrapper_PPC.make_signal", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_signal_array), __pyx_ptype_5numpy_ndarray, 1, "signal_array", 0))) __PYX_ERR(0, 91, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_signal_array), __pyx_ptype_5numpy_ndarray, 1, "signal_array", 0))) __PYX_ERR(0, 97, __pyx_L1_error)
   __pyx_r = __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_4make_signal(((struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_PPC *)__pyx_v_self), __pyx_v_pt, __pyx_v_signal_array, __pyx_v_q);
 
   /* function exit code */
@@ -4462,11 +4630,11 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_4make_si
   __pyx_pybuffernd_signal_array.rcbuffer = &__pyx_pybuffer_signal_array;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_signal_array.rcbuffer->pybuffer, (PyObject*)__pyx_v_signal_array, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 91, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_signal_array.rcbuffer->pybuffer, (PyObject*)__pyx_v_signal_array, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 97, __pyx_L1_error)
   }
   __pyx_pybuffernd_signal_array.diminfo[0].strides = __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_signal_array.diminfo[0].shape = __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.shape[0];
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":92
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":98
  * 
  *   def make_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array, double q):
  *     return self.cobj.make_signal(pt, &signal_array[0], q)             # <<<<<<<<<<<<<<
@@ -4482,15 +4650,15 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_4make_si
   } else if (unlikely(__pyx_t_1 >= __pyx_pybuffernd_signal_array.diminfo[0].shape)) __pyx_t_2 = 0;
   if (unlikely(__pyx_t_2 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_2);
-    __PYX_ERR(0, 92, __pyx_L1_error)
+    __PYX_ERR(0, 98, __pyx_L1_error)
   }
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->make_signal(__pyx_v_pt, (&(*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float32_t *, __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_signal_array.diminfo[0].strides))), __pyx_v_q)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 92, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->make_signal(__pyx_v_pt, (&(*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float32_t *, __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_signal_array.diminfo[0].strides))), __pyx_v_q)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 98, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":91
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":97
  *     del self.cobj
  * 
  *   def make_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array, double q):             # <<<<<<<<<<<<<<
@@ -4518,7 +4686,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_4make_si
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":94
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":100
  *     return self.cobj.make_signal(pt, &signal_array[0], q)
  * 
  *   def get_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array):             # <<<<<<<<<<<<<<
@@ -4557,11 +4725,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_7get_sig
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_signal_array)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_signal", 1, 2, 2, 1); __PYX_ERR(0, 94, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_signal", 1, 2, 2, 1); __PYX_ERR(0, 100, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_signal") < 0)) __PYX_ERR(0, 94, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_signal") < 0)) __PYX_ERR(0, 100, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -4569,18 +4737,18 @@ static PyObject *__pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_7get_sig
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 94, __pyx_L3_error)
+    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 100, __pyx_L3_error)
     __pyx_v_signal_array = ((PyArrayObject *)values[1]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_signal", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 94, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_signal", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 100, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.SignalGeneratorWrapper_PPC.get_signal", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_signal_array), __pyx_ptype_5numpy_ndarray, 1, "signal_array", 0))) __PYX_ERR(0, 94, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_signal_array), __pyx_ptype_5numpy_ndarray, 1, "signal_array", 0))) __PYX_ERR(0, 100, __pyx_L1_error)
   __pyx_r = __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_6get_signal(((struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_PPC *)__pyx_v_self), __pyx_v_pt, __pyx_v_signal_array);
 
   /* function exit code */
@@ -4607,11 +4775,11 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_6get_sig
   __pyx_pybuffernd_signal_array.rcbuffer = &__pyx_pybuffer_signal_array;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_signal_array.rcbuffer->pybuffer, (PyObject*)__pyx_v_signal_array, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 94, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_signal_array.rcbuffer->pybuffer, (PyObject*)__pyx_v_signal_array, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(0, 100, __pyx_L1_error)
   }
   __pyx_pybuffernd_signal_array.diminfo[0].strides = __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_signal_array.diminfo[0].shape = __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.shape[0];
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":95
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":101
  * 
  *   def get_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array):
  *     return self.cobj.get_signal(pt, &signal_array[0])             # <<<<<<<<<<<<<<
@@ -4627,15 +4795,15 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_6get_sig
   } else if (unlikely(__pyx_t_1 >= __pyx_pybuffernd_signal_array.diminfo[0].shape)) __pyx_t_2 = 0;
   if (unlikely(__pyx_t_2 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_2);
-    __PYX_ERR(0, 95, __pyx_L1_error)
+    __PYX_ERR(0, 101, __pyx_L1_error)
   }
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_signal(__pyx_v_pt, (&(*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float32_t *, __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_signal_array.diminfo[0].strides))))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 95, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_signal(__pyx_v_pt, (&(*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float32_t *, __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_signal_array.diminfo[0].strides))))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":94
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":100
  *     return self.cobj.make_signal(pt, &signal_array[0], q)
  * 
  *   def get_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array):             # <<<<<<<<<<<<<<
@@ -4663,7 +4831,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_6get_sig
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":97
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":103
  *     return self.cobj.get_signal(pt, &signal_array[0])
  * 
  *   def get_last_drifttime(self, float q):             # <<<<<<<<<<<<<<
@@ -4679,7 +4847,7 @@ static PyObject *__pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_9get_las
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_last_drifttime (wrapper)", 0);
   assert(__pyx_arg_q); {
-    __pyx_v_q = __pyx_PyFloat_AsFloat(__pyx_arg_q); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 97, __pyx_L3_error)
+    __pyx_v_q = __pyx_PyFloat_AsFloat(__pyx_arg_q); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 103, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4700,7 +4868,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_8get_las
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_last_drifttime", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":98
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":104
  * 
  *   def get_last_drifttime(self, float q):
  *     return self.cobj.get_last_drifttime(q)             # <<<<<<<<<<<<<<
@@ -4708,13 +4876,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_8get_las
  *     return self.cobj.get_dwpot()
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_last_drifttime(__pyx_v_q)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_last_drifttime(__pyx_v_q)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":97
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":103
  *     return self.cobj.get_signal(pt, &signal_array[0])
  * 
  *   def get_last_drifttime(self, float q):             # <<<<<<<<<<<<<<
@@ -4733,7 +4901,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_8get_las
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":99
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":105
  *   def get_last_drifttime(self, float q):
  *     return self.cobj.get_last_drifttime(q)
  *   def get_dwpot(self):             # <<<<<<<<<<<<<<
@@ -4760,7 +4928,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_10get_dw
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_dwpot", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":100
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":106
  *     return self.cobj.get_last_drifttime(q)
  *   def get_dwpot(self):
  *     return self.cobj.get_dwpot()             # <<<<<<<<<<<<<<
@@ -4768,13 +4936,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_10get_dw
  *     return self.cobj.get_driftpath(q)
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_float(__pyx_v_self->cobj->get_dwpot()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_float(__pyx_v_self->cobj->get_dwpot()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":99
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":105
  *   def get_last_drifttime(self, float q):
  *     return self.cobj.get_last_drifttime(q)
  *   def get_dwpot(self):             # <<<<<<<<<<<<<<
@@ -4793,7 +4961,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_10get_dw
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":101
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":107
  *   def get_dwpot(self):
  *     return self.cobj.get_dwpot()
  *   def get_driftpath(self, float q):             # <<<<<<<<<<<<<<
@@ -4809,7 +4977,7 @@ static PyObject *__pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_13get_dr
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_driftpath (wrapper)", 0);
   assert(__pyx_arg_q); {
-    __pyx_v_q = __pyx_PyFloat_AsFloat(__pyx_arg_q); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 101, __pyx_L3_error)
+    __pyx_v_q = __pyx_PyFloat_AsFloat(__pyx_arg_q); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 107, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4830,7 +4998,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_12get_dr
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_driftpath", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":102
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":108
  *     return self.cobj.get_dwpot()
  *   def get_driftpath(self, float q):
  *     return self.cobj.get_driftpath(q)             # <<<<<<<<<<<<<<
@@ -4838,13 +5006,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_12get_dr
  *     def __get__(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_struct__Siggen_3a__3a_point(__pyx_v_self->cobj->get_driftpath(__pyx_v_q)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_struct__Siggen_3a__3a_point(__pyx_v_self->cobj->get_driftpath(__pyx_v_q)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":101
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":107
  *   def get_dwpot(self):
  *     return self.cobj.get_dwpot()
  *   def get_driftpath(self, float q):             # <<<<<<<<<<<<<<
@@ -4863,7 +5031,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_12get_dr
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":104
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":110
  *     return self.cobj.get_driftpath(q)
  *   property output_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -4890,7 +5058,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_13output
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":105
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":111
  *   property output_length:
  *     def __get__(self):
  *       return self.cobj.get_output_length()             # <<<<<<<<<<<<<<
@@ -4898,13 +5066,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_13output
  *     #     self.cobj.some_var = var
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_output_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_output_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":104
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":110
  *     return self.cobj.get_driftpath(q)
  *   property output_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -4923,7 +5091,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_13output
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":110
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":116
  * 
  *   property calc_timestep:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -4950,7 +5118,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_13calc_t
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":111
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":117
  *   property calc_timestep:
  *     def __get__(self):
  *       return self.cobj.get_calc_timestep()             # <<<<<<<<<<<<<<
@@ -4958,13 +5126,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_13calc_t
  *     def __set__(self, float ts):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_calc_timestep()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_calc_timestep()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":110
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":116
  * 
  *   property calc_timestep:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -4983,7 +5151,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_13calc_t
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":113
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":119
  *       return self.cobj.get_calc_timestep()
  * 
  *     def __set__(self, float ts):             # <<<<<<<<<<<<<<
@@ -4999,7 +5167,7 @@ static int __pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_13calc_timeste
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_ts); {
-    __pyx_v_ts = __pyx_PyFloat_AsFloat(__pyx_arg_ts); if (unlikely((__pyx_v_ts == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 113, __pyx_L3_error)
+    __pyx_v_ts = __pyx_PyFloat_AsFloat(__pyx_arg_ts); if (unlikely((__pyx_v_ts == (float)-1) && PyErr_Occurred())) __PYX_ERR(0, 119, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5019,7 +5187,7 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_13calc_timeste
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":114
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":120
  * 
  *     def __set__(self, float ts):
  *        self.cobj.set_calc_timestep(ts)             # <<<<<<<<<<<<<<
@@ -5028,7 +5196,7 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_13calc_timeste
  */
   __pyx_v_self->cobj->set_calc_timestep(__pyx_v_ts);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":113
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":119
  *       return self.cobj.get_calc_timestep()
  * 
  *     def __set__(self, float ts):             # <<<<<<<<<<<<<<
@@ -5042,7 +5210,7 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_13calc_timeste
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":117
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":123
  * 
  *   property calc_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -5069,7 +5237,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_11calc_l
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":118
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":124
  *   property calc_length:
  *     def __get__(self):
  *       return self.cobj.get_calc_length()             # <<<<<<<<<<<<<<
@@ -5077,13 +5245,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_11calc_l
  *     def __set__(self, int nt):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_calc_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 118, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_calc_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":117
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":123
  * 
  *   property calc_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -5102,7 +5270,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_11calc_l
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_PPC.pxi":120
+/* "siggen/geometries/TemplateWrapper_PPC.pxi":126
  *       return self.cobj.get_calc_length()
  * 
  *     def __set__(self, int nt):             # <<<<<<<<<<<<<<
@@ -5117,7 +5285,7 @@ static int __pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_11calc_length_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_nt); {
-    __pyx_v_nt = __Pyx_PyInt_As_int(__pyx_arg_nt); if (unlikely((__pyx_v_nt == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 120, __pyx_L3_error)
+    __pyx_v_nt = __Pyx_PyInt_As_int(__pyx_arg_nt); if (unlikely((__pyx_v_nt == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 126, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -5137,14 +5305,14 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_PPC_11calc_length_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":121
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":127
  * 
  *     def __set__(self, int nt):
  *        self.cobj.set_calc_length(nt)             # <<<<<<<<<<<<<<
  */
   __pyx_v_self->cobj->set_calc_length(__pyx_v_nt);
 
-  /* "siggen/geometries/TemplateWrapper_PPC.pxi":120
+  /* "siggen/geometries/TemplateWrapper_PPC.pxi":126
  *       return self.cobj.get_calc_length()
  * 
  *     def __set__(self, int nt):             # <<<<<<<<<<<<<<
@@ -5443,7 +5611,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_4field_setup(st
  *   def field_setup(self):
  *     return self.cobj.field_setup()             # <<<<<<<<<<<<<<
  * 
- *   def outside_detector(self, point pt):
+ *   def set_temp(self, float temp):
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->field_setup()); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 16, __pyx_L1_error)
@@ -5474,49 +5642,49 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_4field_setup(st
 /* "siggen/geometries/TemplateWrapper_GEM.pxi":18
  *     return self.cobj.field_setup()
  * 
- *   def outside_detector(self, point pt):             # <<<<<<<<<<<<<<
- *     return self.cobj.outside_detector(pt)
+ *   def set_temp(self, float temp):             # <<<<<<<<<<<<<<
+ *     return self.cobj.set_temp(temp)
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_7outside_detector(PyObject *__pyx_v_self, PyObject *__pyx_arg_pt); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_7outside_detector(PyObject *__pyx_v_self, PyObject *__pyx_arg_pt) {
-  struct Siggen::point __pyx_v_pt;
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_7set_temp(PyObject *__pyx_v_self, PyObject *__pyx_arg_temp); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_7set_temp(PyObject *__pyx_v_self, PyObject *__pyx_arg_temp) {
+  float __pyx_v_temp;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("outside_detector (wrapper)", 0);
-  assert(__pyx_arg_pt); {
-    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(__pyx_arg_pt); if (unlikely(PyErr_Occurred())) __PYX_ERR(3, 18, __pyx_L3_error)
+  __Pyx_RefNannySetupContext("set_temp (wrapper)", 0);
+  assert(__pyx_arg_temp); {
+    __pyx_v_temp = __pyx_PyFloat_AsFloat(__pyx_arg_temp); if (unlikely((__pyx_v_temp == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 18, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_GEM.outside_detector", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_GEM.set_temp", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_6outside_detector(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_pt);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_6set_temp(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), ((float)__pyx_v_temp));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_6outside_detector(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, struct Siggen::point __pyx_v_pt) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_6set_temp(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_temp) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("outside_detector", 0);
+  __Pyx_RefNannySetupContext("set_temp", 0);
 
   /* "siggen/geometries/TemplateWrapper_GEM.pxi":19
  * 
- *   def outside_detector(self, point pt):
- *     return self.cobj.outside_detector(pt)             # <<<<<<<<<<<<<<
+ *   def set_temp(self, float temp):
+ *     return self.cobj.set_temp(temp)             # <<<<<<<<<<<<<<
  * 
- *   def efield(self, float r, float z):
+ *   def set_use_velo_model(self, bool usemodel):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->outside_detector(__pyx_v_pt)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 19, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_temp(__pyx_v_temp)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5524,6 +5692,146 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_6outside_detect
 
   /* "siggen/geometries/TemplateWrapper_GEM.pxi":18
  *     return self.cobj.field_setup()
+ * 
+ *   def set_temp(self, float temp):             # <<<<<<<<<<<<<<
+ *     return self.cobj.set_temp(temp)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_GEM.set_temp", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":21
+ *     return self.cobj.set_temp(temp)
+ * 
+ *   def set_use_velo_model(self, bool usemodel):             # <<<<<<<<<<<<<<
+ *     return self.cobj.set_use_velo_model(usemodel)
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_9set_use_velo_model(PyObject *__pyx_v_self, PyObject *__pyx_arg_usemodel); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_9set_use_velo_model(PyObject *__pyx_v_self, PyObject *__pyx_arg_usemodel) {
+  bool __pyx_v_usemodel;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("set_use_velo_model (wrapper)", 0);
+  assert(__pyx_arg_usemodel); {
+    __pyx_v_usemodel = __Pyx_PyObject_IsTrue(__pyx_arg_usemodel); if (unlikely((__pyx_v_usemodel == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(3, 21, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_GEM.set_use_velo_model", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8set_use_velo_model(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), ((bool)__pyx_v_usemodel));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8set_use_velo_model(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, bool __pyx_v_usemodel) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("set_use_velo_model", 0);
+
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":22
+ * 
+ *   def set_use_velo_model(self, bool usemodel):
+ *     return self.cobj.set_use_velo_model(usemodel)             # <<<<<<<<<<<<<<
+ * 
+ *   def outside_detector(self, point pt):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_use_velo_model(__pyx_v_usemodel)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 22, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":21
+ *     return self.cobj.set_temp(temp)
+ * 
+ *   def set_use_velo_model(self, bool usemodel):             # <<<<<<<<<<<<<<
+ *     return self.cobj.set_use_velo_model(usemodel)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_GEM.set_use_velo_model", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":24
+ *     return self.cobj.set_use_velo_model(usemodel)
+ * 
+ *   def outside_detector(self, point pt):             # <<<<<<<<<<<<<<
+ *     return self.cobj.outside_detector(pt)
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_11outside_detector(PyObject *__pyx_v_self, PyObject *__pyx_arg_pt); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_11outside_detector(PyObject *__pyx_v_self, PyObject *__pyx_arg_pt) {
+  struct Siggen::point __pyx_v_pt;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("outside_detector (wrapper)", 0);
+  assert(__pyx_arg_pt); {
+    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(__pyx_arg_pt); if (unlikely(PyErr_Occurred())) __PYX_ERR(3, 24, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_GEM.outside_detector", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10outside_detector(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_pt);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10outside_detector(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, struct Siggen::point __pyx_v_pt) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("outside_detector", 0);
+
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":25
+ * 
+ *   def outside_detector(self, point pt):
+ *     return self.cobj.outside_detector(pt)             # <<<<<<<<<<<<<<
+ * 
+ *   def efield(self, float r, float z):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->outside_detector(__pyx_v_pt)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 25, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":24
+ *     return self.cobj.set_use_velo_model(usemodel)
  * 
  *   def outside_detector(self, point pt):             # <<<<<<<<<<<<<<
  *     return self.cobj.outside_detector(pt)
@@ -5541,7 +5849,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_6outside_detect
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":21
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":27
  *     return self.cobj.outside_detector(pt)
  * 
  *   def efield(self, float r, float z):             # <<<<<<<<<<<<<<
@@ -5550,8 +5858,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_6outside_detect
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_9efield(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_9efield(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_13efield(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_13efield(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   float __pyx_v_r;
   float __pyx_v_z;
   PyObject *__pyx_r = 0;
@@ -5580,11 +5888,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_9efield(PyObjec
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_z)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("efield", 1, 2, 2, 1); __PYX_ERR(3, 21, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("efield", 1, 2, 2, 1); __PYX_ERR(3, 27, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "efield") < 0)) __PYX_ERR(3, 21, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "efield") < 0)) __PYX_ERR(3, 27, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -5592,25 +5900,25 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_9efield(PyObjec
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_r = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_r == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 21, __pyx_L3_error)
-    __pyx_v_z = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_z == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 21, __pyx_L3_error)
+    __pyx_v_r = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_r == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 27, __pyx_L3_error)
+    __pyx_v_z = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_z == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 27, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("efield", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 21, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("efield", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 27, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_GEM.efield", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_r, __pyx_v_z);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_12efield(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_r, __pyx_v_z);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_r, float __pyx_v_z) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_12efield(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_r, float __pyx_v_z) {
   struct Siggen::cyl_pt __pyx_v_e;
   struct Siggen::cyl_pt __pyx_v_pt;
   int __pyx_v_val;
@@ -5623,7 +5931,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct 
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("efield", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":26
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":32
  *     cdef cyl_pt pt
  * 
  *     e.r=0.             # <<<<<<<<<<<<<<
@@ -5632,7 +5940,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct 
  */
   __pyx_v_e.r = 0.;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":27
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":33
  * 
  *     e.r=0.
  *     e.phi=0.             # <<<<<<<<<<<<<<
@@ -5641,7 +5949,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct 
  */
   __pyx_v_e.phi = 0.;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":28
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":34
  *     e.r=0.
  *     e.phi=0.
  *     e.z=0.             # <<<<<<<<<<<<<<
@@ -5650,7 +5958,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct 
  */
   __pyx_v_e.z = 0.;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":30
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":36
  *     e.z=0.
  * 
  *     pt.r = r;             # <<<<<<<<<<<<<<
@@ -5659,7 +5967,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct 
  */
   __pyx_v_pt.r = __pyx_v_r;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":31
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":37
  * 
  *     pt.r = r;
  *     pt.phi=0.;             # <<<<<<<<<<<<<<
@@ -5668,7 +5976,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct 
  */
   __pyx_v_pt.phi = 0.;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":32
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":38
  *     pt.r = r;
  *     pt.phi=0.;
  *     pt.z=z;             # <<<<<<<<<<<<<<
@@ -5677,7 +5985,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct 
  */
   __pyx_v_pt.z = __pyx_v_z;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":34
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":40
  *     pt.z=z;
  * 
  *     val = self.cobj.efield(pt,e)             # <<<<<<<<<<<<<<
@@ -5686,7 +5994,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct 
  */
   __pyx_v_val = __pyx_v_self->cobj->efield(__pyx_v_pt, __pyx_v_e);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":36
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":42
  *     val = self.cobj.efield(pt,e)
  * 
  *     return (e.r, e.phi, e.z, val)             # <<<<<<<<<<<<<<
@@ -5694,15 +6002,15 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct 
  *   def wpotential(self, point pt, np.ndarray[np.float32_t, ndim=1] wp_np):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_e.r); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 36, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_e.r); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_e.phi); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 36, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_e.phi); if (unlikely(!__pyx_t_2)) __PYX_ERR(3, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_e.z); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 36, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_e.z); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_val); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 36, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_val); if (unlikely(!__pyx_t_4)) __PYX_ERR(3, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 36, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -5720,7 +6028,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct 
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":21
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":27
  *     return self.cobj.outside_detector(pt)
  * 
  *   def efield(self, float r, float z):             # <<<<<<<<<<<<<<
@@ -5743,7 +6051,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct 
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":38
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":44
  *     return (e.r, e.phi, e.z, val)
  * 
  *   def wpotential(self, point pt, np.ndarray[np.float32_t, ndim=1] wp_np):             # <<<<<<<<<<<<<<
@@ -5752,8 +6060,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_8efield(struct 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_11wpotential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_11wpotential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_15wpotential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_15wpotential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct Siggen::point __pyx_v_pt;
   PyArrayObject *__pyx_v_wp_np = 0;
   PyObject *__pyx_r = 0;
@@ -5782,11 +6090,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_11wpotential(Py
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_wp_np)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("wpotential", 1, 2, 2, 1); __PYX_ERR(3, 38, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("wpotential", 1, 2, 2, 1); __PYX_ERR(3, 44, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "wpotential") < 0)) __PYX_ERR(3, 38, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "wpotential") < 0)) __PYX_ERR(3, 44, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -5794,19 +6102,19 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_11wpotential(Py
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(3, 38, __pyx_L3_error)
+    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(3, 44, __pyx_L3_error)
     __pyx_v_wp_np = ((PyArrayObject *)values[1]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("wpotential", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 38, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("wpotential", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 44, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_GEM.wpotential", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_wp_np), __pyx_ptype_5numpy_ndarray, 1, "wp_np", 0))) __PYX_ERR(3, 38, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10wpotential(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_pt, __pyx_v_wp_np);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_wp_np), __pyx_ptype_5numpy_ndarray, 1, "wp_np", 0))) __PYX_ERR(3, 44, __pyx_L1_error)
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_14wpotential(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_pt, __pyx_v_wp_np);
 
   /* function exit code */
   goto __pyx_L0;
@@ -5817,7 +6125,7 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_11wpotential(Py
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10wpotential(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_wp_np) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_14wpotential(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_wp_np) {
   std::vector<float>  __pyx_v_wp;
   int __pyx_v_val;
   PyObject *__pyx_v_i = NULL;
@@ -5838,29 +6146,29 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10wpotential(st
   __pyx_pybuffernd_wp_np.rcbuffer = &__pyx_pybuffer_wp_np;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_wp_np.rcbuffer->pybuffer, (PyObject*)__pyx_v_wp_np, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(3, 38, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_wp_np.rcbuffer->pybuffer, (PyObject*)__pyx_v_wp_np, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(3, 44, __pyx_L1_error)
   }
   __pyx_pybuffernd_wp_np.diminfo[0].strides = __pyx_pybuffernd_wp_np.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_wp_np.diminfo[0].shape = __pyx_pybuffernd_wp_np.rcbuffer->pybuffer.shape[0];
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":41
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":47
  *     # print (pt.x, pt.z, wp[0])
  *     cdef vector[float] wp
  *     wp.resize(wp_np.size)             # <<<<<<<<<<<<<<
  * 
  *     val = self.cobj.wpotential(pt,wp)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_wp_np), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 41, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_wp_np), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_2 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(3, 41, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_2 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(3, 47, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   try {
     __pyx_v_wp.resize(__pyx_t_2);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(3, 41, __pyx_L1_error)
+    __PYX_ERR(3, 47, __pyx_L1_error)
   }
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":43
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":49
  *     wp.resize(wp_np.size)
  * 
  *     val = self.cobj.wpotential(pt,wp)             # <<<<<<<<<<<<<<
@@ -5869,30 +6177,30 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10wpotential(st
  */
   __pyx_v_val = __pyx_v_self->cobj->wpotential(__pyx_v_pt, __pyx_v_wp);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":45
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":51
  *     val = self.cobj.wpotential(pt,wp)
  * 
  *     for i in range(wp_np.size):             # <<<<<<<<<<<<<<
  *       wp_np[i] = wp[i]
  *     return val
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_wp_np), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 45, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_wp_np), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 45, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 45, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_3 = __pyx_t_1; __Pyx_INCREF(__pyx_t_3); __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 45, __pyx_L1_error)
+    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 51, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 45, __pyx_L1_error)
+    __pyx_t_5 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(3, 51, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -5900,17 +6208,17 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10wpotential(st
       if (likely(PyList_CheckExact(__pyx_t_3))) {
         if (__pyx_t_4 >= PyList_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(3, 45, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(3, 51, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 45, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 51, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_4 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(3, 45, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(3, 51, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 45, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 51, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -5920,7 +6228,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10wpotential(st
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(3, 45, __pyx_L1_error)
+          else __PYX_ERR(3, 51, __pyx_L1_error)
         }
         break;
       }
@@ -5929,20 +6237,20 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10wpotential(st
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "siggen/geometries/TemplateWrapper_GEM.pxi":46
+    /* "siggen/geometries/TemplateWrapper_GEM.pxi":52
  * 
  *     for i in range(wp_np.size):
  *       wp_np[i] = wp[i]             # <<<<<<<<<<<<<<
  *     return val
  * 
  */
-    __pyx_t_6 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_6 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(3, 46, __pyx_L1_error)
-    __pyx_t_1 = PyFloat_FromDouble((__pyx_v_wp[__pyx_t_6])); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 46, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_6 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(3, 52, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble((__pyx_v_wp[__pyx_t_6])); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 52, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_wp_np), __pyx_v_i, __pyx_t_1) < 0)) __PYX_ERR(3, 46, __pyx_L1_error)
+    if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_wp_np), __pyx_v_i, __pyx_t_1) < 0)) __PYX_ERR(3, 52, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "siggen/geometries/TemplateWrapper_GEM.pxi":45
+    /* "siggen/geometries/TemplateWrapper_GEM.pxi":51
  *     val = self.cobj.wpotential(pt,wp)
  * 
  *     for i in range(wp_np.size):             # <<<<<<<<<<<<<<
@@ -5952,7 +6260,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10wpotential(st
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":47
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":53
  *     for i in range(wp_np.size):
  *       wp_np[i] = wp[i]
  *     return val             # <<<<<<<<<<<<<<
@@ -5960,13 +6268,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10wpotential(st
  *   def set_holes(self, mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_val); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 47, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_val); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":38
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":44
  *     return (e.r, e.phi, e.z, val)
  * 
  *   def wpotential(self, point pt, np.ndarray[np.float32_t, ndim=1] wp_np):             # <<<<<<<<<<<<<<
@@ -5996,7 +6304,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10wpotential(st
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":49
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":55
  *     return val
  * 
  *   def set_holes(self, mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111):             # <<<<<<<<<<<<<<
@@ -6005,8 +6313,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_10wpotential(st
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_13set_holes(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_13set_holes(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_17set_holes(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_17set_holes(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_mu0_100 = 0;
   PyObject *__pyx_v_beta_100 = 0;
   PyObject *__pyx_v_E_0_100 = 0;
@@ -6047,35 +6355,35 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_13set_holes(PyO
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 1); __PYX_ERR(3, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 1); __PYX_ERR(3, 55, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 2); __PYX_ERR(3, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 2); __PYX_ERR(3, 55, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 3); __PYX_ERR(3, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 3); __PYX_ERR(3, 55, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 4); __PYX_ERR(3, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 4); __PYX_ERR(3, 55, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 5); __PYX_ERR(3, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 5); __PYX_ERR(3, 55, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_holes") < 0)) __PYX_ERR(3, 49, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_holes") < 0)) __PYX_ERR(3, 55, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 6) {
       goto __pyx_L5_argtuple_error;
@@ -6096,20 +6404,20 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_13set_holes(PyO
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 49, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 55, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_GEM.set_holes", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_12set_holes(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_16set_holes(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_12set_holes(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, PyObject *__pyx_v_mu0_100, PyObject *__pyx_v_beta_100, PyObject *__pyx_v_E_0_100, PyObject *__pyx_v_mu0_111, PyObject *__pyx_v_beta_111, PyObject *__pyx_v_E_0_111) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_16set_holes(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, PyObject *__pyx_v_mu0_100, PyObject *__pyx_v_beta_100, PyObject *__pyx_v_E_0_100, PyObject *__pyx_v_mu0_111, PyObject *__pyx_v_beta_111, PyObject *__pyx_v_E_0_111) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   float __pyx_t_1;
@@ -6121,7 +6429,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_12set_holes(str
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("set_holes", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":50
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":56
  * 
  *   def set_holes(self, mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111):
  *     return self.cobj.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)             # <<<<<<<<<<<<<<
@@ -6129,19 +6437,19 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_12set_holes(str
  *   def set_electrons(self, float mu0_100, float beta_100, float E_0_100,float mu_n_100,
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_PyFloat_AsFloat(__pyx_v_mu0_100); if (unlikely((__pyx_t_1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 50, __pyx_L1_error)
-  __pyx_t_2 = __pyx_PyFloat_AsFloat(__pyx_v_beta_100); if (unlikely((__pyx_t_2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 50, __pyx_L1_error)
-  __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_v_E_0_100); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 50, __pyx_L1_error)
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_v_mu0_111); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 50, __pyx_L1_error)
-  __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_v_beta_111); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 50, __pyx_L1_error)
-  __pyx_t_6 = __pyx_PyFloat_AsFloat(__pyx_v_E_0_111); if (unlikely((__pyx_t_6 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 50, __pyx_L1_error)
-  __pyx_t_7 = __Pyx_void_to_None(__pyx_v_self->cobj->set_holes(__pyx_t_1, __pyx_t_2, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6)); if (unlikely(!__pyx_t_7)) __PYX_ERR(3, 50, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsFloat(__pyx_v_mu0_100); if (unlikely((__pyx_t_1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 56, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsFloat(__pyx_v_beta_100); if (unlikely((__pyx_t_2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 56, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_v_E_0_100); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 56, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_v_mu0_111); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 56, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_v_beta_111); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 56, __pyx_L1_error)
+  __pyx_t_6 = __pyx_PyFloat_AsFloat(__pyx_v_E_0_111); if (unlikely((__pyx_t_6 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 56, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_void_to_None(__pyx_v_self->cobj->set_holes(__pyx_t_1, __pyx_t_2, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6)); if (unlikely(!__pyx_t_7)) __PYX_ERR(3, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_r = __pyx_t_7;
   __pyx_t_7 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":49
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":55
  *     return val
  * 
  *   def set_holes(self, mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111):             # <<<<<<<<<<<<<<
@@ -6160,7 +6468,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_12set_holes(str
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":52
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":58
  *     return self.cobj.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
  * 
  *   def set_electrons(self, float mu0_100, float beta_100, float E_0_100,float mu_n_100,             # <<<<<<<<<<<<<<
@@ -6169,8 +6477,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_12set_holes(str
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_15set_electrons(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_15set_electrons(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_19set_electrons(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_19set_electrons(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   float __pyx_v_mu0_100;
   float __pyx_v_beta_100;
   float __pyx_v_E_0_100;
@@ -6217,47 +6525,47 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_15set_electrons
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 1); __PYX_ERR(3, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 1); __PYX_ERR(3, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 2); __PYX_ERR(3, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 2); __PYX_ERR(3, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu_n_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 3); __PYX_ERR(3, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 3); __PYX_ERR(3, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 4); __PYX_ERR(3, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 4); __PYX_ERR(3, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 5); __PYX_ERR(3, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 5); __PYX_ERR(3, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
         if (likely((values[6] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 6); __PYX_ERR(3, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 6); __PYX_ERR(3, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  7:
         if (likely((values[7] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu_n_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 7); __PYX_ERR(3, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 7); __PYX_ERR(3, 58, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_electrons") < 0)) __PYX_ERR(3, 52, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_electrons") < 0)) __PYX_ERR(3, 58, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 8) {
       goto __pyx_L5_argtuple_error;
@@ -6271,37 +6579,37 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_15set_electrons
       values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
       values[7] = PyTuple_GET_ITEM(__pyx_args, 7);
     }
-    __pyx_v_mu0_100 = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_mu0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 52, __pyx_L3_error)
-    __pyx_v_beta_100 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_beta_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 52, __pyx_L3_error)
-    __pyx_v_E_0_100 = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_E_0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 52, __pyx_L3_error)
-    __pyx_v_mu_n_100 = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_mu_n_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 52, __pyx_L3_error)
-    __pyx_v_mu0_111 = __pyx_PyFloat_AsFloat(values[4]); if (unlikely((__pyx_v_mu0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 53, __pyx_L3_error)
-    __pyx_v_beta_111 = __pyx_PyFloat_AsFloat(values[5]); if (unlikely((__pyx_v_beta_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 53, __pyx_L3_error)
-    __pyx_v_E_0_111 = __pyx_PyFloat_AsFloat(values[6]); if (unlikely((__pyx_v_E_0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 53, __pyx_L3_error)
-    __pyx_v_mu_n_111 = __pyx_PyFloat_AsFloat(values[7]); if (unlikely((__pyx_v_mu_n_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 53, __pyx_L3_error)
+    __pyx_v_mu0_100 = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_mu0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 58, __pyx_L3_error)
+    __pyx_v_beta_100 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_beta_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 58, __pyx_L3_error)
+    __pyx_v_E_0_100 = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_E_0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 58, __pyx_L3_error)
+    __pyx_v_mu_n_100 = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_mu_n_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 58, __pyx_L3_error)
+    __pyx_v_mu0_111 = __pyx_PyFloat_AsFloat(values[4]); if (unlikely((__pyx_v_mu0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 59, __pyx_L3_error)
+    __pyx_v_beta_111 = __pyx_PyFloat_AsFloat(values[5]); if (unlikely((__pyx_v_beta_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 59, __pyx_L3_error)
+    __pyx_v_E_0_111 = __pyx_PyFloat_AsFloat(values[6]); if (unlikely((__pyx_v_E_0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 59, __pyx_L3_error)
+    __pyx_v_mu_n_111 = __pyx_PyFloat_AsFloat(values[7]); if (unlikely((__pyx_v_mu_n_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 59, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 52, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 58, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_GEM.set_electrons", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_14set_electrons(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_18set_electrons(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_14set_electrons(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_18set_electrons(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("set_electrons", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":54
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":60
  *   def set_electrons(self, float mu0_100, float beta_100, float E_0_100,float mu_n_100,
  *                 float mu0_111, float beta_111, float E_0_111, float mu_n_111):
  *     return self.cobj.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)             # <<<<<<<<<<<<<<
@@ -6309,13 +6617,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_14set_electrons
  *   def set_impurity_z0(self, float imp, float grad):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_electrons(__pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 54, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_electrons(__pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":52
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":58
  *     return self.cobj.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
  * 
  *   def set_electrons(self, float mu0_100, float beta_100, float E_0_100,float mu_n_100,             # <<<<<<<<<<<<<<
@@ -6334,7 +6642,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_14set_electrons
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":56
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":62
  *     return self.cobj.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)
  * 
  *   def set_impurity_z0(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -6343,8 +6651,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_14set_electrons
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_17set_impurity_z0(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_17set_impurity_z0(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_21set_impurity_z0(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_21set_impurity_z0(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   float __pyx_v_imp;
   float __pyx_v_grad;
   PyObject *__pyx_r = 0;
@@ -6373,11 +6681,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_17set_impurity_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_grad)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_impurity_z0", 1, 2, 2, 1); __PYX_ERR(3, 56, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_impurity_z0", 1, 2, 2, 1); __PYX_ERR(3, 62, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_impurity_z0") < 0)) __PYX_ERR(3, 56, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_impurity_z0") < 0)) __PYX_ERR(3, 62, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -6385,31 +6693,31 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_17set_impurity_
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 56, __pyx_L3_error)
-    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 56, __pyx_L3_error)
+    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 62, __pyx_L3_error)
+    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 62, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_impurity_z0", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 56, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_impurity_z0", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 62, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_GEM.set_impurity_z0", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_16set_impurity_z0(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_imp, __pyx_v_grad);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_20set_impurity_z0(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_imp, __pyx_v_grad);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_16set_impurity_z0(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_20set_impurity_z0(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("set_impurity_z0", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":57
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":63
  * 
  *   def set_impurity_z0(self, float imp, float grad):
  *     return self.cobj.set_impurity_z0(imp,grad)             # <<<<<<<<<<<<<<
@@ -6417,13 +6725,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_16set_impurity_
  *   def set_impurity_avg(self, float imp, float grad):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_impurity_z0(__pyx_v_imp, __pyx_v_grad)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 57, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_impurity_z0(__pyx_v_imp, __pyx_v_grad)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":56
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":62
  *     return self.cobj.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)
  * 
  *   def set_impurity_z0(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -6442,7 +6750,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_16set_impurity_
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":59
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":65
  *     return self.cobj.set_impurity_z0(imp,grad)
  * 
  *   def set_impurity_avg(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -6451,8 +6759,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_16set_impurity_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_19set_impurity_avg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_19set_impurity_avg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_23set_impurity_avg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_23set_impurity_avg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   float __pyx_v_imp;
   float __pyx_v_grad;
   PyObject *__pyx_r = 0;
@@ -6481,11 +6789,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_19set_impurity_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_grad)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_impurity_avg", 1, 2, 2, 1); __PYX_ERR(3, 59, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_impurity_avg", 1, 2, 2, 1); __PYX_ERR(3, 65, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_impurity_avg") < 0)) __PYX_ERR(3, 59, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_impurity_avg") < 0)) __PYX_ERR(3, 65, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -6493,31 +6801,31 @@ static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_19set_impurity_
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 59, __pyx_L3_error)
-    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 59, __pyx_L3_error)
+    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 65, __pyx_L3_error)
+    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 65, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_impurity_avg", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 59, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_impurity_avg", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 65, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_GEM.set_impurity_avg", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_18set_impurity_avg(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_imp, __pyx_v_grad);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_22set_impurity_avg(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), __pyx_v_imp, __pyx_v_grad);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_18set_impurity_avg(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_22set_impurity_avg(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("set_impurity_avg", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":60
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":66
  * 
  *   def set_impurity_avg(self, float imp, float grad):
  *     return self.cobj.set_impurity_avg(imp,grad)             # <<<<<<<<<<<<<<
@@ -6525,13 +6833,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_18set_impurity_
  *   #Getters and setters
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_impurity_avg(__pyx_v_imp, __pyx_v_grad)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 60, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_impurity_avg(__pyx_v_imp, __pyx_v_grad)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":59
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":65
  *     return self.cobj.set_impurity_z0(imp,grad)
  * 
  *   def set_impurity_avg(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -6550,7 +6858,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_18set_impurity_
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":65
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":71
  * 
  *   property xtal_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -6577,7 +6885,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_11xtal_radius__
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":66
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":72
  *   property xtal_radius:
  *     def __get__(self):
  *       return self.cobj.get_nsegments()             # <<<<<<<<<<<<<<
@@ -6585,13 +6893,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_11xtal_radius__
  *   property nsegments:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_nsegments()); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 66, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_nsegments()); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":65
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":71
  * 
  *   property xtal_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -6610,7 +6918,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_11xtal_radius__
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":69
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":75
  * 
  *   property nsegments:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -6637,7 +6945,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_9nsegments___ge
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":70
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":76
  *   property nsegments:
  *     def __get__(self):
  *       return self.cobj.get_nsegments()             # <<<<<<<<<<<<<<
@@ -6645,13 +6953,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_9nsegments___ge
  *     #     self.cobj.some_var = var
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_nsegments()); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 70, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_nsegments()); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":69
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":75
  * 
  *   property nsegments:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -6670,7 +6978,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_9nsegments___ge
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":77
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":83
  *     # def __get__(self):
  *     #   return self.cobj.get_output_length()
  *     def __set__(self, double trap_const):             # <<<<<<<<<<<<<<
@@ -6686,7 +6994,7 @@ static int __pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_17trapping_constant_1
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_trap_const); {
-    __pyx_v_trap_const = __pyx_PyFloat_AsDouble(__pyx_arg_trap_const); if (unlikely((__pyx_v_trap_const == (double)-1) && PyErr_Occurred())) __PYX_ERR(3, 77, __pyx_L3_error)
+    __pyx_v_trap_const = __pyx_PyFloat_AsDouble(__pyx_arg_trap_const); if (unlikely((__pyx_v_trap_const == (double)-1) && PyErr_Occurred())) __PYX_ERR(3, 83, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -6706,7 +7014,7 @@ static int __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_17trapping_constant__
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":78
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":84
  *     #   return self.cobj.get_output_length()
  *     def __set__(self, double trap_const):
  *       self.cobj.set_trapping(trap_const)             # <<<<<<<<<<<<<<
@@ -6715,7 +7023,7 @@ static int __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_17trapping_constant__
  */
   __pyx_v_self->cobj->set_trapping(__pyx_v_trap_const);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":77
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":83
  *     # def __get__(self):
  *     #   return self.cobj.get_output_length()
  *     def __set__(self, double trap_const):             # <<<<<<<<<<<<<<
@@ -6736,19 +7044,19 @@ static int __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_17trapping_constant__
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_21__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_21__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_25__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_25__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_20__reduce_cython__(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self));
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_24__reduce_cython__(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_20__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_24__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6790,19 +7098,19 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_20__reduce_cyth
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_23__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_23__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_27__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_27__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_22__setstate_cython__(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_26__setstate_cython__(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_22__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_26__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_GEM *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -6836,7 +7144,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_19DetectorWrapper_GEM_22__setstate_cy
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":85
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":91
  *   cdef SignalGenerator[GEM]* cobj
  * 
  *   def __cinit__(self, DetectorWrapper_GEM detector, PySetup setup):             # <<<<<<<<<<<<<<
@@ -6875,11 +7183,11 @@ static int __pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_1__cinit__(PyO
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_setup)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(3, 85, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(3, 91, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(3, 85, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(3, 91, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -6892,14 +7200,14 @@ static int __pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_1__cinit__(PyO
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 85, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 91, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.SignalGeneratorWrapper_GEM.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_detector), __pyx_ptype_6siggen_7_siggen_DetectorWrapper_GEM, 1, "detector", 0))) __PYX_ERR(3, 85, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_setup), __pyx_ptype_6siggen_7_siggen_PySetup, 1, "setup", 0))) __PYX_ERR(3, 85, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_detector), __pyx_ptype_6siggen_7_siggen_DetectorWrapper_GEM, 1, "detector", 0))) __PYX_ERR(3, 91, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_setup), __pyx_ptype_6siggen_7_siggen_PySetup, 1, "setup", 0))) __PYX_ERR(3, 91, __pyx_L1_error)
   __pyx_r = __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM___cinit__(((struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_GEM *)__pyx_v_self), __pyx_v_detector, __pyx_v_setup);
 
   /* function exit code */
@@ -6916,7 +7224,7 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM___cinit__(stru
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":86
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":92
  * 
  *   def __cinit__(self, DetectorWrapper_GEM detector, PySetup setup):
  *     self.cobj = new SignalGenerator[GEM](detector.cobj, dereference(setup.cobj))             # <<<<<<<<<<<<<<
@@ -6925,7 +7233,7 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM___cinit__(stru
  */
   __pyx_v_self->cobj = new Siggen::SignalGenerator<GEM> (__pyx_v_detector->cobj, (*__pyx_v_setup->cobj));
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":85
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":91
  *   cdef SignalGenerator[GEM]* cobj
  * 
  *   def __cinit__(self, DetectorWrapper_GEM detector, PySetup setup):             # <<<<<<<<<<<<<<
@@ -6939,7 +7247,7 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM___cinit__(stru
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":88
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":94
  *     self.cobj = new SignalGenerator[GEM](detector.cobj, dereference(setup.cobj))
  * 
  *   def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -6962,7 +7270,7 @@ static void __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_2__dealloc__(
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":89
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":95
  * 
  *   def __dealloc__(self):
  *     del self.cobj             # <<<<<<<<<<<<<<
@@ -6971,7 +7279,7 @@ static void __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_2__dealloc__(
  */
   delete __pyx_v_self->cobj;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":88
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":94
  *     self.cobj = new SignalGenerator[GEM](detector.cobj, dereference(setup.cobj))
  * 
  *   def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -6983,7 +7291,7 @@ static void __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_2__dealloc__(
   __Pyx_RefNannyFinishContext();
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":91
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":97
  *     del self.cobj
  * 
  *   def make_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array, double q):             # <<<<<<<<<<<<<<
@@ -7025,17 +7333,17 @@ static PyObject *__pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_5make_si
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_signal_array)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, 1); __PYX_ERR(3, 91, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, 1); __PYX_ERR(3, 97, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_q)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, 2); __PYX_ERR(3, 91, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, 2); __PYX_ERR(3, 97, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "make_signal") < 0)) __PYX_ERR(3, 91, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "make_signal") < 0)) __PYX_ERR(3, 97, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -7044,19 +7352,19 @@ static PyObject *__pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_5make_si
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(3, 91, __pyx_L3_error)
+    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(3, 97, __pyx_L3_error)
     __pyx_v_signal_array = ((PyArrayObject *)values[1]);
-    __pyx_v_q = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_q == (double)-1) && PyErr_Occurred())) __PYX_ERR(3, 91, __pyx_L3_error)
+    __pyx_v_q = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_q == (double)-1) && PyErr_Occurred())) __PYX_ERR(3, 97, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 91, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 97, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.SignalGeneratorWrapper_GEM.make_signal", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_signal_array), __pyx_ptype_5numpy_ndarray, 1, "signal_array", 0))) __PYX_ERR(3, 91, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_signal_array), __pyx_ptype_5numpy_ndarray, 1, "signal_array", 0))) __PYX_ERR(3, 97, __pyx_L1_error)
   __pyx_r = __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_4make_signal(((struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_GEM *)__pyx_v_self), __pyx_v_pt, __pyx_v_signal_array, __pyx_v_q);
 
   /* function exit code */
@@ -7083,11 +7391,11 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_4make_si
   __pyx_pybuffernd_signal_array.rcbuffer = &__pyx_pybuffer_signal_array;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_signal_array.rcbuffer->pybuffer, (PyObject*)__pyx_v_signal_array, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(3, 91, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_signal_array.rcbuffer->pybuffer, (PyObject*)__pyx_v_signal_array, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(3, 97, __pyx_L1_error)
   }
   __pyx_pybuffernd_signal_array.diminfo[0].strides = __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_signal_array.diminfo[0].shape = __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.shape[0];
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":92
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":98
  * 
  *   def make_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array, double q):
  *     return self.cobj.make_signal(pt, &signal_array[0], q)             # <<<<<<<<<<<<<<
@@ -7103,15 +7411,15 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_4make_si
   } else if (unlikely(__pyx_t_1 >= __pyx_pybuffernd_signal_array.diminfo[0].shape)) __pyx_t_2 = 0;
   if (unlikely(__pyx_t_2 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_2);
-    __PYX_ERR(3, 92, __pyx_L1_error)
+    __PYX_ERR(3, 98, __pyx_L1_error)
   }
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->make_signal(__pyx_v_pt, (&(*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float32_t *, __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_signal_array.diminfo[0].strides))), __pyx_v_q)); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 92, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->make_signal(__pyx_v_pt, (&(*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float32_t *, __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_signal_array.diminfo[0].strides))), __pyx_v_q)); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 98, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":91
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":97
  *     del self.cobj
  * 
  *   def make_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array, double q):             # <<<<<<<<<<<<<<
@@ -7139,7 +7447,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_4make_si
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":94
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":100
  *     return self.cobj.make_signal(pt, &signal_array[0], q)
  * 
  *   def get_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array):             # <<<<<<<<<<<<<<
@@ -7178,11 +7486,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_7get_sig
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_signal_array)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_signal", 1, 2, 2, 1); __PYX_ERR(3, 94, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_signal", 1, 2, 2, 1); __PYX_ERR(3, 100, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_signal") < 0)) __PYX_ERR(3, 94, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_signal") < 0)) __PYX_ERR(3, 100, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -7190,18 +7498,18 @@ static PyObject *__pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_7get_sig
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(3, 94, __pyx_L3_error)
+    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(3, 100, __pyx_L3_error)
     __pyx_v_signal_array = ((PyArrayObject *)values[1]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_signal", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 94, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_signal", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(3, 100, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.SignalGeneratorWrapper_GEM.get_signal", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_signal_array), __pyx_ptype_5numpy_ndarray, 1, "signal_array", 0))) __PYX_ERR(3, 94, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_signal_array), __pyx_ptype_5numpy_ndarray, 1, "signal_array", 0))) __PYX_ERR(3, 100, __pyx_L1_error)
   __pyx_r = __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_6get_signal(((struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_GEM *)__pyx_v_self), __pyx_v_pt, __pyx_v_signal_array);
 
   /* function exit code */
@@ -7228,11 +7536,11 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_6get_sig
   __pyx_pybuffernd_signal_array.rcbuffer = &__pyx_pybuffer_signal_array;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_signal_array.rcbuffer->pybuffer, (PyObject*)__pyx_v_signal_array, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(3, 94, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_signal_array.rcbuffer->pybuffer, (PyObject*)__pyx_v_signal_array, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(3, 100, __pyx_L1_error)
   }
   __pyx_pybuffernd_signal_array.diminfo[0].strides = __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_signal_array.diminfo[0].shape = __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.shape[0];
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":95
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":101
  * 
  *   def get_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array):
  *     return self.cobj.get_signal(pt, &signal_array[0])             # <<<<<<<<<<<<<<
@@ -7248,15 +7556,15 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_6get_sig
   } else if (unlikely(__pyx_t_1 >= __pyx_pybuffernd_signal_array.diminfo[0].shape)) __pyx_t_2 = 0;
   if (unlikely(__pyx_t_2 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_2);
-    __PYX_ERR(3, 95, __pyx_L1_error)
+    __PYX_ERR(3, 101, __pyx_L1_error)
   }
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_signal(__pyx_v_pt, (&(*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float32_t *, __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_signal_array.diminfo[0].strides))))); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 95, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_signal(__pyx_v_pt, (&(*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float32_t *, __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_signal_array.diminfo[0].strides))))); if (unlikely(!__pyx_t_3)) __PYX_ERR(3, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":94
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":100
  *     return self.cobj.make_signal(pt, &signal_array[0], q)
  * 
  *   def get_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array):             # <<<<<<<<<<<<<<
@@ -7284,7 +7592,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_6get_sig
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":97
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":103
  *     return self.cobj.get_signal(pt, &signal_array[0])
  * 
  *   def get_last_drifttime(self, float q):             # <<<<<<<<<<<<<<
@@ -7300,7 +7608,7 @@ static PyObject *__pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_9get_las
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_last_drifttime (wrapper)", 0);
   assert(__pyx_arg_q); {
-    __pyx_v_q = __pyx_PyFloat_AsFloat(__pyx_arg_q); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 97, __pyx_L3_error)
+    __pyx_v_q = __pyx_PyFloat_AsFloat(__pyx_arg_q); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 103, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7321,7 +7629,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_8get_las
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_last_drifttime", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":98
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":104
  * 
  *   def get_last_drifttime(self, float q):
  *     return self.cobj.get_last_drifttime(q)             # <<<<<<<<<<<<<<
@@ -7329,13 +7637,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_8get_las
  *     return self.cobj.get_dwpot()
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_last_drifttime(__pyx_v_q)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 98, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_last_drifttime(__pyx_v_q)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":97
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":103
  *     return self.cobj.get_signal(pt, &signal_array[0])
  * 
  *   def get_last_drifttime(self, float q):             # <<<<<<<<<<<<<<
@@ -7354,7 +7662,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_8get_las
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":99
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":105
  *   def get_last_drifttime(self, float q):
  *     return self.cobj.get_last_drifttime(q)
  *   def get_dwpot(self):             # <<<<<<<<<<<<<<
@@ -7381,7 +7689,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_10get_dw
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_dwpot", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":100
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":106
  *     return self.cobj.get_last_drifttime(q)
  *   def get_dwpot(self):
  *     return self.cobj.get_dwpot()             # <<<<<<<<<<<<<<
@@ -7389,13 +7697,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_10get_dw
  *     return self.cobj.get_driftpath(q)
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_float(__pyx_v_self->cobj->get_dwpot()); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 100, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_float(__pyx_v_self->cobj->get_dwpot()); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":99
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":105
  *   def get_last_drifttime(self, float q):
  *     return self.cobj.get_last_drifttime(q)
  *   def get_dwpot(self):             # <<<<<<<<<<<<<<
@@ -7414,7 +7722,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_10get_dw
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":101
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":107
  *   def get_dwpot(self):
  *     return self.cobj.get_dwpot()
  *   def get_driftpath(self, float q):             # <<<<<<<<<<<<<<
@@ -7430,7 +7738,7 @@ static PyObject *__pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_13get_dr
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_driftpath (wrapper)", 0);
   assert(__pyx_arg_q); {
-    __pyx_v_q = __pyx_PyFloat_AsFloat(__pyx_arg_q); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 101, __pyx_L3_error)
+    __pyx_v_q = __pyx_PyFloat_AsFloat(__pyx_arg_q); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 107, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7451,7 +7759,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_12get_dr
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_driftpath", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":102
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":108
  *     return self.cobj.get_dwpot()
  *   def get_driftpath(self, float q):
  *     return self.cobj.get_driftpath(q)             # <<<<<<<<<<<<<<
@@ -7459,13 +7767,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_12get_dr
  *     def __get__(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_struct__Siggen_3a__3a_point(__pyx_v_self->cobj->get_driftpath(__pyx_v_q)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 102, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_struct__Siggen_3a__3a_point(__pyx_v_self->cobj->get_driftpath(__pyx_v_q)); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":101
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":107
  *   def get_dwpot(self):
  *     return self.cobj.get_dwpot()
  *   def get_driftpath(self, float q):             # <<<<<<<<<<<<<<
@@ -7484,7 +7792,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_12get_dr
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":104
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":110
  *     return self.cobj.get_driftpath(q)
  *   property output_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -7511,7 +7819,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_13output
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":105
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":111
  *   property output_length:
  *     def __get__(self):
  *       return self.cobj.get_output_length()             # <<<<<<<<<<<<<<
@@ -7519,13 +7827,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_13output
  *     #     self.cobj.some_var = var
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_output_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 105, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_output_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":104
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":110
  *     return self.cobj.get_driftpath(q)
  *   property output_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -7544,7 +7852,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_13output
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":110
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":116
  * 
  *   property calc_timestep:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -7571,7 +7879,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_13calc_t
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":111
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":117
  *   property calc_timestep:
  *     def __get__(self):
  *       return self.cobj.get_calc_timestep()             # <<<<<<<<<<<<<<
@@ -7579,13 +7887,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_13calc_t
  *     def __set__(self, float ts):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_calc_timestep()); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 111, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_calc_timestep()); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":110
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":116
  * 
  *   property calc_timestep:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -7604,7 +7912,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_13calc_t
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":113
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":119
  *       return self.cobj.get_calc_timestep()
  * 
  *     def __set__(self, float ts):             # <<<<<<<<<<<<<<
@@ -7620,7 +7928,7 @@ static int __pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_13calc_timeste
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_ts); {
-    __pyx_v_ts = __pyx_PyFloat_AsFloat(__pyx_arg_ts); if (unlikely((__pyx_v_ts == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 113, __pyx_L3_error)
+    __pyx_v_ts = __pyx_PyFloat_AsFloat(__pyx_arg_ts); if (unlikely((__pyx_v_ts == (float)-1) && PyErr_Occurred())) __PYX_ERR(3, 119, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7640,7 +7948,7 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_13calc_timeste
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":114
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":120
  * 
  *     def __set__(self, float ts):
  *        self.cobj.set_calc_timestep(ts)             # <<<<<<<<<<<<<<
@@ -7649,7 +7957,7 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_13calc_timeste
  */
   __pyx_v_self->cobj->set_calc_timestep(__pyx_v_ts);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":113
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":119
  *       return self.cobj.get_calc_timestep()
  * 
  *     def __set__(self, float ts):             # <<<<<<<<<<<<<<
@@ -7663,7 +7971,7 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_13calc_timeste
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":117
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":123
  * 
  *   property calc_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -7690,7 +7998,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_11calc_l
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":118
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":124
  *   property calc_length:
  *     def __get__(self):
  *       return self.cobj.get_calc_length()             # <<<<<<<<<<<<<<
@@ -7698,13 +8006,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_11calc_l
  *     def __set__(self, int nt):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_calc_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 118, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_calc_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(3, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":117
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":123
  * 
  *   property calc_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -7723,7 +8031,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_11calc_l
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_GEM.pxi":120
+/* "siggen/geometries/TemplateWrapper_GEM.pxi":126
  *       return self.cobj.get_calc_length()
  * 
  *     def __set__(self, int nt):             # <<<<<<<<<<<<<<
@@ -7738,7 +8046,7 @@ static int __pyx_pw_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_11calc_length_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_nt); {
-    __pyx_v_nt = __Pyx_PyInt_As_int(__pyx_arg_nt); if (unlikely((__pyx_v_nt == (int)-1) && PyErr_Occurred())) __PYX_ERR(3, 120, __pyx_L3_error)
+    __pyx_v_nt = __Pyx_PyInt_As_int(__pyx_arg_nt); if (unlikely((__pyx_v_nt == (int)-1) && PyErr_Occurred())) __PYX_ERR(3, 126, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -7758,14 +8066,14 @@ static int __pyx_pf_6siggen_7_siggen_26SignalGeneratorWrapper_GEM_11calc_length_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":121
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":127
  * 
  *     def __set__(self, int nt):
  *        self.cobj.set_calc_length(nt)             # <<<<<<<<<<<<<<
  */
   __pyx_v_self->cobj->set_calc_length(__pyx_v_nt);
 
-  /* "siggen/geometries/TemplateWrapper_GEM.pxi":120
+  /* "siggen/geometries/TemplateWrapper_GEM.pxi":126
  *       return self.cobj.get_calc_length()
  * 
  *     def __set__(self, int nt):             # <<<<<<<<<<<<<<
@@ -8064,7 +8372,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_4field_setup(s
  *   def field_setup(self):
  *     return self.cobj.field_setup()             # <<<<<<<<<<<<<<
  * 
- *   def outside_detector(self, point pt):
+ *   def set_temp(self, float temp):
  */
   __Pyx_XDECREF(__pyx_r);
   __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->field_setup()); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 16, __pyx_L1_error)
@@ -8095,49 +8403,49 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_4field_setup(s
 /* "siggen/geometries/TemplateWrapper_ICPC.pxi":18
  *     return self.cobj.field_setup()
  * 
- *   def outside_detector(self, point pt):             # <<<<<<<<<<<<<<
- *     return self.cobj.outside_detector(pt)
+ *   def set_temp(self, float temp):             # <<<<<<<<<<<<<<
+ *     return self.cobj.set_temp(temp)
  * 
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_7outside_detector(PyObject *__pyx_v_self, PyObject *__pyx_arg_pt); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_7outside_detector(PyObject *__pyx_v_self, PyObject *__pyx_arg_pt) {
-  struct Siggen::point __pyx_v_pt;
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_7set_temp(PyObject *__pyx_v_self, PyObject *__pyx_arg_temp); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_7set_temp(PyObject *__pyx_v_self, PyObject *__pyx_arg_temp) {
+  float __pyx_v_temp;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("outside_detector (wrapper)", 0);
-  assert(__pyx_arg_pt); {
-    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(__pyx_arg_pt); if (unlikely(PyErr_Occurred())) __PYX_ERR(4, 18, __pyx_L3_error)
+  __Pyx_RefNannySetupContext("set_temp (wrapper)", 0);
+  assert(__pyx_arg_temp); {
+    __pyx_v_temp = __pyx_PyFloat_AsFloat(__pyx_arg_temp); if (unlikely((__pyx_v_temp == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 18, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
-  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_ICPC.outside_detector", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_ICPC.set_temp", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_6outside_detector(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_pt);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_6set_temp(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), ((float)__pyx_v_temp));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_6outside_detector(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, struct Siggen::point __pyx_v_pt) {
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_6set_temp(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_temp) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
-  __Pyx_RefNannySetupContext("outside_detector", 0);
+  __Pyx_RefNannySetupContext("set_temp", 0);
 
   /* "siggen/geometries/TemplateWrapper_ICPC.pxi":19
  * 
- *   def outside_detector(self, point pt):
- *     return self.cobj.outside_detector(pt)             # <<<<<<<<<<<<<<
+ *   def set_temp(self, float temp):
+ *     return self.cobj.set_temp(temp)             # <<<<<<<<<<<<<<
  * 
- *   def efield(self, float r, float z):
+ *   def set_use_velo_model(self, bool usemodel):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->outside_detector(__pyx_v_pt)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 19, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_temp(__pyx_v_temp)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 19, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -8145,6 +8453,146 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_6outside_detec
 
   /* "siggen/geometries/TemplateWrapper_ICPC.pxi":18
  *     return self.cobj.field_setup()
+ * 
+ *   def set_temp(self, float temp):             # <<<<<<<<<<<<<<
+ *     return self.cobj.set_temp(temp)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_ICPC.set_temp", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":21
+ *     return self.cobj.set_temp(temp)
+ * 
+ *   def set_use_velo_model(self, bool usemodel):             # <<<<<<<<<<<<<<
+ *     return self.cobj.set_use_velo_model(usemodel)
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_9set_use_velo_model(PyObject *__pyx_v_self, PyObject *__pyx_arg_usemodel); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_9set_use_velo_model(PyObject *__pyx_v_self, PyObject *__pyx_arg_usemodel) {
+  bool __pyx_v_usemodel;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("set_use_velo_model (wrapper)", 0);
+  assert(__pyx_arg_usemodel); {
+    __pyx_v_usemodel = __Pyx_PyObject_IsTrue(__pyx_arg_usemodel); if (unlikely((__pyx_v_usemodel == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(4, 21, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_ICPC.set_use_velo_model", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8set_use_velo_model(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), ((bool)__pyx_v_usemodel));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8set_use_velo_model(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, bool __pyx_v_usemodel) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("set_use_velo_model", 0);
+
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":22
+ * 
+ *   def set_use_velo_model(self, bool usemodel):
+ *     return self.cobj.set_use_velo_model(usemodel)             # <<<<<<<<<<<<<<
+ * 
+ *   def outside_detector(self, point pt):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_use_velo_model(__pyx_v_usemodel)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 22, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":21
+ *     return self.cobj.set_temp(temp)
+ * 
+ *   def set_use_velo_model(self, bool usemodel):             # <<<<<<<<<<<<<<
+ *     return self.cobj.set_use_velo_model(usemodel)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_ICPC.set_use_velo_model", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":24
+ *     return self.cobj.set_use_velo_model(usemodel)
+ * 
+ *   def outside_detector(self, point pt):             # <<<<<<<<<<<<<<
+ *     return self.cobj.outside_detector(pt)
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_11outside_detector(PyObject *__pyx_v_self, PyObject *__pyx_arg_pt); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_11outside_detector(PyObject *__pyx_v_self, PyObject *__pyx_arg_pt) {
+  struct Siggen::point __pyx_v_pt;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("outside_detector (wrapper)", 0);
+  assert(__pyx_arg_pt); {
+    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(__pyx_arg_pt); if (unlikely(PyErr_Occurred())) __PYX_ERR(4, 24, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_ICPC.outside_detector", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10outside_detector(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_pt);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10outside_detector(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, struct Siggen::point __pyx_v_pt) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("outside_detector", 0);
+
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":25
+ * 
+ *   def outside_detector(self, point pt):
+ *     return self.cobj.outside_detector(pt)             # <<<<<<<<<<<<<<
+ * 
+ *   def efield(self, float r, float z):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->outside_detector(__pyx_v_pt)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 25, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":24
+ *     return self.cobj.set_use_velo_model(usemodel)
  * 
  *   def outside_detector(self, point pt):             # <<<<<<<<<<<<<<
  *     return self.cobj.outside_detector(pt)
@@ -8162,7 +8610,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_6outside_detec
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":21
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":27
  *     return self.cobj.outside_detector(pt)
  * 
  *   def efield(self, float r, float z):             # <<<<<<<<<<<<<<
@@ -8171,8 +8619,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_6outside_detec
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_9efield(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_9efield(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_13efield(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_13efield(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   float __pyx_v_r;
   float __pyx_v_z;
   PyObject *__pyx_r = 0;
@@ -8201,11 +8649,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_9efield(PyObje
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_z)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("efield", 1, 2, 2, 1); __PYX_ERR(4, 21, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("efield", 1, 2, 2, 1); __PYX_ERR(4, 27, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "efield") < 0)) __PYX_ERR(4, 21, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "efield") < 0)) __PYX_ERR(4, 27, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -8213,25 +8661,25 @@ static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_9efield(PyObje
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_r = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_r == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 21, __pyx_L3_error)
-    __pyx_v_z = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_z == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 21, __pyx_L3_error)
+    __pyx_v_r = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_r == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 27, __pyx_L3_error)
+    __pyx_v_z = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_z == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 27, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("efield", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 21, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("efield", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 27, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_ICPC.efield", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_r, __pyx_v_z);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_12efield(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_r, __pyx_v_z);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_r, float __pyx_v_z) {
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_12efield(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_r, float __pyx_v_z) {
   struct Siggen::cyl_pt __pyx_v_e;
   struct Siggen::cyl_pt __pyx_v_pt;
   int __pyx_v_val;
@@ -8244,7 +8692,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("efield", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":26
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":32
  *     cdef cyl_pt pt
  * 
  *     e.r=0.             # <<<<<<<<<<<<<<
@@ -8253,7 +8701,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct
  */
   __pyx_v_e.r = 0.;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":27
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":33
  * 
  *     e.r=0.
  *     e.phi=0.             # <<<<<<<<<<<<<<
@@ -8262,7 +8710,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct
  */
   __pyx_v_e.phi = 0.;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":28
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":34
  *     e.r=0.
  *     e.phi=0.
  *     e.z=0.             # <<<<<<<<<<<<<<
@@ -8271,7 +8719,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct
  */
   __pyx_v_e.z = 0.;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":30
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":36
  *     e.z=0.
  * 
  *     pt.r = r;             # <<<<<<<<<<<<<<
@@ -8280,7 +8728,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct
  */
   __pyx_v_pt.r = __pyx_v_r;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":31
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":37
  * 
  *     pt.r = r;
  *     pt.phi=0.;             # <<<<<<<<<<<<<<
@@ -8289,7 +8737,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct
  */
   __pyx_v_pt.phi = 0.;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":32
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":38
  *     pt.r = r;
  *     pt.phi=0.;
  *     pt.z=z;             # <<<<<<<<<<<<<<
@@ -8298,7 +8746,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct
  */
   __pyx_v_pt.z = __pyx_v_z;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":34
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":40
  *     pt.z=z;
  * 
  *     val = self.cobj.efield(pt,e)             # <<<<<<<<<<<<<<
@@ -8307,7 +8755,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct
  */
   __pyx_v_val = __pyx_v_self->cobj->efield(__pyx_v_pt, __pyx_v_e);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":36
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":42
  *     val = self.cobj.efield(pt,e)
  * 
  *     return (e.r, e.phi, e.z, val)             # <<<<<<<<<<<<<<
@@ -8315,15 +8763,15 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct
  *   def wpotential(self, point pt, np.ndarray[np.float32_t, ndim=1] wp_np):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_e.r); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 36, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_e.r); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_e.phi); if (unlikely(!__pyx_t_2)) __PYX_ERR(4, 36, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_e.phi); if (unlikely(!__pyx_t_2)) __PYX_ERR(4, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_e.z); if (unlikely(!__pyx_t_3)) __PYX_ERR(4, 36, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_e.z); if (unlikely(!__pyx_t_3)) __PYX_ERR(4, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_val); if (unlikely(!__pyx_t_4)) __PYX_ERR(4, 36, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyInt_From_int(__pyx_v_val); if (unlikely(!__pyx_t_4)) __PYX_ERR(4, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(4, 36, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(4, 42, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -8341,7 +8789,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":21
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":27
  *     return self.cobj.outside_detector(pt)
  * 
  *   def efield(self, float r, float z):             # <<<<<<<<<<<<<<
@@ -8364,7 +8812,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":38
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":44
  *     return (e.r, e.phi, e.z, val)
  * 
  *   def wpotential(self, point pt, np.ndarray[np.float32_t, ndim=1] wp_np):             # <<<<<<<<<<<<<<
@@ -8373,8 +8821,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_8efield(struct
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_11wpotential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_11wpotential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_15wpotential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_15wpotential(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   struct Siggen::point __pyx_v_pt;
   PyArrayObject *__pyx_v_wp_np = 0;
   PyObject *__pyx_r = 0;
@@ -8403,11 +8851,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_11wpotential(P
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_wp_np)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("wpotential", 1, 2, 2, 1); __PYX_ERR(4, 38, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("wpotential", 1, 2, 2, 1); __PYX_ERR(4, 44, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "wpotential") < 0)) __PYX_ERR(4, 38, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "wpotential") < 0)) __PYX_ERR(4, 44, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -8415,19 +8863,19 @@ static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_11wpotential(P
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(4, 38, __pyx_L3_error)
+    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(4, 44, __pyx_L3_error)
     __pyx_v_wp_np = ((PyArrayObject *)values[1]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("wpotential", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 38, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("wpotential", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 44, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_ICPC.wpotential", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_wp_np), __pyx_ptype_5numpy_ndarray, 1, "wp_np", 0))) __PYX_ERR(4, 38, __pyx_L1_error)
-  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10wpotential(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_pt, __pyx_v_wp_np);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_wp_np), __pyx_ptype_5numpy_ndarray, 1, "wp_np", 0))) __PYX_ERR(4, 44, __pyx_L1_error)
+  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_14wpotential(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_pt, __pyx_v_wp_np);
 
   /* function exit code */
   goto __pyx_L0;
@@ -8438,7 +8886,7 @@ static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_11wpotential(P
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10wpotential(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_wp_np) {
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_14wpotential(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, struct Siggen::point __pyx_v_pt, PyArrayObject *__pyx_v_wp_np) {
   std::vector<float>  __pyx_v_wp;
   int __pyx_v_val;
   PyObject *__pyx_v_i = NULL;
@@ -8459,29 +8907,29 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10wpotential(s
   __pyx_pybuffernd_wp_np.rcbuffer = &__pyx_pybuffer_wp_np;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_wp_np.rcbuffer->pybuffer, (PyObject*)__pyx_v_wp_np, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(4, 38, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_wp_np.rcbuffer->pybuffer, (PyObject*)__pyx_v_wp_np, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(4, 44, __pyx_L1_error)
   }
   __pyx_pybuffernd_wp_np.diminfo[0].strides = __pyx_pybuffernd_wp_np.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_wp_np.diminfo[0].shape = __pyx_pybuffernd_wp_np.rcbuffer->pybuffer.shape[0];
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":41
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":47
  *     # print (pt.x, pt.z, wp[0])
  *     cdef vector[float] wp
  *     wp.resize(wp_np.size)             # <<<<<<<<<<<<<<
  * 
  *     val = self.cobj.wpotential(pt,wp)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_wp_np), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 41, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_wp_np), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_2 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(4, 41, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_As_size_t(__pyx_t_1); if (unlikely((__pyx_t_2 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(4, 47, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   try {
     __pyx_v_wp.resize(__pyx_t_2);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(4, 41, __pyx_L1_error)
+    __PYX_ERR(4, 47, __pyx_L1_error)
   }
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":43
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":49
  *     wp.resize(wp_np.size)
  * 
  *     val = self.cobj.wpotential(pt,wp)             # <<<<<<<<<<<<<<
@@ -8490,30 +8938,30 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10wpotential(s
  */
   __pyx_v_val = __pyx_v_self->cobj->wpotential(__pyx_v_pt, __pyx_v_wp);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":45
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":51
  *     val = self.cobj.wpotential(pt,wp)
  * 
  *     for i in range(wp_np.size):             # <<<<<<<<<<<<<<
  *       wp_np[i] = wp[i]
  *     return val
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_wp_np), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 45, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_wp_np), __pyx_n_s_size); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(4, 45, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(4, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 45, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_3 = __pyx_t_1; __Pyx_INCREF(__pyx_t_3); __pyx_t_4 = 0;
     __pyx_t_5 = NULL;
   } else {
-    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(4, 45, __pyx_L1_error)
+    __pyx_t_4 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(4, 51, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(4, 45, __pyx_L1_error)
+    __pyx_t_5 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_5)) __PYX_ERR(4, 51, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -8521,17 +8969,17 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10wpotential(s
       if (likely(PyList_CheckExact(__pyx_t_3))) {
         if (__pyx_t_4 >= PyList_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(4, 45, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(4, 51, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 45, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 51, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_4 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(4, 45, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_4); __Pyx_INCREF(__pyx_t_1); __pyx_t_4++; if (unlikely(0 < 0)) __PYX_ERR(4, 51, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 45, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_3, __pyx_t_4); __pyx_t_4++; if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 51, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -8541,7 +8989,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10wpotential(s
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(4, 45, __pyx_L1_error)
+          else __PYX_ERR(4, 51, __pyx_L1_error)
         }
         break;
       }
@@ -8550,20 +8998,20 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10wpotential(s
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "siggen/geometries/TemplateWrapper_ICPC.pxi":46
+    /* "siggen/geometries/TemplateWrapper_ICPC.pxi":52
  * 
  *     for i in range(wp_np.size):
  *       wp_np[i] = wp[i]             # <<<<<<<<<<<<<<
  *     return val
  * 
  */
-    __pyx_t_6 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_6 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(4, 46, __pyx_L1_error)
-    __pyx_t_1 = PyFloat_FromDouble((__pyx_v_wp[__pyx_t_6])); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 46, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_6 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(4, 52, __pyx_L1_error)
+    __pyx_t_1 = PyFloat_FromDouble((__pyx_v_wp[__pyx_t_6])); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 52, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_wp_np), __pyx_v_i, __pyx_t_1) < 0)) __PYX_ERR(4, 46, __pyx_L1_error)
+    if (unlikely(PyObject_SetItem(((PyObject *)__pyx_v_wp_np), __pyx_v_i, __pyx_t_1) < 0)) __PYX_ERR(4, 52, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "siggen/geometries/TemplateWrapper_ICPC.pxi":45
+    /* "siggen/geometries/TemplateWrapper_ICPC.pxi":51
  *     val = self.cobj.wpotential(pt,wp)
  * 
  *     for i in range(wp_np.size):             # <<<<<<<<<<<<<<
@@ -8573,7 +9021,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10wpotential(s
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":47
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":53
  *     for i in range(wp_np.size):
  *       wp_np[i] = wp[i]
  *     return val             # <<<<<<<<<<<<<<
@@ -8581,13 +9029,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10wpotential(s
  *   def set_holes(self, mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_val); if (unlikely(!__pyx_t_3)) __PYX_ERR(4, 47, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_val); if (unlikely(!__pyx_t_3)) __PYX_ERR(4, 53, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":38
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":44
  *     return (e.r, e.phi, e.z, val)
  * 
  *   def wpotential(self, point pt, np.ndarray[np.float32_t, ndim=1] wp_np):             # <<<<<<<<<<<<<<
@@ -8617,7 +9065,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10wpotential(s
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":49
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":55
  *     return val
  * 
  *   def set_holes(self, mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111):             # <<<<<<<<<<<<<<
@@ -8626,8 +9074,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_10wpotential(s
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_13set_holes(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_13set_holes(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_17set_holes(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_17set_holes(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_mu0_100 = 0;
   PyObject *__pyx_v_beta_100 = 0;
   PyObject *__pyx_v_E_0_100 = 0;
@@ -8668,35 +9116,35 @@ static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_13set_holes(Py
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 1); __PYX_ERR(4, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 1); __PYX_ERR(4, 55, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 2); __PYX_ERR(4, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 2); __PYX_ERR(4, 55, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 3); __PYX_ERR(4, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 3); __PYX_ERR(4, 55, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 4); __PYX_ERR(4, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 4); __PYX_ERR(4, 55, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 5); __PYX_ERR(4, 49, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, 5); __PYX_ERR(4, 55, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_holes") < 0)) __PYX_ERR(4, 49, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_holes") < 0)) __PYX_ERR(4, 55, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 6) {
       goto __pyx_L5_argtuple_error;
@@ -8717,20 +9165,20 @@ static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_13set_holes(Py
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 49, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_holes", 1, 6, 6, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 55, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_ICPC.set_holes", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_12set_holes(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_16set_holes(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_12set_holes(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, PyObject *__pyx_v_mu0_100, PyObject *__pyx_v_beta_100, PyObject *__pyx_v_E_0_100, PyObject *__pyx_v_mu0_111, PyObject *__pyx_v_beta_111, PyObject *__pyx_v_E_0_111) {
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_16set_holes(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, PyObject *__pyx_v_mu0_100, PyObject *__pyx_v_beta_100, PyObject *__pyx_v_E_0_100, PyObject *__pyx_v_mu0_111, PyObject *__pyx_v_beta_111, PyObject *__pyx_v_E_0_111) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   float __pyx_t_1;
@@ -8742,7 +9190,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_12set_holes(st
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("set_holes", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":50
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":56
  * 
  *   def set_holes(self, mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111):
  *     return self.cobj.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)             # <<<<<<<<<<<<<<
@@ -8750,19 +9198,19 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_12set_holes(st
  *   def set_electrons(self, float mu0_100, float beta_100, float E_0_100,float mu_n_100,
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_PyFloat_AsFloat(__pyx_v_mu0_100); if (unlikely((__pyx_t_1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 50, __pyx_L1_error)
-  __pyx_t_2 = __pyx_PyFloat_AsFloat(__pyx_v_beta_100); if (unlikely((__pyx_t_2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 50, __pyx_L1_error)
-  __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_v_E_0_100); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 50, __pyx_L1_error)
-  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_v_mu0_111); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 50, __pyx_L1_error)
-  __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_v_beta_111); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 50, __pyx_L1_error)
-  __pyx_t_6 = __pyx_PyFloat_AsFloat(__pyx_v_E_0_111); if (unlikely((__pyx_t_6 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 50, __pyx_L1_error)
-  __pyx_t_7 = __Pyx_void_to_None(__pyx_v_self->cobj->set_holes(__pyx_t_1, __pyx_t_2, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6)); if (unlikely(!__pyx_t_7)) __PYX_ERR(4, 50, __pyx_L1_error)
+  __pyx_t_1 = __pyx_PyFloat_AsFloat(__pyx_v_mu0_100); if (unlikely((__pyx_t_1 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 56, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsFloat(__pyx_v_beta_100); if (unlikely((__pyx_t_2 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 56, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsFloat(__pyx_v_E_0_100); if (unlikely((__pyx_t_3 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 56, __pyx_L1_error)
+  __pyx_t_4 = __pyx_PyFloat_AsFloat(__pyx_v_mu0_111); if (unlikely((__pyx_t_4 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 56, __pyx_L1_error)
+  __pyx_t_5 = __pyx_PyFloat_AsFloat(__pyx_v_beta_111); if (unlikely((__pyx_t_5 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 56, __pyx_L1_error)
+  __pyx_t_6 = __pyx_PyFloat_AsFloat(__pyx_v_E_0_111); if (unlikely((__pyx_t_6 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 56, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_void_to_None(__pyx_v_self->cobj->set_holes(__pyx_t_1, __pyx_t_2, __pyx_t_3, __pyx_t_4, __pyx_t_5, __pyx_t_6)); if (unlikely(!__pyx_t_7)) __PYX_ERR(4, 56, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_r = __pyx_t_7;
   __pyx_t_7 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":49
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":55
  *     return val
  * 
  *   def set_holes(self, mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111):             # <<<<<<<<<<<<<<
@@ -8781,7 +9229,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_12set_holes(st
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":52
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":58
  *     return self.cobj.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
  * 
  *   def set_electrons(self, float mu0_100, float beta_100, float E_0_100,float mu_n_100,             # <<<<<<<<<<<<<<
@@ -8790,8 +9238,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_12set_holes(st
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_15set_electrons(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_15set_electrons(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_19set_electrons(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_19set_electrons(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   float __pyx_v_mu0_100;
   float __pyx_v_beta_100;
   float __pyx_v_E_0_100;
@@ -8838,47 +9286,47 @@ static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_15set_electron
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 1); __PYX_ERR(4, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 1); __PYX_ERR(4, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 2); __PYX_ERR(4, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 2); __PYX_ERR(4, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu_n_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 3); __PYX_ERR(4, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 3); __PYX_ERR(4, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 4); __PYX_ERR(4, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 4); __PYX_ERR(4, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 5); __PYX_ERR(4, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 5); __PYX_ERR(4, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
         if (likely((values[6] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 6); __PYX_ERR(4, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 6); __PYX_ERR(4, 58, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  7:
         if (likely((values[7] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu_n_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 7); __PYX_ERR(4, 52, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, 7); __PYX_ERR(4, 58, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_electrons") < 0)) __PYX_ERR(4, 52, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_electrons") < 0)) __PYX_ERR(4, 58, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 8) {
       goto __pyx_L5_argtuple_error;
@@ -8892,37 +9340,37 @@ static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_15set_electron
       values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
       values[7] = PyTuple_GET_ITEM(__pyx_args, 7);
     }
-    __pyx_v_mu0_100 = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_mu0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 52, __pyx_L3_error)
-    __pyx_v_beta_100 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_beta_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 52, __pyx_L3_error)
-    __pyx_v_E_0_100 = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_E_0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 52, __pyx_L3_error)
-    __pyx_v_mu_n_100 = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_mu_n_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 52, __pyx_L3_error)
-    __pyx_v_mu0_111 = __pyx_PyFloat_AsFloat(values[4]); if (unlikely((__pyx_v_mu0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 53, __pyx_L3_error)
-    __pyx_v_beta_111 = __pyx_PyFloat_AsFloat(values[5]); if (unlikely((__pyx_v_beta_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 53, __pyx_L3_error)
-    __pyx_v_E_0_111 = __pyx_PyFloat_AsFloat(values[6]); if (unlikely((__pyx_v_E_0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 53, __pyx_L3_error)
-    __pyx_v_mu_n_111 = __pyx_PyFloat_AsFloat(values[7]); if (unlikely((__pyx_v_mu_n_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 53, __pyx_L3_error)
+    __pyx_v_mu0_100 = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_mu0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 58, __pyx_L3_error)
+    __pyx_v_beta_100 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_beta_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 58, __pyx_L3_error)
+    __pyx_v_E_0_100 = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_E_0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 58, __pyx_L3_error)
+    __pyx_v_mu_n_100 = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_mu_n_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 58, __pyx_L3_error)
+    __pyx_v_mu0_111 = __pyx_PyFloat_AsFloat(values[4]); if (unlikely((__pyx_v_mu0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 59, __pyx_L3_error)
+    __pyx_v_beta_111 = __pyx_PyFloat_AsFloat(values[5]); if (unlikely((__pyx_v_beta_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 59, __pyx_L3_error)
+    __pyx_v_E_0_111 = __pyx_PyFloat_AsFloat(values[6]); if (unlikely((__pyx_v_E_0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 59, __pyx_L3_error)
+    __pyx_v_mu_n_111 = __pyx_PyFloat_AsFloat(values[7]); if (unlikely((__pyx_v_mu_n_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 59, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 52, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_electrons", 1, 8, 8, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 58, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_ICPC.set_electrons", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_14set_electrons(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_18set_electrons(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_14set_electrons(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111) {
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_18set_electrons(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("set_electrons", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":54
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":60
  *   def set_electrons(self, float mu0_100, float beta_100, float E_0_100,float mu_n_100,
  *                 float mu0_111, float beta_111, float E_0_111, float mu_n_111):
  *     return self.cobj.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)             # <<<<<<<<<<<<<<
@@ -8930,13 +9378,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_14set_electron
  *   def set_impurity_z0(self, float imp, float grad):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_electrons(__pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 54, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_electrons(__pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 60, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":52
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":58
  *     return self.cobj.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
  * 
  *   def set_electrons(self, float mu0_100, float beta_100, float E_0_100,float mu_n_100,             # <<<<<<<<<<<<<<
@@ -8955,7 +9403,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_14set_electron
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":56
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":62
  *     return self.cobj.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)
  * 
  *   def set_impurity_z0(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -8964,8 +9412,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_14set_electron
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_17set_impurity_z0(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_17set_impurity_z0(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_21set_impurity_z0(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_21set_impurity_z0(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   float __pyx_v_imp;
   float __pyx_v_grad;
   PyObject *__pyx_r = 0;
@@ -8994,11 +9442,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_17set_impurity
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_grad)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_impurity_z0", 1, 2, 2, 1); __PYX_ERR(4, 56, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_impurity_z0", 1, 2, 2, 1); __PYX_ERR(4, 62, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_impurity_z0") < 0)) __PYX_ERR(4, 56, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_impurity_z0") < 0)) __PYX_ERR(4, 62, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -9006,31 +9454,31 @@ static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_17set_impurity
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 56, __pyx_L3_error)
-    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 56, __pyx_L3_error)
+    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 62, __pyx_L3_error)
+    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 62, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_impurity_z0", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 56, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_impurity_z0", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 62, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_ICPC.set_impurity_z0", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_16set_impurity_z0(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_imp, __pyx_v_grad);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_20set_impurity_z0(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_imp, __pyx_v_grad);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_16set_impurity_z0(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_20set_impurity_z0(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("set_impurity_z0", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":57
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":63
  * 
  *   def set_impurity_z0(self, float imp, float grad):
  *     return self.cobj.set_impurity_z0(imp,grad)             # <<<<<<<<<<<<<<
@@ -9038,13 +9486,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_16set_impurity
  *   def set_impurity_avg(self, float imp, float grad):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_impurity_z0(__pyx_v_imp, __pyx_v_grad)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 57, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_impurity_z0(__pyx_v_imp, __pyx_v_grad)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 63, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":56
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":62
  *     return self.cobj.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)
  * 
  *   def set_impurity_z0(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -9063,7 +9511,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_16set_impurity
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":59
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":65
  *     return self.cobj.set_impurity_z0(imp,grad)
  * 
  *   def set_impurity_avg(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -9072,8 +9520,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_16set_impurity
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_19set_impurity_avg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_19set_impurity_avg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_23set_impurity_avg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_23set_impurity_avg(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   float __pyx_v_imp;
   float __pyx_v_grad;
   PyObject *__pyx_r = 0;
@@ -9102,11 +9550,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_19set_impurity
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_grad)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("set_impurity_avg", 1, 2, 2, 1); __PYX_ERR(4, 59, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("set_impurity_avg", 1, 2, 2, 1); __PYX_ERR(4, 65, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_impurity_avg") < 0)) __PYX_ERR(4, 59, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "set_impurity_avg") < 0)) __PYX_ERR(4, 65, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -9114,31 +9562,31 @@ static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_19set_impurity
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 59, __pyx_L3_error)
-    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 59, __pyx_L3_error)
+    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[0]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 65, __pyx_L3_error)
+    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 65, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("set_impurity_avg", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 59, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("set_impurity_avg", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 65, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.DetectorWrapper_ICPC.set_impurity_avg", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_18set_impurity_avg(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_imp, __pyx_v_grad);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_22set_impurity_avg(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), __pyx_v_imp, __pyx_v_grad);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_18set_impurity_avg(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_22set_impurity_avg(struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("set_impurity_avg", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":60
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":66
  * 
  *   def set_impurity_avg(self, float imp, float grad):
  *     return self.cobj.set_impurity_avg(imp,grad)             # <<<<<<<<<<<<<<
@@ -9146,13 +9594,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_18set_impurity
  *   #Getters and setters
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_impurity_avg(__pyx_v_imp, __pyx_v_grad)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 60, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_void_to_None(__pyx_v_self->cobj->set_impurity_avg(__pyx_v_imp, __pyx_v_grad)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":59
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":65
  *     return self.cobj.set_impurity_z0(imp,grad)
  * 
  *   def set_impurity_avg(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -9171,7 +9619,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_18set_impurity
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":65
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":71
  * 
  *   property xtal_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -9198,7 +9646,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_11xtal_radius_
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":66
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":72
  *   property xtal_radius:
  *     def __get__(self):
  *       return self.cobj.get_nsegments()             # <<<<<<<<<<<<<<
@@ -9206,13 +9654,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_11xtal_radius_
  *   property nsegments:
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_nsegments()); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 66, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_nsegments()); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":65
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":71
  * 
  *   property xtal_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -9231,7 +9679,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_11xtal_radius_
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":69
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":75
  * 
  *   property nsegments:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -9258,7 +9706,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_9nsegments___g
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":70
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":76
  *   property nsegments:
  *     def __get__(self):
  *       return self.cobj.get_nsegments()             # <<<<<<<<<<<<<<
@@ -9266,13 +9714,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_9nsegments___g
  *     #     self.cobj.some_var = var
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_nsegments()); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 70, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_nsegments()); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":69
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":75
  * 
  *   property nsegments:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -9291,7 +9739,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_9nsegments___g
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":77
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":83
  *     # def __get__(self):
  *     #   return self.cobj.get_output_length()
  *     def __set__(self, double trap_const):             # <<<<<<<<<<<<<<
@@ -9307,7 +9755,7 @@ static int __pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_17trapping_constant_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_trap_const); {
-    __pyx_v_trap_const = __pyx_PyFloat_AsDouble(__pyx_arg_trap_const); if (unlikely((__pyx_v_trap_const == (double)-1) && PyErr_Occurred())) __PYX_ERR(4, 77, __pyx_L3_error)
+    __pyx_v_trap_const = __pyx_PyFloat_AsDouble(__pyx_arg_trap_const); if (unlikely((__pyx_v_trap_const == (double)-1) && PyErr_Occurred())) __PYX_ERR(4, 83, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -9327,7 +9775,7 @@ static int __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_17trapping_constant_
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":78
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":84
  *     #   return self.cobj.get_output_length()
  *     def __set__(self, double trap_const):
  *       self.cobj.set_trapping(trap_const)             # <<<<<<<<<<<<<<
@@ -9336,7 +9784,7 @@ static int __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_17trapping_constant_
  */
   __pyx_v_self->cobj->set_trapping(__pyx_v_trap_const);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":77
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":83
  *     # def __get__(self):
  *     #   return self.cobj.get_output_length()
  *     def __set__(self, double trap_const):             # <<<<<<<<<<<<<<
@@ -9357,19 +9805,19 @@ static int __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_17trapping_constant_
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_21__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_21__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_25__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_25__reduce_cython__(PyObject *__pyx_v_self, CYTHON_UNUSED PyObject *unused) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_20__reduce_cython__(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self));
+  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_24__reduce_cython__(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_20__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self) {
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_24__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -9411,19 +9859,19 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_20__reduce_cyt
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_23__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
-static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_23__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_27__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_27__setstate_cython__(PyObject *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_22__setstate_cython__(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
+  __pyx_r = __pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_26__setstate_cython__(((struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *)__pyx_v_self), ((PyObject *)__pyx_v___pyx_state));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_22__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_26__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_DetectorWrapper_ICPC *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -9457,7 +9905,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_20DetectorWrapper_ICPC_22__setstate_c
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":85
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":91
  *   cdef SignalGenerator[ICPC]* cobj
  * 
  *   def __cinit__(self, DetectorWrapper_ICPC detector, PySetup setup):             # <<<<<<<<<<<<<<
@@ -9496,11 +9944,11 @@ static int __pyx_pw_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_1__cinit__(Py
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_setup)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(4, 85, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, 1); __PYX_ERR(4, 91, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(4, 85, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(4, 91, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -9513,14 +9961,14 @@ static int __pyx_pw_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_1__cinit__(Py
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 85, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 91, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.SignalGeneratorWrapper_ICPC.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_detector), __pyx_ptype_6siggen_7_siggen_DetectorWrapper_ICPC, 1, "detector", 0))) __PYX_ERR(4, 85, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_setup), __pyx_ptype_6siggen_7_siggen_PySetup, 1, "setup", 0))) __PYX_ERR(4, 85, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_detector), __pyx_ptype_6siggen_7_siggen_DetectorWrapper_ICPC, 1, "detector", 0))) __PYX_ERR(4, 91, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_setup), __pyx_ptype_6siggen_7_siggen_PySetup, 1, "setup", 0))) __PYX_ERR(4, 91, __pyx_L1_error)
   __pyx_r = __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC___cinit__(((struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_ICPC *)__pyx_v_self), __pyx_v_detector, __pyx_v_setup);
 
   /* function exit code */
@@ -9537,7 +9985,7 @@ static int __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC___cinit__(str
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":86
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":92
  * 
  *   def __cinit__(self, DetectorWrapper_ICPC detector, PySetup setup):
  *     self.cobj = new SignalGenerator[ICPC](detector.cobj, dereference(setup.cobj))             # <<<<<<<<<<<<<<
@@ -9546,7 +9994,7 @@ static int __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC___cinit__(str
  */
   __pyx_v_self->cobj = new Siggen::SignalGenerator<ICPC> (__pyx_v_detector->cobj, (*__pyx_v_setup->cobj));
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":85
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":91
  *   cdef SignalGenerator[ICPC]* cobj
  * 
  *   def __cinit__(self, DetectorWrapper_ICPC detector, PySetup setup):             # <<<<<<<<<<<<<<
@@ -9560,7 +10008,7 @@ static int __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC___cinit__(str
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":88
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":94
  *     self.cobj = new SignalGenerator[ICPC](detector.cobj, dereference(setup.cobj))
  * 
  *   def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -9583,7 +10031,7 @@ static void __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_2__dealloc__
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":89
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":95
  * 
  *   def __dealloc__(self):
  *     del self.cobj             # <<<<<<<<<<<<<<
@@ -9592,7 +10040,7 @@ static void __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_2__dealloc__
  */
   delete __pyx_v_self->cobj;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":88
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":94
  *     self.cobj = new SignalGenerator[ICPC](detector.cobj, dereference(setup.cobj))
  * 
  *   def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -9604,7 +10052,7 @@ static void __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_2__dealloc__
   __Pyx_RefNannyFinishContext();
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":91
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":97
  *     del self.cobj
  * 
  *   def make_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array, double q):             # <<<<<<<<<<<<<<
@@ -9646,17 +10094,17 @@ static PyObject *__pyx_pw_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_5make_s
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_signal_array)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, 1); __PYX_ERR(4, 91, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, 1); __PYX_ERR(4, 97, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_q)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, 2); __PYX_ERR(4, 91, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, 2); __PYX_ERR(4, 97, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "make_signal") < 0)) __PYX_ERR(4, 91, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "make_signal") < 0)) __PYX_ERR(4, 97, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -9665,19 +10113,19 @@ static PyObject *__pyx_pw_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_5make_s
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
-    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(4, 91, __pyx_L3_error)
+    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(4, 97, __pyx_L3_error)
     __pyx_v_signal_array = ((PyArrayObject *)values[1]);
-    __pyx_v_q = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_q == (double)-1) && PyErr_Occurred())) __PYX_ERR(4, 91, __pyx_L3_error)
+    __pyx_v_q = __pyx_PyFloat_AsDouble(values[2]); if (unlikely((__pyx_v_q == (double)-1) && PyErr_Occurred())) __PYX_ERR(4, 97, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 91, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("make_signal", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 97, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.SignalGeneratorWrapper_ICPC.make_signal", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_signal_array), __pyx_ptype_5numpy_ndarray, 1, "signal_array", 0))) __PYX_ERR(4, 91, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_signal_array), __pyx_ptype_5numpy_ndarray, 1, "signal_array", 0))) __PYX_ERR(4, 97, __pyx_L1_error)
   __pyx_r = __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_4make_signal(((struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_ICPC *)__pyx_v_self), __pyx_v_pt, __pyx_v_signal_array, __pyx_v_q);
 
   /* function exit code */
@@ -9704,11 +10152,11 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_4make_s
   __pyx_pybuffernd_signal_array.rcbuffer = &__pyx_pybuffer_signal_array;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_signal_array.rcbuffer->pybuffer, (PyObject*)__pyx_v_signal_array, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(4, 91, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_signal_array.rcbuffer->pybuffer, (PyObject*)__pyx_v_signal_array, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(4, 97, __pyx_L1_error)
   }
   __pyx_pybuffernd_signal_array.diminfo[0].strides = __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_signal_array.diminfo[0].shape = __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.shape[0];
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":92
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":98
  * 
  *   def make_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array, double q):
  *     return self.cobj.make_signal(pt, &signal_array[0], q)             # <<<<<<<<<<<<<<
@@ -9724,15 +10172,15 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_4make_s
   } else if (unlikely(__pyx_t_1 >= __pyx_pybuffernd_signal_array.diminfo[0].shape)) __pyx_t_2 = 0;
   if (unlikely(__pyx_t_2 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_2);
-    __PYX_ERR(4, 92, __pyx_L1_error)
+    __PYX_ERR(4, 98, __pyx_L1_error)
   }
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->make_signal(__pyx_v_pt, (&(*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float32_t *, __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_signal_array.diminfo[0].strides))), __pyx_v_q)); if (unlikely(!__pyx_t_3)) __PYX_ERR(4, 92, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->make_signal(__pyx_v_pt, (&(*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float32_t *, __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_signal_array.diminfo[0].strides))), __pyx_v_q)); if (unlikely(!__pyx_t_3)) __PYX_ERR(4, 98, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":91
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":97
  *     del self.cobj
  * 
  *   def make_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array, double q):             # <<<<<<<<<<<<<<
@@ -9760,7 +10208,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_4make_s
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":94
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":100
  *     return self.cobj.make_signal(pt, &signal_array[0], q)
  * 
  *   def get_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array):             # <<<<<<<<<<<<<<
@@ -9799,11 +10247,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_7get_si
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_signal_array)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("get_signal", 1, 2, 2, 1); __PYX_ERR(4, 94, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("get_signal", 1, 2, 2, 1); __PYX_ERR(4, 100, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_signal") < 0)) __PYX_ERR(4, 94, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "get_signal") < 0)) __PYX_ERR(4, 100, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -9811,18 +10259,18 @@ static PyObject *__pyx_pw_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_7get_si
       values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
-    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(4, 94, __pyx_L3_error)
+    __pyx_v_pt = __pyx_convert__from_py_struct__Siggen_3a__3a_point(values[0]); if (unlikely(PyErr_Occurred())) __PYX_ERR(4, 100, __pyx_L3_error)
     __pyx_v_signal_array = ((PyArrayObject *)values[1]);
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("get_signal", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 94, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("get_signal", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(4, 100, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.SignalGeneratorWrapper_ICPC.get_signal", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_signal_array), __pyx_ptype_5numpy_ndarray, 1, "signal_array", 0))) __PYX_ERR(4, 94, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_signal_array), __pyx_ptype_5numpy_ndarray, 1, "signal_array", 0))) __PYX_ERR(4, 100, __pyx_L1_error)
   __pyx_r = __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_6get_signal(((struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_ICPC *)__pyx_v_self), __pyx_v_pt, __pyx_v_signal_array);
 
   /* function exit code */
@@ -9849,11 +10297,11 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_6get_si
   __pyx_pybuffernd_signal_array.rcbuffer = &__pyx_pybuffer_signal_array;
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
-    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_signal_array.rcbuffer->pybuffer, (PyObject*)__pyx_v_signal_array, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(4, 94, __pyx_L1_error)
+    if (unlikely(__Pyx_GetBufferAndValidate(&__pyx_pybuffernd_signal_array.rcbuffer->pybuffer, (PyObject*)__pyx_v_signal_array, &__Pyx_TypeInfo_nn___pyx_t_5numpy_float32_t, PyBUF_FORMAT| PyBUF_STRIDES, 1, 0, __pyx_stack) == -1)) __PYX_ERR(4, 100, __pyx_L1_error)
   }
   __pyx_pybuffernd_signal_array.diminfo[0].strides = __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_signal_array.diminfo[0].shape = __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.shape[0];
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":95
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":101
  * 
  *   def get_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array):
  *     return self.cobj.get_signal(pt, &signal_array[0])             # <<<<<<<<<<<<<<
@@ -9869,15 +10317,15 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_6get_si
   } else if (unlikely(__pyx_t_1 >= __pyx_pybuffernd_signal_array.diminfo[0].shape)) __pyx_t_2 = 0;
   if (unlikely(__pyx_t_2 != -1)) {
     __Pyx_RaiseBufferIndexError(__pyx_t_2);
-    __PYX_ERR(4, 95, __pyx_L1_error)
+    __PYX_ERR(4, 101, __pyx_L1_error)
   }
-  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_signal(__pyx_v_pt, (&(*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float32_t *, __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_signal_array.diminfo[0].strides))))); if (unlikely(!__pyx_t_3)) __PYX_ERR(4, 95, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_signal(__pyx_v_pt, (&(*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_float32_t *, __pyx_pybuffernd_signal_array.rcbuffer->pybuffer.buf, __pyx_t_1, __pyx_pybuffernd_signal_array.diminfo[0].strides))))); if (unlikely(!__pyx_t_3)) __PYX_ERR(4, 101, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_r = __pyx_t_3;
   __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":94
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":100
  *     return self.cobj.make_signal(pt, &signal_array[0], q)
  * 
  *   def get_signal(self, point pt, np.ndarray[np.float32_t, ndim=1] signal_array):             # <<<<<<<<<<<<<<
@@ -9905,7 +10353,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_6get_si
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":97
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":103
  *     return self.cobj.get_signal(pt, &signal_array[0])
  * 
  *   def get_last_drifttime(self, float q):             # <<<<<<<<<<<<<<
@@ -9921,7 +10369,7 @@ static PyObject *__pyx_pw_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_9get_la
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_last_drifttime (wrapper)", 0);
   assert(__pyx_arg_q); {
-    __pyx_v_q = __pyx_PyFloat_AsFloat(__pyx_arg_q); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 97, __pyx_L3_error)
+    __pyx_v_q = __pyx_PyFloat_AsFloat(__pyx_arg_q); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 103, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -9942,7 +10390,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_8get_la
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_last_drifttime", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":98
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":104
  * 
  *   def get_last_drifttime(self, float q):
  *     return self.cobj.get_last_drifttime(q)             # <<<<<<<<<<<<<<
@@ -9950,13 +10398,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_8get_la
  *     return self.cobj.get_dwpot()
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_last_drifttime(__pyx_v_q)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 98, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_last_drifttime(__pyx_v_q)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":97
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":103
  *     return self.cobj.get_signal(pt, &signal_array[0])
  * 
  *   def get_last_drifttime(self, float q):             # <<<<<<<<<<<<<<
@@ -9975,7 +10423,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_8get_la
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":99
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":105
  *   def get_last_drifttime(self, float q):
  *     return self.cobj.get_last_drifttime(q)
  *   def get_dwpot(self):             # <<<<<<<<<<<<<<
@@ -10002,7 +10450,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_10get_d
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_dwpot", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":100
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":106
  *     return self.cobj.get_last_drifttime(q)
  *   def get_dwpot(self):
  *     return self.cobj.get_dwpot()             # <<<<<<<<<<<<<<
@@ -10010,13 +10458,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_10get_d
  *     return self.cobj.get_driftpath(q)
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_float(__pyx_v_self->cobj->get_dwpot()); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 100, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_float(__pyx_v_self->cobj->get_dwpot()); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":99
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":105
  *   def get_last_drifttime(self, float q):
  *     return self.cobj.get_last_drifttime(q)
  *   def get_dwpot(self):             # <<<<<<<<<<<<<<
@@ -10035,7 +10483,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_10get_d
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":101
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":107
  *   def get_dwpot(self):
  *     return self.cobj.get_dwpot()
  *   def get_driftpath(self, float q):             # <<<<<<<<<<<<<<
@@ -10051,7 +10499,7 @@ static PyObject *__pyx_pw_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_13get_d
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("get_driftpath (wrapper)", 0);
   assert(__pyx_arg_q); {
-    __pyx_v_q = __pyx_PyFloat_AsFloat(__pyx_arg_q); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 101, __pyx_L3_error)
+    __pyx_v_q = __pyx_PyFloat_AsFloat(__pyx_arg_q); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 107, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10072,7 +10520,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_12get_d
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("get_driftpath", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":102
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":108
  *     return self.cobj.get_dwpot()
  *   def get_driftpath(self, float q):
  *     return self.cobj.get_driftpath(q)             # <<<<<<<<<<<<<<
@@ -10080,13 +10528,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_12get_d
  *     def __get__(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_convert_vector_to_py_struct__Siggen_3a__3a_point(__pyx_v_self->cobj->get_driftpath(__pyx_v_q)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 102, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert_vector_to_py_struct__Siggen_3a__3a_point(__pyx_v_self->cobj->get_driftpath(__pyx_v_q)); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":101
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":107
  *   def get_dwpot(self):
  *     return self.cobj.get_dwpot()
  *   def get_driftpath(self, float q):             # <<<<<<<<<<<<<<
@@ -10105,7 +10553,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_12get_d
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":104
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":110
  *     return self.cobj.get_driftpath(q)
  *   property output_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -10132,7 +10580,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_13outpu
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":105
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":111
  *   property output_length:
  *     def __get__(self):
  *       return self.cobj.get_output_length()             # <<<<<<<<<<<<<<
@@ -10140,13 +10588,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_13outpu
  *     #     self.cobj.some_var = var
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_output_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 105, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_output_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":104
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":110
  *     return self.cobj.get_driftpath(q)
  *   property output_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -10165,7 +10613,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_13outpu
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":110
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":116
  * 
  *   property calc_timestep:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -10192,7 +10640,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_13calc_
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":111
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":117
  *   property calc_timestep:
  *     def __get__(self):
  *       return self.cobj.get_calc_timestep()             # <<<<<<<<<<<<<<
@@ -10200,13 +10648,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_13calc_
  *     def __set__(self, float ts):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_calc_timestep()); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 111, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_calc_timestep()); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":110
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":116
  * 
  *   property calc_timestep:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -10225,7 +10673,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_13calc_
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":113
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":119
  *       return self.cobj.get_calc_timestep()
  * 
  *     def __set__(self, float ts):             # <<<<<<<<<<<<<<
@@ -10241,7 +10689,7 @@ static int __pyx_pw_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_13calc_timest
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_ts); {
-    __pyx_v_ts = __pyx_PyFloat_AsFloat(__pyx_arg_ts); if (unlikely((__pyx_v_ts == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 113, __pyx_L3_error)
+    __pyx_v_ts = __pyx_PyFloat_AsFloat(__pyx_arg_ts); if (unlikely((__pyx_v_ts == (float)-1) && PyErr_Occurred())) __PYX_ERR(4, 119, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10261,7 +10709,7 @@ static int __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_13calc_timest
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":114
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":120
  * 
  *     def __set__(self, float ts):
  *        self.cobj.set_calc_timestep(ts)             # <<<<<<<<<<<<<<
@@ -10270,7 +10718,7 @@ static int __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_13calc_timest
  */
   __pyx_v_self->cobj->set_calc_timestep(__pyx_v_ts);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":113
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":119
  *       return self.cobj.get_calc_timestep()
  * 
  *     def __set__(self, float ts):             # <<<<<<<<<<<<<<
@@ -10284,7 +10732,7 @@ static int __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_13calc_timest
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":117
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":123
  * 
  *   property calc_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -10311,7 +10759,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_11calc_
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":118
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":124
  *   property calc_length:
  *     def __get__(self):
  *       return self.cobj.get_calc_length()             # <<<<<<<<<<<<<<
@@ -10319,13 +10767,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_11calc_
  *     def __set__(self, int nt):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_calc_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 118, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_self->cobj->get_calc_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(4, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":117
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":123
  * 
  *   property calc_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -10344,7 +10792,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_11calc_
   return __pyx_r;
 }
 
-/* "siggen/geometries/TemplateWrapper_ICPC.pxi":120
+/* "siggen/geometries/TemplateWrapper_ICPC.pxi":126
  *       return self.cobj.get_calc_length()
  * 
  *     def __set__(self, int nt):             # <<<<<<<<<<<<<<
@@ -10359,7 +10807,7 @@ static int __pyx_pw_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_11calc_length
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_nt); {
-    __pyx_v_nt = __Pyx_PyInt_As_int(__pyx_arg_nt); if (unlikely((__pyx_v_nt == (int)-1) && PyErr_Occurred())) __PYX_ERR(4, 120, __pyx_L3_error)
+    __pyx_v_nt = __Pyx_PyInt_As_int(__pyx_arg_nt); if (unlikely((__pyx_v_nt == (int)-1) && PyErr_Occurred())) __PYX_ERR(4, 126, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -10379,14 +10827,14 @@ static int __pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_11calc_length
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":121
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":127
  * 
  *     def __set__(self, int nt):
  *        self.cobj.set_calc_length(nt)             # <<<<<<<<<<<<<<
  */
   __pyx_v_self->cobj->set_calc_length(__pyx_v_nt);
 
-  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":120
+  /* "siggen/geometries/TemplateWrapper_ICPC.pxi":126
  *       return self.cobj.get_calc_length()
  * 
  *     def __set__(self, int nt):             # <<<<<<<<<<<<<<
@@ -14342,15 +14790,349 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_8InCrystal(CYTHON_UNUSED Py
 /* "siggen/PySiggen.pxi":67
  *   #Transparent setters/getters
  * 
+ *   def UseVeloModel(self, bool usemodel):             # <<<<<<<<<<<<<<
+ *     self.detector.set_use_velo_model(usemodel)
+ *   def SetTemp(self, float temp):
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_11UseVeloModel(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_11UseVeloModel = {"UseVeloModel", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_11UseVeloModel, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_11UseVeloModel(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_self = 0;
+  bool __pyx_v_usemodel;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("UseVeloModel (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,&__pyx_n_s_usemodel,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_self)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_usemodel)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("UseVeloModel", 1, 2, 2, 1); __PYX_ERR(7, 67, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "UseVeloModel") < 0)) __PYX_ERR(7, 67, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_self = values[0];
+    __pyx_v_usemodel = __Pyx_PyObject_IsTrue(values[1]); if (unlikely((__pyx_v_usemodel == ((bool)-1)) && PyErr_Occurred())) __PYX_ERR(7, 67, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("UseVeloModel", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 67, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("siggen._siggen.PySiggen.UseVeloModel", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_10UseVeloModel(__pyx_self, __pyx_v_self, __pyx_v_usemodel);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_10UseVeloModel(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, bool __pyx_v_usemodel) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  __Pyx_RefNannySetupContext("UseVeloModel", 0);
+
+  /* "siggen/PySiggen.pxi":68
+ * 
+ *   def UseVeloModel(self, bool usemodel):
+ *     self.detector.set_use_velo_model(usemodel)             # <<<<<<<<<<<<<<
+ *   def SetTemp(self, float temp):
+ *     self.detector.set_temp(temp)
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 68, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_set_use_velo_model); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 68, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = __Pyx_PyBool_FromLong(__pyx_v_usemodel); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 68, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
+  }
+  if (!__pyx_t_4) {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 68, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_GOTREF(__pyx_t_1);
+  } else {
+    #if CYTHON_FAST_PYCALL
+    if (PyFunction_Check(__pyx_t_3)) {
+      PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_2};
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 68, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    } else
+    #endif
+    #if CYTHON_FAST_PYCCALL
+    if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
+      PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_2};
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 68, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    } else
+    #endif
+    {
+      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 68, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
+      __Pyx_GIVEREF(__pyx_t_2);
+      PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_2);
+      __pyx_t_2 = 0;
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 68, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    }
+  }
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "siggen/PySiggen.pxi":67
+ *   #Transparent setters/getters
+ * 
+ *   def UseVeloModel(self, bool usemodel):             # <<<<<<<<<<<<<<
+ *     self.detector.set_use_velo_model(usemodel)
+ *   def SetTemp(self, float temp):
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("siggen._siggen.PySiggen.UseVeloModel", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "siggen/PySiggen.pxi":69
+ *   def UseVeloModel(self, bool usemodel):
+ *     self.detector.set_use_velo_model(usemodel)
+ *   def SetTemp(self, float temp):             # <<<<<<<<<<<<<<
+ *     self.detector.set_temp(temp)
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_13SetTemp(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_13SetTemp = {"SetTemp", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_13SetTemp, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_13SetTemp(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_self = 0;
+  float __pyx_v_temp;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("SetTemp (wrapper)", 0);
+  {
+    static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,&__pyx_n_s_temp,0};
+    PyObject* values[2] = {0,0};
+    if (unlikely(__pyx_kwds)) {
+      Py_ssize_t kw_args;
+      const Py_ssize_t pos_args = PyTuple_GET_SIZE(__pyx_args);
+      switch (pos_args) {
+        case  2: values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = PyDict_Size(__pyx_kwds);
+      switch (pos_args) {
+        case  0:
+        if (likely((values[0] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_self)) != 0)) kw_args--;
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_temp)) != 0)) kw_args--;
+        else {
+          __Pyx_RaiseArgtupleInvalid("SetTemp", 1, 2, 2, 1); __PYX_ERR(7, 69, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetTemp") < 0)) __PYX_ERR(7, 69, __pyx_L3_error)
+      }
+    } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = PyTuple_GET_ITEM(__pyx_args, 0);
+      values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
+    }
+    __pyx_v_self = values[0];
+    __pyx_v_temp = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_temp == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 69, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("SetTemp", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 69, __pyx_L3_error)
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("siggen._siggen.PySiggen.SetTemp", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_12SetTemp(__pyx_self, __pyx_v_self, __pyx_v_temp);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_12SetTemp(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_temp) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  __Pyx_RefNannySetupContext("SetTemp", 0);
+
+  /* "siggen/PySiggen.pxi":70
+ *     self.detector.set_use_velo_model(usemodel)
+ *   def SetTemp(self, float temp):
+ *     self.detector.set_temp(temp)             # <<<<<<<<<<<<<<
+ * 
+ *   def SetHoles(self,float mu0_100, float beta_100, float E_0_100,
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 70, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_set_temp); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 70, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_temp); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 70, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_4 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+    }
+  }
+  if (!__pyx_t_4) {
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 70, __pyx_L1_error)
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __Pyx_GOTREF(__pyx_t_1);
+  } else {
+    #if CYTHON_FAST_PYCALL
+    if (PyFunction_Check(__pyx_t_3)) {
+      PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_2};
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 70, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    } else
+    #endif
+    #if CYTHON_FAST_PYCCALL
+    if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
+      PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_2};
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 70, __pyx_L1_error)
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    } else
+    #endif
+    {
+      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 70, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_5);
+      __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
+      __Pyx_GIVEREF(__pyx_t_2);
+      PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_2);
+      __pyx_t_2 = 0;
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 70, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    }
+  }
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "siggen/PySiggen.pxi":69
+ *   def UseVeloModel(self, bool usemodel):
+ *     self.detector.set_use_velo_model(usemodel)
+ *   def SetTemp(self, float temp):             # <<<<<<<<<<<<<<
+ *     self.detector.set_temp(temp)
+ * 
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("siggen._siggen.PySiggen.SetTemp", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "siggen/PySiggen.pxi":72
+ *     self.detector.set_temp(temp)
+ * 
  *   def SetHoles(self,float mu0_100, float beta_100, float E_0_100,             # <<<<<<<<<<<<<<
  *                  float mu0_111, float beta_111, float E_0_111):
  *        self.detector.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_11SetHoles(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_11SetHoles = {"SetHoles", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_11SetHoles, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_11SetHoles(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_15SetHoles(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_15SetHoles = {"SetHoles", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_15SetHoles, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_15SetHoles(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   float __pyx_v_mu0_100;
   float __pyx_v_beta_100;
@@ -14394,41 +15176,41 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_11SetHoles(PyObject *__pyx_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu0_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, 1); __PYX_ERR(7, 67, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, 1); __PYX_ERR(7, 72, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, 2); __PYX_ERR(7, 67, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, 2); __PYX_ERR(7, 72, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, 3); __PYX_ERR(7, 67, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, 3); __PYX_ERR(7, 72, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, 4); __PYX_ERR(7, 67, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, 4); __PYX_ERR(7, 72, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, 5); __PYX_ERR(7, 67, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, 5); __PYX_ERR(7, 72, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
         if (likely((values[6] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, 6); __PYX_ERR(7, 67, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, 6); __PYX_ERR(7, 72, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetHoles") < 0)) __PYX_ERR(7, 67, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetHoles") < 0)) __PYX_ERR(7, 72, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 7) {
       goto __pyx_L5_argtuple_error;
@@ -14442,29 +15224,29 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_11SetHoles(PyObject *__pyx_
       values[6] = PyTuple_GET_ITEM(__pyx_args, 6);
     }
     __pyx_v_self = values[0];
-    __pyx_v_mu0_100 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_mu0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 67, __pyx_L3_error)
-    __pyx_v_beta_100 = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_beta_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 67, __pyx_L3_error)
-    __pyx_v_E_0_100 = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_E_0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 67, __pyx_L3_error)
-    __pyx_v_mu0_111 = __pyx_PyFloat_AsFloat(values[4]); if (unlikely((__pyx_v_mu0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 68, __pyx_L3_error)
-    __pyx_v_beta_111 = __pyx_PyFloat_AsFloat(values[5]); if (unlikely((__pyx_v_beta_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 68, __pyx_L3_error)
-    __pyx_v_E_0_111 = __pyx_PyFloat_AsFloat(values[6]); if (unlikely((__pyx_v_E_0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 68, __pyx_L3_error)
+    __pyx_v_mu0_100 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_mu0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 72, __pyx_L3_error)
+    __pyx_v_beta_100 = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_beta_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 72, __pyx_L3_error)
+    __pyx_v_E_0_100 = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_E_0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 72, __pyx_L3_error)
+    __pyx_v_mu0_111 = __pyx_PyFloat_AsFloat(values[4]); if (unlikely((__pyx_v_mu0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 73, __pyx_L3_error)
+    __pyx_v_beta_111 = __pyx_PyFloat_AsFloat(values[5]); if (unlikely((__pyx_v_beta_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 73, __pyx_L3_error)
+    __pyx_v_E_0_111 = __pyx_PyFloat_AsFloat(values[6]); if (unlikely((__pyx_v_E_0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 73, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 67, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("SetHoles", 1, 7, 7, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 72, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PySiggen.SetHoles", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_10SetHoles(__pyx_self, __pyx_v_self, __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_14SetHoles(__pyx_self, __pyx_v_self, __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_10SetHoles(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_14SetHoles(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -14480,29 +15262,29 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_10SetHoles(CYTHON_UNUSED Py
   PyObject *__pyx_t_11 = NULL;
   __Pyx_RefNannySetupContext("SetHoles", 0);
 
-  /* "siggen/PySiggen.pxi":69
+  /* "siggen/PySiggen.pxi":74
  *   def SetHoles(self,float mu0_100, float beta_100, float E_0_100,
  *                  float mu0_111, float beta_111, float E_0_111):
  *        self.detector.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)             # <<<<<<<<<<<<<<
  *   def SetElectrons(self,float mu0_100, float beta_100, float E_0_100,float mu_n_100,
  *                 float mu0_111, float beta_111, float E_0_111, float mu_n_111):
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 69, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_set_holes); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 69, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_set_holes); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_mu0_100); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 69, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_mu0_100); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_beta_100); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 69, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_beta_100); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_E_0_100); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 69, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_E_0_100); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_mu0_111); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 69, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_mu0_111); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = PyFloat_FromDouble(__pyx_v_beta_111); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 69, __pyx_L1_error)
+  __pyx_t_7 = PyFloat_FromDouble(__pyx_v_beta_111); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = PyFloat_FromDouble(__pyx_v_E_0_111); if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 69, __pyx_L1_error)
+  __pyx_t_8 = PyFloat_FromDouble(__pyx_v_E_0_111); if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __pyx_t_9 = NULL;
   __pyx_t_10 = 0;
@@ -14519,7 +15301,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_10SetHoles(CYTHON_UNUSED Py
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[7] = {__pyx_t_9, __pyx_t_2, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7, __pyx_t_8};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_10, 6+__pyx_t_10); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 69, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_10, 6+__pyx_t_10); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 74, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -14533,7 +15315,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_10SetHoles(CYTHON_UNUSED Py
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[7] = {__pyx_t_9, __pyx_t_2, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7, __pyx_t_8};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_10, 6+__pyx_t_10); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 69, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_10, 6+__pyx_t_10); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 74, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -14545,7 +15327,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_10SetHoles(CYTHON_UNUSED Py
   } else
   #endif
   {
-    __pyx_t_11 = PyTuple_New(6+__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(7, 69, __pyx_L1_error)
+    __pyx_t_11 = PyTuple_New(6+__pyx_t_10); if (unlikely(!__pyx_t_11)) __PYX_ERR(7, 74, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_11);
     if (__pyx_t_9) {
       __Pyx_GIVEREF(__pyx_t_9); PyTuple_SET_ITEM(__pyx_t_11, 0, __pyx_t_9); __pyx_t_9 = NULL;
@@ -14568,15 +15350,15 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_10SetHoles(CYTHON_UNUSED Py
     __pyx_t_6 = 0;
     __pyx_t_7 = 0;
     __pyx_t_8 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_11, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 69, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_11, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 74, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_11); __pyx_t_11 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/PySiggen.pxi":67
- *   #Transparent setters/getters
+  /* "siggen/PySiggen.pxi":72
+ *     self.detector.set_temp(temp)
  * 
  *   def SetHoles(self,float mu0_100, float beta_100, float E_0_100,             # <<<<<<<<<<<<<<
  *                  float mu0_111, float beta_111, float E_0_111):
@@ -14605,7 +15387,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_10SetHoles(CYTHON_UNUSED Py
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":70
+/* "siggen/PySiggen.pxi":75
  *                  float mu0_111, float beta_111, float E_0_111):
  *        self.detector.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
  *   def SetElectrons(self,float mu0_100, float beta_100, float E_0_100,float mu_n_100,             # <<<<<<<<<<<<<<
@@ -14614,9 +15396,9 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_10SetHoles(CYTHON_UNUSED Py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_13SetElectrons(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_13SetElectrons = {"SetElectrons", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_13SetElectrons, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_13SetElectrons(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_17SetElectrons(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_17SetElectrons = {"SetElectrons", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_17SetElectrons, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_17SetElectrons(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   float __pyx_v_mu0_100;
   float __pyx_v_beta_100;
@@ -14666,53 +15448,53 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_13SetElectrons(PyObject *__
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu0_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 1); __PYX_ERR(7, 70, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 1); __PYX_ERR(7, 75, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 2); __PYX_ERR(7, 70, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 2); __PYX_ERR(7, 75, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 3); __PYX_ERR(7, 70, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 3); __PYX_ERR(7, 75, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
         if (likely((values[4] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu_n_100)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 4); __PYX_ERR(7, 70, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 4); __PYX_ERR(7, 75, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  5:
         if (likely((values[5] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 5); __PYX_ERR(7, 70, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 5); __PYX_ERR(7, 75, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  6:
         if (likely((values[6] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_beta_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 6); __PYX_ERR(7, 70, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 6); __PYX_ERR(7, 75, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  7:
         if (likely((values[7] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_E_0_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 7); __PYX_ERR(7, 70, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 7); __PYX_ERR(7, 75, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  8:
         if (likely((values[8] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mu_n_111)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 8); __PYX_ERR(7, 70, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, 8); __PYX_ERR(7, 75, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetElectrons") < 0)) __PYX_ERR(7, 70, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetElectrons") < 0)) __PYX_ERR(7, 75, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 9) {
       goto __pyx_L5_argtuple_error;
@@ -14728,31 +15510,31 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_13SetElectrons(PyObject *__
       values[8] = PyTuple_GET_ITEM(__pyx_args, 8);
     }
     __pyx_v_self = values[0];
-    __pyx_v_mu0_100 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_mu0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 70, __pyx_L3_error)
-    __pyx_v_beta_100 = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_beta_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 70, __pyx_L3_error)
-    __pyx_v_E_0_100 = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_E_0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 70, __pyx_L3_error)
-    __pyx_v_mu_n_100 = __pyx_PyFloat_AsFloat(values[4]); if (unlikely((__pyx_v_mu_n_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 70, __pyx_L3_error)
-    __pyx_v_mu0_111 = __pyx_PyFloat_AsFloat(values[5]); if (unlikely((__pyx_v_mu0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 71, __pyx_L3_error)
-    __pyx_v_beta_111 = __pyx_PyFloat_AsFloat(values[6]); if (unlikely((__pyx_v_beta_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 71, __pyx_L3_error)
-    __pyx_v_E_0_111 = __pyx_PyFloat_AsFloat(values[7]); if (unlikely((__pyx_v_E_0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 71, __pyx_L3_error)
-    __pyx_v_mu_n_111 = __pyx_PyFloat_AsFloat(values[8]); if (unlikely((__pyx_v_mu_n_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 71, __pyx_L3_error)
+    __pyx_v_mu0_100 = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_mu0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 75, __pyx_L3_error)
+    __pyx_v_beta_100 = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_beta_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 75, __pyx_L3_error)
+    __pyx_v_E_0_100 = __pyx_PyFloat_AsFloat(values[3]); if (unlikely((__pyx_v_E_0_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 75, __pyx_L3_error)
+    __pyx_v_mu_n_100 = __pyx_PyFloat_AsFloat(values[4]); if (unlikely((__pyx_v_mu_n_100 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 75, __pyx_L3_error)
+    __pyx_v_mu0_111 = __pyx_PyFloat_AsFloat(values[5]); if (unlikely((__pyx_v_mu0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 76, __pyx_L3_error)
+    __pyx_v_beta_111 = __pyx_PyFloat_AsFloat(values[6]); if (unlikely((__pyx_v_beta_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 76, __pyx_L3_error)
+    __pyx_v_E_0_111 = __pyx_PyFloat_AsFloat(values[7]); if (unlikely((__pyx_v_E_0_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 76, __pyx_L3_error)
+    __pyx_v_mu_n_111 = __pyx_PyFloat_AsFloat(values[8]); if (unlikely((__pyx_v_mu_n_111 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 76, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 70, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("SetElectrons", 1, 9, 9, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 75, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PySiggen.SetElectrons", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_12SetElectrons(__pyx_self, __pyx_v_self, __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_16SetElectrons(__pyx_self, __pyx_v_self, __pyx_v_mu0_100, __pyx_v_beta_100, __pyx_v_E_0_100, __pyx_v_mu_n_100, __pyx_v_mu0_111, __pyx_v_beta_111, __pyx_v_E_0_111, __pyx_v_mu_n_111);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_12SetElectrons(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_16SetElectrons(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_mu0_100, float __pyx_v_beta_100, float __pyx_v_E_0_100, float __pyx_v_mu_n_100, float __pyx_v_mu0_111, float __pyx_v_beta_111, float __pyx_v_E_0_111, float __pyx_v_mu_n_111) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -14770,33 +15552,33 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_12SetElectrons(CYTHON_UNUSE
   PyObject *__pyx_t_13 = NULL;
   __Pyx_RefNannySetupContext("SetElectrons", 0);
 
-  /* "siggen/PySiggen.pxi":72
+  /* "siggen/PySiggen.pxi":77
  *   def SetElectrons(self,float mu0_100, float beta_100, float E_0_100,float mu_n_100,
  *                 float mu0_111, float beta_111, float E_0_111, float mu_n_111):
  *       self.detector.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)             # <<<<<<<<<<<<<<
  * 
  *   def GetMaxRadius(self):
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 72, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_set_electrons); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 72, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_set_electrons); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_mu0_100); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 72, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_mu0_100); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_beta_100); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 72, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_beta_100); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_E_0_100); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 72, __pyx_L1_error)
+  __pyx_t_5 = PyFloat_FromDouble(__pyx_v_E_0_100); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_mu_n_100); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 72, __pyx_L1_error)
+  __pyx_t_6 = PyFloat_FromDouble(__pyx_v_mu_n_100); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = PyFloat_FromDouble(__pyx_v_mu0_111); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 72, __pyx_L1_error)
+  __pyx_t_7 = PyFloat_FromDouble(__pyx_v_mu0_111); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_8 = PyFloat_FromDouble(__pyx_v_beta_111); if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 72, __pyx_L1_error)
+  __pyx_t_8 = PyFloat_FromDouble(__pyx_v_beta_111); if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_9 = PyFloat_FromDouble(__pyx_v_E_0_111); if (unlikely(!__pyx_t_9)) __PYX_ERR(7, 72, __pyx_L1_error)
+  __pyx_t_9 = PyFloat_FromDouble(__pyx_v_E_0_111); if (unlikely(!__pyx_t_9)) __PYX_ERR(7, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
-  __pyx_t_10 = PyFloat_FromDouble(__pyx_v_mu_n_111); if (unlikely(!__pyx_t_10)) __PYX_ERR(7, 72, __pyx_L1_error)
+  __pyx_t_10 = PyFloat_FromDouble(__pyx_v_mu_n_111); if (unlikely(!__pyx_t_10)) __PYX_ERR(7, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   __pyx_t_11 = NULL;
   __pyx_t_12 = 0;
@@ -14813,7 +15595,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_12SetElectrons(CYTHON_UNUSE
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[9] = {__pyx_t_11, __pyx_t_2, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7, __pyx_t_8, __pyx_t_9, __pyx_t_10};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_12, 8+__pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 72, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_12, 8+__pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 77, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -14829,7 +15611,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_12SetElectrons(CYTHON_UNUSE
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[9] = {__pyx_t_11, __pyx_t_2, __pyx_t_4, __pyx_t_5, __pyx_t_6, __pyx_t_7, __pyx_t_8, __pyx_t_9, __pyx_t_10};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_12, 8+__pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 72, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_12, 8+__pyx_t_12); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 77, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_11); __pyx_t_11 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -14843,7 +15625,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_12SetElectrons(CYTHON_UNUSE
   } else
   #endif
   {
-    __pyx_t_13 = PyTuple_New(8+__pyx_t_12); if (unlikely(!__pyx_t_13)) __PYX_ERR(7, 72, __pyx_L1_error)
+    __pyx_t_13 = PyTuple_New(8+__pyx_t_12); if (unlikely(!__pyx_t_13)) __PYX_ERR(7, 77, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_13);
     if (__pyx_t_11) {
       __Pyx_GIVEREF(__pyx_t_11); PyTuple_SET_ITEM(__pyx_t_13, 0, __pyx_t_11); __pyx_t_11 = NULL;
@@ -14872,14 +15654,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_12SetElectrons(CYTHON_UNUSE
     __pyx_t_8 = 0;
     __pyx_t_9 = 0;
     __pyx_t_10 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_13, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 72, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_13, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 77, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/PySiggen.pxi":70
+  /* "siggen/PySiggen.pxi":75
  *                  float mu0_111, float beta_111, float E_0_111):
  *        self.detector.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
  *   def SetElectrons(self,float mu0_100, float beta_100, float E_0_100,float mu_n_100,             # <<<<<<<<<<<<<<
@@ -14911,7 +15693,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_12SetElectrons(CYTHON_UNUSE
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":74
+/* "siggen/PySiggen.pxi":79
  *       self.detector.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)
  * 
  *   def GetMaxRadius(self):             # <<<<<<<<<<<<<<
@@ -14920,27 +15702,27 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_12SetElectrons(CYTHON_UNUSE
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_15GetMaxRadius(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_15GetMaxRadius = {"GetMaxRadius", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_15GetMaxRadius, METH_O, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_15GetMaxRadius(PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_19GetMaxRadius(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_19GetMaxRadius = {"GetMaxRadius", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_19GetMaxRadius, METH_O, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_19GetMaxRadius(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("GetMaxRadius (wrapper)", 0);
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_14GetMaxRadius(__pyx_self, ((PyObject *)__pyx_v_self));
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_18GetMaxRadius(__pyx_self, ((PyObject *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_14GetMaxRadius(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_18GetMaxRadius(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("GetMaxRadius", 0);
 
-  /* "siggen/PySiggen.pxi":75
+  /* "siggen/PySiggen.pxi":80
  * 
  *   def GetMaxRadius(self):
  *     return self.geometry.xtal_radius             # <<<<<<<<<<<<<<
@@ -14948,16 +15730,16 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_14GetMaxRadius(CYTHON_UNUSE
  *     return self.geometry.xtal_length
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_geometry); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 75, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_geometry); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_xtal_radius); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 75, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_xtal_radius); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 80, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "siggen/PySiggen.pxi":74
+  /* "siggen/PySiggen.pxi":79
  *       self.detector.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)
  * 
  *   def GetMaxRadius(self):             # <<<<<<<<<<<<<<
@@ -14977,7 +15759,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_14GetMaxRadius(CYTHON_UNUSE
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":76
+/* "siggen/PySiggen.pxi":81
  *   def GetMaxRadius(self):
  *     return self.geometry.xtal_radius
  *   def GetMaxZ(self):             # <<<<<<<<<<<<<<
@@ -14986,27 +15768,27 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_14GetMaxRadius(CYTHON_UNUSE
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_17GetMaxZ(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_17GetMaxZ = {"GetMaxZ", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_17GetMaxZ, METH_O, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_17GetMaxZ(PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_21GetMaxZ(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_21GetMaxZ = {"GetMaxZ", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_21GetMaxZ, METH_O, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_21GetMaxZ(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("GetMaxZ (wrapper)", 0);
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_16GetMaxZ(__pyx_self, ((PyObject *)__pyx_v_self));
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_20GetMaxZ(__pyx_self, ((PyObject *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_16GetMaxZ(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_20GetMaxZ(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("GetMaxZ", 0);
 
-  /* "siggen/PySiggen.pxi":77
+  /* "siggen/PySiggen.pxi":82
  *     return self.geometry.xtal_radius
  *   def GetMaxZ(self):
  *     return self.geometry.xtal_length             # <<<<<<<<<<<<<<
@@ -15014,16 +15796,16 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_16GetMaxZ(CYTHON_UNUSED PyO
  *   def GetNumSegments(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_geometry); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 77, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_geometry); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 82, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_xtal_length); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 77, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_xtal_length); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 82, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "siggen/PySiggen.pxi":76
+  /* "siggen/PySiggen.pxi":81
  *   def GetMaxRadius(self):
  *     return self.geometry.xtal_radius
  *   def GetMaxZ(self):             # <<<<<<<<<<<<<<
@@ -15043,7 +15825,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_16GetMaxZ(CYTHON_UNUSED PyO
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":79
+/* "siggen/PySiggen.pxi":84
  *     return self.geometry.xtal_length
  * 
  *   def GetNumSegments(self):             # <<<<<<<<<<<<<<
@@ -15052,27 +15834,27 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_16GetMaxZ(CYTHON_UNUSED PyO
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_19GetNumSegments(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_19GetNumSegments = {"GetNumSegments", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_19GetNumSegments, METH_O, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_19GetNumSegments(PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_23GetNumSegments(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_23GetNumSegments = {"GetNumSegments", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_23GetNumSegments, METH_O, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_23GetNumSegments(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("GetNumSegments (wrapper)", 0);
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_18GetNumSegments(__pyx_self, ((PyObject *)__pyx_v_self));
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_22GetNumSegments(__pyx_self, ((PyObject *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_18GetNumSegments(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_22GetNumSegments(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("GetNumSegments", 0);
 
-  /* "siggen/PySiggen.pxi":80
+  /* "siggen/PySiggen.pxi":85
  * 
  *   def GetNumSegments(self):
  *     return self.detector.nsegments             # <<<<<<<<<<<<<<
@@ -15080,16 +15862,16 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_18GetNumSegments(CYTHON_UNU
  *     return self.siggen.output_length
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 80, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 85, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_nsegments); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 80, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_nsegments); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 85, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "siggen/PySiggen.pxi":79
+  /* "siggen/PySiggen.pxi":84
  *     return self.geometry.xtal_length
  * 
  *   def GetNumSegments(self):             # <<<<<<<<<<<<<<
@@ -15109,7 +15891,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_18GetNumSegments(CYTHON_UNU
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":81
+/* "siggen/PySiggen.pxi":86
  *   def GetNumSegments(self):
  *     return self.detector.nsegments
  *   def GetNumSteps(self):             # <<<<<<<<<<<<<<
@@ -15118,27 +15900,27 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_18GetNumSegments(CYTHON_UNU
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_21GetNumSteps(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_21GetNumSteps = {"GetNumSteps", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_21GetNumSteps, METH_O, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_21GetNumSteps(PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_25GetNumSteps(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_25GetNumSteps = {"GetNumSteps", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_25GetNumSteps, METH_O, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_25GetNumSteps(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("GetNumSteps (wrapper)", 0);
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_20GetNumSteps(__pyx_self, ((PyObject *)__pyx_v_self));
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_24GetNumSteps(__pyx_self, ((PyObject *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_20GetNumSteps(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_24GetNumSteps(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("GetNumSteps", 0);
 
-  /* "siggen/PySiggen.pxi":82
+  /* "siggen/PySiggen.pxi":87
  *     return self.detector.nsegments
  *   def GetNumSteps(self):
  *     return self.siggen.output_length             # <<<<<<<<<<<<<<
@@ -15146,16 +15928,16 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_20GetNumSteps(CYTHON_UNUSED
  *   def GetNumStepsCalc(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 82, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_output_length); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 82, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_output_length); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 87, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "siggen/PySiggen.pxi":81
+  /* "siggen/PySiggen.pxi":86
  *   def GetNumSegments(self):
  *     return self.detector.nsegments
  *   def GetNumSteps(self):             # <<<<<<<<<<<<<<
@@ -15175,7 +15957,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_20GetNumSteps(CYTHON_UNUSED
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":84
+/* "siggen/PySiggen.pxi":89
  *     return self.siggen.output_length
  * 
  *   def GetNumStepsCalc(self):             # <<<<<<<<<<<<<<
@@ -15184,27 +15966,27 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_20GetNumSteps(CYTHON_UNUSED
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_23GetNumStepsCalc(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_23GetNumStepsCalc = {"GetNumStepsCalc", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_23GetNumStepsCalc, METH_O, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_23GetNumStepsCalc(PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_27GetNumStepsCalc(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_27GetNumStepsCalc = {"GetNumStepsCalc", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_27GetNumStepsCalc, METH_O, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_27GetNumStepsCalc(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("GetNumStepsCalc (wrapper)", 0);
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_22GetNumStepsCalc(__pyx_self, ((PyObject *)__pyx_v_self));
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_26GetNumStepsCalc(__pyx_self, ((PyObject *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_22GetNumStepsCalc(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_26GetNumStepsCalc(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("GetNumStepsCalc", 0);
 
-  /* "siggen/PySiggen.pxi":85
+  /* "siggen/PySiggen.pxi":90
  * 
  *   def GetNumStepsCalc(self):
  *     return self.siggen.calc_length             # <<<<<<<<<<<<<<
@@ -15212,16 +15994,16 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_22GetNumStepsCalc(CYTHON_UN
  *     self.siggen.calc_length = nt
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 85, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 90, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_calc_length); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 85, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_calc_length); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 90, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "siggen/PySiggen.pxi":84
+  /* "siggen/PySiggen.pxi":89
  *     return self.siggen.output_length
  * 
  *   def GetNumStepsCalc(self):             # <<<<<<<<<<<<<<
@@ -15241,7 +16023,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_22GetNumStepsCalc(CYTHON_UN
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":86
+/* "siggen/PySiggen.pxi":91
  *   def GetNumStepsCalc(self):
  *     return self.siggen.calc_length
  *   def SetCalcLength(self, int nt):             # <<<<<<<<<<<<<<
@@ -15250,9 +16032,9 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_22GetNumStepsCalc(CYTHON_UN
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_25SetCalcLength(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_25SetCalcLength = {"SetCalcLength", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_25SetCalcLength, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_25SetCalcLength(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_29SetCalcLength(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_29SetCalcLength = {"SetCalcLength", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_29SetCalcLength, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_29SetCalcLength(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   int __pyx_v_nt;
   PyObject *__pyx_r = 0;
@@ -15281,11 +16063,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_25SetCalcLength(PyObject *_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_nt)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetCalcLength", 1, 2, 2, 1); __PYX_ERR(7, 86, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetCalcLength", 1, 2, 2, 1); __PYX_ERR(7, 91, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetCalcLength") < 0)) __PYX_ERR(7, 86, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetCalcLength") < 0)) __PYX_ERR(7, 91, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -15294,46 +16076,46 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_25SetCalcLength(PyObject *_
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_self = values[0];
-    __pyx_v_nt = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_nt == (int)-1) && PyErr_Occurred())) __PYX_ERR(7, 86, __pyx_L3_error)
+    __pyx_v_nt = __Pyx_PyInt_As_int(values[1]); if (unlikely((__pyx_v_nt == (int)-1) && PyErr_Occurred())) __PYX_ERR(7, 91, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("SetCalcLength", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 86, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("SetCalcLength", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 91, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PySiggen.SetCalcLength", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_24SetCalcLength(__pyx_self, __pyx_v_self, __pyx_v_nt);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_28SetCalcLength(__pyx_self, __pyx_v_self, __pyx_v_nt);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_24SetCalcLength(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, int __pyx_v_nt) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_28SetCalcLength(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, int __pyx_v_nt) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("SetCalcLength", 0);
 
-  /* "siggen/PySiggen.pxi":87
+  /* "siggen/PySiggen.pxi":92
  *     return self.siggen.calc_length
  *   def SetCalcLength(self, int nt):
  *     self.siggen.calc_length = nt             # <<<<<<<<<<<<<<
  * 
  *   def GetCalcTimeStep(self):
  */
-  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_nt); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 87, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_From_int(__pyx_v_nt); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 87, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_t_2, __pyx_n_s_calc_length, __pyx_t_1) < 0) __PYX_ERR(7, 87, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_t_2, __pyx_n_s_calc_length, __pyx_t_1) < 0) __PYX_ERR(7, 92, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":86
+  /* "siggen/PySiggen.pxi":91
  *   def GetNumStepsCalc(self):
  *     return self.siggen.calc_length
  *   def SetCalcLength(self, int nt):             # <<<<<<<<<<<<<<
@@ -15355,7 +16137,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_24SetCalcLength(CYTHON_UNUS
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":89
+/* "siggen/PySiggen.pxi":94
  *     self.siggen.calc_length = nt
  * 
  *   def GetCalcTimeStep(self):             # <<<<<<<<<<<<<<
@@ -15364,27 +16146,27 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_24SetCalcLength(CYTHON_UNUS
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_27GetCalcTimeStep(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_27GetCalcTimeStep = {"GetCalcTimeStep", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_27GetCalcTimeStep, METH_O, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_27GetCalcTimeStep(PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_31GetCalcTimeStep(PyObject *__pyx_self, PyObject *__pyx_v_self); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_31GetCalcTimeStep = {"GetCalcTimeStep", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_31GetCalcTimeStep, METH_O, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_31GetCalcTimeStep(PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("GetCalcTimeStep (wrapper)", 0);
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_26GetCalcTimeStep(__pyx_self, ((PyObject *)__pyx_v_self));
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_30GetCalcTimeStep(__pyx_self, ((PyObject *)__pyx_v_self));
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_26GetCalcTimeStep(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_30GetCalcTimeStep(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("GetCalcTimeStep", 0);
 
-  /* "siggen/PySiggen.pxi":90
+  /* "siggen/PySiggen.pxi":95
  * 
  *   def GetCalcTimeStep(self):
  *     return self.siggen.calc_timestep             # <<<<<<<<<<<<<<
@@ -15392,16 +16174,16 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_26GetCalcTimeStep(CYTHON_UN
  *     self.siggen.calc_timestep = dt
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 90, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_calc_timestep); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 90, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_calc_timestep); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_2;
   __pyx_t_2 = 0;
   goto __pyx_L0;
 
-  /* "siggen/PySiggen.pxi":89
+  /* "siggen/PySiggen.pxi":94
  *     self.siggen.calc_length = nt
  * 
  *   def GetCalcTimeStep(self):             # <<<<<<<<<<<<<<
@@ -15421,7 +16203,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_26GetCalcTimeStep(CYTHON_UN
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":91
+/* "siggen/PySiggen.pxi":96
  *   def GetCalcTimeStep(self):
  *     return self.siggen.calc_timestep
  *   def SetCalcTimestep(self, float dt):             # <<<<<<<<<<<<<<
@@ -15430,9 +16212,9 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_26GetCalcTimeStep(CYTHON_UN
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_29SetCalcTimestep(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_29SetCalcTimestep = {"SetCalcTimestep", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_29SetCalcTimestep, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_29SetCalcTimestep(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_33SetCalcTimestep(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_33SetCalcTimestep = {"SetCalcTimestep", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_33SetCalcTimestep, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_33SetCalcTimestep(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   float __pyx_v_dt;
   PyObject *__pyx_r = 0;
@@ -15461,11 +16243,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_29SetCalcTimestep(PyObject 
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_dt)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetCalcTimestep", 1, 2, 2, 1); __PYX_ERR(7, 91, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetCalcTimestep", 1, 2, 2, 1); __PYX_ERR(7, 96, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetCalcTimestep") < 0)) __PYX_ERR(7, 91, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetCalcTimestep") < 0)) __PYX_ERR(7, 96, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -15474,46 +16256,46 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_29SetCalcTimestep(PyObject 
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_self = values[0];
-    __pyx_v_dt = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_dt == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 91, __pyx_L3_error)
+    __pyx_v_dt = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_dt == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 96, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("SetCalcTimestep", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 91, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("SetCalcTimestep", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 96, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PySiggen.SetCalcTimestep", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_28SetCalcTimestep(__pyx_self, __pyx_v_self, __pyx_v_dt);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_32SetCalcTimestep(__pyx_self, __pyx_v_self, __pyx_v_dt);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_28SetCalcTimestep(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_dt) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_32SetCalcTimestep(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_dt) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("SetCalcTimestep", 0);
 
-  /* "siggen/PySiggen.pxi":92
+  /* "siggen/PySiggen.pxi":97
  *     return self.siggen.calc_timestep
  *   def SetCalcTimestep(self, float dt):
  *     self.siggen.calc_timestep = dt             # <<<<<<<<<<<<<<
  * 
  *   def SetTrapping(self, double trap_const):
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_dt); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 92, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_dt); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 97, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 92, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 97, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_t_2, __pyx_n_s_calc_timestep, __pyx_t_1) < 0) __PYX_ERR(7, 92, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_t_2, __pyx_n_s_calc_timestep, __pyx_t_1) < 0) __PYX_ERR(7, 97, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":91
+  /* "siggen/PySiggen.pxi":96
  *   def GetCalcTimeStep(self):
  *     return self.siggen.calc_timestep
  *   def SetCalcTimestep(self, float dt):             # <<<<<<<<<<<<<<
@@ -15535,7 +16317,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_28SetCalcTimestep(CYTHON_UN
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":94
+/* "siggen/PySiggen.pxi":99
  *     self.siggen.calc_timestep = dt
  * 
  *   def SetTrapping(self, double trap_const):             # <<<<<<<<<<<<<<
@@ -15544,9 +16326,9 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_28SetCalcTimestep(CYTHON_UN
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_31SetTrapping(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_31SetTrapping = {"SetTrapping", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_31SetTrapping, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_31SetTrapping(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_35SetTrapping(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_35SetTrapping = {"SetTrapping", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_35SetTrapping, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_35SetTrapping(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   double __pyx_v_trap_const;
   PyObject *__pyx_r = 0;
@@ -15575,11 +16357,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_31SetTrapping(PyObject *__p
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_trap_const)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetTrapping", 1, 2, 2, 1); __PYX_ERR(7, 94, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetTrapping", 1, 2, 2, 1); __PYX_ERR(7, 99, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetTrapping") < 0)) __PYX_ERR(7, 94, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetTrapping") < 0)) __PYX_ERR(7, 99, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -15588,46 +16370,46 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_31SetTrapping(PyObject *__p
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_self = values[0];
-    __pyx_v_trap_const = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_trap_const == (double)-1) && PyErr_Occurred())) __PYX_ERR(7, 94, __pyx_L3_error)
+    __pyx_v_trap_const = __pyx_PyFloat_AsDouble(values[1]); if (unlikely((__pyx_v_trap_const == (double)-1) && PyErr_Occurred())) __PYX_ERR(7, 99, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("SetTrapping", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 94, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("SetTrapping", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 99, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PySiggen.SetTrapping", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_30SetTrapping(__pyx_self, __pyx_v_self, __pyx_v_trap_const);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_34SetTrapping(__pyx_self, __pyx_v_self, __pyx_v_trap_const);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_30SetTrapping(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, double __pyx_v_trap_const) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_34SetTrapping(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, double __pyx_v_trap_const) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   __Pyx_RefNannySetupContext("SetTrapping", 0);
 
-  /* "siggen/PySiggen.pxi":95
+  /* "siggen/PySiggen.pxi":100
  * 
  *   def SetTrapping(self, double trap_const):
  *     self.detector.trapping_constant = trap_const             # <<<<<<<<<<<<<<
  * 
  *   #Stuff that actually requires work
  */
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_trap_const); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 95, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_trap_const); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 95, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_t_2, __pyx_n_s_trapping_constant, __pyx_t_1) < 0) __PYX_ERR(7, 95, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_t_2, __pyx_n_s_trapping_constant, __pyx_t_1) < 0) __PYX_ERR(7, 100, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":94
+  /* "siggen/PySiggen.pxi":99
  *     self.siggen.calc_timestep = dt
  * 
  *   def SetTrapping(self, double trap_const):             # <<<<<<<<<<<<<<
@@ -15649,7 +16431,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_30SetTrapping(CYTHON_UNUSED
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":98
+/* "siggen/PySiggen.pxi":103
  * 
  *   #Stuff that actually requires work
  *   def SetImpurityAvg(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -15658,9 +16440,9 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_30SetTrapping(CYTHON_UNUSED
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_33SetImpurityAvg(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_33SetImpurityAvg = {"SetImpurityAvg", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_33SetImpurityAvg, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_33SetImpurityAvg(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_37SetImpurityAvg(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_37SetImpurityAvg = {"SetImpurityAvg", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_37SetImpurityAvg, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_37SetImpurityAvg(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   float __pyx_v_imp;
   float __pyx_v_grad;
@@ -15692,17 +16474,17 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_33SetImpurityAvg(PyObject *
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_imp)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetImpurityAvg", 1, 3, 3, 1); __PYX_ERR(7, 98, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetImpurityAvg", 1, 3, 3, 1); __PYX_ERR(7, 103, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_grad)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetImpurityAvg", 1, 3, 3, 2); __PYX_ERR(7, 98, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetImpurityAvg", 1, 3, 3, 2); __PYX_ERR(7, 103, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetImpurityAvg") < 0)) __PYX_ERR(7, 98, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetImpurityAvg") < 0)) __PYX_ERR(7, 103, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -15712,25 +16494,25 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_33SetImpurityAvg(PyObject *
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
     __pyx_v_self = values[0];
-    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 98, __pyx_L3_error)
-    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 98, __pyx_L3_error)
+    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 103, __pyx_L3_error)
+    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 103, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("SetImpurityAvg", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 98, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("SetImpurityAvg", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 103, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PySiggen.SetImpurityAvg", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_32SetImpurityAvg(__pyx_self, __pyx_v_self, __pyx_v_imp, __pyx_v_grad);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_36SetImpurityAvg(__pyx_self, __pyx_v_self, __pyx_v_imp, __pyx_v_grad);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_32SetImpurityAvg(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_36SetImpurityAvg(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -15742,21 +16524,21 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_32SetImpurityAvg(CYTHON_UNU
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("SetImpurityAvg", 0);
 
-  /* "siggen/PySiggen.pxi":99
+  /* "siggen/PySiggen.pxi":104
  *   #Stuff that actually requires work
  *   def SetImpurityAvg(self, float imp, float grad):
  *     self.detector.set_impurity_avg( imp,  grad)             # <<<<<<<<<<<<<<
  * 
  *   def SetImpurityZ0(self, float imp, float grad):
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 99, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_set_impurity_avg); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 99, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_set_impurity_avg); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_imp); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 99, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_imp); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_grad); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 99, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_grad); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 104, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -15773,7 +16555,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_32SetImpurityAvg(CYTHON_UNU
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_4};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 99, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 104, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -15783,7 +16565,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_32SetImpurityAvg(CYTHON_UNU
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_4};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 99, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 104, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -15791,7 +16573,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_32SetImpurityAvg(CYTHON_UNU
   } else
   #endif
   {
-    __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 99, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -15802,14 +16584,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_32SetImpurityAvg(CYTHON_UNU
     PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_6, __pyx_t_4);
     __pyx_t_2 = 0;
     __pyx_t_4 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 99, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/PySiggen.pxi":98
+  /* "siggen/PySiggen.pxi":103
  * 
  *   #Stuff that actually requires work
  *   def SetImpurityAvg(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -15835,7 +16617,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_32SetImpurityAvg(CYTHON_UNU
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":101
+/* "siggen/PySiggen.pxi":106
  *     self.detector.set_impurity_avg( imp,  grad)
  * 
  *   def SetImpurityZ0(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -15844,9 +16626,9 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_32SetImpurityAvg(CYTHON_UNU
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_35SetImpurityZ0(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_35SetImpurityZ0 = {"SetImpurityZ0", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_35SetImpurityZ0, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_35SetImpurityZ0(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_39SetImpurityZ0(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_39SetImpurityZ0 = {"SetImpurityZ0", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_39SetImpurityZ0, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_39SetImpurityZ0(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   float __pyx_v_imp;
   float __pyx_v_grad;
@@ -15878,17 +16660,17 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_35SetImpurityZ0(PyObject *_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_imp)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetImpurityZ0", 1, 3, 3, 1); __PYX_ERR(7, 101, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetImpurityZ0", 1, 3, 3, 1); __PYX_ERR(7, 106, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_grad)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("SetImpurityZ0", 1, 3, 3, 2); __PYX_ERR(7, 101, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("SetImpurityZ0", 1, 3, 3, 2); __PYX_ERR(7, 106, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetImpurityZ0") < 0)) __PYX_ERR(7, 101, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "SetImpurityZ0") < 0)) __PYX_ERR(7, 106, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -15898,25 +16680,25 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_35SetImpurityZ0(PyObject *_
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
     __pyx_v_self = values[0];
-    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 101, __pyx_L3_error)
-    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 101, __pyx_L3_error)
+    __pyx_v_imp = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_imp == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 106, __pyx_L3_error)
+    __pyx_v_grad = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_grad == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 106, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("SetImpurityZ0", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 101, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("SetImpurityZ0", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 106, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PySiggen.SetImpurityZ0", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_34SetImpurityZ0(__pyx_self, __pyx_v_self, __pyx_v_imp, __pyx_v_grad);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_38SetImpurityZ0(__pyx_self, __pyx_v_self, __pyx_v_imp, __pyx_v_grad);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_34SetImpurityZ0(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38SetImpurityZ0(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_imp, float __pyx_v_grad) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -15928,21 +16710,21 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_34SetImpurityZ0(CYTHON_UNUS
   PyObject *__pyx_t_7 = NULL;
   __Pyx_RefNannySetupContext("SetImpurityZ0", 0);
 
-  /* "siggen/PySiggen.pxi":102
+  /* "siggen/PySiggen.pxi":107
  * 
  *   def SetImpurityZ0(self, float imp, float grad):
  *     self.detector.set_impurity_z0( imp,  grad)             # <<<<<<<<<<<<<<
  * 
  *   def GetLastDriftTime(self, float q):
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 102, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_set_impurity_z0); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 102, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_set_impurity_z0); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_imp); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 102, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_imp); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_grad); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 102, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_grad); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 107, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -15959,7 +16741,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_34SetImpurityZ0(CYTHON_UNUS
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_4};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 102, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 107, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -15969,7 +16751,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_34SetImpurityZ0(CYTHON_UNUS
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_4};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 102, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 107, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -15977,7 +16759,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_34SetImpurityZ0(CYTHON_UNUS
   } else
   #endif
   {
-    __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 102, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 107, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -15988,14 +16770,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_34SetImpurityZ0(CYTHON_UNUS
     PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_6, __pyx_t_4);
     __pyx_t_2 = 0;
     __pyx_t_4 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 102, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 107, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/PySiggen.pxi":101
+  /* "siggen/PySiggen.pxi":106
  *     self.detector.set_impurity_avg( imp,  grad)
  * 
  *   def SetImpurityZ0(self, float imp, float grad):             # <<<<<<<<<<<<<<
@@ -16021,7 +16803,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_34SetImpurityZ0(CYTHON_UNUS
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":104
+/* "siggen/PySiggen.pxi":109
  *     self.detector.set_impurity_z0( imp,  grad)
  * 
  *   def GetLastDriftTime(self, float q):             # <<<<<<<<<<<<<<
@@ -16030,9 +16812,9 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_34SetImpurityZ0(CYTHON_UNUS
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_37GetLastDriftTime(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_37GetLastDriftTime = {"GetLastDriftTime", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_37GetLastDriftTime, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_37GetLastDriftTime(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_41GetLastDriftTime(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_41GetLastDriftTime = {"GetLastDriftTime", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_41GetLastDriftTime, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_41GetLastDriftTime(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   float __pyx_v_q;
   PyObject *__pyx_r = 0;
@@ -16061,11 +16843,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_37GetLastDriftTime(PyObject
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_q)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("GetLastDriftTime", 1, 2, 2, 1); __PYX_ERR(7, 104, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("GetLastDriftTime", 1, 2, 2, 1); __PYX_ERR(7, 109, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "GetLastDriftTime") < 0)) __PYX_ERR(7, 104, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "GetLastDriftTime") < 0)) __PYX_ERR(7, 109, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -16074,24 +16856,24 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_37GetLastDriftTime(PyObject
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_self = values[0];
-    __pyx_v_q = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 104, __pyx_L3_error)
+    __pyx_v_q = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 109, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("GetLastDriftTime", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 104, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("GetLastDriftTime", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 109, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PySiggen.GetLastDriftTime", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_36GetLastDriftTime(__pyx_self, __pyx_v_self, __pyx_v_q);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_40GetLastDriftTime(__pyx_self, __pyx_v_self, __pyx_v_q);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_36GetLastDriftTime(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_q) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetLastDriftTime(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_q) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -16101,7 +16883,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_36GetLastDriftTime(CYTHON_U
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("GetLastDriftTime", 0);
 
-  /* "siggen/PySiggen.pxi":105
+  /* "siggen/PySiggen.pxi":110
  * 
  *   def GetLastDriftTime(self, float q):
  *     return self.siggen.get_last_drifttime(q)             # <<<<<<<<<<<<<<
@@ -16109,12 +16891,12 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_36GetLastDriftTime(CYTHON_U
  *   def GetEfield(self, float r, float z):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 105, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 110, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_last_drifttime); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 105, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_last_drifttime); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 110, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_q); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 105, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_q); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 110, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -16127,14 +16909,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_36GetLastDriftTime(CYTHON_U
     }
   }
   if (!__pyx_t_4) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 105, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 110, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_2};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 105, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 110, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -16143,20 +16925,20 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_36GetLastDriftTime(CYTHON_U
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_2};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 105, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 110, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     } else
     #endif
     {
-      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 105, __pyx_L1_error)
+      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 110, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
       __Pyx_GIVEREF(__pyx_t_2);
       PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_2);
       __pyx_t_2 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 105, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 110, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
@@ -16166,7 +16948,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_36GetLastDriftTime(CYTHON_U
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/PySiggen.pxi":104
+  /* "siggen/PySiggen.pxi":109
  *     self.detector.set_impurity_z0( imp,  grad)
  * 
  *   def GetLastDriftTime(self, float q):             # <<<<<<<<<<<<<<
@@ -16189,7 +16971,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_36GetLastDriftTime(CYTHON_U
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":107
+/* "siggen/PySiggen.pxi":112
  *     return self.siggen.get_last_drifttime(q)
  * 
  *   def GetEfield(self, float r, float z):             # <<<<<<<<<<<<<<
@@ -16198,9 +16980,9 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_36GetLastDriftTime(CYTHON_U
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_39GetEfield(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_39GetEfield = {"GetEfield", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_39GetEfield, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_39GetEfield(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_43GetEfield(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_43GetEfield = {"GetEfield", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_43GetEfield, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_43GetEfield(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   float __pyx_v_r;
   float __pyx_v_z;
@@ -16232,17 +17014,17 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_39GetEfield(PyObject *__pyx
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_r)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("GetEfield", 1, 3, 3, 1); __PYX_ERR(7, 107, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("GetEfield", 1, 3, 3, 1); __PYX_ERR(7, 112, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_z)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("GetEfield", 1, 3, 3, 2); __PYX_ERR(7, 107, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("GetEfield", 1, 3, 3, 2); __PYX_ERR(7, 112, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "GetEfield") < 0)) __PYX_ERR(7, 107, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "GetEfield") < 0)) __PYX_ERR(7, 112, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -16252,25 +17034,25 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_39GetEfield(PyObject *__pyx
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
     __pyx_v_self = values[0];
-    __pyx_v_r = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_r == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 107, __pyx_L3_error)
-    __pyx_v_z = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_z == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 107, __pyx_L3_error)
+    __pyx_v_r = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_r == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 112, __pyx_L3_error)
+    __pyx_v_z = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_z == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 112, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("GetEfield", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 107, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("GetEfield", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 112, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PySiggen.GetEfield", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(__pyx_self, __pyx_v_self, __pyx_v_r, __pyx_v_z);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_42GetEfield(__pyx_self, __pyx_v_self, __pyx_v_r, __pyx_v_z);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_r, float __pyx_v_z) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetEfield(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_r, float __pyx_v_z) {
   PyObject *__pyx_v_e_r = NULL;
   CYTHON_UNUSED PyObject *__pyx_v_e_phi = NULL;
   PyObject *__pyx_v_e_z = NULL;
@@ -16287,21 +17069,21 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
   PyObject *(*__pyx_t_8)(PyObject *);
   __Pyx_RefNannySetupContext("GetEfield", 0);
 
-  /* "siggen/PySiggen.pxi":109
+  /* "siggen/PySiggen.pxi":114
  *   def GetEfield(self, float r, float z):
  * 
  *     (e_r, e_phi, e_z, val) = self.detector.efield(r,z)             # <<<<<<<<<<<<<<
  *     return (e_r,e_z)
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 109, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_efield); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 109, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_efield); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 109, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_r); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_z); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 109, __pyx_L1_error)
+  __pyx_t_4 = PyFloat_FromDouble(__pyx_v_z); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   __pyx_t_6 = 0;
@@ -16318,7 +17100,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_4};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 109, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 114, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -16328,7 +17110,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_2, __pyx_t_4};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 109, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 114, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -16336,7 +17118,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
   } else
   #endif
   {
-    __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 109, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 114, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -16347,7 +17129,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
     PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_6, __pyx_t_4);
     __pyx_t_2 = 0;
     __pyx_t_4 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 109, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 114, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
@@ -16362,7 +17144,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
     if (unlikely(size != 4)) {
       if (size > 4) __Pyx_RaiseTooManyValuesError(4);
       else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-      __PYX_ERR(7, 109, __pyx_L1_error)
+      __PYX_ERR(7, 114, __pyx_L1_error)
     }
     #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
     if (likely(PyTuple_CheckExact(sequence))) {
@@ -16385,7 +17167,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
       Py_ssize_t i;
       PyObject** temps[4] = {&__pyx_t_3,&__pyx_t_7,&__pyx_t_4,&__pyx_t_2};
       for (i=0; i < 4; i++) {
-        PyObject* item = PySequence_ITEM(sequence, i); if (unlikely(!item)) __PYX_ERR(7, 109, __pyx_L1_error)
+        PyObject* item = PySequence_ITEM(sequence, i); if (unlikely(!item)) __PYX_ERR(7, 114, __pyx_L1_error)
         __Pyx_GOTREF(item);
         *(temps[i]) = item;
       }
@@ -16395,7 +17177,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
   } else {
     Py_ssize_t index = -1;
     PyObject** temps[4] = {&__pyx_t_3,&__pyx_t_7,&__pyx_t_4,&__pyx_t_2};
-    __pyx_t_5 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 109, __pyx_L1_error)
+    __pyx_t_5 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 114, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_8 = Py_TYPE(__pyx_t_5)->tp_iternext;
@@ -16404,7 +17186,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
       __Pyx_GOTREF(item);
       *(temps[index]) = item;
     }
-    if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_5), 4) < 0) __PYX_ERR(7, 109, __pyx_L1_error)
+    if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_5), 4) < 0) __PYX_ERR(7, 114, __pyx_L1_error)
     __pyx_t_8 = NULL;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     goto __pyx_L4_unpacking_done;
@@ -16412,7 +17194,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_8 = NULL;
     if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-    __PYX_ERR(7, 109, __pyx_L1_error)
+    __PYX_ERR(7, 114, __pyx_L1_error)
     __pyx_L4_unpacking_done:;
   }
   __pyx_v_e_r = __pyx_t_3;
@@ -16424,7 +17206,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
   __pyx_v_val = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":110
+  /* "siggen/PySiggen.pxi":115
  * 
  *     (e_r, e_phi, e_z, val) = self.detector.efield(r,z)
  *     return (e_r,e_z)             # <<<<<<<<<<<<<<
@@ -16432,7 +17214,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
  *   def GetWpot(self, float r, float z):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 110, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 115, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_e_r);
   __Pyx_GIVEREF(__pyx_v_e_r);
@@ -16444,7 +17226,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/PySiggen.pxi":107
+  /* "siggen/PySiggen.pxi":112
  *     return self.siggen.get_last_drifttime(q)
  * 
  *   def GetEfield(self, float r, float z):             # <<<<<<<<<<<<<<
@@ -16472,7 +17254,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":112
+/* "siggen/PySiggen.pxi":117
  *     return (e_r,e_z)
  * 
  *   def GetWpot(self, float r, float z):             # <<<<<<<<<<<<<<
@@ -16481,9 +17263,9 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_38GetEfield(CYTHON_UNUSED P
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_41GetWpot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_41GetWpot = {"GetWpot", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_41GetWpot, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_41GetWpot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_45GetWpot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_45GetWpot = {"GetWpot", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_45GetWpot, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_45GetWpot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   float __pyx_v_r;
   float __pyx_v_z;
@@ -16515,17 +17297,17 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_41GetWpot(PyObject *__pyx_s
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_r)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("GetWpot", 1, 3, 3, 1); __PYX_ERR(7, 112, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("GetWpot", 1, 3, 3, 1); __PYX_ERR(7, 117, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_z)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("GetWpot", 1, 3, 3, 2); __PYX_ERR(7, 112, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("GetWpot", 1, 3, 3, 2); __PYX_ERR(7, 117, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "GetWpot") < 0)) __PYX_ERR(7, 112, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "GetWpot") < 0)) __PYX_ERR(7, 117, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -16535,25 +17317,25 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_41GetWpot(PyObject *__pyx_s
       values[2] = PyTuple_GET_ITEM(__pyx_args, 2);
     }
     __pyx_v_self = values[0];
-    __pyx_v_r = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_r == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 112, __pyx_L3_error)
-    __pyx_v_z = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_z == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 112, __pyx_L3_error)
+    __pyx_v_r = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_r == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 117, __pyx_L3_error)
+    __pyx_v_z = __pyx_PyFloat_AsFloat(values[2]); if (unlikely((__pyx_v_z == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 117, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("GetWpot", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 112, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("GetWpot", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 117, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PySiggen.GetWpot", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(__pyx_self, __pyx_v_self, __pyx_v_r, __pyx_v_z);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_44GetWpot(__pyx_self, __pyx_v_self, __pyx_v_r, __pyx_v_z);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_r, float __pyx_v_z) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetWpot(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_r, float __pyx_v_z) {
   struct Siggen::point __pyx_v_pt;
   PyObject *__pyx_v_wp_numpy = NULL;
   PyObject *__pyx_r = NULL;
@@ -16566,7 +17348,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyO
   PyObject *__pyx_t_6 = NULL;
   __Pyx_RefNannySetupContext("GetWpot", 0);
 
-  /* "siggen/PySiggen.pxi":114
+  /* "siggen/PySiggen.pxi":119
  *   def GetWpot(self, float r, float z):
  *     cdef point pt
  *     pt.x = r;             # <<<<<<<<<<<<<<
@@ -16575,7 +17357,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyO
  */
   __pyx_v_pt.x = __pyx_v_r;
 
-  /* "siggen/PySiggen.pxi":115
+  /* "siggen/PySiggen.pxi":120
  *     cdef point pt
  *     pt.x = r;
  *     pt.y = 0;             # <<<<<<<<<<<<<<
@@ -16584,7 +17366,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyO
  */
   __pyx_v_pt.y = 0.0;
 
-  /* "siggen/PySiggen.pxi":116
+  /* "siggen/PySiggen.pxi":121
  *     pt.x = r;
  *     pt.y = 0;
  *     pt.z = z;             # <<<<<<<<<<<<<<
@@ -16593,19 +17375,19 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyO
  */
   __pyx_v_pt.z = __pyx_v_z;
 
-  /* "siggen/PySiggen.pxi":118
+  /* "siggen/PySiggen.pxi":123
  *     pt.z = z;
  * 
  *     wp_numpy = np.zeros(self.GetNumSegments(), dtype='f4')             # <<<<<<<<<<<<<<
  * 
  *     self.detector.wpotential(pt,wp_numpy)
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 118, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 118, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_GetNumSegments); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 118, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_GetNumSegments); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -16618,22 +17400,22 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyO
     }
   }
   if (__pyx_t_4) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 118, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 123, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 118, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 123, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 118, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 118, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_n_s_f4) < 0) __PYX_ERR(7, 118, __pyx_L1_error)
-  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 118, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_dtype, __pyx_n_s_f4) < 0) __PYX_ERR(7, 123, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 123, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -16641,19 +17423,19 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyO
   __pyx_v_wp_numpy = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "siggen/PySiggen.pxi":120
+  /* "siggen/PySiggen.pxi":125
  *     wp_numpy = np.zeros(self.GetNumSegments(), dtype='f4')
  * 
  *     self.detector.wpotential(pt,wp_numpy)             # <<<<<<<<<<<<<<
  * 
  *     return wp_numpy
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 120, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_detector); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_wpotential); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 120, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_wpotential); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __pyx_convert__to_py_struct__Siggen_3a__3a_point(__pyx_v_pt); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 120, __pyx_L1_error)
+  __pyx_t_1 = __pyx_convert__to_py_struct__Siggen_3a__3a_point(__pyx_v_pt); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 125, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = NULL;
   __pyx_t_5 = 0;
@@ -16670,7 +17452,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyO
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_t_1, __pyx_v_wp_numpy};
-    __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 120, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 125, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -16679,14 +17461,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyO
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_t_1, __pyx_v_wp_numpy};
-    __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 120, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_5, 2+__pyx_t_5); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 125, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   } else
   #endif
   {
-    __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 120, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(2+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 125, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     if (__pyx_t_2) {
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -16697,14 +17479,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyO
     __Pyx_GIVEREF(__pyx_v_wp_numpy);
     PyTuple_SET_ITEM(__pyx_t_6, 1+__pyx_t_5, __pyx_v_wp_numpy);
     __pyx_t_1 = 0;
-    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 120, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_6, NULL); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 125, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "siggen/PySiggen.pxi":122
+  /* "siggen/PySiggen.pxi":127
  *     self.detector.wpotential(pt,wp_numpy)
  * 
  *     return wp_numpy             # <<<<<<<<<<<<<<
@@ -16716,7 +17498,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyO
   __pyx_r = __pyx_v_wp_numpy;
   goto __pyx_L0;
 
-  /* "siggen/PySiggen.pxi":112
+  /* "siggen/PySiggen.pxi":117
  *     return (e_r,e_z)
  * 
  *   def GetWpot(self, float r, float z):             # <<<<<<<<<<<<<<
@@ -16740,7 +17522,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyO
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":124
+/* "siggen/PySiggen.pxi":129
  *     return wp_numpy
  * 
  *   def GetDWpot(self, float q):             # <<<<<<<<<<<<<<
@@ -16749,9 +17531,9 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_40GetWpot(CYTHON_UNUSED PyO
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_43GetDWpot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_43GetDWpot = {"GetDWpot", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_43GetDWpot, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_43GetDWpot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_47GetDWpot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_47GetDWpot = {"GetDWpot", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_47GetDWpot, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_47GetDWpot(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   float __pyx_v_q;
   PyObject *__pyx_r = 0;
@@ -16780,11 +17562,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_43GetDWpot(PyObject *__pyx_
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_q)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("GetDWpot", 1, 2, 2, 1); __PYX_ERR(7, 124, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("GetDWpot", 1, 2, 2, 1); __PYX_ERR(7, 129, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "GetDWpot") < 0)) __PYX_ERR(7, 124, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "GetDWpot") < 0)) __PYX_ERR(7, 129, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -16793,24 +17575,24 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_43GetDWpot(PyObject *__pyx_
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_self = values[0];
-    __pyx_v_q = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 124, __pyx_L3_error)
+    __pyx_v_q = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 129, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("GetDWpot", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 124, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("GetDWpot", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 129, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PySiggen.GetDWpot", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(__pyx_self, __pyx_v_self, __pyx_v_q);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_46GetDWpot(__pyx_self, __pyx_v_self, __pyx_v_q);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_q) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46GetDWpot(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_q) {
   std::vector<float>  __pyx_v_dwpot;
   PyObject *__pyx_v_nt = NULL;
   PyObject *__pyx_v_dt = NULL;
@@ -16833,16 +17615,16 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
   std::vector<float> ::size_type __pyx_t_11;
   __Pyx_RefNannySetupContext("GetDWpot", 0);
 
-  /* "siggen/PySiggen.pxi":126
+  /* "siggen/PySiggen.pxi":131
  *   def GetDWpot(self, float q):
  *     cdef vector[float] dwpot
  *     dwpot = self.siggen.get_dwpot()             # <<<<<<<<<<<<<<
  *     nt = self.GetNumStepsCalc()
  *     dt = self.siggen.get_last_drifttime(q)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 126, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_dwpot); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 126, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_dwpot); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 131, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -16856,25 +17638,25 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
     }
   }
   if (__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 126, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 131, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 126, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 131, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_4 = __pyx_convert_vector_from_py_float(__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(7, 126, __pyx_L1_error)
+  __pyx_t_4 = __pyx_convert_vector_from_py_float(__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(7, 131, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_dwpot = __pyx_t_4;
 
-  /* "siggen/PySiggen.pxi":127
+  /* "siggen/PySiggen.pxi":132
  *     cdef vector[float] dwpot
  *     dwpot = self.siggen.get_dwpot()
  *     nt = self.GetNumStepsCalc()             # <<<<<<<<<<<<<<
  *     dt = self.siggen.get_last_drifttime(q)
  *     nsegs = self.GetNumSegments()
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_GetNumStepsCalc); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 127, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_GetNumStepsCalc); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 132, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -16887,29 +17669,29 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
     }
   }
   if (__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 127, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 132, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 127, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 132, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_nt = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "siggen/PySiggen.pxi":128
+  /* "siggen/PySiggen.pxi":133
  *     dwpot = self.siggen.get_dwpot()
  *     nt = self.GetNumStepsCalc()
  *     dt = self.siggen.get_last_drifttime(q)             # <<<<<<<<<<<<<<
  *     nsegs = self.GetNumSegments()
  *     dwp_np = np.ones((nsegs,dt))*np.nan
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 128, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_get_last_drifttime); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 128, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_get_last_drifttime); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_q); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 128, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_q); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -16922,14 +17704,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
     }
   }
   if (!__pyx_t_5) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 128, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 133, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_t_3};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 128, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 133, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -16938,20 +17720,20 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[2] = {__pyx_t_5, __pyx_t_3};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 128, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 133, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 128, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(1+1); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 133, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_5); __pyx_t_5 = NULL;
       __Pyx_GIVEREF(__pyx_t_3);
       PyTuple_SET_ITEM(__pyx_t_6, 0+1, __pyx_t_3);
       __pyx_t_3 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 128, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 133, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
@@ -16960,14 +17742,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
   __pyx_v_dt = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "siggen/PySiggen.pxi":129
+  /* "siggen/PySiggen.pxi":134
  *     nt = self.GetNumStepsCalc()
  *     dt = self.siggen.get_last_drifttime(q)
  *     nsegs = self.GetNumSegments()             # <<<<<<<<<<<<<<
  *     dwp_np = np.ones((nsegs,dt))*np.nan
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_GetNumSegments); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 129, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_GetNumSegments); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 134, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -16980,29 +17762,29 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
     }
   }
   if (__pyx_t_6) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 129, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 134, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 129, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 134, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_nsegs = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "siggen/PySiggen.pxi":130
+  /* "siggen/PySiggen.pxi":135
  *     dt = self.siggen.get_last_drifttime(q)
  *     nsegs = self.GetNumSegments()
  *     dwp_np = np.ones((nsegs,dt))*np.nan             # <<<<<<<<<<<<<<
  * 
  *     for i in range(dt):
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 130, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_ones); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 130, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_ones); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 130, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_v_nsegs);
   __Pyx_GIVEREF(__pyx_v_nsegs);
@@ -17021,14 +17803,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
     }
   }
   if (!__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 130, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 135, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_6)) {
       PyObject *__pyx_temp[2] = {__pyx_t_3, __pyx_t_2};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 130, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_6, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 135, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -17037,59 +17819,59 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_6)) {
       PyObject *__pyx_temp[2] = {__pyx_t_3, __pyx_t_2};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 130, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_6, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 135, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     } else
     #endif
     {
-      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 130, __pyx_L1_error)
+      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 135, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_3); __pyx_t_3 = NULL;
       __Pyx_GIVEREF(__pyx_t_2);
       PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_2);
       __pyx_t_2 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 130, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_6, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 135, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 130, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_nan); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 130, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_nan); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = PyNumber_Multiply(__pyx_t_1, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 130, __pyx_L1_error)
+  __pyx_t_6 = PyNumber_Multiply(__pyx_t_1, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_v_dwp_np = __pyx_t_6;
   __pyx_t_6 = 0;
 
-  /* "siggen/PySiggen.pxi":132
+  /* "siggen/PySiggen.pxi":137
  *     dwp_np = np.ones((nsegs,dt))*np.nan
  * 
  *     for i in range(dt):             # <<<<<<<<<<<<<<
  *       for j in range(nsegs):
  *         dwp_np[j,i] = dwpot[j*nt+i]
  */
-  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 132, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_INCREF(__pyx_v_dt);
   __Pyx_GIVEREF(__pyx_v_dt);
   PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_v_dt);
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 132, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_6, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 137, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   if (likely(PyList_CheckExact(__pyx_t_5)) || PyTuple_CheckExact(__pyx_t_5)) {
     __pyx_t_6 = __pyx_t_5; __Pyx_INCREF(__pyx_t_6); __pyx_t_7 = 0;
     __pyx_t_8 = NULL;
   } else {
-    __pyx_t_7 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 132, __pyx_L1_error)
+    __pyx_t_7 = -1; __pyx_t_6 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(7, 137, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_8 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 132, __pyx_L1_error)
+    __pyx_t_8 = Py_TYPE(__pyx_t_6)->tp_iternext; if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 137, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   for (;;) {
@@ -17097,17 +17879,17 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
       if (likely(PyList_CheckExact(__pyx_t_6))) {
         if (__pyx_t_7 >= PyList_GET_SIZE(__pyx_t_6)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_7); __Pyx_INCREF(__pyx_t_5); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(7, 132, __pyx_L1_error)
+        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_6, __pyx_t_7); __Pyx_INCREF(__pyx_t_5); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(7, 137, __pyx_L1_error)
         #else
-        __pyx_t_5 = PySequence_ITEM(__pyx_t_6, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 132, __pyx_L1_error)
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_6, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 137, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         #endif
       } else {
         if (__pyx_t_7 >= PyTuple_GET_SIZE(__pyx_t_6)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_7); __Pyx_INCREF(__pyx_t_5); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(7, 132, __pyx_L1_error)
+        __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_6, __pyx_t_7); __Pyx_INCREF(__pyx_t_5); __pyx_t_7++; if (unlikely(0 < 0)) __PYX_ERR(7, 137, __pyx_L1_error)
         #else
-        __pyx_t_5 = PySequence_ITEM(__pyx_t_6, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 132, __pyx_L1_error)
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_6, __pyx_t_7); __pyx_t_7++; if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 137, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         #endif
       }
@@ -17117,7 +17899,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(7, 132, __pyx_L1_error)
+          else __PYX_ERR(7, 137, __pyx_L1_error)
         }
         break;
       }
@@ -17126,28 +17908,28 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_5);
     __pyx_t_5 = 0;
 
-    /* "siggen/PySiggen.pxi":133
+    /* "siggen/PySiggen.pxi":138
  * 
  *     for i in range(dt):
  *       for j in range(nsegs):             # <<<<<<<<<<<<<<
  *         dwp_np[j,i] = dwpot[j*nt+i]
  *     return dwp_np
  */
-    __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 133, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 138, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_INCREF(__pyx_v_nsegs);
     __Pyx_GIVEREF(__pyx_v_nsegs);
     PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_nsegs);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 133, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 138, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
       __pyx_t_5 = __pyx_t_1; __Pyx_INCREF(__pyx_t_5); __pyx_t_9 = 0;
       __pyx_t_10 = NULL;
     } else {
-      __pyx_t_9 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 133, __pyx_L1_error)
+      __pyx_t_9 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 138, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_10 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(7, 133, __pyx_L1_error)
+      __pyx_t_10 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_10)) __PYX_ERR(7, 138, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     for (;;) {
@@ -17155,17 +17937,17 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
         if (likely(PyList_CheckExact(__pyx_t_5))) {
           if (__pyx_t_9 >= PyList_GET_SIZE(__pyx_t_5)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(7, 133, __pyx_L1_error)
+          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(7, 138, __pyx_L1_error)
           #else
-          __pyx_t_1 = PySequence_ITEM(__pyx_t_5, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 133, __pyx_L1_error)
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_5, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 138, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           #endif
         } else {
           if (__pyx_t_9 >= PyTuple_GET_SIZE(__pyx_t_5)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(7, 133, __pyx_L1_error)
+          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_9); __Pyx_INCREF(__pyx_t_1); __pyx_t_9++; if (unlikely(0 < 0)) __PYX_ERR(7, 138, __pyx_L1_error)
           #else
-          __pyx_t_1 = PySequence_ITEM(__pyx_t_5, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 133, __pyx_L1_error)
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_5, __pyx_t_9); __pyx_t_9++; if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 138, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           #endif
         }
@@ -17175,7 +17957,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(7, 133, __pyx_L1_error)
+            else __PYX_ERR(7, 138, __pyx_L1_error)
           }
           break;
         }
@@ -17184,23 +17966,23 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
       __Pyx_XDECREF_SET(__pyx_v_j, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "siggen/PySiggen.pxi":134
+      /* "siggen/PySiggen.pxi":139
  *     for i in range(dt):
  *       for j in range(nsegs):
  *         dwp_np[j,i] = dwpot[j*nt+i]             # <<<<<<<<<<<<<<
  *     return dwp_np
  * 
  */
-      __pyx_t_1 = PyNumber_Multiply(__pyx_v_j, __pyx_v_nt); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 134, __pyx_L1_error)
+      __pyx_t_1 = PyNumber_Multiply(__pyx_v_j, __pyx_v_nt); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 139, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 134, __pyx_L1_error)
+      __pyx_t_2 = PyNumber_Add(__pyx_t_1, __pyx_v_i); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 139, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_11 = __Pyx_PyInt_As_size_t(__pyx_t_2); if (unlikely((__pyx_t_11 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 134, __pyx_L1_error)
+      __pyx_t_11 = __Pyx_PyInt_As_size_t(__pyx_t_2); if (unlikely((__pyx_t_11 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 139, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyFloat_FromDouble((__pyx_v_dwpot[__pyx_t_11])); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 134, __pyx_L1_error)
+      __pyx_t_2 = PyFloat_FromDouble((__pyx_v_dwpot[__pyx_t_11])); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 139, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 134, __pyx_L1_error)
+      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 139, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_INCREF(__pyx_v_j);
       __Pyx_GIVEREF(__pyx_v_j);
@@ -17208,11 +17990,11 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
       __Pyx_INCREF(__pyx_v_i);
       __Pyx_GIVEREF(__pyx_v_i);
       PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_i);
-      if (unlikely(PyObject_SetItem(__pyx_v_dwp_np, __pyx_t_1, __pyx_t_2) < 0)) __PYX_ERR(7, 134, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_v_dwp_np, __pyx_t_1, __pyx_t_2) < 0)) __PYX_ERR(7, 139, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "siggen/PySiggen.pxi":133
+      /* "siggen/PySiggen.pxi":138
  * 
  *     for i in range(dt):
  *       for j in range(nsegs):             # <<<<<<<<<<<<<<
@@ -17222,7 +18004,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "siggen/PySiggen.pxi":132
+    /* "siggen/PySiggen.pxi":137
  *     dwp_np = np.ones((nsegs,dt))*np.nan
  * 
  *     for i in range(dt):             # <<<<<<<<<<<<<<
@@ -17232,7 +18014,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
   }
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "siggen/PySiggen.pxi":135
+  /* "siggen/PySiggen.pxi":140
  *       for j in range(nsegs):
  *         dwp_np[j,i] = dwpot[j*nt+i]
  *     return dwp_np             # <<<<<<<<<<<<<<
@@ -17244,7 +18026,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
   __pyx_r = __pyx_v_dwp_np;
   goto __pyx_L0;
 
-  /* "siggen/PySiggen.pxi":124
+  /* "siggen/PySiggen.pxi":129
  *     return wp_numpy
  * 
  *   def GetDWpot(self, float q):             # <<<<<<<<<<<<<<
@@ -17273,7 +18055,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":137
+/* "siggen/PySiggen.pxi":142
  *     return dwp_np
  * 
  *   def GetPath(self, float q):             # <<<<<<<<<<<<<<
@@ -17282,9 +18064,9 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_42GetDWpot(CYTHON_UNUSED Py
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_45GetPath(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_45GetPath = {"GetPath", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_45GetPath, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_45GetPath(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_49GetPath(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_49GetPath = {"GetPath", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_49GetPath, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_49GetPath(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
   float __pyx_v_q;
   PyObject *__pyx_r = 0;
@@ -17313,11 +18095,11 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_45GetPath(PyObject *__pyx_s
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_q)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("GetPath", 1, 2, 2, 1); __PYX_ERR(7, 137, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("GetPath", 1, 2, 2, 1); __PYX_ERR(7, 142, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "GetPath") < 0)) __PYX_ERR(7, 137, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "GetPath") < 0)) __PYX_ERR(7, 142, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -17326,24 +18108,24 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_45GetPath(PyObject *__pyx_s
       values[1] = PyTuple_GET_ITEM(__pyx_args, 1);
     }
     __pyx_v_self = values[0];
-    __pyx_v_q = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 137, __pyx_L3_error)
+    __pyx_v_q = __pyx_PyFloat_AsFloat(values[1]); if (unlikely((__pyx_v_q == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 142, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("GetPath", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 137, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("GetPath", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 142, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PySiggen.GetPath", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(__pyx_self, __pyx_v_self, __pyx_v_q);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_48GetPath(__pyx_self, __pyx_v_self, __pyx_v_q);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_q) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_48GetPath(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, float __pyx_v_q) {
   std::vector<struct Siggen::point>  __pyx_v_dp;
   PyObject *__pyx_v_dt = NULL;
   PyObject *__pyx_v_dp_np = NULL;
@@ -17369,19 +18151,19 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
   __Pyx_FakeReference<struct Siggen::point> __pyx_t_17;
   __Pyx_RefNannySetupContext("GetPath", 0);
 
-  /* "siggen/PySiggen.pxi":139
+  /* "siggen/PySiggen.pxi":144
  *   def GetPath(self, float q):
  *     cdef vector[point] dp
  *     dp = self.siggen.get_driftpath(q)             # <<<<<<<<<<<<<<
  *     dt = self.siggen.get_last_drifttime(q)
  *     if dt > dp.size():
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 139, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 144, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_driftpath); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 139, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get_driftpath); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 144, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_q); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 139, __pyx_L1_error)
+  __pyx_t_2 = PyFloat_FromDouble(__pyx_v_q); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 144, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_4 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -17394,14 +18176,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
     }
   }
   if (!__pyx_t_4) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 139, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 144, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_2};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 139, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 144, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -17410,42 +18192,42 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[2] = {__pyx_t_4, __pyx_t_2};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 139, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 144, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     } else
     #endif
     {
-      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 139, __pyx_L1_error)
+      __pyx_t_5 = PyTuple_New(1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 144, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_4); __pyx_t_4 = NULL;
       __Pyx_GIVEREF(__pyx_t_2);
       PyTuple_SET_ITEM(__pyx_t_5, 0+1, __pyx_t_2);
       __pyx_t_2 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 139, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 144, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_6 = __pyx_convert_vector_from_py_struct__Siggen_3a__3a_point(__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(7, 139, __pyx_L1_error)
+  __pyx_t_6 = __pyx_convert_vector_from_py_struct__Siggen_3a__3a_point(__pyx_t_1); if (unlikely(PyErr_Occurred())) __PYX_ERR(7, 144, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_dp = __pyx_t_6;
 
-  /* "siggen/PySiggen.pxi":140
+  /* "siggen/PySiggen.pxi":145
  *     cdef vector[point] dp
  *     dp = self.siggen.get_driftpath(q)
  *     dt = self.siggen.get_last_drifttime(q)             # <<<<<<<<<<<<<<
  *     if dt > dp.size():
  *       print("dt %d, size %d, how did this happen?" % (dt,dp.size()))
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 140, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_siggen); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_get_last_drifttime); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 140, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_get_last_drifttime); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_q); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 140, __pyx_L1_error)
+  __pyx_t_3 = PyFloat_FromDouble(__pyx_v_q); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -17458,14 +18240,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
     }
   }
   if (!__pyx_t_2) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 140, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 145, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_t_3};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 140, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 145, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -17474,20 +18256,20 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[2] = {__pyx_t_2, __pyx_t_3};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 140, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 145, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     } else
     #endif
     {
-      __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 140, __pyx_L1_error)
+      __pyx_t_4 = PyTuple_New(1+1); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 145, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_2); __pyx_t_2 = NULL;
       __Pyx_GIVEREF(__pyx_t_3);
       PyTuple_SET_ITEM(__pyx_t_4, 0+1, __pyx_t_3);
       __pyx_t_3 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 140, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 145, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     }
@@ -17496,31 +18278,31 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
   __pyx_v_dt = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "siggen/PySiggen.pxi":141
+  /* "siggen/PySiggen.pxi":146
  *     dp = self.siggen.get_driftpath(q)
  *     dt = self.siggen.get_last_drifttime(q)
  *     if dt > dp.size():             # <<<<<<<<<<<<<<
  *       print("dt %d, size %d, how did this happen?" % (dt,dp.size()))
  * 
  */
-  __pyx_t_1 = __Pyx_PyInt_FromSize_t(__pyx_v_dp.size()); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 141, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyInt_FromSize_t(__pyx_v_dp.size()); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 146, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = PyObject_RichCompare(__pyx_v_dt, __pyx_t_1, Py_GT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 141, __pyx_L1_error)
+  __pyx_t_5 = PyObject_RichCompare(__pyx_v_dt, __pyx_t_1, Py_GT); __Pyx_XGOTREF(__pyx_t_5); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 146, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(7, 141, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(7, 146, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   if (__pyx_t_7) {
 
-    /* "siggen/PySiggen.pxi":142
+    /* "siggen/PySiggen.pxi":147
  *     dt = self.siggen.get_last_drifttime(q)
  *     if dt > dp.size():
  *       print("dt %d, size %d, how did this happen?" % (dt,dp.size()))             # <<<<<<<<<<<<<<
  * 
  *     #turn it into a np array
  */
-    __pyx_t_5 = __Pyx_PyInt_FromSize_t(__pyx_v_dp.size()); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 142, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyInt_FromSize_t(__pyx_v_dp.size()); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 147, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 142, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 147, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_v_dt);
     __Pyx_GIVEREF(__pyx_v_dt);
@@ -17528,13 +18310,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
     __Pyx_GIVEREF(__pyx_t_5);
     PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_5);
     __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyString_Format(__pyx_kp_s_dt_d_size_d_how_did_this_happen, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 142, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyString_Format(__pyx_kp_s_dt_d_size_d_how_did_this_happen, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 147, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (__Pyx_PrintOne(0, __pyx_t_5) < 0) __PYX_ERR(7, 142, __pyx_L1_error)
+    if (__Pyx_PrintOne(0, __pyx_t_5) < 0) __PYX_ERR(7, 147, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "siggen/PySiggen.pxi":141
+    /* "siggen/PySiggen.pxi":146
  *     dp = self.siggen.get_driftpath(q)
  *     dt = self.siggen.get_last_drifttime(q)
  *     if dt > dp.size():             # <<<<<<<<<<<<<<
@@ -17543,19 +18325,19 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
  */
   }
 
-  /* "siggen/PySiggen.pxi":145
+  /* "siggen/PySiggen.pxi":150
  * 
  *     #turn it into a np array
  *     dp_np = np.ones((3,dt))*np.nan             # <<<<<<<<<<<<<<
  *     for i in range(dt):
  *       if dp.at(i).x == 0 and dp.at(i).y==0 and dp.at(i).z==0:
  */
-  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 145, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 150, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_ones); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 145, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_ones); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 150, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 145, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 150, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_int_3);
   __Pyx_GIVEREF(__pyx_int_3);
@@ -17574,14 +18356,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
     }
   }
   if (!__pyx_t_3) {
-    __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 145, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 150, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_GOTREF(__pyx_t_5);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_4)) {
       PyObject *__pyx_temp[2] = {__pyx_t_3, __pyx_t_1};
-      __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 145, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 150, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -17590,59 +18372,59 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
       PyObject *__pyx_temp[2] = {__pyx_t_3, __pyx_t_1};
-      __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 145, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 150, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     } else
     #endif
     {
-      __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 145, __pyx_L1_error)
+      __pyx_t_2 = PyTuple_New(1+1); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 150, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3); __pyx_t_3 = NULL;
       __Pyx_GIVEREF(__pyx_t_1);
       PyTuple_SET_ITEM(__pyx_t_2, 0+1, __pyx_t_1);
       __pyx_t_1 = 0;
-      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 145, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_2, NULL); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 150, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 145, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 150, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_nan); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 145, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_nan); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 150, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = PyNumber_Multiply(__pyx_t_5, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 145, __pyx_L1_error)
+  __pyx_t_4 = PyNumber_Multiply(__pyx_t_5, __pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 150, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_dp_np = __pyx_t_4;
   __pyx_t_4 = 0;
 
-  /* "siggen/PySiggen.pxi":146
+  /* "siggen/PySiggen.pxi":151
  *     #turn it into a np array
  *     dp_np = np.ones((3,dt))*np.nan
  *     for i in range(dt):             # <<<<<<<<<<<<<<
  *       if dp.at(i).x == 0 and dp.at(i).y==0 and dp.at(i).z==0:
  *         continue
  */
-  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 146, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 151, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_INCREF(__pyx_v_dt);
   __Pyx_GIVEREF(__pyx_v_dt);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_v_dt);
-  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 146, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 151, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
     __pyx_t_4 = __pyx_t_2; __Pyx_INCREF(__pyx_t_4); __pyx_t_8 = 0;
     __pyx_t_9 = NULL;
   } else {
-    __pyx_t_8 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 146, __pyx_L1_error)
+    __pyx_t_8 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_4)) __PYX_ERR(7, 151, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_9 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(7, 146, __pyx_L1_error)
+    __pyx_t_9 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_9)) __PYX_ERR(7, 151, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   for (;;) {
@@ -17650,17 +18432,17 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
       if (likely(PyList_CheckExact(__pyx_t_4))) {
         if (__pyx_t_8 >= PyList_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(7, 146, __pyx_L1_error)
+        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(7, 151, __pyx_L1_error)
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_4, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 146, __pyx_L1_error)
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_4, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 151, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       } else {
         if (__pyx_t_8 >= PyTuple_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(7, 146, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_8); __Pyx_INCREF(__pyx_t_2); __pyx_t_8++; if (unlikely(0 < 0)) __PYX_ERR(7, 151, __pyx_L1_error)
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_4, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 146, __pyx_L1_error)
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_4, __pyx_t_8); __pyx_t_8++; if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 151, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       }
@@ -17670,7 +18452,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(7, 146, __pyx_L1_error)
+          else __PYX_ERR(7, 151, __pyx_L1_error)
         }
         break;
       }
@@ -17679,19 +18461,19 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "siggen/PySiggen.pxi":147
+    /* "siggen/PySiggen.pxi":152
  *     dp_np = np.ones((3,dt))*np.nan
  *     for i in range(dt):
  *       if dp.at(i).x == 0 and dp.at(i).y==0 and dp.at(i).z==0:             # <<<<<<<<<<<<<<
  *         continue
  *       else: dp_np[:,i] = dp.at(i).x, dp.at(i).y, dp.at(i).z
  */
-    __pyx_t_10 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_10 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 147, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_10 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 152, __pyx_L1_error)
     try {
       __pyx_t_11 = __pyx_v_dp.at(__pyx_t_10);
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      __PYX_ERR(7, 147, __pyx_L1_error)
+      __PYX_ERR(7, 152, __pyx_L1_error)
     }
     __pyx_t_12 = ((__pyx_t_11->x == 0.0) != 0);
     if (__pyx_t_12) {
@@ -17699,12 +18481,12 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
       __pyx_t_7 = __pyx_t_12;
       goto __pyx_L7_bool_binop_done;
     }
-    __pyx_t_10 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_10 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 147, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_10 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 152, __pyx_L1_error)
     try {
       __pyx_t_13 = __pyx_v_dp.at(__pyx_t_10);
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      __PYX_ERR(7, 147, __pyx_L1_error)
+      __PYX_ERR(7, 152, __pyx_L1_error)
     }
     __pyx_t_12 = ((__pyx_t_13->y == 0.0) != 0);
     if (__pyx_t_12) {
@@ -17712,19 +18494,19 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
       __pyx_t_7 = __pyx_t_12;
       goto __pyx_L7_bool_binop_done;
     }
-    __pyx_t_10 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_10 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 147, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_10 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 152, __pyx_L1_error)
     try {
       __pyx_t_14 = __pyx_v_dp.at(__pyx_t_10);
     } catch(...) {
       __Pyx_CppExn2PyErr();
-      __PYX_ERR(7, 147, __pyx_L1_error)
+      __PYX_ERR(7, 152, __pyx_L1_error)
     }
     __pyx_t_12 = ((__pyx_t_14->z == 0.0) != 0);
     __pyx_t_7 = __pyx_t_12;
     __pyx_L7_bool_binop_done:;
     if (__pyx_t_7) {
 
-      /* "siggen/PySiggen.pxi":148
+      /* "siggen/PySiggen.pxi":153
  *     for i in range(dt):
  *       if dp.at(i).x == 0 and dp.at(i).y==0 and dp.at(i).z==0:
  *         continue             # <<<<<<<<<<<<<<
@@ -17733,7 +18515,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
  */
       goto __pyx_L4_continue;
 
-      /* "siggen/PySiggen.pxi":147
+      /* "siggen/PySiggen.pxi":152
  *     dp_np = np.ones((3,dt))*np.nan
  *     for i in range(dt):
  *       if dp.at(i).x == 0 and dp.at(i).y==0 and dp.at(i).z==0:             # <<<<<<<<<<<<<<
@@ -17742,7 +18524,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
  */
     }
 
-    /* "siggen/PySiggen.pxi":149
+    /* "siggen/PySiggen.pxi":154
  *       if dp.at(i).x == 0 and dp.at(i).y==0 and dp.at(i).z==0:
  *         continue
  *       else: dp_np[:,i] = dp.at(i).x, dp.at(i).y, dp.at(i).z             # <<<<<<<<<<<<<<
@@ -17750,34 +18532,34 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
  *     return dp_np
  */
     /*else*/ {
-      __pyx_t_10 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_10 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 149, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_10 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 154, __pyx_L1_error)
       try {
         __pyx_t_15 = __pyx_v_dp.at(__pyx_t_10);
       } catch(...) {
         __Pyx_CppExn2PyErr();
-        __PYX_ERR(7, 149, __pyx_L1_error)
+        __PYX_ERR(7, 154, __pyx_L1_error)
       }
-      __pyx_t_2 = PyFloat_FromDouble(__pyx_t_15->x); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 149, __pyx_L1_error)
+      __pyx_t_2 = PyFloat_FromDouble(__pyx_t_15->x); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 154, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_10 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_10 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 149, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_10 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 154, __pyx_L1_error)
       try {
         __pyx_t_16 = __pyx_v_dp.at(__pyx_t_10);
       } catch(...) {
         __Pyx_CppExn2PyErr();
-        __PYX_ERR(7, 149, __pyx_L1_error)
+        __PYX_ERR(7, 154, __pyx_L1_error)
       }
-      __pyx_t_5 = PyFloat_FromDouble(__pyx_t_16->y); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 149, __pyx_L1_error)
+      __pyx_t_5 = PyFloat_FromDouble(__pyx_t_16->y); if (unlikely(!__pyx_t_5)) __PYX_ERR(7, 154, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_10 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_10 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 149, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyInt_As_size_t(__pyx_v_i); if (unlikely((__pyx_t_10 == (size_t)-1) && PyErr_Occurred())) __PYX_ERR(7, 154, __pyx_L1_error)
       try {
         __pyx_t_17 = __pyx_v_dp.at(__pyx_t_10);
       } catch(...) {
         __Pyx_CppExn2PyErr();
-        __PYX_ERR(7, 149, __pyx_L1_error)
+        __PYX_ERR(7, 154, __pyx_L1_error)
       }
-      __pyx_t_1 = PyFloat_FromDouble(__pyx_t_17->z); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 149, __pyx_L1_error)
+      __pyx_t_1 = PyFloat_FromDouble(__pyx_t_17->z); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 154, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 149, __pyx_L1_error)
+      __pyx_t_3 = PyTuple_New(3); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 154, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_GIVEREF(__pyx_t_2);
       PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_2);
@@ -17788,7 +18570,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
       __pyx_t_2 = 0;
       __pyx_t_5 = 0;
       __pyx_t_1 = 0;
-      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 149, __pyx_L1_error)
+      __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 154, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_INCREF(__pyx_slice__23);
       __Pyx_GIVEREF(__pyx_slice__23);
@@ -17796,12 +18578,12 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
       __Pyx_INCREF(__pyx_v_i);
       __Pyx_GIVEREF(__pyx_v_i);
       PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_i);
-      if (unlikely(PyObject_SetItem(__pyx_v_dp_np, __pyx_t_1, __pyx_t_3) < 0)) __PYX_ERR(7, 149, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_v_dp_np, __pyx_t_1, __pyx_t_3) < 0)) __PYX_ERR(7, 154, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
 
-    /* "siggen/PySiggen.pxi":146
+    /* "siggen/PySiggen.pxi":151
  *     #turn it into a np array
  *     dp_np = np.ones((3,dt))*np.nan
  *     for i in range(dt):             # <<<<<<<<<<<<<<
@@ -17812,7 +18594,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "siggen/PySiggen.pxi":151
+  /* "siggen/PySiggen.pxi":156
  *       else: dp_np[:,i] = dp.at(i).x, dp.at(i).y, dp.at(i).z
  * 
  *     return dp_np             # <<<<<<<<<<<<<<
@@ -17824,7 +18606,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
   __pyx_r = __pyx_v_dp_np;
   goto __pyx_L0;
 
-  /* "siggen/PySiggen.pxi":137
+  /* "siggen/PySiggen.pxi":142
  *     return dwp_np
  * 
  *   def GetPath(self, float q):             # <<<<<<<<<<<<<<
@@ -17850,7 +18632,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
   return __pyx_r;
 }
 
-/* "siggen/PySiggen.pxi":153
+/* "siggen/PySiggen.pxi":158
  *     return dp_np
  * 
  *   def save_efield(self, mat_full, efld_name, header_bytes):             # <<<<<<<<<<<<<<
@@ -17859,9 +18641,9 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_44GetPath(CYTHON_UNUSED PyO
  */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_47save_efield(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_47save_efield = {"save_efield", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_47save_efield, METH_VARARGS|METH_KEYWORDS, 0};
-static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_47save_efield(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_51save_efield(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static PyMethodDef __pyx_mdef_6siggen_7_siggen_8PySiggen_51save_efield = {"save_efield", (PyCFunction)__pyx_pw_6siggen_7_siggen_8PySiggen_51save_efield, METH_VARARGS|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_51save_efield(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   CYTHON_UNUSED PyObject *__pyx_v_self = 0;
   PyObject *__pyx_v_mat_full = 0;
   PyObject *__pyx_v_efld_name = 0;
@@ -17896,23 +18678,23 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_47save_efield(PyObject *__p
         case  1:
         if (likely((values[1] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_mat_full)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("save_efield", 1, 4, 4, 1); __PYX_ERR(7, 153, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("save_efield", 1, 4, 4, 1); __PYX_ERR(7, 158, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_efld_name)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("save_efield", 1, 4, 4, 2); __PYX_ERR(7, 153, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("save_efield", 1, 4, 4, 2); __PYX_ERR(7, 158, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = PyDict_GetItem(__pyx_kwds, __pyx_n_s_header_bytes)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("save_efield", 1, 4, 4, 3); __PYX_ERR(7, 153, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("save_efield", 1, 4, 4, 3); __PYX_ERR(7, 158, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "save_efield") < 0)) __PYX_ERR(7, 153, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "save_efield") < 0)) __PYX_ERR(7, 158, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 4) {
       goto __pyx_L5_argtuple_error;
@@ -17929,20 +18711,20 @@ static PyObject *__pyx_pw_6siggen_7_siggen_8PySiggen_47save_efield(PyObject *__p
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("save_efield", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 153, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("save_efield", 1, 4, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(7, 158, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PySiggen.save_efield", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(__pyx_self, __pyx_v_self, __pyx_v_mat_full, __pyx_v_efld_name, __pyx_v_header_bytes);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_8PySiggen_50save_efield(__pyx_self, __pyx_v_self, __pyx_v_mat_full, __pyx_v_efld_name, __pyx_v_header_bytes);
 
   /* function exit code */
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_mat_full, PyObject *__pyx_v_efld_name, PyObject *__pyx_v_header_bytes) {
+static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_50save_efield(CYTHON_UNUSED PyObject *__pyx_self, CYTHON_UNUSED PyObject *__pyx_v_self, PyObject *__pyx_v_mat_full, PyObject *__pyx_v_efld_name, PyObject *__pyx_v_header_bytes) {
   Siggen::EFieldPoint __pyx_v_e_pt;
   struct Siggen::cyl_pt __pyx_v_c_pt;
   std::ofstream *__pyx_v_outputter;
@@ -17987,14 +18769,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
   float __pyx_t_24;
   __Pyx_RefNannySetupContext("save_efield", 0);
 
-  /* "siggen/PySiggen.pxi":159
+  /* "siggen/PySiggen.pxi":164
  *     cdef unsigned int header_size
  *     # use try ... finally to ensure destructor is called
  *     outputter = new ofstream(efld_name.encode(), binary)             # <<<<<<<<<<<<<<
  * 
  *     r_num = mat_full.shape[0]
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_efld_name, __pyx_n_s_encode); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 159, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_efld_name, __pyx_n_s_encode); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 164, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -18007,97 +18789,97 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
     }
   }
   if (__pyx_t_3) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 159, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 164, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else {
-    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 159, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 164, __pyx_L1_error)
   }
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __Pyx_PyObject_AsString(__pyx_t_1); if (unlikely((!__pyx_t_4) && PyErr_Occurred())) __PYX_ERR(7, 159, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_AsString(__pyx_t_1); if (unlikely((!__pyx_t_4) && PyErr_Occurred())) __PYX_ERR(7, 164, __pyx_L1_error)
   try {
     __pyx_t_5 = new std::ofstream(__pyx_t_4, std::ios_base::binary);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(7, 159, __pyx_L1_error)
+    __PYX_ERR(7, 164, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_outputter = __pyx_t_5;
 
-  /* "siggen/PySiggen.pxi":161
+  /* "siggen/PySiggen.pxi":166
  *     outputter = new ofstream(efld_name.encode(), binary)
  * 
  *     r_num = mat_full.shape[0]             # <<<<<<<<<<<<<<
  *     z_num = mat_full.shape[1]
  *     imp_num = mat_full.shape[2]
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_mat_full, __pyx_n_s_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 161, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_mat_full, __pyx_n_s_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 161, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 166, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_r_num = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":162
+  /* "siggen/PySiggen.pxi":167
  * 
  *     r_num = mat_full.shape[0]
  *     z_num = mat_full.shape[1]             # <<<<<<<<<<<<<<
  *     imp_num = mat_full.shape[2]
  *     grad_num = mat_full.shape[3]
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_mat_full, __pyx_n_s_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 162, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_mat_full, __pyx_n_s_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 167, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 162, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 167, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_z_num = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "siggen/PySiggen.pxi":163
+  /* "siggen/PySiggen.pxi":168
  *     r_num = mat_full.shape[0]
  *     z_num = mat_full.shape[1]
  *     imp_num = mat_full.shape[2]             # <<<<<<<<<<<<<<
  *     grad_num = mat_full.shape[3]
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_mat_full, __pyx_n_s_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 163, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_mat_full, __pyx_n_s_shape); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 163, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_imp_num = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":164
+  /* "siggen/PySiggen.pxi":169
  *     z_num = mat_full.shape[1]
  *     imp_num = mat_full.shape[2]
  *     grad_num = mat_full.shape[3]             # <<<<<<<<<<<<<<
  * 
  *     header_size = np.uint32(len(header_bytes))
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_mat_full, __pyx_n_s_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 164, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_mat_full, __pyx_n_s_shape); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 3, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 164, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 3, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 169, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_grad_num = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "siggen/PySiggen.pxi":166
+  /* "siggen/PySiggen.pxi":171
  *     grad_num = mat_full.shape[3]
  * 
  *     header_size = np.uint32(len(header_bytes))             # <<<<<<<<<<<<<<
  * 
  *     outputter.write(<char*> & header_size,4);
  */
-  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 166, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetModuleGlobalName(__pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_uint32); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 166, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_uint32); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_6 = PyObject_Length(__pyx_v_header_bytes); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(7, 166, __pyx_L1_error)
-  __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 166, __pyx_L1_error)
+  __pyx_t_6 = PyObject_Length(__pyx_v_header_bytes); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(7, 171, __pyx_L1_error)
+  __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 171, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_7 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_3))) {
@@ -18110,14 +18892,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
     }
   }
   if (!__pyx_t_7) {
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 166, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 171, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else {
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[2] = {__pyx_t_7, __pyx_t_2};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 166, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 171, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -18126,30 +18908,30 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[2] = {__pyx_t_7, __pyx_t_2};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 166, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-1, 1+1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 171, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     } else
     #endif
     {
-      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 166, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(1+1); if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 171, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_7); __pyx_t_7 = NULL;
       __Pyx_GIVEREF(__pyx_t_2);
       PyTuple_SET_ITEM(__pyx_t_8, 0+1, __pyx_t_2);
       __pyx_t_2 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_8, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 166, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_8, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 171, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_9 = __Pyx_PyInt_As_unsigned_int(__pyx_t_1); if (unlikely((__pyx_t_9 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(7, 166, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyInt_As_unsigned_int(__pyx_t_1); if (unlikely((__pyx_t_9 == (unsigned int)-1) && PyErr_Occurred())) __PYX_ERR(7, 171, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_header_size = __pyx_t_9;
 
-  /* "siggen/PySiggen.pxi":168
+  /* "siggen/PySiggen.pxi":173
  *     header_size = np.uint32(len(header_bytes))
  * 
  *     outputter.write(<char*> & header_size,4);             # <<<<<<<<<<<<<<
@@ -18160,46 +18942,46 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
     __pyx_v_outputter->write(((char *)(&__pyx_v_header_size)), 4);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(7, 168, __pyx_L1_error)
+    __PYX_ERR(7, 173, __pyx_L1_error)
   }
 
-  /* "siggen/PySiggen.pxi":169
+  /* "siggen/PySiggen.pxi":174
  * 
  *     outputter.write(<char*> & header_size,4);
  *     outputter.write(header_bytes, header_size);             # <<<<<<<<<<<<<<
  * 
  *     # mat_full = solve_efield()
  */
-  __pyx_t_10 = __Pyx_PyObject_AsString(__pyx_v_header_bytes); if (unlikely((!__pyx_t_10) && PyErr_Occurred())) __PYX_ERR(7, 169, __pyx_L1_error)
+  __pyx_t_10 = __Pyx_PyObject_AsString(__pyx_v_header_bytes); if (unlikely((!__pyx_t_10) && PyErr_Occurred())) __PYX_ERR(7, 174, __pyx_L1_error)
   try {
     __pyx_v_outputter->write(__pyx_t_10, __pyx_v_header_size);
   } catch(...) {
     __Pyx_CppExn2PyErr();
-    __PYX_ERR(7, 169, __pyx_L1_error)
+    __PYX_ERR(7, 174, __pyx_L1_error)
   }
 
-  /* "siggen/PySiggen.pxi":173
+  /* "siggen/PySiggen.pxi":178
  *     # mat_full = solve_efield()
  * 
  *     for i in range(r_num):             # <<<<<<<<<<<<<<
  *       for j in range(z_num):
  *         for k in range(imp_num):
  */
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 173, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_r_num);
   __Pyx_GIVEREF(__pyx_v_r_num);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_r_num);
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 173, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 178, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
     __pyx_t_1 = __pyx_t_3; __Pyx_INCREF(__pyx_t_1); __pyx_t_6 = 0;
     __pyx_t_11 = NULL;
   } else {
-    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 173, __pyx_L1_error)
+    __pyx_t_6 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(7, 178, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_11 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(7, 173, __pyx_L1_error)
+    __pyx_t_11 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_11)) __PYX_ERR(7, 178, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   for (;;) {
@@ -18207,17 +18989,17 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_6 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(7, 173, __pyx_L1_error)
+        __pyx_t_3 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(7, 178, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 173, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 178, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       } else {
         if (__pyx_t_6 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(7, 173, __pyx_L1_error)
+        __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_6); __Pyx_INCREF(__pyx_t_3); __pyx_t_6++; if (unlikely(0 < 0)) __PYX_ERR(7, 178, __pyx_L1_error)
         #else
-        __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 173, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(__pyx_t_1, __pyx_t_6); __pyx_t_6++; if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 178, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         #endif
       }
@@ -18227,7 +19009,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(7, 173, __pyx_L1_error)
+          else __PYX_ERR(7, 178, __pyx_L1_error)
         }
         break;
       }
@@ -18236,28 +19018,28 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
     __Pyx_XDECREF_SET(__pyx_v_i, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "siggen/PySiggen.pxi":174
+    /* "siggen/PySiggen.pxi":179
  * 
  *     for i in range(r_num):
  *       for j in range(z_num):             # <<<<<<<<<<<<<<
  *         for k in range(imp_num):
  *           for m in range(grad_num):
  */
-    __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 174, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_INCREF(__pyx_v_z_num);
     __Pyx_GIVEREF(__pyx_v_z_num);
     PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_v_z_num);
-    __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_3, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 174, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_3, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 179, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (likely(PyList_CheckExact(__pyx_t_8)) || PyTuple_CheckExact(__pyx_t_8)) {
       __pyx_t_3 = __pyx_t_8; __Pyx_INCREF(__pyx_t_3); __pyx_t_12 = 0;
       __pyx_t_13 = NULL;
     } else {
-      __pyx_t_12 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 174, __pyx_L1_error)
+      __pyx_t_12 = -1; __pyx_t_3 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(7, 179, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_13 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(7, 174, __pyx_L1_error)
+      __pyx_t_13 = Py_TYPE(__pyx_t_3)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(7, 179, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     for (;;) {
@@ -18265,17 +19047,17 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
         if (likely(PyList_CheckExact(__pyx_t_3))) {
           if (__pyx_t_12 >= PyList_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_8 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_12); __Pyx_INCREF(__pyx_t_8); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(7, 174, __pyx_L1_error)
+          __pyx_t_8 = PyList_GET_ITEM(__pyx_t_3, __pyx_t_12); __Pyx_INCREF(__pyx_t_8); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(7, 179, __pyx_L1_error)
           #else
-          __pyx_t_8 = PySequence_ITEM(__pyx_t_3, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 174, __pyx_L1_error)
+          __pyx_t_8 = PySequence_ITEM(__pyx_t_3, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 179, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           #endif
         } else {
           if (__pyx_t_12 >= PyTuple_GET_SIZE(__pyx_t_3)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_12); __Pyx_INCREF(__pyx_t_8); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(7, 174, __pyx_L1_error)
+          __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_3, __pyx_t_12); __Pyx_INCREF(__pyx_t_8); __pyx_t_12++; if (unlikely(0 < 0)) __PYX_ERR(7, 179, __pyx_L1_error)
           #else
-          __pyx_t_8 = PySequence_ITEM(__pyx_t_3, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 174, __pyx_L1_error)
+          __pyx_t_8 = PySequence_ITEM(__pyx_t_3, __pyx_t_12); __pyx_t_12++; if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 179, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_8);
           #endif
         }
@@ -18285,7 +19067,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(7, 174, __pyx_L1_error)
+            else __PYX_ERR(7, 179, __pyx_L1_error)
           }
           break;
         }
@@ -18294,28 +19076,28 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
       __Pyx_XDECREF_SET(__pyx_v_j, __pyx_t_8);
       __pyx_t_8 = 0;
 
-      /* "siggen/PySiggen.pxi":175
+      /* "siggen/PySiggen.pxi":180
  *     for i in range(r_num):
  *       for j in range(z_num):
  *         for k in range(imp_num):             # <<<<<<<<<<<<<<
  *           for m in range(grad_num):
  *             voltage, e, e_r, e_z = mat_full[i,j,k,m,:]
  */
-      __pyx_t_8 = PyTuple_New(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 175, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 180, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_INCREF(__pyx_v_imp_num);
       __Pyx_GIVEREF(__pyx_v_imp_num);
       PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_v_imp_num);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 175, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 180, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
         __pyx_t_8 = __pyx_t_2; __Pyx_INCREF(__pyx_t_8); __pyx_t_14 = 0;
         __pyx_t_15 = NULL;
       } else {
-        __pyx_t_14 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 175, __pyx_L1_error)
+        __pyx_t_14 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(7, 180, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_15 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(7, 175, __pyx_L1_error)
+        __pyx_t_15 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_15)) __PYX_ERR(7, 180, __pyx_L1_error)
       }
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       for (;;) {
@@ -18323,17 +19105,17 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
           if (likely(PyList_CheckExact(__pyx_t_8))) {
             if (__pyx_t_14 >= PyList_GET_SIZE(__pyx_t_8)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_2 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(7, 175, __pyx_L1_error)
+            __pyx_t_2 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(7, 180, __pyx_L1_error)
             #else
-            __pyx_t_2 = PySequence_ITEM(__pyx_t_8, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 175, __pyx_L1_error)
+            __pyx_t_2 = PySequence_ITEM(__pyx_t_8, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 180, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             #endif
           } else {
             if (__pyx_t_14 >= PyTuple_GET_SIZE(__pyx_t_8)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(7, 175, __pyx_L1_error)
+            __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_14); __Pyx_INCREF(__pyx_t_2); __pyx_t_14++; if (unlikely(0 < 0)) __PYX_ERR(7, 180, __pyx_L1_error)
             #else
-            __pyx_t_2 = PySequence_ITEM(__pyx_t_8, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 175, __pyx_L1_error)
+            __pyx_t_2 = PySequence_ITEM(__pyx_t_8, __pyx_t_14); __pyx_t_14++; if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 180, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_2);
             #endif
           }
@@ -18343,7 +19125,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(7, 175, __pyx_L1_error)
+              else __PYX_ERR(7, 180, __pyx_L1_error)
             }
             break;
           }
@@ -18352,28 +19134,28 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
         __Pyx_XDECREF_SET(__pyx_v_k, __pyx_t_2);
         __pyx_t_2 = 0;
 
-        /* "siggen/PySiggen.pxi":176
+        /* "siggen/PySiggen.pxi":181
  *       for j in range(z_num):
  *         for k in range(imp_num):
  *           for m in range(grad_num):             # <<<<<<<<<<<<<<
  *             voltage, e, e_r, e_z = mat_full[i,j,k,m,:]
  *             c_pt.r = e_r
  */
-        __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 176, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 181, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_INCREF(__pyx_v_grad_num);
         __Pyx_GIVEREF(__pyx_v_grad_num);
         PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_grad_num);
-        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_2, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 176, __pyx_L1_error)
+        __pyx_t_7 = __Pyx_PyObject_Call(__pyx_builtin_range, __pyx_t_2, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 181, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
           __pyx_t_2 = __pyx_t_7; __Pyx_INCREF(__pyx_t_2); __pyx_t_16 = 0;
           __pyx_t_17 = NULL;
         } else {
-          __pyx_t_16 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 176, __pyx_L1_error)
+          __pyx_t_16 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 181, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
-          __pyx_t_17 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_17)) __PYX_ERR(7, 176, __pyx_L1_error)
+          __pyx_t_17 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_17)) __PYX_ERR(7, 181, __pyx_L1_error)
         }
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         for (;;) {
@@ -18381,17 +19163,17 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
             if (likely(PyList_CheckExact(__pyx_t_2))) {
               if (__pyx_t_16 >= PyList_GET_SIZE(__pyx_t_2)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_7 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_16); __Pyx_INCREF(__pyx_t_7); __pyx_t_16++; if (unlikely(0 < 0)) __PYX_ERR(7, 176, __pyx_L1_error)
+              __pyx_t_7 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_16); __Pyx_INCREF(__pyx_t_7); __pyx_t_16++; if (unlikely(0 < 0)) __PYX_ERR(7, 181, __pyx_L1_error)
               #else
-              __pyx_t_7 = PySequence_ITEM(__pyx_t_2, __pyx_t_16); __pyx_t_16++; if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 176, __pyx_L1_error)
+              __pyx_t_7 = PySequence_ITEM(__pyx_t_2, __pyx_t_16); __pyx_t_16++; if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 181, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_7);
               #endif
             } else {
               if (__pyx_t_16 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_16); __Pyx_INCREF(__pyx_t_7); __pyx_t_16++; if (unlikely(0 < 0)) __PYX_ERR(7, 176, __pyx_L1_error)
+              __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_16); __Pyx_INCREF(__pyx_t_7); __pyx_t_16++; if (unlikely(0 < 0)) __PYX_ERR(7, 181, __pyx_L1_error)
               #else
-              __pyx_t_7 = PySequence_ITEM(__pyx_t_2, __pyx_t_16); __pyx_t_16++; if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 176, __pyx_L1_error)
+              __pyx_t_7 = PySequence_ITEM(__pyx_t_2, __pyx_t_16); __pyx_t_16++; if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 181, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_7);
               #endif
             }
@@ -18401,7 +19183,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else __PYX_ERR(7, 176, __pyx_L1_error)
+                else __PYX_ERR(7, 181, __pyx_L1_error)
               }
               break;
             }
@@ -18410,14 +19192,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
           __Pyx_XDECREF_SET(__pyx_v_m, __pyx_t_7);
           __pyx_t_7 = 0;
 
-          /* "siggen/PySiggen.pxi":177
+          /* "siggen/PySiggen.pxi":182
  *         for k in range(imp_num):
  *           for m in range(grad_num):
  *             voltage, e, e_r, e_z = mat_full[i,j,k,m,:]             # <<<<<<<<<<<<<<
  *             c_pt.r = e_r
  *             c_pt.z = e_z
  */
-          __pyx_t_7 = PyTuple_New(5); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 177, __pyx_L1_error)
+          __pyx_t_7 = PyTuple_New(5); if (unlikely(!__pyx_t_7)) __PYX_ERR(7, 182, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           __Pyx_INCREF(__pyx_v_i);
           __Pyx_GIVEREF(__pyx_v_i);
@@ -18434,7 +19216,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
           __Pyx_INCREF(__pyx_slice__24);
           __Pyx_GIVEREF(__pyx_slice__24);
           PyTuple_SET_ITEM(__pyx_t_7, 4, __pyx_slice__24);
-          __pyx_t_18 = PyObject_GetItem(__pyx_v_mat_full, __pyx_t_7); if (unlikely(!__pyx_t_18)) __PYX_ERR(7, 177, __pyx_L1_error)
+          __pyx_t_18 = PyObject_GetItem(__pyx_v_mat_full, __pyx_t_7); if (unlikely(!__pyx_t_18)) __PYX_ERR(7, 182, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_18);
           __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
           if ((likely(PyTuple_CheckExact(__pyx_t_18))) || (PyList_CheckExact(__pyx_t_18))) {
@@ -18447,7 +19229,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
             if (unlikely(size != 4)) {
               if (size > 4) __Pyx_RaiseTooManyValuesError(4);
               else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-              __PYX_ERR(7, 177, __pyx_L1_error)
+              __PYX_ERR(7, 182, __pyx_L1_error)
             }
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
             if (likely(PyTuple_CheckExact(sequence))) {
@@ -18470,7 +19252,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
               Py_ssize_t i;
               PyObject** temps[4] = {&__pyx_t_7,&__pyx_t_19,&__pyx_t_20,&__pyx_t_21};
               for (i=0; i < 4; i++) {
-                PyObject* item = PySequence_ITEM(sequence, i); if (unlikely(!item)) __PYX_ERR(7, 177, __pyx_L1_error)
+                PyObject* item = PySequence_ITEM(sequence, i); if (unlikely(!item)) __PYX_ERR(7, 182, __pyx_L1_error)
                 __Pyx_GOTREF(item);
                 *(temps[i]) = item;
               }
@@ -18480,7 +19262,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
           } else {
             Py_ssize_t index = -1;
             PyObject** temps[4] = {&__pyx_t_7,&__pyx_t_19,&__pyx_t_20,&__pyx_t_21};
-            __pyx_t_22 = PyObject_GetIter(__pyx_t_18); if (unlikely(!__pyx_t_22)) __PYX_ERR(7, 177, __pyx_L1_error)
+            __pyx_t_22 = PyObject_GetIter(__pyx_t_18); if (unlikely(!__pyx_t_22)) __PYX_ERR(7, 182, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_22);
             __Pyx_DECREF(__pyx_t_18); __pyx_t_18 = 0;
             __pyx_t_23 = Py_TYPE(__pyx_t_22)->tp_iternext;
@@ -18489,7 +19271,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
               __Pyx_GOTREF(item);
               *(temps[index]) = item;
             }
-            if (__Pyx_IternextUnpackEndCheck(__pyx_t_23(__pyx_t_22), 4) < 0) __PYX_ERR(7, 177, __pyx_L1_error)
+            if (__Pyx_IternextUnpackEndCheck(__pyx_t_23(__pyx_t_22), 4) < 0) __PYX_ERR(7, 182, __pyx_L1_error)
             __pyx_t_23 = NULL;
             __Pyx_DECREF(__pyx_t_22); __pyx_t_22 = 0;
             goto __pyx_L12_unpacking_done;
@@ -18497,7 +19279,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
             __Pyx_DECREF(__pyx_t_22); __pyx_t_22 = 0;
             __pyx_t_23 = NULL;
             if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-            __PYX_ERR(7, 177, __pyx_L1_error)
+            __PYX_ERR(7, 182, __pyx_L1_error)
             __pyx_L12_unpacking_done:;
           }
           __Pyx_XDECREF_SET(__pyx_v_voltage, __pyx_t_7);
@@ -18509,27 +19291,27 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
           __Pyx_XDECREF_SET(__pyx_v_e_z, __pyx_t_21);
           __pyx_t_21 = 0;
 
-          /* "siggen/PySiggen.pxi":178
+          /* "siggen/PySiggen.pxi":183
  *           for m in range(grad_num):
  *             voltage, e, e_r, e_z = mat_full[i,j,k,m,:]
  *             c_pt.r = e_r             # <<<<<<<<<<<<<<
  *             c_pt.z = e_z
  *             c_pt.phi = 0
  */
-          __pyx_t_24 = __pyx_PyFloat_AsFloat(__pyx_v_e_r); if (unlikely((__pyx_t_24 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 178, __pyx_L1_error)
+          __pyx_t_24 = __pyx_PyFloat_AsFloat(__pyx_v_e_r); if (unlikely((__pyx_t_24 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 183, __pyx_L1_error)
           __pyx_v_c_pt.r = __pyx_t_24;
 
-          /* "siggen/PySiggen.pxi":179
+          /* "siggen/PySiggen.pxi":184
  *             voltage, e, e_r, e_z = mat_full[i,j,k,m,:]
  *             c_pt.r = e_r
  *             c_pt.z = e_z             # <<<<<<<<<<<<<<
  *             c_pt.phi = 0
  *             e_pt.set_field(c_pt)
  */
-          __pyx_t_24 = __pyx_PyFloat_AsFloat(__pyx_v_e_z); if (unlikely((__pyx_t_24 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 179, __pyx_L1_error)
+          __pyx_t_24 = __pyx_PyFloat_AsFloat(__pyx_v_e_z); if (unlikely((__pyx_t_24 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 184, __pyx_L1_error)
           __pyx_v_c_pt.z = __pyx_t_24;
 
-          /* "siggen/PySiggen.pxi":180
+          /* "siggen/PySiggen.pxi":185
  *             c_pt.r = e_r
  *             c_pt.z = e_z
  *             c_pt.phi = 0             # <<<<<<<<<<<<<<
@@ -18538,7 +19320,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
  */
           __pyx_v_c_pt.phi = 0.0;
 
-          /* "siggen/PySiggen.pxi":181
+          /* "siggen/PySiggen.pxi":186
  *             c_pt.z = e_z
  *             c_pt.phi = 0
  *             e_pt.set_field(c_pt)             # <<<<<<<<<<<<<<
@@ -18547,17 +19329,17 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
  */
           __pyx_v_e_pt.set_field(__pyx_v_c_pt);
 
-          /* "siggen/PySiggen.pxi":182
+          /* "siggen/PySiggen.pxi":187
  *             c_pt.phi = 0
  *             e_pt.set_field(c_pt)
  *             e_pt.set_voltage(voltage)             # <<<<<<<<<<<<<<
  *             e_pt.serialize(outputter)
  * 
  */
-          __pyx_t_24 = __pyx_PyFloat_AsFloat(__pyx_v_voltage); if (unlikely((__pyx_t_24 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 182, __pyx_L1_error)
+          __pyx_t_24 = __pyx_PyFloat_AsFloat(__pyx_v_voltage); if (unlikely((__pyx_t_24 == (float)-1) && PyErr_Occurred())) __PYX_ERR(7, 187, __pyx_L1_error)
           __pyx_v_e_pt.set_voltage(__pyx_t_24);
 
-          /* "siggen/PySiggen.pxi":183
+          /* "siggen/PySiggen.pxi":188
  *             e_pt.set_field(c_pt)
  *             e_pt.set_voltage(voltage)
  *             e_pt.serialize(outputter)             # <<<<<<<<<<<<<<
@@ -18566,7 +19348,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
  */
           __pyx_v_e_pt.serialize(__pyx_v_outputter);
 
-          /* "siggen/PySiggen.pxi":176
+          /* "siggen/PySiggen.pxi":181
  *       for j in range(z_num):
  *         for k in range(imp_num):
  *           for m in range(grad_num):             # <<<<<<<<<<<<<<
@@ -18576,7 +19358,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
         }
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-        /* "siggen/PySiggen.pxi":175
+        /* "siggen/PySiggen.pxi":180
  *     for i in range(r_num):
  *       for j in range(z_num):
  *         for k in range(imp_num):             # <<<<<<<<<<<<<<
@@ -18586,7 +19368,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
       }
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-      /* "siggen/PySiggen.pxi":174
+      /* "siggen/PySiggen.pxi":179
  * 
  *     for i in range(r_num):
  *       for j in range(z_num):             # <<<<<<<<<<<<<<
@@ -18596,7 +19378,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "siggen/PySiggen.pxi":173
+    /* "siggen/PySiggen.pxi":178
  *     # mat_full = solve_efield()
  * 
  *     for i in range(r_num):             # <<<<<<<<<<<<<<
@@ -18606,14 +19388,14 @@ static PyObject *__pyx_pf_6siggen_7_siggen_8PySiggen_46save_efield(CYTHON_UNUSED
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/PySiggen.pxi":185
+  /* "siggen/PySiggen.pxi":190
  *             e_pt.serialize(outputter)
  * 
  *     del outputter             # <<<<<<<<<<<<<<
  */
   delete __pyx_v_outputter;
 
-  /* "siggen/PySiggen.pxi":153
+  /* "siggen/PySiggen.pxi":158
  *     return dp_np
  * 
  *   def save_efield(self, mat_full, efld_name, header_bytes):             # <<<<<<<<<<<<<<
@@ -22265,15 +23047,17 @@ static int __pyx_setprop_6siggen_7_siggen_19DetectorWrapper_PPC_trapping_constan
 
 static PyMethodDef __pyx_methods_6siggen_7_siggen_DetectorWrapper_PPC[] = {
   {"field_setup", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_5field_setup, METH_NOARGS, 0},
-  {"outside_detector", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_7outside_detector, METH_O, 0},
-  {"efield", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_9efield, METH_VARARGS|METH_KEYWORDS, 0},
-  {"wpotential", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_11wpotential, METH_VARARGS|METH_KEYWORDS, 0},
-  {"set_holes", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_13set_holes, METH_VARARGS|METH_KEYWORDS, 0},
-  {"set_electrons", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_15set_electrons, METH_VARARGS|METH_KEYWORDS, 0},
-  {"set_impurity_z0", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_17set_impurity_z0, METH_VARARGS|METH_KEYWORDS, 0},
-  {"set_impurity_avg", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_19set_impurity_avg, METH_VARARGS|METH_KEYWORDS, 0},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_21__reduce_cython__, METH_NOARGS, 0},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_23__setstate_cython__, METH_O, 0},
+  {"set_temp", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_7set_temp, METH_O, 0},
+  {"set_use_velo_model", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_9set_use_velo_model, METH_O, 0},
+  {"outside_detector", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_11outside_detector, METH_O, 0},
+  {"efield", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_13efield, METH_VARARGS|METH_KEYWORDS, 0},
+  {"wpotential", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_15wpotential, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_holes", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_17set_holes, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_electrons", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_19set_electrons, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_impurity_z0", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_21set_impurity_z0, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_impurity_avg", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_23set_impurity_avg, METH_VARARGS|METH_KEYWORDS, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_25__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_PPC_27__setstate_cython__, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -22534,15 +23318,17 @@ static int __pyx_setprop_6siggen_7_siggen_19DetectorWrapper_GEM_trapping_constan
 
 static PyMethodDef __pyx_methods_6siggen_7_siggen_DetectorWrapper_GEM[] = {
   {"field_setup", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_5field_setup, METH_NOARGS, 0},
-  {"outside_detector", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_7outside_detector, METH_O, 0},
-  {"efield", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_9efield, METH_VARARGS|METH_KEYWORDS, 0},
-  {"wpotential", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_11wpotential, METH_VARARGS|METH_KEYWORDS, 0},
-  {"set_holes", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_13set_holes, METH_VARARGS|METH_KEYWORDS, 0},
-  {"set_electrons", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_15set_electrons, METH_VARARGS|METH_KEYWORDS, 0},
-  {"set_impurity_z0", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_17set_impurity_z0, METH_VARARGS|METH_KEYWORDS, 0},
-  {"set_impurity_avg", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_19set_impurity_avg, METH_VARARGS|METH_KEYWORDS, 0},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_21__reduce_cython__, METH_NOARGS, 0},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_23__setstate_cython__, METH_O, 0},
+  {"set_temp", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_7set_temp, METH_O, 0},
+  {"set_use_velo_model", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_9set_use_velo_model, METH_O, 0},
+  {"outside_detector", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_11outside_detector, METH_O, 0},
+  {"efield", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_13efield, METH_VARARGS|METH_KEYWORDS, 0},
+  {"wpotential", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_15wpotential, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_holes", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_17set_holes, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_electrons", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_19set_electrons, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_impurity_z0", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_21set_impurity_z0, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_impurity_avg", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_23set_impurity_avg, METH_VARARGS|METH_KEYWORDS, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_25__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_6siggen_7_siggen_19DetectorWrapper_GEM_27__setstate_cython__, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -22803,15 +23589,17 @@ static int __pyx_setprop_6siggen_7_siggen_20DetectorWrapper_ICPC_trapping_consta
 
 static PyMethodDef __pyx_methods_6siggen_7_siggen_DetectorWrapper_ICPC[] = {
   {"field_setup", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_5field_setup, METH_NOARGS, 0},
-  {"outside_detector", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_7outside_detector, METH_O, 0},
-  {"efield", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_9efield, METH_VARARGS|METH_KEYWORDS, 0},
-  {"wpotential", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_11wpotential, METH_VARARGS|METH_KEYWORDS, 0},
-  {"set_holes", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_13set_holes, METH_VARARGS|METH_KEYWORDS, 0},
-  {"set_electrons", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_15set_electrons, METH_VARARGS|METH_KEYWORDS, 0},
-  {"set_impurity_z0", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_17set_impurity_z0, METH_VARARGS|METH_KEYWORDS, 0},
-  {"set_impurity_avg", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_19set_impurity_avg, METH_VARARGS|METH_KEYWORDS, 0},
-  {"__reduce_cython__", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_21__reduce_cython__, METH_NOARGS, 0},
-  {"__setstate_cython__", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_23__setstate_cython__, METH_O, 0},
+  {"set_temp", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_7set_temp, METH_O, 0},
+  {"set_use_velo_model", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_9set_use_velo_model, METH_O, 0},
+  {"outside_detector", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_11outside_detector, METH_O, 0},
+  {"efield", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_13efield, METH_VARARGS|METH_KEYWORDS, 0},
+  {"wpotential", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_15wpotential, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_holes", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_17set_holes, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_electrons", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_19set_electrons, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_impurity_z0", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_21set_impurity_z0, METH_VARARGS|METH_KEYWORDS, 0},
+  {"set_impurity_avg", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_23set_impurity_avg, METH_VARARGS|METH_KEYWORDS, 0},
+  {"__reduce_cython__", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_25__reduce_cython__, METH_NOARGS, 0},
+  {"__setstate_cython__", (PyCFunction)__pyx_pw_6siggen_7_siggen_20DetectorWrapper_ICPC_27__setstate_cython__, METH_O, 0},
   {0, 0, 0, 0}
 };
 
@@ -23673,7 +24461,9 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_PySiggen_SetHoles, __pyx_k_PySiggen_SetHoles, sizeof(__pyx_k_PySiggen_SetHoles), 0, 0, 1, 1},
   {&__pyx_n_s_PySiggen_SetImpurityAvg, __pyx_k_PySiggen_SetImpurityAvg, sizeof(__pyx_k_PySiggen_SetImpurityAvg), 0, 0, 1, 1},
   {&__pyx_n_s_PySiggen_SetImpurityZ0, __pyx_k_PySiggen_SetImpurityZ0, sizeof(__pyx_k_PySiggen_SetImpurityZ0), 0, 0, 1, 1},
+  {&__pyx_n_s_PySiggen_SetTemp, __pyx_k_PySiggen_SetTemp, sizeof(__pyx_k_PySiggen_SetTemp), 0, 0, 1, 1},
   {&__pyx_n_s_PySiggen_SetTrapping, __pyx_k_PySiggen_SetTrapping, sizeof(__pyx_k_PySiggen_SetTrapping), 0, 0, 1, 1},
+  {&__pyx_n_s_PySiggen_UseVeloModel, __pyx_k_PySiggen_UseVeloModel, sizeof(__pyx_k_PySiggen_UseVeloModel), 0, 0, 1, 1},
   {&__pyx_n_s_PySiggen___init, __pyx_k_PySiggen___init, sizeof(__pyx_k_PySiggen___init), 0, 0, 1, 1},
   {&__pyx_n_s_PySiggen_save_efield, __pyx_k_PySiggen_save_efield, sizeof(__pyx_k_PySiggen_save_efield), 0, 0, 1, 1},
   {&__pyx_n_s_RuntimeError, __pyx_k_RuntimeError, sizeof(__pyx_k_RuntimeError), 0, 0, 1, 1},
@@ -23683,8 +24473,10 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_SetHoles, __pyx_k_SetHoles, sizeof(__pyx_k_SetHoles), 0, 0, 1, 1},
   {&__pyx_n_s_SetImpurityAvg, __pyx_k_SetImpurityAvg, sizeof(__pyx_k_SetImpurityAvg), 0, 0, 1, 1},
   {&__pyx_n_s_SetImpurityZ0, __pyx_k_SetImpurityZ0, sizeof(__pyx_k_SetImpurityZ0), 0, 0, 1, 1},
+  {&__pyx_n_s_SetTemp, __pyx_k_SetTemp, sizeof(__pyx_k_SetTemp), 0, 0, 1, 1},
   {&__pyx_n_s_SetTrapping, __pyx_k_SetTrapping, sizeof(__pyx_k_SetTrapping), 0, 0, 1, 1},
   {&__pyx_n_s_TypeError, __pyx_k_TypeError, sizeof(__pyx_k_TypeError), 0, 0, 1, 1},
+  {&__pyx_n_s_UseVeloModel, __pyx_k_UseVeloModel, sizeof(__pyx_k_UseVeloModel), 0, 0, 1, 1},
   {&__pyx_n_s_ValueError, __pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 0, 1, 1},
   {&__pyx_n_s_beta_100, __pyx_k_beta_100, sizeof(__pyx_k_beta_100), 0, 0, 1, 1},
   {&__pyx_n_s_beta_111, __pyx_k_beta_111, sizeof(__pyx_k_beta_111), 0, 0, 1, 1},
@@ -23789,6 +24581,8 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_kp_s_set_not_implemented_for_wrap_aro, __pyx_k_set_not_implemented_for_wrap_aro, sizeof(__pyx_k_set_not_implemented_for_wrap_aro), 0, 0, 1, 0},
   {&__pyx_kp_s_set_not_implemented_for_xtal_len, __pyx_k_set_not_implemented_for_xtal_len, sizeof(__pyx_k_set_not_implemented_for_xtal_len), 0, 0, 1, 0},
   {&__pyx_kp_s_set_not_implemented_for_xtal_rad, __pyx_k_set_not_implemented_for_xtal_rad, sizeof(__pyx_k_set_not_implemented_for_xtal_rad), 0, 0, 1, 0},
+  {&__pyx_n_s_set_temp, __pyx_k_set_temp, sizeof(__pyx_k_set_temp), 0, 0, 1, 1},
+  {&__pyx_n_s_set_use_velo_model, __pyx_k_set_use_velo_model, sizeof(__pyx_k_set_use_velo_model), 0, 0, 1, 1},
   {&__pyx_n_s_setstate, __pyx_k_setstate, sizeof(__pyx_k_setstate), 0, 0, 1, 1},
   {&__pyx_n_s_setstate_cython, __pyx_k_setstate_cython, sizeof(__pyx_k_setstate_cython), 0, 0, 1, 1},
   {&__pyx_n_s_setup, __pyx_k_setup, sizeof(__pyx_k_setup), 0, 0, 1, 1},
@@ -23798,11 +24592,13 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_siggen__siggen, __pyx_k_siggen__siggen, sizeof(__pyx_k_siggen__siggen), 0, 0, 1, 1},
   {&__pyx_n_s_signal_array, __pyx_k_signal_array, sizeof(__pyx_k_signal_array), 0, 0, 1, 1},
   {&__pyx_n_s_size, __pyx_k_size, sizeof(__pyx_k_size), 0, 0, 1, 1},
+  {&__pyx_n_s_temp, __pyx_k_temp, sizeof(__pyx_k_temp), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
   {&__pyx_n_s_trap_const, __pyx_k_trap_const, sizeof(__pyx_k_trap_const), 0, 0, 1, 1},
   {&__pyx_n_s_trapping_constant, __pyx_k_trapping_constant, sizeof(__pyx_k_trapping_constant), 0, 0, 1, 1},
   {&__pyx_n_s_uint32, __pyx_k_uint32, sizeof(__pyx_k_uint32), 0, 0, 1, 1},
   {&__pyx_kp_u_unknown_dtype_code_in_numpy_pxd, __pyx_k_unknown_dtype_code_in_numpy_pxd, sizeof(__pyx_k_unknown_dtype_code_in_numpy_pxd), 0, 1, 0, 0},
+  {&__pyx_n_s_usemodel, __pyx_k_usemodel, sizeof(__pyx_k_usemodel), 0, 0, 1, 1},
   {&__pyx_kp_s_utf_8, __pyx_k_utf_8, sizeof(__pyx_k_utf_8), 0, 0, 1, 0},
   {&__pyx_n_s_val, __pyx_k_val, sizeof(__pyx_k_val), 0, 0, 1, 1},
   {&__pyx_n_s_voltage, __pyx_k_voltage, sizeof(__pyx_k_voltage), 0, 0, 1, 1},
@@ -23819,7 +24615,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 45, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 51, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
   __pyx_builtin_exit = __Pyx_GetBuiltinName(__pyx_n_s_exit); if (!__pyx_builtin_exit) __PYX_ERR(2, 32, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(9, 235, __pyx_L1_error)
@@ -24050,25 +24846,25 @@ static int __Pyx_InitCachedConstants(void) {
   __Pyx_GOTREF(__pyx_tuple__22);
   __Pyx_GIVEREF(__pyx_tuple__22);
 
-  /* "siggen/PySiggen.pxi":149
+  /* "siggen/PySiggen.pxi":154
  *       if dp.at(i).x == 0 and dp.at(i).y==0 and dp.at(i).z==0:
  *         continue
  *       else: dp_np[:,i] = dp.at(i).x, dp.at(i).y, dp.at(i).z             # <<<<<<<<<<<<<<
  * 
  *     return dp_np
  */
-  __pyx_slice__23 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__23)) __PYX_ERR(7, 149, __pyx_L1_error)
+  __pyx_slice__23 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__23)) __PYX_ERR(7, 154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__23);
   __Pyx_GIVEREF(__pyx_slice__23);
 
-  /* "siggen/PySiggen.pxi":177
+  /* "siggen/PySiggen.pxi":182
  *         for k in range(imp_num):
  *           for m in range(grad_num):
  *             voltage, e, e_r, e_z = mat_full[i,j,k,m,:]             # <<<<<<<<<<<<<<
  *             c_pt.r = e_r
  *             c_pt.z = e_z
  */
-  __pyx_slice__24 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__24)) __PYX_ERR(7, 177, __pyx_L1_error)
+  __pyx_slice__24 = PySlice_New(Py_None, Py_None, Py_None); if (unlikely(!__pyx_slice__24)) __PYX_ERR(7, 182, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__24);
   __Pyx_GIVEREF(__pyx_slice__24);
 
@@ -24284,230 +25080,254 @@ static int __Pyx_InitCachedConstants(void) {
   /* "siggen/PySiggen.pxi":67
  *   #Transparent setters/getters
  * 
+ *   def UseVeloModel(self, bool usemodel):             # <<<<<<<<<<<<<<
+ *     self.detector.set_use_velo_model(usemodel)
+ *   def SetTemp(self, float temp):
+ */
+  __pyx_tuple__49 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_usemodel); if (unlikely(!__pyx_tuple__49)) __PYX_ERR(7, 67, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__49);
+  __Pyx_GIVEREF(__pyx_tuple__49);
+  __pyx_codeobj__50 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_UseVeloModel, 67, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__50)) __PYX_ERR(7, 67, __pyx_L1_error)
+
+  /* "siggen/PySiggen.pxi":69
+ *   def UseVeloModel(self, bool usemodel):
+ *     self.detector.set_use_velo_model(usemodel)
+ *   def SetTemp(self, float temp):             # <<<<<<<<<<<<<<
+ *     self.detector.set_temp(temp)
+ * 
+ */
+  __pyx_tuple__51 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_temp); if (unlikely(!__pyx_tuple__51)) __PYX_ERR(7, 69, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__51);
+  __Pyx_GIVEREF(__pyx_tuple__51);
+  __pyx_codeobj__52 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__51, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetTemp, 69, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__52)) __PYX_ERR(7, 69, __pyx_L1_error)
+
+  /* "siggen/PySiggen.pxi":72
+ *     self.detector.set_temp(temp)
+ * 
  *   def SetHoles(self,float mu0_100, float beta_100, float E_0_100,             # <<<<<<<<<<<<<<
  *                  float mu0_111, float beta_111, float E_0_111):
  *        self.detector.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
  */
-  __pyx_tuple__49 = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_mu0_100, __pyx_n_s_beta_100, __pyx_n_s_E_0_100, __pyx_n_s_mu0_111, __pyx_n_s_beta_111, __pyx_n_s_E_0_111); if (unlikely(!__pyx_tuple__49)) __PYX_ERR(7, 67, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__49);
-  __Pyx_GIVEREF(__pyx_tuple__49);
-  __pyx_codeobj__50 = (PyObject*)__Pyx_PyCode_New(7, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetHoles, 67, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__50)) __PYX_ERR(7, 67, __pyx_L1_error)
+  __pyx_tuple__53 = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_mu0_100, __pyx_n_s_beta_100, __pyx_n_s_E_0_100, __pyx_n_s_mu0_111, __pyx_n_s_beta_111, __pyx_n_s_E_0_111); if (unlikely(!__pyx_tuple__53)) __PYX_ERR(7, 72, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__53);
+  __Pyx_GIVEREF(__pyx_tuple__53);
+  __pyx_codeobj__54 = (PyObject*)__Pyx_PyCode_New(7, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__53, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetHoles, 72, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__54)) __PYX_ERR(7, 72, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":70
+  /* "siggen/PySiggen.pxi":75
  *                  float mu0_111, float beta_111, float E_0_111):
  *        self.detector.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
  *   def SetElectrons(self,float mu0_100, float beta_100, float E_0_100,float mu_n_100,             # <<<<<<<<<<<<<<
  *                 float mu0_111, float beta_111, float E_0_111, float mu_n_111):
  *       self.detector.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)
  */
-  __pyx_tuple__51 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_mu0_100, __pyx_n_s_beta_100, __pyx_n_s_E_0_100, __pyx_n_s_mu_n_100, __pyx_n_s_mu0_111, __pyx_n_s_beta_111, __pyx_n_s_E_0_111, __pyx_n_s_mu_n_111); if (unlikely(!__pyx_tuple__51)) __PYX_ERR(7, 70, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__51);
-  __Pyx_GIVEREF(__pyx_tuple__51);
-  __pyx_codeobj__52 = (PyObject*)__Pyx_PyCode_New(9, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__51, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetElectrons, 70, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__52)) __PYX_ERR(7, 70, __pyx_L1_error)
+  __pyx_tuple__55 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_mu0_100, __pyx_n_s_beta_100, __pyx_n_s_E_0_100, __pyx_n_s_mu_n_100, __pyx_n_s_mu0_111, __pyx_n_s_beta_111, __pyx_n_s_E_0_111, __pyx_n_s_mu_n_111); if (unlikely(!__pyx_tuple__55)) __PYX_ERR(7, 75, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__55);
+  __Pyx_GIVEREF(__pyx_tuple__55);
+  __pyx_codeobj__56 = (PyObject*)__Pyx_PyCode_New(9, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetElectrons, 75, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__56)) __PYX_ERR(7, 75, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":74
+  /* "siggen/PySiggen.pxi":79
  *       self.detector.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)
  * 
  *   def GetMaxRadius(self):             # <<<<<<<<<<<<<<
  *     return self.geometry.xtal_radius
  *   def GetMaxZ(self):
  */
-  __pyx_tuple__53 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__53)) __PYX_ERR(7, 74, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__53);
-  __Pyx_GIVEREF(__pyx_tuple__53);
-  __pyx_codeobj__54 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__53, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetMaxRadius, 74, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__54)) __PYX_ERR(7, 74, __pyx_L1_error)
+  __pyx_tuple__57 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__57)) __PYX_ERR(7, 79, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__57);
+  __Pyx_GIVEREF(__pyx_tuple__57);
+  __pyx_codeobj__58 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__57, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetMaxRadius, 79, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__58)) __PYX_ERR(7, 79, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":76
+  /* "siggen/PySiggen.pxi":81
  *   def GetMaxRadius(self):
  *     return self.geometry.xtal_radius
  *   def GetMaxZ(self):             # <<<<<<<<<<<<<<
  *     return self.geometry.xtal_length
  * 
  */
-  __pyx_tuple__55 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__55)) __PYX_ERR(7, 76, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__55);
-  __Pyx_GIVEREF(__pyx_tuple__55);
-  __pyx_codeobj__56 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetMaxZ, 76, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__56)) __PYX_ERR(7, 76, __pyx_L1_error)
+  __pyx_tuple__59 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__59)) __PYX_ERR(7, 81, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__59);
+  __Pyx_GIVEREF(__pyx_tuple__59);
+  __pyx_codeobj__60 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__59, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetMaxZ, 81, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__60)) __PYX_ERR(7, 81, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":79
+  /* "siggen/PySiggen.pxi":84
  *     return self.geometry.xtal_length
  * 
  *   def GetNumSegments(self):             # <<<<<<<<<<<<<<
  *     return self.detector.nsegments
  *   def GetNumSteps(self):
  */
-  __pyx_tuple__57 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__57)) __PYX_ERR(7, 79, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__57);
-  __Pyx_GIVEREF(__pyx_tuple__57);
-  __pyx_codeobj__58 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__57, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetNumSegments, 79, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__58)) __PYX_ERR(7, 79, __pyx_L1_error)
+  __pyx_tuple__61 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__61)) __PYX_ERR(7, 84, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__61);
+  __Pyx_GIVEREF(__pyx_tuple__61);
+  __pyx_codeobj__62 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__61, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetNumSegments, 84, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__62)) __PYX_ERR(7, 84, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":81
+  /* "siggen/PySiggen.pxi":86
  *   def GetNumSegments(self):
  *     return self.detector.nsegments
  *   def GetNumSteps(self):             # <<<<<<<<<<<<<<
  *     return self.siggen.output_length
  * 
  */
-  __pyx_tuple__59 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__59)) __PYX_ERR(7, 81, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__59);
-  __Pyx_GIVEREF(__pyx_tuple__59);
-  __pyx_codeobj__60 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__59, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetNumSteps, 81, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__60)) __PYX_ERR(7, 81, __pyx_L1_error)
+  __pyx_tuple__63 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__63)) __PYX_ERR(7, 86, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__63);
+  __Pyx_GIVEREF(__pyx_tuple__63);
+  __pyx_codeobj__64 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__63, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetNumSteps, 86, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__64)) __PYX_ERR(7, 86, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":84
+  /* "siggen/PySiggen.pxi":89
  *     return self.siggen.output_length
  * 
  *   def GetNumStepsCalc(self):             # <<<<<<<<<<<<<<
  *     return self.siggen.calc_length
  *   def SetCalcLength(self, int nt):
  */
-  __pyx_tuple__61 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__61)) __PYX_ERR(7, 84, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__61);
-  __Pyx_GIVEREF(__pyx_tuple__61);
-  __pyx_codeobj__62 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__61, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetNumStepsCalc, 84, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__62)) __PYX_ERR(7, 84, __pyx_L1_error)
+  __pyx_tuple__65 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__65)) __PYX_ERR(7, 89, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__65);
+  __Pyx_GIVEREF(__pyx_tuple__65);
+  __pyx_codeobj__66 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__65, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetNumStepsCalc, 89, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__66)) __PYX_ERR(7, 89, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":86
+  /* "siggen/PySiggen.pxi":91
  *   def GetNumStepsCalc(self):
  *     return self.siggen.calc_length
  *   def SetCalcLength(self, int nt):             # <<<<<<<<<<<<<<
  *     self.siggen.calc_length = nt
  * 
  */
-  __pyx_tuple__63 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_nt); if (unlikely(!__pyx_tuple__63)) __PYX_ERR(7, 86, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__63);
-  __Pyx_GIVEREF(__pyx_tuple__63);
-  __pyx_codeobj__64 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__63, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetCalcLength, 86, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__64)) __PYX_ERR(7, 86, __pyx_L1_error)
+  __pyx_tuple__67 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_nt); if (unlikely(!__pyx_tuple__67)) __PYX_ERR(7, 91, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__67);
+  __Pyx_GIVEREF(__pyx_tuple__67);
+  __pyx_codeobj__68 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__67, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetCalcLength, 91, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__68)) __PYX_ERR(7, 91, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":89
+  /* "siggen/PySiggen.pxi":94
  *     self.siggen.calc_length = nt
  * 
  *   def GetCalcTimeStep(self):             # <<<<<<<<<<<<<<
  *     return self.siggen.calc_timestep
  *   def SetCalcTimestep(self, float dt):
  */
-  __pyx_tuple__65 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__65)) __PYX_ERR(7, 89, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__65);
-  __Pyx_GIVEREF(__pyx_tuple__65);
-  __pyx_codeobj__66 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__65, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetCalcTimeStep, 89, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__66)) __PYX_ERR(7, 89, __pyx_L1_error)
+  __pyx_tuple__69 = PyTuple_Pack(1, __pyx_n_s_self); if (unlikely(!__pyx_tuple__69)) __PYX_ERR(7, 94, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__69);
+  __Pyx_GIVEREF(__pyx_tuple__69);
+  __pyx_codeobj__70 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__69, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetCalcTimeStep, 94, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__70)) __PYX_ERR(7, 94, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":91
+  /* "siggen/PySiggen.pxi":96
  *   def GetCalcTimeStep(self):
  *     return self.siggen.calc_timestep
  *   def SetCalcTimestep(self, float dt):             # <<<<<<<<<<<<<<
  *     self.siggen.calc_timestep = dt
  * 
  */
-  __pyx_tuple__67 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_dt); if (unlikely(!__pyx_tuple__67)) __PYX_ERR(7, 91, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__67);
-  __Pyx_GIVEREF(__pyx_tuple__67);
-  __pyx_codeobj__68 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__67, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetCalcTimestep, 91, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__68)) __PYX_ERR(7, 91, __pyx_L1_error)
+  __pyx_tuple__71 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_dt); if (unlikely(!__pyx_tuple__71)) __PYX_ERR(7, 96, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__71);
+  __Pyx_GIVEREF(__pyx_tuple__71);
+  __pyx_codeobj__72 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__71, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetCalcTimestep, 96, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__72)) __PYX_ERR(7, 96, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":94
+  /* "siggen/PySiggen.pxi":99
  *     self.siggen.calc_timestep = dt
  * 
  *   def SetTrapping(self, double trap_const):             # <<<<<<<<<<<<<<
  *     self.detector.trapping_constant = trap_const
  * 
  */
-  __pyx_tuple__69 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_trap_const); if (unlikely(!__pyx_tuple__69)) __PYX_ERR(7, 94, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__69);
-  __Pyx_GIVEREF(__pyx_tuple__69);
-  __pyx_codeobj__70 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__69, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetTrapping, 94, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__70)) __PYX_ERR(7, 94, __pyx_L1_error)
+  __pyx_tuple__73 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_trap_const); if (unlikely(!__pyx_tuple__73)) __PYX_ERR(7, 99, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__73);
+  __Pyx_GIVEREF(__pyx_tuple__73);
+  __pyx_codeobj__74 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__73, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetTrapping, 99, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__74)) __PYX_ERR(7, 99, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":98
+  /* "siggen/PySiggen.pxi":103
  * 
  *   #Stuff that actually requires work
  *   def SetImpurityAvg(self, float imp, float grad):             # <<<<<<<<<<<<<<
  *     self.detector.set_impurity_avg( imp,  grad)
  * 
  */
-  __pyx_tuple__71 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_imp, __pyx_n_s_grad); if (unlikely(!__pyx_tuple__71)) __PYX_ERR(7, 98, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__71);
-  __Pyx_GIVEREF(__pyx_tuple__71);
-  __pyx_codeobj__72 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__71, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetImpurityAvg, 98, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__72)) __PYX_ERR(7, 98, __pyx_L1_error)
+  __pyx_tuple__75 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_imp, __pyx_n_s_grad); if (unlikely(!__pyx_tuple__75)) __PYX_ERR(7, 103, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__75);
+  __Pyx_GIVEREF(__pyx_tuple__75);
+  __pyx_codeobj__76 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__75, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetImpurityAvg, 103, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__76)) __PYX_ERR(7, 103, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":101
+  /* "siggen/PySiggen.pxi":106
  *     self.detector.set_impurity_avg( imp,  grad)
  * 
  *   def SetImpurityZ0(self, float imp, float grad):             # <<<<<<<<<<<<<<
  *     self.detector.set_impurity_z0( imp,  grad)
  * 
  */
-  __pyx_tuple__73 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_imp, __pyx_n_s_grad); if (unlikely(!__pyx_tuple__73)) __PYX_ERR(7, 101, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__73);
-  __Pyx_GIVEREF(__pyx_tuple__73);
-  __pyx_codeobj__74 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__73, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetImpurityZ0, 101, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__74)) __PYX_ERR(7, 101, __pyx_L1_error)
+  __pyx_tuple__77 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_imp, __pyx_n_s_grad); if (unlikely(!__pyx_tuple__77)) __PYX_ERR(7, 106, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__77);
+  __Pyx_GIVEREF(__pyx_tuple__77);
+  __pyx_codeobj__78 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__77, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_SetImpurityZ0, 106, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__78)) __PYX_ERR(7, 106, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":104
+  /* "siggen/PySiggen.pxi":109
  *     self.detector.set_impurity_z0( imp,  grad)
  * 
  *   def GetLastDriftTime(self, float q):             # <<<<<<<<<<<<<<
  *     return self.siggen.get_last_drifttime(q)
  * 
  */
-  __pyx_tuple__75 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_q); if (unlikely(!__pyx_tuple__75)) __PYX_ERR(7, 104, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__75);
-  __Pyx_GIVEREF(__pyx_tuple__75);
-  __pyx_codeobj__76 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__75, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetLastDriftTime, 104, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__76)) __PYX_ERR(7, 104, __pyx_L1_error)
+  __pyx_tuple__79 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_q); if (unlikely(!__pyx_tuple__79)) __PYX_ERR(7, 109, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__79);
+  __Pyx_GIVEREF(__pyx_tuple__79);
+  __pyx_codeobj__80 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__79, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetLastDriftTime, 109, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__80)) __PYX_ERR(7, 109, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":107
+  /* "siggen/PySiggen.pxi":112
  *     return self.siggen.get_last_drifttime(q)
  * 
  *   def GetEfield(self, float r, float z):             # <<<<<<<<<<<<<<
  * 
  *     (e_r, e_phi, e_z, val) = self.detector.efield(r,z)
  */
-  __pyx_tuple__77 = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_r, __pyx_n_s_z, __pyx_n_s_e_r, __pyx_n_s_e_phi, __pyx_n_s_e_z, __pyx_n_s_val); if (unlikely(!__pyx_tuple__77)) __PYX_ERR(7, 107, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__77);
-  __Pyx_GIVEREF(__pyx_tuple__77);
-  __pyx_codeobj__78 = (PyObject*)__Pyx_PyCode_New(3, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__77, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetEfield, 107, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__78)) __PYX_ERR(7, 107, __pyx_L1_error)
+  __pyx_tuple__81 = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_r, __pyx_n_s_z, __pyx_n_s_e_r, __pyx_n_s_e_phi, __pyx_n_s_e_z, __pyx_n_s_val); if (unlikely(!__pyx_tuple__81)) __PYX_ERR(7, 112, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__81);
+  __Pyx_GIVEREF(__pyx_tuple__81);
+  __pyx_codeobj__82 = (PyObject*)__Pyx_PyCode_New(3, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__81, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetEfield, 112, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__82)) __PYX_ERR(7, 112, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":112
+  /* "siggen/PySiggen.pxi":117
  *     return (e_r,e_z)
  * 
  *   def GetWpot(self, float r, float z):             # <<<<<<<<<<<<<<
  *     cdef point pt
  *     pt.x = r;
  */
-  __pyx_tuple__79 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_r, __pyx_n_s_z, __pyx_n_s_pt, __pyx_n_s_wp_numpy); if (unlikely(!__pyx_tuple__79)) __PYX_ERR(7, 112, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__79);
-  __Pyx_GIVEREF(__pyx_tuple__79);
-  __pyx_codeobj__80 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__79, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetWpot, 112, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__80)) __PYX_ERR(7, 112, __pyx_L1_error)
+  __pyx_tuple__83 = PyTuple_Pack(5, __pyx_n_s_self, __pyx_n_s_r, __pyx_n_s_z, __pyx_n_s_pt, __pyx_n_s_wp_numpy); if (unlikely(!__pyx_tuple__83)) __PYX_ERR(7, 117, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__83);
+  __Pyx_GIVEREF(__pyx_tuple__83);
+  __pyx_codeobj__84 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__83, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetWpot, 117, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__84)) __PYX_ERR(7, 117, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":124
+  /* "siggen/PySiggen.pxi":129
  *     return wp_numpy
  * 
  *   def GetDWpot(self, float q):             # <<<<<<<<<<<<<<
  *     cdef vector[float] dwpot
  *     dwpot = self.siggen.get_dwpot()
  */
-  __pyx_tuple__81 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_q, __pyx_n_s_dwpot, __pyx_n_s_nt, __pyx_n_s_dt, __pyx_n_s_nsegs, __pyx_n_s_dwp_np, __pyx_n_s_i, __pyx_n_s_j); if (unlikely(!__pyx_tuple__81)) __PYX_ERR(7, 124, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__81);
-  __Pyx_GIVEREF(__pyx_tuple__81);
-  __pyx_codeobj__82 = (PyObject*)__Pyx_PyCode_New(2, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__81, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetDWpot, 124, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__82)) __PYX_ERR(7, 124, __pyx_L1_error)
+  __pyx_tuple__85 = PyTuple_Pack(9, __pyx_n_s_self, __pyx_n_s_q, __pyx_n_s_dwpot, __pyx_n_s_nt, __pyx_n_s_dt, __pyx_n_s_nsegs, __pyx_n_s_dwp_np, __pyx_n_s_i, __pyx_n_s_j); if (unlikely(!__pyx_tuple__85)) __PYX_ERR(7, 129, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__85);
+  __Pyx_GIVEREF(__pyx_tuple__85);
+  __pyx_codeobj__86 = (PyObject*)__Pyx_PyCode_New(2, 0, 9, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__85, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetDWpot, 129, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__86)) __PYX_ERR(7, 129, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":137
+  /* "siggen/PySiggen.pxi":142
  *     return dwp_np
  * 
  *   def GetPath(self, float q):             # <<<<<<<<<<<<<<
  *     cdef vector[point] dp
  *     dp = self.siggen.get_driftpath(q)
  */
-  __pyx_tuple__83 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_q, __pyx_n_s_dp, __pyx_n_s_dt, __pyx_n_s_dp_np, __pyx_n_s_i); if (unlikely(!__pyx_tuple__83)) __PYX_ERR(7, 137, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__83);
-  __Pyx_GIVEREF(__pyx_tuple__83);
-  __pyx_codeobj__84 = (PyObject*)__Pyx_PyCode_New(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__83, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetPath, 137, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__84)) __PYX_ERR(7, 137, __pyx_L1_error)
+  __pyx_tuple__87 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_q, __pyx_n_s_dp, __pyx_n_s_dt, __pyx_n_s_dp_np, __pyx_n_s_i); if (unlikely(!__pyx_tuple__87)) __PYX_ERR(7, 142, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__87);
+  __Pyx_GIVEREF(__pyx_tuple__87);
+  __pyx_codeobj__88 = (PyObject*)__Pyx_PyCode_New(2, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__87, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_GetPath, 142, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__88)) __PYX_ERR(7, 142, __pyx_L1_error)
 
-  /* "siggen/PySiggen.pxi":153
+  /* "siggen/PySiggen.pxi":158
  *     return dp_np
  * 
  *   def save_efield(self, mat_full, efld_name, header_bytes):             # <<<<<<<<<<<<<<
  *     cdef EFieldPoint e_pt
  *     cdef cyl_pt c_pt
  */
-  __pyx_tuple__85 = PyTuple_Pack(20, __pyx_n_s_self, __pyx_n_s_mat_full, __pyx_n_s_efld_name, __pyx_n_s_header_bytes, __pyx_n_s_e_pt, __pyx_n_s_c_pt, __pyx_n_s_outputter, __pyx_n_s_header_size, __pyx_n_s_r_num, __pyx_n_s_z_num, __pyx_n_s_imp_num, __pyx_n_s_grad_num, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_k, __pyx_n_s_m, __pyx_n_s_voltage, __pyx_n_s_e, __pyx_n_s_e_r, __pyx_n_s_e_z); if (unlikely(!__pyx_tuple__85)) __PYX_ERR(7, 153, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__85);
-  __Pyx_GIVEREF(__pyx_tuple__85);
-  __pyx_codeobj__86 = (PyObject*)__Pyx_PyCode_New(4, 0, 20, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__85, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_save_efield, 153, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__86)) __PYX_ERR(7, 153, __pyx_L1_error)
+  __pyx_tuple__89 = PyTuple_Pack(20, __pyx_n_s_self, __pyx_n_s_mat_full, __pyx_n_s_efld_name, __pyx_n_s_header_bytes, __pyx_n_s_e_pt, __pyx_n_s_c_pt, __pyx_n_s_outputter, __pyx_n_s_header_size, __pyx_n_s_r_num, __pyx_n_s_z_num, __pyx_n_s_imp_num, __pyx_n_s_grad_num, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_k, __pyx_n_s_m, __pyx_n_s_voltage, __pyx_n_s_e, __pyx_n_s_e_r, __pyx_n_s_e_z); if (unlikely(!__pyx_tuple__89)) __PYX_ERR(7, 158, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__89);
+  __Pyx_GIVEREF(__pyx_tuple__89);
+  __pyx_codeobj__90 = (PyObject*)__Pyx_PyCode_New(4, 0, 20, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__89, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_siggen_PySiggen_pxi, __pyx_n_s_save_efield, 158, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__90)) __PYX_ERR(7, 158, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -24669,30 +25489,30 @@ static int __pyx_pymod_exec__siggen(PyObject *__pyx_pyinit_module)
   if (PyObject_SetAttrString(__pyx_m, "DetectorWrapper_PPC", (PyObject *)&__pyx_type_6siggen_7_siggen_DetectorWrapper_PPC) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6siggen_7_siggen_DetectorWrapper_PPC) < 0) __PYX_ERR(0, 6, __pyx_L1_error)
   __pyx_ptype_6siggen_7_siggen_DetectorWrapper_PPC = &__pyx_type_6siggen_7_siggen_DetectorWrapper_PPC;
-  if (PyType_Ready(&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_PPC) < 0) __PYX_ERR(0, 82, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_PPC) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
   __pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_PPC.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "SignalGeneratorWrapper_PPC", (PyObject *)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_PPC) < 0) __PYX_ERR(0, 82, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_PPC) < 0) __PYX_ERR(0, 82, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "SignalGeneratorWrapper_PPC", (PyObject *)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_PPC) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_PPC) < 0) __PYX_ERR(0, 88, __pyx_L1_error)
   __pyx_ptype_6siggen_7_siggen_SignalGeneratorWrapper_PPC = &__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_PPC;
   if (PyType_Ready(&__pyx_type_6siggen_7_siggen_DetectorWrapper_GEM) < 0) __PYX_ERR(3, 6, __pyx_L1_error)
   __pyx_type_6siggen_7_siggen_DetectorWrapper_GEM.tp_print = 0;
   if (PyObject_SetAttrString(__pyx_m, "DetectorWrapper_GEM", (PyObject *)&__pyx_type_6siggen_7_siggen_DetectorWrapper_GEM) < 0) __PYX_ERR(3, 6, __pyx_L1_error)
   if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6siggen_7_siggen_DetectorWrapper_GEM) < 0) __PYX_ERR(3, 6, __pyx_L1_error)
   __pyx_ptype_6siggen_7_siggen_DetectorWrapper_GEM = &__pyx_type_6siggen_7_siggen_DetectorWrapper_GEM;
-  if (PyType_Ready(&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_GEM) < 0) __PYX_ERR(3, 82, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_GEM) < 0) __PYX_ERR(3, 88, __pyx_L1_error)
   __pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_GEM.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "SignalGeneratorWrapper_GEM", (PyObject *)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_GEM) < 0) __PYX_ERR(3, 82, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_GEM) < 0) __PYX_ERR(3, 82, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "SignalGeneratorWrapper_GEM", (PyObject *)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_GEM) < 0) __PYX_ERR(3, 88, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_GEM) < 0) __PYX_ERR(3, 88, __pyx_L1_error)
   __pyx_ptype_6siggen_7_siggen_SignalGeneratorWrapper_GEM = &__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_GEM;
   if (PyType_Ready(&__pyx_type_6siggen_7_siggen_DetectorWrapper_ICPC) < 0) __PYX_ERR(4, 6, __pyx_L1_error)
   __pyx_type_6siggen_7_siggen_DetectorWrapper_ICPC.tp_print = 0;
   if (PyObject_SetAttrString(__pyx_m, "DetectorWrapper_ICPC", (PyObject *)&__pyx_type_6siggen_7_siggen_DetectorWrapper_ICPC) < 0) __PYX_ERR(4, 6, __pyx_L1_error)
   if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6siggen_7_siggen_DetectorWrapper_ICPC) < 0) __PYX_ERR(4, 6, __pyx_L1_error)
   __pyx_ptype_6siggen_7_siggen_DetectorWrapper_ICPC = &__pyx_type_6siggen_7_siggen_DetectorWrapper_ICPC;
-  if (PyType_Ready(&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_ICPC) < 0) __PYX_ERR(4, 82, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_ICPC) < 0) __PYX_ERR(4, 88, __pyx_L1_error)
   __pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_ICPC.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "SignalGeneratorWrapper_ICPC", (PyObject *)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_ICPC) < 0) __PYX_ERR(4, 82, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_ICPC) < 0) __PYX_ERR(4, 82, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "SignalGeneratorWrapper_ICPC", (PyObject *)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_ICPC) < 0) __PYX_ERR(4, 88, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_ICPC) < 0) __PYX_ERR(4, 88, __pyx_L1_error)
   __pyx_ptype_6siggen_7_siggen_SignalGeneratorWrapper_ICPC = &__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_ICPC;
   if (PyType_Ready(&__pyx_type_6siggen_7_siggen_PPCGeometry) < 0) __PYX_ERR(2, 18, __pyx_L1_error)
   __pyx_type_6siggen_7_siggen_PPCGeometry.tp_print = 0;
@@ -24853,229 +25673,253 @@ static int __pyx_pymod_exec__siggen(PyObject *__pyx_pyinit_module)
   /* "siggen/PySiggen.pxi":67
  *   #Transparent setters/getters
  * 
+ *   def UseVeloModel(self, bool usemodel):             # <<<<<<<<<<<<<<
+ *     self.detector.set_use_velo_model(usemodel)
+ *   def SetTemp(self, float temp):
+ */
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_11UseVeloModel, 0, __pyx_n_s_PySiggen_UseVeloModel, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__50)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 67, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_UseVeloModel, __pyx_t_2) < 0) __PYX_ERR(7, 67, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "siggen/PySiggen.pxi":69
+ *   def UseVeloModel(self, bool usemodel):
+ *     self.detector.set_use_velo_model(usemodel)
+ *   def SetTemp(self, float temp):             # <<<<<<<<<<<<<<
+ *     self.detector.set_temp(temp)
+ * 
+ */
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_13SetTemp, 0, __pyx_n_s_PySiggen_SetTemp, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__52)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 69, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetTemp, __pyx_t_2) < 0) __PYX_ERR(7, 69, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "siggen/PySiggen.pxi":72
+ *     self.detector.set_temp(temp)
+ * 
  *   def SetHoles(self,float mu0_100, float beta_100, float E_0_100,             # <<<<<<<<<<<<<<
  *                  float mu0_111, float beta_111, float E_0_111):
  *        self.detector.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_11SetHoles, 0, __pyx_n_s_PySiggen_SetHoles, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__50)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 67, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_15SetHoles, 0, __pyx_n_s_PySiggen_SetHoles, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__54)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 72, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetHoles, __pyx_t_2) < 0) __PYX_ERR(7, 67, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetHoles, __pyx_t_2) < 0) __PYX_ERR(7, 72, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":70
+  /* "siggen/PySiggen.pxi":75
  *                  float mu0_111, float beta_111, float E_0_111):
  *        self.detector.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111)
  *   def SetElectrons(self,float mu0_100, float beta_100, float E_0_100,float mu_n_100,             # <<<<<<<<<<<<<<
  *                 float mu0_111, float beta_111, float E_0_111, float mu_n_111):
  *       self.detector.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_13SetElectrons, 0, __pyx_n_s_PySiggen_SetElectrons, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__52)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 70, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_17SetElectrons, 0, __pyx_n_s_PySiggen_SetElectrons, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__56)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetElectrons, __pyx_t_2) < 0) __PYX_ERR(7, 70, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetElectrons, __pyx_t_2) < 0) __PYX_ERR(7, 75, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":74
+  /* "siggen/PySiggen.pxi":79
  *       self.detector.set_electrons(mu0_100,beta_100,E_0_100,mu_n_100,mu0_111,beta_111,E_0_111, mu_n_111)
  * 
  *   def GetMaxRadius(self):             # <<<<<<<<<<<<<<
  *     return self.geometry.xtal_radius
  *   def GetMaxZ(self):
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_15GetMaxRadius, 0, __pyx_n_s_PySiggen_GetMaxRadius, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__54)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 74, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_19GetMaxRadius, 0, __pyx_n_s_PySiggen_GetMaxRadius, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__58)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 79, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetMaxRadius, __pyx_t_2) < 0) __PYX_ERR(7, 74, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetMaxRadius, __pyx_t_2) < 0) __PYX_ERR(7, 79, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":76
+  /* "siggen/PySiggen.pxi":81
  *   def GetMaxRadius(self):
  *     return self.geometry.xtal_radius
  *   def GetMaxZ(self):             # <<<<<<<<<<<<<<
  *     return self.geometry.xtal_length
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_17GetMaxZ, 0, __pyx_n_s_PySiggen_GetMaxZ, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__56)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 76, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_21GetMaxZ, 0, __pyx_n_s_PySiggen_GetMaxZ, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__60)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 81, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetMaxZ, __pyx_t_2) < 0) __PYX_ERR(7, 76, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetMaxZ, __pyx_t_2) < 0) __PYX_ERR(7, 81, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":79
+  /* "siggen/PySiggen.pxi":84
  *     return self.geometry.xtal_length
  * 
  *   def GetNumSegments(self):             # <<<<<<<<<<<<<<
  *     return self.detector.nsegments
  *   def GetNumSteps(self):
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_19GetNumSegments, 0, __pyx_n_s_PySiggen_GetNumSegments, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__58)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 79, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_23GetNumSegments, 0, __pyx_n_s_PySiggen_GetNumSegments, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__62)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 84, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetNumSegments, __pyx_t_2) < 0) __PYX_ERR(7, 79, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetNumSegments, __pyx_t_2) < 0) __PYX_ERR(7, 84, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":81
+  /* "siggen/PySiggen.pxi":86
  *   def GetNumSegments(self):
  *     return self.detector.nsegments
  *   def GetNumSteps(self):             # <<<<<<<<<<<<<<
  *     return self.siggen.output_length
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_21GetNumSteps, 0, __pyx_n_s_PySiggen_GetNumSteps, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__60)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 81, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_25GetNumSteps, 0, __pyx_n_s_PySiggen_GetNumSteps, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__64)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 86, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetNumSteps, __pyx_t_2) < 0) __PYX_ERR(7, 81, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetNumSteps, __pyx_t_2) < 0) __PYX_ERR(7, 86, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":84
+  /* "siggen/PySiggen.pxi":89
  *     return self.siggen.output_length
  * 
  *   def GetNumStepsCalc(self):             # <<<<<<<<<<<<<<
  *     return self.siggen.calc_length
  *   def SetCalcLength(self, int nt):
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_23GetNumStepsCalc, 0, __pyx_n_s_PySiggen_GetNumStepsCalc, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__62)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 84, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_27GetNumStepsCalc, 0, __pyx_n_s_PySiggen_GetNumStepsCalc, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__66)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 89, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetNumStepsCalc, __pyx_t_2) < 0) __PYX_ERR(7, 84, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetNumStepsCalc, __pyx_t_2) < 0) __PYX_ERR(7, 89, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":86
+  /* "siggen/PySiggen.pxi":91
  *   def GetNumStepsCalc(self):
  *     return self.siggen.calc_length
  *   def SetCalcLength(self, int nt):             # <<<<<<<<<<<<<<
  *     self.siggen.calc_length = nt
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_25SetCalcLength, 0, __pyx_n_s_PySiggen_SetCalcLength, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__64)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 86, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_29SetCalcLength, 0, __pyx_n_s_PySiggen_SetCalcLength, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__68)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 91, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetCalcLength, __pyx_t_2) < 0) __PYX_ERR(7, 86, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetCalcLength, __pyx_t_2) < 0) __PYX_ERR(7, 91, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":89
+  /* "siggen/PySiggen.pxi":94
  *     self.siggen.calc_length = nt
  * 
  *   def GetCalcTimeStep(self):             # <<<<<<<<<<<<<<
  *     return self.siggen.calc_timestep
  *   def SetCalcTimestep(self, float dt):
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_27GetCalcTimeStep, 0, __pyx_n_s_PySiggen_GetCalcTimeStep, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__66)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 89, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_31GetCalcTimeStep, 0, __pyx_n_s_PySiggen_GetCalcTimeStep, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__70)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 94, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetCalcTimeStep, __pyx_t_2) < 0) __PYX_ERR(7, 89, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetCalcTimeStep, __pyx_t_2) < 0) __PYX_ERR(7, 94, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":91
+  /* "siggen/PySiggen.pxi":96
  *   def GetCalcTimeStep(self):
  *     return self.siggen.calc_timestep
  *   def SetCalcTimestep(self, float dt):             # <<<<<<<<<<<<<<
  *     self.siggen.calc_timestep = dt
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_29SetCalcTimestep, 0, __pyx_n_s_PySiggen_SetCalcTimestep, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__68)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 91, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_33SetCalcTimestep, 0, __pyx_n_s_PySiggen_SetCalcTimestep, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__72)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 96, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetCalcTimestep, __pyx_t_2) < 0) __PYX_ERR(7, 91, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetCalcTimestep, __pyx_t_2) < 0) __PYX_ERR(7, 96, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":94
+  /* "siggen/PySiggen.pxi":99
  *     self.siggen.calc_timestep = dt
  * 
  *   def SetTrapping(self, double trap_const):             # <<<<<<<<<<<<<<
  *     self.detector.trapping_constant = trap_const
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_31SetTrapping, 0, __pyx_n_s_PySiggen_SetTrapping, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__70)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 94, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_35SetTrapping, 0, __pyx_n_s_PySiggen_SetTrapping, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__74)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetTrapping, __pyx_t_2) < 0) __PYX_ERR(7, 94, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetTrapping, __pyx_t_2) < 0) __PYX_ERR(7, 99, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":98
+  /* "siggen/PySiggen.pxi":103
  * 
  *   #Stuff that actually requires work
  *   def SetImpurityAvg(self, float imp, float grad):             # <<<<<<<<<<<<<<
  *     self.detector.set_impurity_avg( imp,  grad)
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_33SetImpurityAvg, 0, __pyx_n_s_PySiggen_SetImpurityAvg, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__72)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 98, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_37SetImpurityAvg, 0, __pyx_n_s_PySiggen_SetImpurityAvg, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__76)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 103, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetImpurityAvg, __pyx_t_2) < 0) __PYX_ERR(7, 98, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetImpurityAvg, __pyx_t_2) < 0) __PYX_ERR(7, 103, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":101
+  /* "siggen/PySiggen.pxi":106
  *     self.detector.set_impurity_avg( imp,  grad)
  * 
  *   def SetImpurityZ0(self, float imp, float grad):             # <<<<<<<<<<<<<<
  *     self.detector.set_impurity_z0( imp,  grad)
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_35SetImpurityZ0, 0, __pyx_n_s_PySiggen_SetImpurityZ0, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__74)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 101, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_39SetImpurityZ0, 0, __pyx_n_s_PySiggen_SetImpurityZ0, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__78)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 106, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetImpurityZ0, __pyx_t_2) < 0) __PYX_ERR(7, 101, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_SetImpurityZ0, __pyx_t_2) < 0) __PYX_ERR(7, 106, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":104
+  /* "siggen/PySiggen.pxi":109
  *     self.detector.set_impurity_z0( imp,  grad)
  * 
  *   def GetLastDriftTime(self, float q):             # <<<<<<<<<<<<<<
  *     return self.siggen.get_last_drifttime(q)
  * 
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_37GetLastDriftTime, 0, __pyx_n_s_PySiggen_GetLastDriftTime, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__76)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 104, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_41GetLastDriftTime, 0, __pyx_n_s_PySiggen_GetLastDriftTime, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__80)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 109, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetLastDriftTime, __pyx_t_2) < 0) __PYX_ERR(7, 104, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetLastDriftTime, __pyx_t_2) < 0) __PYX_ERR(7, 109, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":107
+  /* "siggen/PySiggen.pxi":112
  *     return self.siggen.get_last_drifttime(q)
  * 
  *   def GetEfield(self, float r, float z):             # <<<<<<<<<<<<<<
  * 
  *     (e_r, e_phi, e_z, val) = self.detector.efield(r,z)
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_39GetEfield, 0, __pyx_n_s_PySiggen_GetEfield, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__78)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 107, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_43GetEfield, 0, __pyx_n_s_PySiggen_GetEfield, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__82)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetEfield, __pyx_t_2) < 0) __PYX_ERR(7, 107, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetEfield, __pyx_t_2) < 0) __PYX_ERR(7, 112, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":112
+  /* "siggen/PySiggen.pxi":117
  *     return (e_r,e_z)
  * 
  *   def GetWpot(self, float r, float z):             # <<<<<<<<<<<<<<
  *     cdef point pt
  *     pt.x = r;
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_41GetWpot, 0, __pyx_n_s_PySiggen_GetWpot, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__80)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 112, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_45GetWpot, 0, __pyx_n_s_PySiggen_GetWpot, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__84)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 117, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetWpot, __pyx_t_2) < 0) __PYX_ERR(7, 112, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetWpot, __pyx_t_2) < 0) __PYX_ERR(7, 117, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":124
+  /* "siggen/PySiggen.pxi":129
  *     return wp_numpy
  * 
  *   def GetDWpot(self, float q):             # <<<<<<<<<<<<<<
  *     cdef vector[float] dwpot
  *     dwpot = self.siggen.get_dwpot()
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_43GetDWpot, 0, __pyx_n_s_PySiggen_GetDWpot, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__82)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 124, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_47GetDWpot, 0, __pyx_n_s_PySiggen_GetDWpot, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__86)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 129, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetDWpot, __pyx_t_2) < 0) __PYX_ERR(7, 124, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetDWpot, __pyx_t_2) < 0) __PYX_ERR(7, 129, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":137
+  /* "siggen/PySiggen.pxi":142
  *     return dwp_np
  * 
  *   def GetPath(self, float q):             # <<<<<<<<<<<<<<
  *     cdef vector[point] dp
  *     dp = self.siggen.get_driftpath(q)
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_45GetPath, 0, __pyx_n_s_PySiggen_GetPath, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__84)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 137, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_49GetPath, 0, __pyx_n_s_PySiggen_GetPath, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__88)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 142, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetPath, __pyx_t_2) < 0) __PYX_ERR(7, 137, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_GetPath, __pyx_t_2) < 0) __PYX_ERR(7, 142, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "siggen/PySiggen.pxi":153
+  /* "siggen/PySiggen.pxi":158
  *     return dp_np
  * 
  *   def save_efield(self, mat_full, efld_name, header_bytes):             # <<<<<<<<<<<<<<
  *     cdef EFieldPoint e_pt
  *     cdef cyl_pt c_pt
  */
-  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_47save_efield, 0, __pyx_n_s_PySiggen_save_efield, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__86)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 153, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_NewEx(&__pyx_mdef_6siggen_7_siggen_8PySiggen_51save_efield, 0, __pyx_n_s_PySiggen_save_efield, NULL, __pyx_n_s_siggen__siggen, __pyx_d, ((PyObject *)__pyx_codeobj__90)); if (unlikely(!__pyx_t_2)) __PYX_ERR(7, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_save_efield, __pyx_t_2) < 0) __PYX_ERR(7, 153, __pyx_L1_error)
+  if (PyObject_SetItem(__pyx_t_1, __pyx_n_s_save_efield, __pyx_t_2) < 0) __PYX_ERR(7, 158, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "siggen/PySiggen.pxi":4

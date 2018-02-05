@@ -16,7 +16,8 @@ namespace Siggen
 
 VelocityLookup::VelocityLookup(std::string drift_name):
 xtal_temp(REF_TEMP),
-drift_name(drift_name)
+drift_name(drift_name),
+is_setup(0)
 {
 }
 
@@ -211,6 +212,7 @@ int VelocityLookup::setup_velo(){
   // setup.v_lookup = v_lookup;
   // setup->v_lookup_len = v_lookup_len;
 
+  is_setup = 1;
   return 0;
 }
 
@@ -263,7 +265,7 @@ int VelocityLookup::drift_velocity(point cart_en, float abse, float q, float& v_
 
 }
 
-int VelocityLookup::set_temp(float temp){
+int VelocityLookup::set_xtal_temp(float temp){
   if (temp < MIN_TEMP || temp > MAX_TEMP){
     error("temperature out of range: %f\n", temp);
     return -1;

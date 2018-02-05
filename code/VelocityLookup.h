@@ -37,6 +37,7 @@ class VelocityLookup
     int vlook_sz=0;
     float xtal_temp;
     std::string drift_name;
+    bool is_setup;
 
 	public:
     VelocityLookup(){};
@@ -46,11 +47,12 @@ class VelocityLookup
     int setup_velo();
 
     int drift_velocity(point cart_en, float abse, float q, float& v_over_E, float& dv_dE, vector *velo);
-    void set_xtal_temp(float temp){xtal_temp = temp;}
+
     void set_drift_name(std::string drift){drift_name = drift;}
-    int set_temp(float temp);
 
+    inline bool get_is_setup(){return is_setup;}
 
+    int set_xtal_temp(float temp);
 
 };
 

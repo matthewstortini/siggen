@@ -69,9 +69,10 @@ class Detector
 
     //pass thru to the velocity calculator
     int drift_velocity(point pt, float q, float& v_over_E, float& dv_dE, vector *velo);
-    void set_temp(float temp);
+    inline void set_temp(float temp){velocity_lookup.set_xtal_temp(temp);}
 
     //velocity model
+    void set_use_velo_model(bool usemodel);
     inline void set_holes(float mu0_100, float beta_100, float E_0_100,
                           float mu0_111, float beta_111, float E_0_111)
                           {velocity_model.set_holes(mu0_100,beta_100,E_0_100,mu0_111,beta_111,E_0_111);}

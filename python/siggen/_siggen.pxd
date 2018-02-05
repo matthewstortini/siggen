@@ -69,6 +69,8 @@ cdef extern from "Siggen.h" namespace "Siggen":
     void set_trapping(double trap_c)
     void set_impurity_z0(float imp, float grad)
     void set_impurity_avg(float imp, float grad)
+    void set_use_velo_model(bool usemodel)
+    void set_temp(float temp)
     void set_holes(float mu0_100, float beta_100, float E_0_100,
                    float mu0_111, float beta_111, float E_0_111)
     void set_electrons(float mu0_100, float beta_100, float E_0_100, float mu_n_100,
