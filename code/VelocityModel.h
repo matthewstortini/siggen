@@ -9,15 +9,13 @@ namespace Siggen
 class AxisModel
 {
   private:
-    float mu_0, beta, E_0, mu_n = 0;
+    float mu_0, beta, E_0, mu_n = 0.;
 
   public:
-    AxisModel(float mu_0, float beta, float E_0);
-    AxisModel(float mu_0, float beta, float E_0, float mu_n);
-
+    AxisModel(float mu_0_in, float beta_in, float E_0_in, float mu_n_in=0.);
+    void set_params(float mu_0_in, float beta_in, float E_0_in, float mu_n_in=0.);
     float get_velocity(float E);
-    void set_params(float mu_0_in, float beta_in, float E_0_in, float mu_n_in=0);
-    // void set_params(float mu_0, float beta, float E_0, float mu_n);
+
 };
 
 class VelocityModel
@@ -26,15 +24,11 @@ class VelocityModel
     // int hole_velocity(float field, float theta, float phi, vector& velo);
     // int electron_velocity(float field, float theta, float phi, vector& velo);
 
-    //Axis velocity models.  Default parameters from Bruyneel NIM A 569 p 764
-
-    //hole velocity based on Reggiani data (Phys Rev B 16 (6))
-    AxisModel h100 = AxisModel(66333.,0.744,181.);
-    AxisModel h111 = AxisModel(107270.,0.580,100.);
-
-    //hole velocity based on Mihailescu data (NIM A 447 p 350)
-    AxisModel e100 = AxisModel(40180.,0.72,493.,589.);
-    AxisModel e111 = AxisModel(42420.,0.87,251.,62.);
+    //Axis velocity models.
+    AxisModel h100;
+    AxisModel h111;
+    AxisModel e100;
+    AxisModel e111;
 
     //gamma matrices for electron velocity calculation
     double gamma_j[4][3][3];

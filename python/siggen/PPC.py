@@ -112,6 +112,10 @@ class PPC(Detector):
     self.padded_siggen_data[len(electron_wf[0,:]):] = self.padded_siggen_data[len(electron_wf[0,:])-1]
 
     self.padded_siggen_data *= scale
+
+    # ret = self.padded_siggen_data[::10]
+    # return ret[np.argmax(ret)-(numSamples-50): np.argmax(ret)+50]
+
     sim_wf = self.ProcessWaveform(self.padded_siggen_data, align_point,align_percent, numSamples)
 
     return sim_wf
@@ -239,11 +243,15 @@ class PPC(Detector):
           if x[0] > xtal_radius - DOLFIN_EPS or x[1] > xtal_length - DOLFIN_EPS:
               return True
           #Ditch
-          elif x[0] < wrap_around_radius + DOLFIN_EPS and x[0] > wrap_around_radius - ditch_thickness - DOLFIN_EPS and x[1] < ditch_depth + DOLFIN_EPS:
-              return True
+          elif wrap_around_radius > 0 and  ditch_thickness > 0 and ditch_depth > 0:
+              if x[0] < wrap_around_radius + DOLFIN_EPS and x[0] > wrap_around_radius - ditch_thickness - DOLFIN_EPS and x[1] < ditch_depth + DOLFIN_EPS:
+                  return False
+              elif x[0] > wrap_around_radius - DOLFIN_EPS and x[1] < DOLFIN_EPS:
+                  return True
+              else: return False
           #Taper
           elif x[0] >= x[1] + xtal_radius - taper_length:
-                  return True
+              return True
           #Top bullet radius
           elif (x[0] > xtal_radius -top_bullet_radius - DOLFIN_EPS) and (x[1] > xtal_length -top_bullet_radius - DOLFIN_EPS):
               if ((x[0] - xtal_radius +top_bullet_radius)  **2 + (x[1] - xtal_length +top_bullet_radius)**2) > top_bullet_radius**2 - DOLFIN_EPS:

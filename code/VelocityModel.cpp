@@ -6,23 +6,16 @@
 namespace Siggen
 {
 
-
-AxisModel::AxisModel(float mu_0, float beta, float E_0):
-mu_0(mu_0),
-beta(beta),
-E_0(E_0),
-mu_n(0.)
-{}
-
-AxisModel::AxisModel(float mu_0, float beta, float E_0, float mu_n):
-mu_0(mu_0),
-beta(beta),
-E_0(E_0),
-mu_n(mu_n)
+AxisModel::AxisModel(float mu_0_in, float beta_in, float E_0_in, float mu_n_in):
+mu_0(mu_0_in),
+beta(beta_in),
+E_0(E_0_in),
+mu_n(mu_n_in)
 {}
 
 float AxisModel::get_velocity(float E){
   float v;
+  // printf("mu_0 %f, E_0 %f, beta %f\n", mu_0, E_0, beta);
 
   v = (mu_0 * E) / pow(1+pow(E/E_0,beta), 1./beta) - mu_n*E;
   return v * 10 * 1E-9;
@@ -36,17 +29,14 @@ void AxisModel::set_params(float mu_0_in, float beta_in, float E_0_in, float mu_
   mu_n = mu_n_in;
 }
 
-// void AxisModel::set_params(float mu_0_in, float beta_in, float E_0_in)
-// {
-//   mu_0 = mu_0_in;
-//   beta = beta_in;
-//   E_0  = E_0_in;
-//   mu_n = 0;
-// }
-
-
-
-VelocityModel::VelocityModel()
+//Default parameters from Bruyneel NIM A 569 p 764
+//hole velocity based on Reggiani data (Phys Rev B 16 (6))
+//e velocity based on Mihailescu data (NIM A 447 p 350)
+VelocityModel::VelocityModel():
+h100(AxisModel(66333.,0.744,181.)),
+h111(AxisModel(107270.,0.580,100.)),
+e100 (AxisModel(40180.,0.72,493.,589.)),
+e111 (AxisModel(42420.,0.87,251.,62.))
 {
   //Initialize gamma matrices for the electron velocity calculation
   int i;
@@ -139,6 +129,8 @@ int VelocityModel::drift_velocity(point cart_en, float abse, float q, float& v_o
     velo->z = 0;
     return 0;
   }
+
+  TELL_CHATTY(" v: (%f,%f,%f)\n", velo->x, velo->y, velo->z);
 
   return 0;
 

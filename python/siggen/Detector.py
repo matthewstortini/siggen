@@ -82,12 +82,12 @@ class Detector:
       y = r * np.sin(phi)
       return self.siggenInst.InCrystal(x,y,z)
 
-  def SetTransferFunctionRC(self, RC1_in_us, RC2_in_us, rc1_frac, digPeriod  = 1E9):
+  def SetTransferFunctionRC(self, RC1_in_us, RC2_in_us, rc1_frac, digFrequency  = 1E9):
     RC1= 1E-6 * (RC1_in_us)
-    self.rc1_for_tf = np.exp(-1./digPeriod/RC1)
+    self.rc1_for_tf = np.exp(-1./digFrequency/RC1)
 
     RC2 = 1E-6 * (RC2_in_us)
-    self.rc2_for_tf = np.exp(-1./digPeriod/RC2)
+    self.rc2_for_tf = np.exp(-1./digFrequency/RC2)
 
     self.rc1_frac = rc1_frac
 
@@ -128,7 +128,7 @@ class Detector:
       return None
 
     self.signal_array[:,self.wf_padding:] = self.signal_array_flat.reshape((self.nsegments,self.num_steps_out))
-    return self.signal_array
+    return self.signal_array*energy
 
   def solve_fields(self, meshmult, xtal_HV, impAvgRange, gradientRange, wp_name = "wpot.field", ef_name="ev.field", num_cpu=1):
     import xml.etree.ElementTree as ET
@@ -181,7 +181,7 @@ class Detector:
 
     efield_args = []
 
-    efield = np.zeros((nr,nz,nimp,ngrad,4), dtype=np.object)
+    efield = np.zeros((nr,nz,nimp,ngrad,4), dtype=np.float32)
     for i,avg in enumerate(impAvgRange):
         for j,grad in enumerate(gradientRange):
             print("Solving EF {} of {}... imp {}, grad {}".format(i*ngrad +j + 1, ngrad*nimp, avg, grad))
@@ -191,6 +191,7 @@ class Detector:
                 efield_args.append[ (meshmult, xtal_HV, avg, grad, boundary_pc, boundary_n)  ]
 
     self.siggenInst.save_efield(efield, ef_name, header_bytes)
+    return (wp_mat, efield)
 
   def avg_to_z0(self, impurity_avg, impurity_gradient):
     return impurity_avg - impurity_gradient * (self.detector_length/10) / 2
@@ -308,5 +309,16 @@ class Detector:
               e_theta = 0.
               e = np.sqrt(e_r**2+e_z**2)
               mat_full[i,j,:] = voltage, e, e_r, e_z
+
+    #   import matplotlib.pyplot as plt
+    #   plt.figure(figsize=(14,6))
+    #   plt.subplot(131)
+    #   plt.imshow(mat_full[:,:,1].T, origin="lower")
+    #   plt.subplot(132)
+    #   plt.imshow(mat_full[:,:,2].T, origin="lower")
+    #   plt.subplot(133)
+    #   plt.imshow(mat_full[:,:,3].T, origin="lower")
+    #   plt.show()
+    #   exit()
 
       return mat_full

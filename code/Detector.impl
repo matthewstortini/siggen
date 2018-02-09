@@ -15,7 +15,6 @@ xtal_length(setup.xtal_length)
   parse_setup(setup.detector_map);
 
   velocity_lookup.set_drift_name(drift_name);
-  velocity_lookup.set_xtal_temp(xtal_temp);
   set_impurity_z0(impurity_z0, impurity_gradient);
 
   rmin  = 0;
@@ -81,7 +80,6 @@ void Detector<GeometryType>::parse_setup(std::map<std::string, std::string>& det
       std::cout << "WARNING: unrecognized detector keyword " << key << "\n";
     }
   }
-
 }
 
 template<class GeometryType>
@@ -176,8 +174,8 @@ template<class GeometryType>
 void Detector <GeometryType>::set_use_velo_model(bool usemodel){
   use_velo_model = usemodel;
 
-  if ((usemodel == 1) && (velocity_lookup.get_is_setup()==0)){
-    if (velocity_lookup.setup_velo() != 0){
+  if ((usemodel == 0) && (velocity_lookup.get_is_setup()==0)){
+    if (velocity_lookup.set_xtal_temp(xtal_temp) != 0){
       error("Failed to read drift velocity data from file: %s\n", drift_name.c_str());
     }
   }
