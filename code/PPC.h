@@ -59,6 +59,7 @@ class PPC
     inline float get_ditch_depth(){return ditch_depth;}
     inline float get_ditch_thickness(){return ditch_thickness;}
     inline float get_taper_length(){return taper_length;}
+    inline bool get_bulletize_PC(){return bulletize_PC;}
 
     inline void set_xtal_radius(float val){xtal_radius = val;}
     inline void set_xtal_length(float val){xtal_length = val;}

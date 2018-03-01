@@ -286,6 +286,7 @@ class PPC(Detector):
     xtal_length           = self.siggenInst.geometry.xtal_length
     pc_length             = self.siggenInst.geometry.pc_length
     pc_radius             = self.siggenInst.geometry.pc_radius
+    bulletize_PC          = self.siggenInst.geometry.bulletize_PC
 
     bottom_bullet_radius  = self.siggenInst.geometry.bottom_bullet_radius
     top_bullet_radius     = self.siggenInst.geometry.top_bullet_radius
@@ -295,13 +296,22 @@ class PPC(Detector):
     ditch_thickness       = self.siggenInst.geometry.ditch_thickness
     ditch_depth           = self.siggenInst.geometry.ditch_depth
 
+    is_BEGe = 0
+    if taper_length > 0 and wrap_around_radius > 0:
+        raise NotImplementedError("Field solver only implemented for wrap_around_radius>0 or taper_length>0: can't do both")
+    elif wrap_around_radius >0:
+        is_BEGe = 1
+
     class n_contact(SubDomain):
         def inside(self, x, on_boundary):
-            if near(x[0], xtal_radius) or near(x[1], xtal_length) or (near(x[1], 0) and between(x[0], (wrap_around_radius, xtal_radius))):
+            if near(x[0], xtal_radius) or near(x[1], xtal_length):
                 return True
             #Taper
             elif taper_length >0 and x[0] >= x[1] + xtal_radius - taper_length:
               return True
+            #Wrap-around
+            elif wrap_around_radius>0 and near(x[1], 0) and between(x[0], (wrap_around_radius, xtal_radius)):
+                return True
             #Top bullet radius
             elif (x[0] > xtal_radius -top_bullet_radius - DOLFIN_EPS) and (x[1] > xtal_length -top_bullet_radius - DOLFIN_EPS):
               if ((x[0] - xtal_radius +top_bullet_radius)  **2 + (x[1] - xtal_length +top_bullet_radius)**2) > top_bullet_radius**2 - DOLFIN_EPS:
@@ -317,11 +327,19 @@ class PPC(Detector):
 
     class p_contact(SubDomain):
         def inside(self, x, on_boundary):
-            return between(x[0], (0, pc_radius)) and between(x[1], (0, pc_length))
+            if not (between(x[0], (0, pc_radius)) or between(x[1], (0, pc_length))):
+                return False
+            elif bulletize_PC:
+                return between( (x[0]/pc_radius)**2 + (x[1]/pc_length)**2, (0,1))
+            else:
+                return True
 
     class passivated_surface(SubDomain):
         def inside(self, x, on_boundary):
-            return near(x[0], 0) and between(x[0], (pc_radius, wrap_around_radius-ditch_thickness))
+            if is_BEGe:
+                return near(x[0], 0) and between(x[0], (pc_radius, wrap_around_radius-ditch_thickness))
+            else:
+                return near(x[0], 0) and between(x[0], (pc_radius, xtal_radius-taper_length ))
 
     class Ditch(SubDomain):
         def inside(self, x, on_boundary):
@@ -331,7 +349,9 @@ class PPC(Detector):
     n_contact = n_contact()
     p_contact = p_contact()
     pass_surface = passivated_surface()
-    ditch = Ditch()
+
+    if is_BEGe:
+        ditch = Ditch()
 
     # Define mesh
     mesh = RectangleMesh(Point(0.0, 0.0), Point(xtal_radius, xtal_length), n_r, n_z)
@@ -339,7 +359,9 @@ class PPC(Detector):
     # Initialize mesh function for interior domains
     domains = CellFunction("size_t", mesh)
     domains.set_all(0)
-    ditch.mark(domains, 1)
+
+    if is_BEGe:
+        ditch.mark(domains, 1)
 
     # Initialize mesh function for boundary domains
     boundaries = FacetFunction("size_t", mesh)
@@ -378,9 +400,11 @@ class PPC(Detector):
         bcs_efield = [DirichletBC(V, u_n, boundaries, 1), DirichletBC(V, u_p, boundaries, 2)]
 
         # Define variational form
-        F = (inner(epsilon_ge*grad(u), grad(v))*r*dx(0) + inner(epsilon_0*grad(u), grad(v))*r*dx(1)
-            #  - g_L*v*ds(1) - g_R*v*ds(3)
+        if is_BEGe:
+            F = (inner(epsilon_ge*grad(u), grad(v))*r*dx(0) + inner(epsilon_0*grad(u), grad(v))*r*dx(1)
              - f*v*r*dx(0))
+        else:
+            F = (inner(epsilon_ge*grad(u), grad(v))*r*dx(0) - f*v*r*dx(0))
 
         # Separate left and right hand sides of equation
         a, L = lhs(F), rhs(F)
@@ -414,7 +438,10 @@ class PPC(Detector):
         bcs_wpot = [DirichletBC(V, wp_n, boundaries, 1), DirichletBC(V, wp_p, boundaries, 2)]
 
         # Define variational form
-        F = (inner(epsilon_ge*grad(u), grad(v))*r*dx(0) + inner(epsilon_0*grad(u), grad(v))*r*dx(1))
+        if is_BEGe:
+            F = (inner(epsilon_ge*grad(u), grad(v))*r*dx(0) + inner(epsilon_0*grad(u), grad(v))*r*dx(1))
+        else:
+            F = inner(epsilon_ge*grad(u), grad(v))*r*dx(0)
 
         # Separate left and right hand sides of equation
         a, L = lhs(F), rhs(F)

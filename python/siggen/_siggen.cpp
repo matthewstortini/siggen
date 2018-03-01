@@ -1207,8 +1207,8 @@ struct __pyx_obj_6siggen_7_siggen_SignalGeneratorWrapper_ICPC {
 };
 
 
-/* "siggen/geometries/PPCGeometry.pxi":18
- *     float get_taper_length()
+/* "siggen/geometries/PPCGeometry.pxi":20
+ * 
  * 
  * cdef class PPCGeometry:             # <<<<<<<<<<<<<<
  *   cdef PPC* cobj
@@ -2245,6 +2245,7 @@ static const char __pyx_k_ndarray_is_not_Fortran_contiguou[] = "ndarray is not F
 static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __reduce__ due to non-trivial __cinit__";
 static const char __pyx_k_numpy_core_umath_failed_to_impor[] = "numpy.core.umath failed to import";
 static const char __pyx_k_set_not_implemented_for_bottom_b[] = "set not implemented for bottom_bullet_radius!";
+static const char __pyx_k_set_not_implemented_for_bulletiz[] = "set not implemented for bulletize_PC!";
 static const char __pyx_k_set_not_implemented_for_ditch_th[] = "set not implemented for ditch_thickness!";
 static const char __pyx_k_set_not_implemented_for_get_ditc[] = "set not implemented for get_ditch_depth!";
 static const char __pyx_k_set_not_implemented_for_pc_lengt[] = "set not implemented for pc_length!";
@@ -2431,6 +2432,7 @@ static PyObject *__pyx_n_s_set_holes;
 static PyObject *__pyx_n_s_set_impurity_avg;
 static PyObject *__pyx_n_s_set_impurity_z0;
 static PyObject *__pyx_kp_s_set_not_implemented_for_bottom_b;
+static PyObject *__pyx_kp_s_set_not_implemented_for_bulletiz;
 static PyObject *__pyx_kp_s_set_not_implemented_for_ditch_th;
 static PyObject *__pyx_kp_s_set_not_implemented_for_get_ditc;
 static PyObject *__pyx_kp_s_set_not_implemented_for_pc_lengt;
@@ -2586,6 +2588,8 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_length___get__(stru
 static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_length_2__set__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_PPCGeometry *__pyx_v_self, CYTHON_UNUSED float __pyx_v_val); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_radius___get__(struct __pyx_obj_6siggen_7_siggen_PPCGeometry *__pyx_v_self); /* proto */
 static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_radius_2__set__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_PPCGeometry *__pyx_v_self, CYTHON_UNUSED float __pyx_v_val); /* proto */
+static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_12bulletize_PC___get__(struct __pyx_obj_6siggen_7_siggen_PPCGeometry *__pyx_v_self); /* proto */
+static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_12bulletize_PC_2__set__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_PPCGeometry *__pyx_v_self, CYTHON_UNUSED float __pyx_v_val); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_17top_bullet_radius___get__(struct __pyx_obj_6siggen_7_siggen_PPCGeometry *__pyx_v_self); /* proto */
 static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_17top_bullet_radius_2__set__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_PPCGeometry *__pyx_v_self, CYTHON_UNUSED float __pyx_v_val); /* proto */
 static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_20bottom_bullet_radius___get__(struct __pyx_obj_6siggen_7_siggen_PPCGeometry *__pyx_v_self); /* proto */
@@ -11767,7 +11771,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_27SignalGeneratorWrapper_ICPC_16__set
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":21
+/* "siggen/geometries/PPCGeometry.pxi":23
  *   cdef PPC* cobj
  * 
  *   def __cinit__(self, PySetup setup):             # <<<<<<<<<<<<<<
@@ -11801,7 +11805,7 @@ static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_1__cinit__(PyObject *__pyx_v_
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(2, 21, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__cinit__") < 0)) __PYX_ERR(2, 23, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 1) {
       goto __pyx_L5_argtuple_error;
@@ -11812,13 +11816,13 @@ static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_1__cinit__(PyObject *__pyx_v_
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(2, 21, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 1, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(2, 23, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("siggen._siggen.PPCGeometry.__cinit__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_setup), __pyx_ptype_6siggen_7_siggen_PySetup, 1, "setup", 0))) __PYX_ERR(2, 21, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_setup), __pyx_ptype_6siggen_7_siggen_PySetup, 1, "setup", 0))) __PYX_ERR(2, 23, __pyx_L1_error)
   __pyx_r = __pyx_pf_6siggen_7_siggen_11PPCGeometry___cinit__(((struct __pyx_obj_6siggen_7_siggen_PPCGeometry *)__pyx_v_self), __pyx_v_setup);
 
   /* function exit code */
@@ -11835,7 +11839,7 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry___cinit__(struct __pyx_obj_6s
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__cinit__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":22
+  /* "siggen/geometries/PPCGeometry.pxi":24
  * 
  *   def __cinit__(self, PySetup setup):
  *     self.cobj = new PPC(dereference(setup.cobj))             # <<<<<<<<<<<<<<
@@ -11844,7 +11848,7 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry___cinit__(struct __pyx_obj_6s
  */
   __pyx_v_self->cobj = new PPC((*__pyx_v_setup->cobj));
 
-  /* "siggen/geometries/PPCGeometry.pxi":21
+  /* "siggen/geometries/PPCGeometry.pxi":23
  *   cdef PPC* cobj
  * 
  *   def __cinit__(self, PySetup setup):             # <<<<<<<<<<<<<<
@@ -11858,7 +11862,7 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry___cinit__(struct __pyx_obj_6s
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":24
+/* "siggen/geometries/PPCGeometry.pxi":26
  *     self.cobj = new PPC(dereference(setup.cobj))
  * 
  *   def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -11881,7 +11885,7 @@ static void __pyx_pf_6siggen_7_siggen_11PPCGeometry_2__dealloc__(struct __pyx_ob
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__dealloc__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":25
+  /* "siggen/geometries/PPCGeometry.pxi":27
  * 
  *   def __dealloc__(self):
  *     del self.cobj             # <<<<<<<<<<<<<<
@@ -11890,7 +11894,7 @@ static void __pyx_pf_6siggen_7_siggen_11PPCGeometry_2__dealloc__(struct __pyx_ob
  */
   delete __pyx_v_self->cobj;
 
-  /* "siggen/geometries/PPCGeometry.pxi":24
+  /* "siggen/geometries/PPCGeometry.pxi":26
  *     self.cobj = new PPC(dereference(setup.cobj))
  * 
  *   def __dealloc__(self):             # <<<<<<<<<<<<<<
@@ -11902,7 +11906,7 @@ static void __pyx_pf_6siggen_7_siggen_11PPCGeometry_2__dealloc__(struct __pyx_ob
   __Pyx_RefNannyFinishContext();
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":28
+/* "siggen/geometries/PPCGeometry.pxi":30
  * 
  *   property xtal_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -11929,7 +11933,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_11xtal_radius___get__(s
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":29
+  /* "siggen/geometries/PPCGeometry.pxi":31
  *   property xtal_radius:
  *     def __get__(self):
  *       return self.cobj.get_xtal_radius()             # <<<<<<<<<<<<<<
@@ -11937,13 +11941,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_11xtal_radius___get__(s
  *       print("set not implemented for xtal_radius!")
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_xtal_radius()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 29, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_xtal_radius()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 31, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":28
+  /* "siggen/geometries/PPCGeometry.pxi":30
  * 
  *   property xtal_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -11962,7 +11966,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_11xtal_radius___get__(s
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":30
+/* "siggen/geometries/PPCGeometry.pxi":32
  *     def __get__(self):
  *       return self.cobj.get_xtal_radius()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -11978,7 +11982,7 @@ static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_11xtal_radius_3__set__(PyObje
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_val); {
-    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 30, __pyx_L3_error)
+    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 32, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -11999,27 +12003,27 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_11xtal_radius_2__set__(CYTHON
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":31
+  /* "siggen/geometries/PPCGeometry.pxi":33
  *       return self.cobj.get_xtal_radius()
  *     def __set__(self, float val):
  *       print("set not implemented for xtal_radius!")             # <<<<<<<<<<<<<<
  *       exit()
  * 
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_xtal_rad) < 0) __PYX_ERR(2, 31, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_xtal_rad) < 0) __PYX_ERR(2, 33, __pyx_L1_error)
 
-  /* "siggen/geometries/PPCGeometry.pxi":32
+  /* "siggen/geometries/PPCGeometry.pxi":34
  *     def __set__(self, float val):
  *       print("set not implemented for xtal_radius!")
  *       exit()             # <<<<<<<<<<<<<<
  * 
  *   property xtal_length:
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 32, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 34, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":30
+  /* "siggen/geometries/PPCGeometry.pxi":32
  *     def __get__(self):
  *       return self.cobj.get_xtal_radius()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12039,7 +12043,7 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_11xtal_radius_2__set__(CYTHON
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":35
+/* "siggen/geometries/PPCGeometry.pxi":37
  * 
  *   property xtal_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12066,7 +12070,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_11xtal_length___get__(s
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":36
+  /* "siggen/geometries/PPCGeometry.pxi":38
  *   property xtal_length:
  *     def __get__(self):
  *       return self.cobj.get_xtal_length()             # <<<<<<<<<<<<<<
@@ -12074,13 +12078,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_11xtal_length___get__(s
  *       print("set not implemented for xtal_length!")
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_xtal_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 36, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_xtal_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":35
+  /* "siggen/geometries/PPCGeometry.pxi":37
  * 
  *   property xtal_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12099,7 +12103,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_11xtal_length___get__(s
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":37
+/* "siggen/geometries/PPCGeometry.pxi":39
  *     def __get__(self):
  *       return self.cobj.get_xtal_length()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12115,7 +12119,7 @@ static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_11xtal_length_3__set__(PyObje
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_val); {
-    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 37, __pyx_L3_error)
+    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 39, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -12136,27 +12140,27 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_11xtal_length_2__set__(CYTHON
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":38
+  /* "siggen/geometries/PPCGeometry.pxi":40
  *       return self.cobj.get_xtal_length()
  *     def __set__(self, float val):
  *       print("set not implemented for xtal_length!")             # <<<<<<<<<<<<<<
  *       exit()
  *   property pc_length:
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_xtal_len) < 0) __PYX_ERR(2, 38, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_xtal_len) < 0) __PYX_ERR(2, 40, __pyx_L1_error)
 
-  /* "siggen/geometries/PPCGeometry.pxi":39
+  /* "siggen/geometries/PPCGeometry.pxi":41
  *     def __set__(self, float val):
  *       print("set not implemented for xtal_length!")
  *       exit()             # <<<<<<<<<<<<<<
  *   property pc_length:
  *     def __get__(self):
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 39, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":37
+  /* "siggen/geometries/PPCGeometry.pxi":39
  *     def __get__(self):
  *       return self.cobj.get_xtal_length()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12176,7 +12180,7 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_11xtal_length_2__set__(CYTHON
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":41
+/* "siggen/geometries/PPCGeometry.pxi":43
  *       exit()
  *   property pc_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12203,7 +12207,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_length___get__(stru
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":42
+  /* "siggen/geometries/PPCGeometry.pxi":44
  *   property pc_length:
  *     def __get__(self):
  *       return self.cobj.get_pc_length()             # <<<<<<<<<<<<<<
@@ -12211,13 +12215,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_length___get__(stru
  *       print("set not implemented for pc_length!")
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_pc_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 42, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_pc_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 44, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":41
+  /* "siggen/geometries/PPCGeometry.pxi":43
  *       exit()
  *   property pc_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12236,7 +12240,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_length___get__(stru
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":43
+/* "siggen/geometries/PPCGeometry.pxi":45
  *     def __get__(self):
  *       return self.cobj.get_pc_length()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12252,7 +12256,7 @@ static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_9pc_length_3__set__(PyObject 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_val); {
-    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 43, __pyx_L3_error)
+    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 45, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -12273,27 +12277,27 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_length_2__set__(CYTHON_UN
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":44
+  /* "siggen/geometries/PPCGeometry.pxi":46
  *       return self.cobj.get_pc_length()
  *     def __set__(self, float val):
  *       print("set not implemented for pc_length!")             # <<<<<<<<<<<<<<
  *       exit()
  * 
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_pc_lengt) < 0) __PYX_ERR(2, 44, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_pc_lengt) < 0) __PYX_ERR(2, 46, __pyx_L1_error)
 
-  /* "siggen/geometries/PPCGeometry.pxi":45
+  /* "siggen/geometries/PPCGeometry.pxi":47
  *     def __set__(self, float val):
  *       print("set not implemented for pc_length!")
  *       exit()             # <<<<<<<<<<<<<<
  * 
  *   property pc_radius:
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 45, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 47, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":43
+  /* "siggen/geometries/PPCGeometry.pxi":45
  *     def __get__(self):
  *       return self.cobj.get_pc_length()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12313,7 +12317,7 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_length_2__set__(CYTHON_UN
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":48
+/* "siggen/geometries/PPCGeometry.pxi":50
  * 
  *   property pc_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12340,7 +12344,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_radius___get__(stru
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":49
+  /* "siggen/geometries/PPCGeometry.pxi":51
  *   property pc_radius:
  *     def __get__(self):
  *       return self.cobj.get_pc_radius()             # <<<<<<<<<<<<<<
@@ -12348,13 +12352,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_radius___get__(stru
  *       print("set not implemented for pc_radius!")
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_pc_radius()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 49, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_pc_radius()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 51, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":48
+  /* "siggen/geometries/PPCGeometry.pxi":50
  * 
  *   property pc_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12373,7 +12377,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_radius___get__(stru
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":50
+/* "siggen/geometries/PPCGeometry.pxi":52
  *     def __get__(self):
  *       return self.cobj.get_pc_radius()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12389,7 +12393,7 @@ static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_9pc_radius_3__set__(PyObject 
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_val); {
-    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 50, __pyx_L3_error)
+    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 52, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -12410,27 +12414,27 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_radius_2__set__(CYTHON_UN
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":51
+  /* "siggen/geometries/PPCGeometry.pxi":53
  *       return self.cobj.get_pc_radius()
  *     def __set__(self, float val):
  *       print("set not implemented for pc_radius!")             # <<<<<<<<<<<<<<
  *       exit()
- * 
+ *   property bulletize_PC:
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_pc_radiu) < 0) __PYX_ERR(2, 51, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_pc_radiu) < 0) __PYX_ERR(2, 53, __pyx_L1_error)
 
-  /* "siggen/geometries/PPCGeometry.pxi":52
+  /* "siggen/geometries/PPCGeometry.pxi":54
  *     def __set__(self, float val):
  *       print("set not implemented for pc_radius!")
  *       exit()             # <<<<<<<<<<<<<<
- * 
- *   property top_bullet_radius:
+ *   property bulletize_PC:
+ *     def __get__(self):
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 52, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 54, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":50
+  /* "siggen/geometries/PPCGeometry.pxi":52
  *     def __get__(self):
  *       return self.cobj.get_pc_radius()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12450,7 +12454,144 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_9pc_radius_2__set__(CYTHON_UN
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":55
+/* "siggen/geometries/PPCGeometry.pxi":56
+ *       exit()
+ *   property bulletize_PC:
+ *     def __get__(self):             # <<<<<<<<<<<<<<
+ *       return self.cobj.get_bulletize_PC()
+ *     def __set__(self, float val):
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_6siggen_7_siggen_11PPCGeometry_12bulletize_PC_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_6siggen_7_siggen_11PPCGeometry_12bulletize_PC_1__get__(PyObject *__pyx_v_self) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_r = __pyx_pf_6siggen_7_siggen_11PPCGeometry_12bulletize_PC___get__(((struct __pyx_obj_6siggen_7_siggen_PPCGeometry *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_12bulletize_PC___get__(struct __pyx_obj_6siggen_7_siggen_PPCGeometry *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("__get__", 0);
+
+  /* "siggen/geometries/PPCGeometry.pxi":57
+ *   property bulletize_PC:
+ *     def __get__(self):
+ *       return self.cobj.get_bulletize_PC()             # <<<<<<<<<<<<<<
+ *     def __set__(self, float val):
+ *       print("set not implemented for bulletize_PC!")
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __Pyx_PyBool_FromLong(__pyx_v_self->cobj->get_bulletize_PC()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 57, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "siggen/geometries/PPCGeometry.pxi":56
+ *       exit()
+ *   property bulletize_PC:
+ *     def __get__(self):             # <<<<<<<<<<<<<<
+ *       return self.cobj.get_bulletize_PC()
+ *     def __set__(self, float val):
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("siggen._siggen.PPCGeometry.bulletize_PC.__get__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "siggen/geometries/PPCGeometry.pxi":58
+ *     def __get__(self):
+ *       return self.cobj.get_bulletize_PC()
+ *     def __set__(self, float val):             # <<<<<<<<<<<<<<
+ *       print("set not implemented for bulletize_PC!")
+ *       exit()
+ */
+
+/* Python wrapper */
+static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_12bulletize_PC_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_val); /*proto*/
+static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_12bulletize_PC_3__set__(PyObject *__pyx_v_self, PyObject *__pyx_arg_val) {
+  CYTHON_UNUSED float __pyx_v_val;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
+  assert(__pyx_arg_val); {
+    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 58, __pyx_L3_error)
+  }
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  __Pyx_AddTraceback("siggen._siggen.PPCGeometry.bulletize_PC.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_6siggen_7_siggen_11PPCGeometry_12bulletize_PC_2__set__(((struct __pyx_obj_6siggen_7_siggen_PPCGeometry *)__pyx_v_self), ((float)__pyx_v_val));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_12bulletize_PC_2__set__(CYTHON_UNUSED struct __pyx_obj_6siggen_7_siggen_PPCGeometry *__pyx_v_self, CYTHON_UNUSED float __pyx_v_val) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  __Pyx_RefNannySetupContext("__set__", 0);
+
+  /* "siggen/geometries/PPCGeometry.pxi":59
+ *       return self.cobj.get_bulletize_PC()
+ *     def __set__(self, float val):
+ *       print("set not implemented for bulletize_PC!")             # <<<<<<<<<<<<<<
+ *       exit()
+ * 
+ */
+  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_bulletiz) < 0) __PYX_ERR(2, 59, __pyx_L1_error)
+
+  /* "siggen/geometries/PPCGeometry.pxi":60
+ *     def __set__(self, float val):
+ *       print("set not implemented for bulletize_PC!")
+ *       exit()             # <<<<<<<<<<<<<<
+ * 
+ *   property top_bullet_radius:
+ */
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 60, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "siggen/geometries/PPCGeometry.pxi":58
+ *     def __get__(self):
+ *       return self.cobj.get_bulletize_PC()
+ *     def __set__(self, float val):             # <<<<<<<<<<<<<<
+ *       print("set not implemented for bulletize_PC!")
+ *       exit()
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("siggen._siggen.PPCGeometry.bulletize_PC.__set__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "siggen/geometries/PPCGeometry.pxi":63
  * 
  *   property top_bullet_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12477,7 +12618,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_17top_bullet_radius___g
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":56
+  /* "siggen/geometries/PPCGeometry.pxi":64
  *   property top_bullet_radius:
  *     def __get__(self):
  *       return self.cobj.get_top_bullet_radius()             # <<<<<<<<<<<<<<
@@ -12485,13 +12626,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_17top_bullet_radius___g
  *       print("set not implemented for top_bullet_radius!")
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_top_bullet_radius()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 56, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_top_bullet_radius()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":55
+  /* "siggen/geometries/PPCGeometry.pxi":63
  * 
  *   property top_bullet_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12510,7 +12651,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_17top_bullet_radius___g
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":57
+/* "siggen/geometries/PPCGeometry.pxi":65
  *     def __get__(self):
  *       return self.cobj.get_top_bullet_radius()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12526,7 +12667,7 @@ static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_17top_bullet_radius_3__set__(
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_val); {
-    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 57, __pyx_L3_error)
+    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 65, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -12547,27 +12688,27 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_17top_bullet_radius_2__set__(
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":58
+  /* "siggen/geometries/PPCGeometry.pxi":66
  *       return self.cobj.get_top_bullet_radius()
  *     def __set__(self, float val):
  *       print("set not implemented for top_bullet_radius!")             # <<<<<<<<<<<<<<
  *       exit()
  * 
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_top_bull) < 0) __PYX_ERR(2, 58, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_top_bull) < 0) __PYX_ERR(2, 66, __pyx_L1_error)
 
-  /* "siggen/geometries/PPCGeometry.pxi":59
+  /* "siggen/geometries/PPCGeometry.pxi":67
  *     def __set__(self, float val):
  *       print("set not implemented for top_bullet_radius!")
  *       exit()             # <<<<<<<<<<<<<<
  * 
  *   property bottom_bullet_radius:
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 59, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":57
+  /* "siggen/geometries/PPCGeometry.pxi":65
  *     def __get__(self):
  *       return self.cobj.get_top_bullet_radius()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12587,7 +12728,7 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_17top_bullet_radius_2__set__(
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":62
+/* "siggen/geometries/PPCGeometry.pxi":70
  * 
  *   property bottom_bullet_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12614,7 +12755,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_20bottom_bullet_radius_
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":63
+  /* "siggen/geometries/PPCGeometry.pxi":71
  *   property bottom_bullet_radius:
  *     def __get__(self):
  *       return self.cobj.get_bottom_bullet_radius()             # <<<<<<<<<<<<<<
@@ -12622,13 +12763,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_20bottom_bullet_radius_
  *       print("set not implemented for bottom_bullet_radius!")
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_bottom_bullet_radius()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 63, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_bottom_bullet_radius()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 71, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":62
+  /* "siggen/geometries/PPCGeometry.pxi":70
  * 
  *   property bottom_bullet_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12647,7 +12788,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_20bottom_bullet_radius_
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":64
+/* "siggen/geometries/PPCGeometry.pxi":72
  *     def __get__(self):
  *       return self.cobj.get_bottom_bullet_radius()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12663,7 +12804,7 @@ static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_20bottom_bullet_radius_3__set
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_val); {
-    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 64, __pyx_L3_error)
+    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 72, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -12684,27 +12825,27 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_20bottom_bullet_radius_2__set
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":65
+  /* "siggen/geometries/PPCGeometry.pxi":73
  *       return self.cobj.get_bottom_bullet_radius()
  *     def __set__(self, float val):
  *       print("set not implemented for bottom_bullet_radius!")             # <<<<<<<<<<<<<<
  *       exit()
  * 
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_bottom_b) < 0) __PYX_ERR(2, 65, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_bottom_b) < 0) __PYX_ERR(2, 73, __pyx_L1_error)
 
-  /* "siggen/geometries/PPCGeometry.pxi":66
+  /* "siggen/geometries/PPCGeometry.pxi":74
  *     def __set__(self, float val):
  *       print("set not implemented for bottom_bullet_radius!")
  *       exit()             # <<<<<<<<<<<<<<
  * 
  *   property wrap_around_radius:
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 66, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 74, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":64
+  /* "siggen/geometries/PPCGeometry.pxi":72
  *     def __get__(self):
  *       return self.cobj.get_bottom_bullet_radius()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12724,7 +12865,7 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_20bottom_bullet_radius_2__set
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":69
+/* "siggen/geometries/PPCGeometry.pxi":77
  * 
  *   property wrap_around_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12751,7 +12892,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_18wrap_around_radius___
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":70
+  /* "siggen/geometries/PPCGeometry.pxi":78
  *   property wrap_around_radius:
  *     def __get__(self):
  *       return self.cobj.get_wrap_around_radius()             # <<<<<<<<<<<<<<
@@ -12759,13 +12900,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_18wrap_around_radius___
  *       print("set not implemented for wrap_around_radius!")
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_wrap_around_radius()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 70, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_wrap_around_radius()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 78, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":69
+  /* "siggen/geometries/PPCGeometry.pxi":77
  * 
  *   property wrap_around_radius:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12784,7 +12925,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_18wrap_around_radius___
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":71
+/* "siggen/geometries/PPCGeometry.pxi":79
  *     def __get__(self):
  *       return self.cobj.get_wrap_around_radius()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12800,7 +12941,7 @@ static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_18wrap_around_radius_3__set__
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_val); {
-    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 71, __pyx_L3_error)
+    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 79, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -12821,27 +12962,27 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_18wrap_around_radius_2__set__
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":72
+  /* "siggen/geometries/PPCGeometry.pxi":80
  *       return self.cobj.get_wrap_around_radius()
  *     def __set__(self, float val):
  *       print("set not implemented for wrap_around_radius!")             # <<<<<<<<<<<<<<
  *       exit()
  * 
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_wrap_aro) < 0) __PYX_ERR(2, 72, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_wrap_aro) < 0) __PYX_ERR(2, 80, __pyx_L1_error)
 
-  /* "siggen/geometries/PPCGeometry.pxi":73
+  /* "siggen/geometries/PPCGeometry.pxi":81
  *     def __set__(self, float val):
  *       print("set not implemented for wrap_around_radius!")
  *       exit()             # <<<<<<<<<<<<<<
  * 
  *   property ditch_depth:
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 73, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 81, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":71
+  /* "siggen/geometries/PPCGeometry.pxi":79
  *     def __get__(self):
  *       return self.cobj.get_wrap_around_radius()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12861,7 +13002,7 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_18wrap_around_radius_2__set__
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":76
+/* "siggen/geometries/PPCGeometry.pxi":84
  * 
  *   property ditch_depth:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12888,7 +13029,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_11ditch_depth___get__(s
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":77
+  /* "siggen/geometries/PPCGeometry.pxi":85
  *   property ditch_depth:
  *     def __get__(self):
  *       return self.cobj.get_ditch_depth()             # <<<<<<<<<<<<<<
@@ -12896,13 +13037,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_11ditch_depth___get__(s
  *       print("set not implemented for get_ditch_depth!")
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_ditch_depth()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 77, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_ditch_depth()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 85, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":76
+  /* "siggen/geometries/PPCGeometry.pxi":84
  * 
  *   property ditch_depth:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -12921,7 +13062,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_11ditch_depth___get__(s
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":78
+/* "siggen/geometries/PPCGeometry.pxi":86
  *     def __get__(self):
  *       return self.cobj.get_ditch_depth()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12937,7 +13078,7 @@ static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_11ditch_depth_3__set__(PyObje
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_val); {
-    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 78, __pyx_L3_error)
+    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 86, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -12958,27 +13099,27 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_11ditch_depth_2__set__(CYTHON
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":79
+  /* "siggen/geometries/PPCGeometry.pxi":87
  *       return self.cobj.get_ditch_depth()
  *     def __set__(self, float val):
  *       print("set not implemented for get_ditch_depth!")             # <<<<<<<<<<<<<<
  *       exit()
  * 
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_get_ditc) < 0) __PYX_ERR(2, 79, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_get_ditc) < 0) __PYX_ERR(2, 87, __pyx_L1_error)
 
-  /* "siggen/geometries/PPCGeometry.pxi":80
+  /* "siggen/geometries/PPCGeometry.pxi":88
  *     def __set__(self, float val):
  *       print("set not implemented for get_ditch_depth!")
  *       exit()             # <<<<<<<<<<<<<<
  * 
  *   property ditch_thickness:
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 80, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 88, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":78
+  /* "siggen/geometries/PPCGeometry.pxi":86
  *     def __get__(self):
  *       return self.cobj.get_ditch_depth()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -12998,7 +13139,7 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_11ditch_depth_2__set__(CYTHON
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":83
+/* "siggen/geometries/PPCGeometry.pxi":91
  * 
  *   property ditch_thickness:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -13025,7 +13166,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_15ditch_thickness___get
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":84
+  /* "siggen/geometries/PPCGeometry.pxi":92
  *   property ditch_thickness:
  *     def __get__(self):
  *       return self.cobj.get_ditch_thickness()             # <<<<<<<<<<<<<<
@@ -13033,13 +13174,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_15ditch_thickness___get
  *       print("set not implemented for ditch_thickness!")
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_ditch_thickness()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 84, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_ditch_thickness()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 92, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":83
+  /* "siggen/geometries/PPCGeometry.pxi":91
  * 
  *   property ditch_thickness:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -13058,7 +13199,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_15ditch_thickness___get
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":85
+/* "siggen/geometries/PPCGeometry.pxi":93
  *     def __get__(self):
  *       return self.cobj.get_ditch_thickness()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -13074,7 +13215,7 @@ static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_15ditch_thickness_3__set__(Py
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_val); {
-    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 85, __pyx_L3_error)
+    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 93, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -13095,27 +13236,27 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_15ditch_thickness_2__set__(CY
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":86
+  /* "siggen/geometries/PPCGeometry.pxi":94
  *       return self.cobj.get_ditch_thickness()
  *     def __set__(self, float val):
  *       print("set not implemented for ditch_thickness!")             # <<<<<<<<<<<<<<
  *       exit()
  * 
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_ditch_th) < 0) __PYX_ERR(2, 86, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_ditch_th) < 0) __PYX_ERR(2, 94, __pyx_L1_error)
 
-  /* "siggen/geometries/PPCGeometry.pxi":87
+  /* "siggen/geometries/PPCGeometry.pxi":95
  *     def __set__(self, float val):
  *       print("set not implemented for ditch_thickness!")
  *       exit()             # <<<<<<<<<<<<<<
  * 
  *   property taper_length:
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 87, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 95, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":85
+  /* "siggen/geometries/PPCGeometry.pxi":93
  *     def __get__(self):
  *       return self.cobj.get_ditch_thickness()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -13135,7 +13276,7 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_15ditch_thickness_2__set__(CY
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":90
+/* "siggen/geometries/PPCGeometry.pxi":98
  * 
  *   property taper_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -13162,7 +13303,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_12taper_length___get__(
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__get__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":91
+  /* "siggen/geometries/PPCGeometry.pxi":99
  *   property taper_length:
  *     def __get__(self):
  *       return self.cobj.get_taper_length()             # <<<<<<<<<<<<<<
@@ -13170,13 +13311,13 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_12taper_length___get__(
  *       print("set not implemented for taper_length!")
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_taper_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 91, __pyx_L1_error)
+  __pyx_t_1 = PyFloat_FromDouble(__pyx_v_self->cobj->get_taper_length()); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 99, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":90
+  /* "siggen/geometries/PPCGeometry.pxi":98
  * 
  *   property taper_length:
  *     def __get__(self):             # <<<<<<<<<<<<<<
@@ -13195,7 +13336,7 @@ static PyObject *__pyx_pf_6siggen_7_siggen_11PPCGeometry_12taper_length___get__(
   return __pyx_r;
 }
 
-/* "siggen/geometries/PPCGeometry.pxi":92
+/* "siggen/geometries/PPCGeometry.pxi":100
  *     def __get__(self):
  *       return self.cobj.get_taper_length()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -13211,7 +13352,7 @@ static int __pyx_pw_6siggen_7_siggen_11PPCGeometry_12taper_length_3__set__(PyObj
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__set__ (wrapper)", 0);
   assert(__pyx_arg_val); {
-    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 92, __pyx_L3_error)
+    __pyx_v_val = __pyx_PyFloat_AsFloat(__pyx_arg_val); if (unlikely((__pyx_v_val == (float)-1) && PyErr_Occurred())) __PYX_ERR(2, 100, __pyx_L3_error)
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -13232,24 +13373,24 @@ static int __pyx_pf_6siggen_7_siggen_11PPCGeometry_12taper_length_2__set__(CYTHO
   PyObject *__pyx_t_1 = NULL;
   __Pyx_RefNannySetupContext("__set__", 0);
 
-  /* "siggen/geometries/PPCGeometry.pxi":93
+  /* "siggen/geometries/PPCGeometry.pxi":101
  *       return self.cobj.get_taper_length()
  *     def __set__(self, float val):
  *       print("set not implemented for taper_length!")             # <<<<<<<<<<<<<<
  *       exit()
  */
-  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_taper_le) < 0) __PYX_ERR(2, 93, __pyx_L1_error)
+  if (__Pyx_PrintOne(0, __pyx_kp_s_set_not_implemented_for_taper_le) < 0) __PYX_ERR(2, 101, __pyx_L1_error)
 
-  /* "siggen/geometries/PPCGeometry.pxi":94
+  /* "siggen/geometries/PPCGeometry.pxi":102
  *     def __set__(self, float val):
  *       print("set not implemented for taper_length!")
  *       exit()             # <<<<<<<<<<<<<<
  */
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 94, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_builtin_exit); if (unlikely(!__pyx_t_1)) __PYX_ERR(2, 102, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "siggen/geometries/PPCGeometry.pxi":92
+  /* "siggen/geometries/PPCGeometry.pxi":100
  *     def __get__(self):
  *       return self.cobj.get_taper_length()
  *     def __set__(self, float val):             # <<<<<<<<<<<<<<
@@ -25485,6 +25626,20 @@ static int __pyx_setprop_6siggen_7_siggen_11PPCGeometry_pc_radius(PyObject *o, P
   }
 }
 
+static PyObject *__pyx_getprop_6siggen_7_siggen_11PPCGeometry_bulletize_PC(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_6siggen_7_siggen_11PPCGeometry_12bulletize_PC_1__get__(o);
+}
+
+static int __pyx_setprop_6siggen_7_siggen_11PPCGeometry_bulletize_PC(PyObject *o, PyObject *v, CYTHON_UNUSED void *x) {
+  if (v) {
+    return __pyx_pw_6siggen_7_siggen_11PPCGeometry_12bulletize_PC_3__set__(o, v);
+  }
+  else {
+    PyErr_SetString(PyExc_NotImplementedError, "__del__");
+    return -1;
+  }
+}
+
 static PyObject *__pyx_getprop_6siggen_7_siggen_11PPCGeometry_top_bullet_radius(PyObject *o, CYTHON_UNUSED void *x) {
   return __pyx_pw_6siggen_7_siggen_11PPCGeometry_17top_bullet_radius_1__get__(o);
 }
@@ -25580,6 +25735,7 @@ static struct PyGetSetDef __pyx_getsets_6siggen_7_siggen_PPCGeometry[] = {
   {(char *)"xtal_length", __pyx_getprop_6siggen_7_siggen_11PPCGeometry_xtal_length, __pyx_setprop_6siggen_7_siggen_11PPCGeometry_xtal_length, (char *)0, 0},
   {(char *)"pc_length", __pyx_getprop_6siggen_7_siggen_11PPCGeometry_pc_length, __pyx_setprop_6siggen_7_siggen_11PPCGeometry_pc_length, (char *)0, 0},
   {(char *)"pc_radius", __pyx_getprop_6siggen_7_siggen_11PPCGeometry_pc_radius, __pyx_setprop_6siggen_7_siggen_11PPCGeometry_pc_radius, (char *)0, 0},
+  {(char *)"bulletize_PC", __pyx_getprop_6siggen_7_siggen_11PPCGeometry_bulletize_PC, __pyx_setprop_6siggen_7_siggen_11PPCGeometry_bulletize_PC, (char *)0, 0},
   {(char *)"top_bullet_radius", __pyx_getprop_6siggen_7_siggen_11PPCGeometry_top_bullet_radius, __pyx_setprop_6siggen_7_siggen_11PPCGeometry_top_bullet_radius, (char *)0, 0},
   {(char *)"bottom_bullet_radius", __pyx_getprop_6siggen_7_siggen_11PPCGeometry_bottom_bullet_radius, __pyx_setprop_6siggen_7_siggen_11PPCGeometry_bottom_bullet_radius, (char *)0, 0},
   {(char *)"wrap_around_radius", __pyx_getprop_6siggen_7_siggen_11PPCGeometry_wrap_around_radius, __pyx_setprop_6siggen_7_siggen_11PPCGeometry_wrap_around_radius, (char *)0, 0},
@@ -26174,6 +26330,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_set_impurity_avg, __pyx_k_set_impurity_avg, sizeof(__pyx_k_set_impurity_avg), 0, 0, 1, 1},
   {&__pyx_n_s_set_impurity_z0, __pyx_k_set_impurity_z0, sizeof(__pyx_k_set_impurity_z0), 0, 0, 1, 1},
   {&__pyx_kp_s_set_not_implemented_for_bottom_b, __pyx_k_set_not_implemented_for_bottom_b, sizeof(__pyx_k_set_not_implemented_for_bottom_b), 0, 0, 1, 0},
+  {&__pyx_kp_s_set_not_implemented_for_bulletiz, __pyx_k_set_not_implemented_for_bulletiz, sizeof(__pyx_k_set_not_implemented_for_bulletiz), 0, 0, 1, 0},
   {&__pyx_kp_s_set_not_implemented_for_ditch_th, __pyx_k_set_not_implemented_for_ditch_th, sizeof(__pyx_k_set_not_implemented_for_ditch_th), 0, 0, 1, 0},
   {&__pyx_kp_s_set_not_implemented_for_get_ditc, __pyx_k_set_not_implemented_for_get_ditc, sizeof(__pyx_k_set_not_implemented_for_get_ditc), 0, 0, 1, 0},
   {&__pyx_kp_s_set_not_implemented_for_pc_lengt, __pyx_k_set_not_implemented_for_pc_lengt, sizeof(__pyx_k_set_not_implemented_for_pc_lengt), 0, 0, 1, 0},
@@ -26219,7 +26376,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
 static int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(0, 51, __pyx_L1_error)
   __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_n_s_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
-  __pyx_builtin_exit = __Pyx_GetBuiltinName(__pyx_n_s_exit); if (!__pyx_builtin_exit) __PYX_ERR(2, 32, __pyx_L1_error)
+  __pyx_builtin_exit = __Pyx_GetBuiltinName(__pyx_n_s_exit); if (!__pyx_builtin_exit) __PYX_ERR(2, 34, __pyx_L1_error)
   __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(9, 235, __pyx_L1_error)
   __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeError); if (!__pyx_builtin_RuntimeError) __PYX_ERR(9, 823, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(9, 1013, __pyx_L1_error)
@@ -27176,10 +27333,10 @@ static int __pyx_pymod_exec__siggen(PyObject *__pyx_pyinit_module)
   if (PyObject_SetAttrString(__pyx_m, "SignalGeneratorWrapper_ICPC", (PyObject *)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_ICPC) < 0) __PYX_ERR(4, 97, __pyx_L1_error)
   if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_ICPC) < 0) __PYX_ERR(4, 97, __pyx_L1_error)
   __pyx_ptype_6siggen_7_siggen_SignalGeneratorWrapper_ICPC = &__pyx_type_6siggen_7_siggen_SignalGeneratorWrapper_ICPC;
-  if (PyType_Ready(&__pyx_type_6siggen_7_siggen_PPCGeometry) < 0) __PYX_ERR(2, 18, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_6siggen_7_siggen_PPCGeometry) < 0) __PYX_ERR(2, 20, __pyx_L1_error)
   __pyx_type_6siggen_7_siggen_PPCGeometry.tp_print = 0;
-  if (PyObject_SetAttrString(__pyx_m, "PPCGeometry", (PyObject *)&__pyx_type_6siggen_7_siggen_PPCGeometry) < 0) __PYX_ERR(2, 18, __pyx_L1_error)
-  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6siggen_7_siggen_PPCGeometry) < 0) __PYX_ERR(2, 18, __pyx_L1_error)
+  if (PyObject_SetAttrString(__pyx_m, "PPCGeometry", (PyObject *)&__pyx_type_6siggen_7_siggen_PPCGeometry) < 0) __PYX_ERR(2, 20, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject*)&__pyx_type_6siggen_7_siggen_PPCGeometry) < 0) __PYX_ERR(2, 20, __pyx_L1_error)
   __pyx_ptype_6siggen_7_siggen_PPCGeometry = &__pyx_type_6siggen_7_siggen_PPCGeometry;
   if (PyType_Ready(&__pyx_type_6siggen_7_siggen_ICPCGeometry) < 0) __PYX_ERR(5, 4, __pyx_L1_error)
   __pyx_type_6siggen_7_siggen_ICPCGeometry.tp_print = 0;

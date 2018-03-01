@@ -8,12 +8,14 @@ cdef extern from "PPC.h":
     float get_xtal_length()
     float get_pc_length()
     float get_pc_radius()
+    bool get_bulletize_PC()
     float get_top_bullet_radius()
     float get_bottom_bullet_radius()
     float get_wrap_around_radius()
     float get_ditch_depth()
     float get_ditch_thickness()
     float get_taper_length()
+
 
 cdef class PPCGeometry:
   cdef PPC* cobj
@@ -49,6 +51,12 @@ cdef class PPCGeometry:
       return self.cobj.get_pc_radius()
     def __set__(self, float val):
       print("set not implemented for pc_radius!")
+      exit()
+  property bulletize_PC:
+    def __get__(self):
+      return self.cobj.get_bulletize_PC()
+    def __set__(self, float val):
+      print("set not implemented for bulletize_PC!")
       exit()
 
   property top_bullet_radius:
