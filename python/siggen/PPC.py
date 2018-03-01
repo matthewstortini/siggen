@@ -327,7 +327,7 @@ class PPC(Detector):
 
     class p_contact(SubDomain):
         def inside(self, x, on_boundary):
-            if not (between(x[0], (0, pc_radius)) or between(x[1], (0, pc_length))):
+            if not (between(x[0], (0, pc_radius)) and between(x[1], (0, pc_length))):
                 return False
             elif bulletize_PC:
                 return between( (x[0]/pc_radius)**2 + (x[1]/pc_length)**2, (0,1))
