@@ -290,13 +290,30 @@ class PPC(Detector):
     bottom_bullet_radius  = self.siggenInst.geometry.bottom_bullet_radius
     top_bullet_radius     = self.siggenInst.geometry.top_bullet_radius
 
+    taper_length           = self.siggenInst.geometry.taper_length
     wrap_around_radius    = self.siggenInst.geometry.wrap_around_radius
     ditch_thickness       = self.siggenInst.geometry.ditch_thickness
     ditch_depth           = self.siggenInst.geometry.ditch_depth
 
     class n_contact(SubDomain):
         def inside(self, x, on_boundary):
-            return near(x[0], xtal_radius) or near(x[1], xtal_length) or (near(x[1], 0) and between(x[0], (wrap_around_radius, xtal_radius)))
+            if near(x[0], xtal_radius) or near(x[1], xtal_length) or (near(x[1], 0) and between(x[0], (wrap_around_radius, xtal_radius))):
+                return True
+            #Taper
+            elif taper_length >0 and x[0] >= x[1] + xtal_radius - taper_length:
+              return True
+            #Top bullet radius
+            elif (x[0] > xtal_radius -top_bullet_radius - DOLFIN_EPS) and (x[1] > xtal_length -top_bullet_radius - DOLFIN_EPS):
+              if ((x[0] - xtal_radius +top_bullet_radius)  **2 + (x[1] - xtal_length +top_bullet_radius)**2) > top_bullet_radius**2 - DOLFIN_EPS:
+                  return True
+              else: return False
+            #Bottom bullet radius
+            elif taper_length == 0 and x[0] > (xtal_radius - bottom_bullet_radius - DOLFIN_EPS) and (x[1] < bottom_bullet_radius + DOLFIN_EPS):
+                if ((x[0] - xtal_radius + bottom_bullet_radius)  **2 + (x[1] - bottom_bullet_radius)**2) > bottom_bullet_radius**2 - DOLFIN_EPS:
+                    return True
+                else: return False
+            else:
+              return False
 
     class p_contact(SubDomain):
         def inside(self, x, on_boundary):
