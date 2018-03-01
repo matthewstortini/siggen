@@ -87,9 +87,14 @@ class Detector
     // inline int outside_detector_cyl(cyl_pt pt){return geometry.outside_detector_cyl( pt);  }
 
     inline float get_impurity(){return impurity_z0;}
+    inline float get_impurity_gradient(){return impurity_gradient;}
+    inline float get_xtal_HV(){return xtal_HV;}
+
     inline float get_nsegments(){return geometry.get_nsegments();}
     inline float get_trapping(){return trapping_constant;  }
     inline void set_trapping(double trap_c){ trapping_constant = trap_c;  }
+
+    inline std::string get_field_name(){return field_name;}
 
     void set_impurity_avg(float imp, float impgrad);
     void set_impurity_z0(float imp, float impgrad);

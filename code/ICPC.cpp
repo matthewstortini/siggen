@@ -133,6 +133,7 @@ int ICPC::wpotential(point pt, std::vector<float>& wp){
         for (j = 0; j < 2; j++){
           for (a = 0; a < 2; a++){
             aa = ipt.phi + a - aa45deg * (k-1);
+            printf("a %d, aa %d, iphi %d, phi %f\n", a, aa, ipt.phi, cyl.phi);
             if (aa < 0) aa += 8 * aa45deg;
               wp[k] += w[i][a][j]*az_wpot(ipt.r+i, aa, ipt.z+j);
           }

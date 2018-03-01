@@ -89,7 +89,7 @@ int Field<PointType>::read_binary_data(std::string file_name,  GeometryType& geo
   cyl_pt cyl;
   point cart;
 
-  std::cout << "\nReading field data from file: " << file_name << "...";
+  std::cout << "\nReading field data from file: " << file_name << "...\n";
   is.open(file_name.c_str(), std::ios::binary);
 
   //Starts with an xml header:
@@ -123,21 +123,25 @@ int Field<PointType>::read_binary_data(std::string file_name,  GeometryType& geo
         rmin = min;
         rlen = num;
         rstep = (num > 1) ? (max-min)/(num-1) : 0;
+        std::cout << "-->rmin: " << rmin << ", rlen: " << rlen << ", rstep: "<< rstep << "\n";
       }
       else if (strcmp (variable_node->first_attribute("name")->value(),"axialDimension") == 0){
         zmin = min;
         zlen = num;
         zstep = (num > 1) ? (max-min)/(num-1) : 0;
+        std::cout << "-->zmin: " << zmin << ", zlen: " << zlen << ", zstep: "<< zstep << "\n";
       }
       else if (strcmp (variable_node->first_attribute("name")->value(),"impurity_avg") == 0){
         impmin = min;
         implen = num;
         impstep = (num > 1) ? (max-min)/(num-1) : 0;
+        std::cout << "-->impmin: " << impmin << ", implen: " << implen << ", impstep: "<< impstep << "\n";
       }
       else if (strcmp (variable_node->first_attribute("name")->value(),"impurity_grad") == 0){
         gradmin = min;
         gradlen = num;
-        gradstep = (max-min)/(num-1);
+        gradstep = (num > 1) ? (max-min)/(num-1) : 0;
+        std::cout << "-->gradmin: " << gradmin << ", gradlen: " << gradlen << ", gradstep: "<< gradstep << "\n";
       }
   }
 
@@ -189,7 +193,7 @@ int Field<PointType>::read_binary_data(std::string file_name,  GeometryType& geo
     count, rlen, zlen, philen, implen, gradlen);
     return 1;
   }
-  std::cout << " done successfully!\n";
+  std::cout << "done successfully!\n";
   return 0;
 }
 

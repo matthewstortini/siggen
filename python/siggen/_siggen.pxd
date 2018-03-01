@@ -2,6 +2,7 @@
 
 from libcpp.vector cimport vector
 from libcpp cimport bool
+from libcpp.string cimport string
 
 cdef extern from "<iostream>" namespace "std":
     cdef cppclass ostream:
@@ -65,6 +66,11 @@ cdef extern from "Siggen.h" namespace "Siggen":
     int efield(cyl_pt pt, cyl_pt e)
     int wpotential(point pt, vector[float] wp)
     int get_nsegments()
+    float get_impurity()
+    float get_impurity_gradient()
+    float get_xtal_HV()
+    string get_field_name()
+
 
     void set_trapping(double trap_c)
     void set_impurity_z0(float imp, float grad)

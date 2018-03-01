@@ -203,66 +203,212 @@ class PPC(Detector):
 
     return self.output_wf[:outputLength]
 
-########################################################################################################
-  def GetBoundaryConditions(self):
-      xtal_radius           = self.siggenInst.geometry.xtal_radius
-      xtal_length           = self.siggenInst.geometry.xtal_length
-      pc_length             = self.siggenInst.geometry.pc_length
-      pc_radius             = self.siggenInst.geometry.pc_radius
 
-      bottom_bullet_radius  = self.siggenInst.geometry.bottom_bullet_radius
-      top_bullet_radius     = self.siggenInst.geometry.top_bullet_radius
+# class OrtecPPC(Detector):
+# ########################################################################################################
+#   def GetBoundaryConditions(self):
+#       xtal_radius           = self.siggenInst.geometry.xtal_radius
+#       xtal_length           = self.siggenInst.geometry.xtal_length
+#       pc_length             = self.siggenInst.geometry.pc_length
+#       pc_radius             = self.siggenInst.geometry.pc_radius
+#
+#       bottom_bullet_radius  = self.siggenInst.geometry.bottom_bullet_radius
+#       top_bullet_radius     = self.siggenInst.geometry.top_bullet_radius
+#
+#       wrap_around_radius    = self.siggenInst.geometry.wrap_around_radius
+#       ditch_thickness       = self.siggenInst.geometry.ditch_thickness
+#       ditch_depth           = self.siggenInst.geometry.ditch_depth
+#
+#       taper_length          = self.siggenInst.geometry.taper_length
+#
+#
+#       def boundary_pc(x):
+#           #Currently the PC is modeled as not-quite hemispherical: its circularly-rounded in whichever corner has the smaller radius
+#           #TODO: matt busch thinks a hemisphere is a better idea
+#           if x[0] > pc_radius or x[1] > pc_length: return False
+#
+#           if pc_radius < pc_length:
+#               diff = pc_length - pc_radius
+#               if x[0] < pc_radius + DOLFIN_EPS and x[1] < diff + DOLFIN_EPS:
+#                   return True
+#               elif x[0]*x[0] + (x[1] - diff)**2 < pc_radius**2: return True
+#               else: return False
+#           else:
+#               diff = pc_radius - pc_length
+#               if x[0] < diff + DOLFIN_EPS and x[1] < pc_length + DOLFIN_EPS:
+#                   return True
+#               elif (x[0] - diff)**2 + x[1]*x[1] < pc_length**2: return True
+#               else:return False
+#
+#       def boundary_n(x):
+#           #Rectangular boundary
+#           if x[0] > xtal_radius - DOLFIN_EPS or x[1] > xtal_length - DOLFIN_EPS:
+#               return True
+#           #Taper
+#           elif x[0] >= x[1] + xtal_radius - taper_length:
+#               return True
+#           #Top bullet radius
+#           elif (x[0] > xtal_radius -top_bullet_radius - DOLFIN_EPS) and (x[1] > xtal_length -top_bullet_radius - DOLFIN_EPS):
+#               if ((x[0] - xtal_radius +top_bullet_radius)  **2 + (x[1] - xtal_length +top_bullet_radius)**2) > top_bullet_radius**2 - DOLFIN_EPS:
+#                   return True
+#               else: return False
+#           #Bottom bullet radius
+#           elif taper_length == 0 and x[0] > (xtal_radius - bottom_bullet_radius - DOLFIN_EPS) and (x[1] < bottom_bullet_radius + DOLFIN_EPS):
+#             if ((x[0] - xtal_radius + bottom_bullet_radius)  **2 + (x[1] - bottom_bullet_radius)**2) > bottom_bullet_radius**2 - DOLFIN_EPS:
+#                 return True
+#             else: return False
+#           else:
+#               return False
+#       def boundary_ditch(x):
+#         #Ditch
+#         if wrap_around_radius > 0 and  ditch_thickness > 0 and ditch_depth > 0:
+#             if x[0] < wrap_around_radius + DOLFIN_EPS and x[0] > wrap_around_radius - ditch_thickness - DOLFIN_EPS and x[1] < ditch_depth + DOLFIN_EPS:
+#                 return False
+#             elif x[0] > wrap_around_radius - DOLFIN_EPS and x[1] < DOLFIN_EPS:
+#                 return True
+#             else: return False
+#         else:
+#             return False
+#
+#       return (boundary_pc, boundary_n)
 
-      wrap_around_radius    = self.siggenInst.geometry.wrap_around_radius
-      ditch_thickness       = self.siggenInst.geometry.ditch_thickness
-      ditch_depth           = self.siggenInst.geometry.ditch_depth
+  def solve_field(self, field_type, n_r, n_z, impurity_gradient=None, impurity_avg=None, xtal_HV=None):
 
-      taper_length          = self.siggenInst.geometry.taper_length
+    if impurity_gradient is None: impurity_gradient = self.siggenInst.GetImpurityGradient()
+    if impurity_avg is None:
+        impurity_z0 = self.siggenInst.GetImpurity()
+    else:
+        impurity_z0 = self.avg_to_z0(impurity_avg, impurity_gradient)
+    if xtal_HV is None:
+        xtal_HV = self.siggenInst.GetXtalHV()
 
+    xtal_radius           = self.siggenInst.geometry.xtal_radius
+    xtal_length           = self.siggenInst.geometry.xtal_length
+    pc_length             = self.siggenInst.geometry.pc_length
+    pc_radius             = self.siggenInst.geometry.pc_radius
 
-      def boundary_pc(x):
-          #Currently the PC is modeled as not-quite hemispherical: its circularly-rounded in whichever corner has the smaller radius
-          #TODO: matt busch thinks a hemisphere is a better idea
-          if x[0] > pc_radius or x[1] > pc_length: return False
+    bottom_bullet_radius  = self.siggenInst.geometry.bottom_bullet_radius
+    top_bullet_radius     = self.siggenInst.geometry.top_bullet_radius
 
-          if pc_radius < pc_length:
-              diff = pc_length - pc_radius
-              if x[0] < pc_radius + DOLFIN_EPS and x[1] < diff + DOLFIN_EPS:
-                  return True
-              elif x[0]*x[0] + (x[1] - diff)**2 < pc_radius**2: return True
-              else: return False
-          else:
-              diff = pc_radius - pc_length
-              if x[0] < diff + DOLFIN_EPS and x[1] < pc_length + DOLFIN_EPS:
-                  return True
-              elif (x[0] - diff)**2 + x[1]*x[1] < pc_length**2: return True
-              else:return False
+    wrap_around_radius    = self.siggenInst.geometry.wrap_around_radius
+    ditch_thickness       = self.siggenInst.geometry.ditch_thickness
+    ditch_depth           = self.siggenInst.geometry.ditch_depth
 
-      def boundary_n(x):
-          #Rectangular boundary
-          if x[0] > xtal_radius - DOLFIN_EPS or x[1] > xtal_length - DOLFIN_EPS:
-              return True
-          #Ditch
-          elif wrap_around_radius > 0 and  ditch_thickness > 0 and ditch_depth > 0:
-              if x[0] < wrap_around_radius + DOLFIN_EPS and x[0] > wrap_around_radius - ditch_thickness - DOLFIN_EPS and x[1] < ditch_depth + DOLFIN_EPS:
-                  return False
-              elif x[0] > wrap_around_radius - DOLFIN_EPS and x[1] < DOLFIN_EPS:
-                  return True
-              else: return False
-          #Taper
-          elif x[0] >= x[1] + xtal_radius - taper_length:
-              return True
-          #Top bullet radius
-          elif (x[0] > xtal_radius -top_bullet_radius - DOLFIN_EPS) and (x[1] > xtal_length -top_bullet_radius - DOLFIN_EPS):
-              if ((x[0] - xtal_radius +top_bullet_radius)  **2 + (x[1] - xtal_length +top_bullet_radius)**2) > top_bullet_radius**2 - DOLFIN_EPS:
-                  return True
-              else: return False
-          #Bottom bullet radius
-          elif taper_length == 0 and x[0] > (xtal_radius - bottom_bullet_radius - DOLFIN_EPS) and (x[1] < bottom_bullet_radius + DOLFIN_EPS):
-            if ((x[0] - xtal_radius + bottom_bullet_radius)  **2 + (x[1] - bottom_bullet_radius)**2) > bottom_bullet_radius**2 - DOLFIN_EPS:
-                return True
-            else: return False
-          else:
-              return False
+    class n_contact(SubDomain):
+        def inside(self, x, on_boundary):
+            return near(x[0], xtal_radius) or near(x[1], xtal_length) or (near(x[1], 0) and between(x[0], (wrap_around_radius, xtal_radius)))
 
-      return (boundary_pc, boundary_n)
+    class p_contact(SubDomain):
+        def inside(self, x, on_boundary):
+            return between(x[0], (0, pc_radius)) and between(x[1], (0, pc_length))
+
+    class passivated_surface(SubDomain):
+        def inside(self, x, on_boundary):
+            return near(x[0], 0) and between(x[0], (pc_radius, wrap_around_radius-ditch_thickness))
+
+    class Ditch(SubDomain):
+        def inside(self, x, on_boundary):
+            return (between(x[0], (wrap_around_radius-ditch_thickness, wrap_around_radius)) and between(x[0], (0, ditch_depth)))
+
+    # Initialize sub-domain instances
+    n_contact = n_contact()
+    p_contact = p_contact()
+    pass_surface = passivated_surface()
+    ditch = Ditch()
+
+    # Define mesh
+    mesh = RectangleMesh(Point(0.0, 0.0), Point(xtal_radius, xtal_length), n_r, n_z)
+
+    # Initialize mesh function for interior domains
+    domains = CellFunction("size_t", mesh)
+    domains.set_all(0)
+    ditch.mark(domains, 1)
+
+    # Initialize mesh function for boundary domains
+    boundaries = FacetFunction("size_t", mesh)
+    boundaries.set_all(0)
+    n_contact.mark(boundaries, 1)
+    p_contact.mark(boundaries, 2)
+    pass_surface.mark(boundaries,3)
+
+    # Define function space and basis functions
+    V = FunctionSpace(mesh, "CG", 2)
+    u = TrialFunction(V)
+    v = TestFunction(V)
+
+    # Define new measures associated with the interior domains and
+    # exterior boundaries
+    dx = Measure('dx', domain=mesh, subdomain_data=domains)
+    ds = Measure('ds', domain=mesh, subdomain_data=boundaries)
+    r = Expression('x[0]', degree=1)
+
+    epsilon_0 = Constant(8.854187817E-15)
+    epsilon_ge = 16*epsilon_0
+
+    if field_type == "efield":
+        ###############
+        #Solve e-field
+        ###############
+
+        # Define charge gradient data (e-field)
+        e = 1.602176E-19 #C/charge
+        e_per_vol = e * 1E10 * 1E-3 #charge density in units of C/mm^3
+        f=Expression("({} + {}*x[1])*{}  ".format(impurity_z0,0.1*impurity_gradient, e_per_vol), degree=1 )
+
+        # Define Dirichlet boundary conditions at electrodes (e-field)
+        u_n = Constant(xtal_HV) #n contact at bias voltage
+        u_p = Constant(0)       #point contact at 0V
+        bcs_efield = [DirichletBC(V, u_n, boundaries, 1), DirichletBC(V, u_p, boundaries, 2)]
+
+        # Define variational form
+        F = (inner(epsilon_ge*grad(u), grad(v))*r*dx(0) + inner(epsilon_0*grad(u), grad(v))*r*dx(1)
+            #  - g_L*v*ds(1) - g_R*v*ds(3)
+             - f*v*r*dx(0))
+
+        # Separate left and right hand sides of equation
+        a, L = lhs(F), rhs(F)
+
+        # Solve problem
+        voltage = Function(V)
+        solve(a == L, voltage, bcs_efield)
+
+        V_vec = VectorFunctionSpace(mesh, "CG", 1)
+        gradu = project(grad(voltage),V_vec)
+        mat_full = np.zeros((n_r,n_z,4), dtype=np.float32)
+
+        for i,r in enumerate(np.linspace(0, xtal_radius, n_r)):
+          for j,z in enumerate(np.linspace(0, xtal_length, n_z)):
+              voltage_pt = voltage(Point(r,z))
+              gradv = gradu(Point(r,z)) #in V/mm
+              e_r = -gradv[0] * 10 #to V/cm
+              e_z = -gradv[1] * 10 #to V/cm
+              e = np.sqrt(e_r**2+e_z**2)
+              mat_full[i,j,:] = voltage_pt, e, e_r, e_z
+
+        return mat_full
+    elif field_type == "wpot":
+        ###############
+        #Solve wpotential
+        ###############
+
+        # Define Dirichlet boundary conditions at electrodes (w-potential)
+        wp_n = Constant(0)
+        wp_p = Constant(1)
+        bcs_wpot = [DirichletBC(V, wp_n, boundaries, 1), DirichletBC(V, wp_p, boundaries, 2)]
+
+        # Define variational form
+        F = (inner(epsilon_ge*grad(u), grad(v))*r*dx(0) + inner(epsilon_0*grad(u), grad(v))*r*dx(1))
+
+        # Separate left and right hand sides of equation
+        a, L = lhs(F), rhs(F)
+
+        # Solve problem
+        wpot = Function(V)
+        solve(a == L, wpot, bcs_wpot)
+
+        mat_full = np.zeros((n_r,n_z), dtype=np.float32)
+        for i,r in enumerate(np.linspace(0, xtal_radius, n_r)):
+          for j,z in enumerate(np.linspace(0, xtal_length, n_z)):
+              mat_full[i,j] = wpot(Point(r,z))
+
+        return mat_full

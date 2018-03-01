@@ -14,10 +14,10 @@ class PySiggen:
       self.geometry = GEMGeometry(self.setup)
       self.detector = DetectorWrapper_GEM(self.geometry, self.setup)
       self.siggen = SignalGeneratorWrapper_GEM(self.detector, self.setup)
-    elif geometry_type == "GEM":
-      self.geometry = GEMGeometry(self.setup)
-      self.detector = DetectorWrapper_GEM(self.geometry, self.setup)
-      self.siggen = SignalGeneratorWrapper_GEM(self.detector, self.setup)
+    elif geometry_type == "ICPC":
+      self.geometry = ICPCGeometry(self.setup)
+      self.detector = DetectorWrapper_ICPC(self.geometry, self.setup)
+      self.siggen = SignalGeneratorWrapper_ICPC(self.detector, self.setup)
     else:
       print("Detector geometry {} is not implemented!".format(geometry_type))
       exit(0)
@@ -88,6 +88,7 @@ class PySiggen:
 
   def GetNumStepsCalc(self):
     return self.siggen.calc_length
+
   def SetCalcLength(self, int nt):
     self.siggen.calc_length = nt
 
@@ -99,12 +100,25 @@ class PySiggen:
   def SetTrapping(self, double trap_const):
     self.detector.trapping_constant = trap_const
 
+  def GetFieldName(self):
+    return self.detector.get_field_name()
+
   #Stuff that actually requires work
   def SetImpurityAvg(self, float imp, float grad):
     self.detector.set_impurity_avg( imp,  grad)
 
   def SetImpurityZ0(self, float imp, float grad):
     self.detector.set_impurity_z0( imp,  grad)
+  def GetImpurity(self):
+    return self.detector.get_impurity()
+  def GetImpurityGradient(self):
+    return self.detector.get_impurity_gradient()
+  def GetXtalHV(self):
+    return self.detector.get_xtal_HV()
+
+  def SetImpurityZ0(self, float imp, float grad):
+    self.detector.set_impurity_z0( imp,  grad)
+
 
   def GetLastDriftTime(self, float q):
     return self.siggen.get_last_drifttime(q)

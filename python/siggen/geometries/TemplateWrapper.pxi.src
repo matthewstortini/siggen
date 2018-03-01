@@ -17,7 +17,7 @@ cdef class DetectorWrapper_{DetectorType}:
 
   def set_temp(self, float temp):
     return self.cobj.set_temp(temp)
-    
+
   def set_use_velo_model(self, bool usemodel):
     return self.cobj.set_use_velo_model(usemodel)
 
@@ -64,6 +64,15 @@ cdef class DetectorWrapper_{DetectorType}:
 
   def set_impurity_avg(self, float imp, float grad):
     return self.cobj.set_impurity_avg(imp,grad)
+
+  def get_impurity(self):
+    return self.cobj.get_impurity()
+  def get_impurity_gradient(self):
+    return self.cobj.get_impurity_gradient()
+  def get_xtal_HV(self):
+    return self.cobj.get_xtal_HV()
+  def get_field_name(self):
+    return self.cobj.get_field_name().decode('UTF-8')
 
   #Getters and setters
 

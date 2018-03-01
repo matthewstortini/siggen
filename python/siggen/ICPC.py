@@ -11,8 +11,8 @@ from .Detector import Detector
 #Does all the interfacing with siggen for you, stores/loads lookup tables, and does electronics shaping
 
 class ICPC(Detector):
-  def __init__(self, conf_file, t0_padding=0):
-    super().__init__("ICPC", conf_file, t0_padding)
+  def __init__(self, conf_file, **kwargs):
+    super().__init__("ICPC", conf_file, **kwargs)
 
     self.r_core = 5
     self.z_core = 25
