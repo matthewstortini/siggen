@@ -125,6 +125,9 @@ int ICPC::wpotential(point pt, std::vector<float>& wp){
   if (res < 0) return 1;
 
   az_wpot.position_weights(cyl, ipt, w);
+  // printf("res: %d, %d, %d \n", ipt.r, ipt.phi, ipt.z);
+  // printf("weights: %e, %e,%e, %e \n", w[0][0][0], w[0][1][0], w[1][0][1],w[1][1][1]);
+  // exit(0);
 
   for (k=0; k<nsegs; k++) {
     wp[k] = 0.0;
@@ -134,9 +137,13 @@ int ICPC::wpotential(point pt, std::vector<float>& wp){
         for (j = 0; j < 2; j++){
           for (a = 0; a < 2; a++){
             aa = ipt.phi + a - aa45deg * (k-1);
-            // printf("a %d, aa %d, iphi %d, phi %f\n", a, aa, ipt.phi, cyl.phi);
+            // printf("a %d, aa %d, iphi %d, phi %f, weight %e\n", a, aa, ipt.phi, cyl.phi, w[i][j][a]);
             if (aa < 0) aa += 8 * aa45deg;
+            if (w[i][a][j] == 0.){
+              wp[k] += 0.;
+            }else{
               wp[k] += w[i][a][j]*az_wpot(ipt.r+i, aa, ipt.z+j);
+            }
           }
         }
       }
@@ -149,7 +156,6 @@ int ICPC::wpotential(point pt, std::vector<float>& wp){
       }
     }
   }
-
   return 0;
 }
 
