@@ -104,7 +104,12 @@ class PySiggen:
     return self.detector.get_field_name()
 
   #Stuff that actually requires work
+
   def SetImpurityAvg(self, float imp, float grad):
+
+    if imp + grad * self.GetMaxZ()/2/10 > 0:
+      raise ValueError("Values would create a positive impurity at z_max!")
+
     self.detector.set_impurity_avg( imp,  grad)
 
   def SetImpurityZ0(self, float imp, float grad):

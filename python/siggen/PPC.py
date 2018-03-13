@@ -99,12 +99,12 @@ class PPC(Detector):
     self.padded_siggen_data[len(hole_wf[0,:]):] = hole_wf[0,-1]
 
     if smoothing is not None:
-      ndimage.filters.gaussian_filter1d(self.padded_siggen_data, smoothing, output=self.padded_siggen_data)
+      ndimage.filters.gaussian_filter1d(self.padded_siggen_data, smoothing, output=self.padded_siggen_data, mode="nearest")
 
     electron_wf = self.MakeWaveform(r, phi, z, -1)
 
     if e_smoothing is not None:
-      ndimage.filters.gaussian_filter1d(electron_wf[0,:], e_smoothing, output=electron_wf[0,:])
+      ndimage.filters.gaussian_filter1d(electron_wf[0,:], e_smoothing, output=electron_wf[0,:], mode="nearest")
 
     if electron_wf is  None:
       return None

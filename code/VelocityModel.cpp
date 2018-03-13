@@ -130,7 +130,7 @@ int VelocityModel::drift_velocity(point cart_en, float abse, float q, float& v_o
     return 0;
   }
 
-  TELL_CHATTY(" v: (%f,%f,%f)\n", velo->x, velo->y, velo->z);
+  TELL_CHATTY(" v: (%e,%e,%e)\n", velo->x, velo->y, velo->z);
 
   return 0;
 

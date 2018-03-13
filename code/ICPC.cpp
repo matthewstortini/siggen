@@ -79,7 +79,6 @@ int ICPC::setup_efield(){
 int ICPC::setup_wp(){
   int i;
 
-
   rlen = 1.5 + (rmax - rmin)/rstep;  // round up and add 1
   zlen = 1.5 + (zmax - zmin)/zstep;
   alen = 2.5 + (phimax - phimin)/phistep;  // round up and add 2
@@ -117,6 +116,8 @@ int ICPC::wpotential(point pt, std::vector<float>& wp){
 
   if (aa45deg == 0) {
     aa45deg = (int) (1.5 + (phimax - phimin)/phistep) / 8;
+    // printf(">>>>>>> aa45deg = %d <<<<<<<<<<\n", aa45deg);
+    // printf("phimax %0.2f, phimin %0.2f, phistep %0.2f\n", phimax, phimin, phistep);
   }
 
   cyl = cart_to_cyl(pt);
@@ -133,7 +134,7 @@ int ICPC::wpotential(point pt, std::vector<float>& wp){
         for (j = 0; j < 2; j++){
           for (a = 0; a < 2; a++){
             aa = ipt.phi + a - aa45deg * (k-1);
-            printf("a %d, aa %d, iphi %d, phi %f\n", a, aa, ipt.phi, cyl.phi);
+            // printf("a %d, aa %d, iphi %d, phi %f\n", a, aa, ipt.phi, cyl.phi);
             if (aa < 0) aa += 8 * aa45deg;
               wp[k] += w[i][a][j]*az_wpot(ipt.r+i, aa, ipt.z+j);
           }

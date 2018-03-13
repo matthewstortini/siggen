@@ -557,7 +557,7 @@ template<class PointType>
 template<class GeometryType>
 int Field<PointType>::get_point_interp(cyl_pt cyl, float imp_z0, float imp_grad, PointType& data, GeometryType& geometry){
   if (philen > 1){
-    error("Reading 3D Field as a 2D field: get_point_data only supported for 2D fields\n");
+    error("Reading 3D Field as a 2D field: get_point_interp only supported for 2D fields\n");
   }
   int    res;
   cyl_int_pt ipt;
@@ -575,7 +575,7 @@ template<class PointType>
 template<class GeometryType>
 int Field<PointType>::get_point_interp(cyl_pt cyl,  PointType& data, GeometryType& geometry){
   if (philen > 1){
-    error("Reading 3D Field as a 2D field: get_point_data only supported for 2D fields\n");
+    error("Reading 3D Field as a 2D field: get_point_interp only supported for 2D fields\n");
   }
   int    res;
   cyl_int_pt ipt;
