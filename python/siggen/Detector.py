@@ -138,7 +138,7 @@ class Detector:
       efield_file = self.siggenInst.GetFieldName()
       efield_file_ext = efield_file.split(".")[-1]
       if efield_file_ext != "field":
-          print("Error: can currently only read impurity information from binary field files")
+        #   print("Warning: can currently only read impurity information from binary field files")
           return
 
       conf_dir, __ = os.path.split(self.conf_file)
