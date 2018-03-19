@@ -6,7 +6,7 @@ try:
 except ImportError:
     pass
 
-from .Detector import Detector
+from ..Detector import Detector
 
 #Does all the interfacing with siggen for you, stores/loads lookup tables, and does electronics shaping
 

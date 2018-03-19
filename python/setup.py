@@ -1,7 +1,4 @@
-try:
-    from setuptools import setup, Extension
-except ImportError:
-    from distutils.core import setup, Extension
+from setuptools import setup, Extension, find_packages
 
 import os
 
@@ -62,6 +59,6 @@ setup(
     author="Ben Shanks",
     author_email="benjamin.shanks@gmail.com",
     ext_modules =extensions,
-    packages=["siggen"],
+    packages=find_packages(),
     install_requires=["numpy"]
 )
