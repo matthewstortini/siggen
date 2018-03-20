@@ -149,7 +149,7 @@ int Field<PointType>::read_binary_data(std::string file_name,  GeometryType& geo
   //Now resize the field data accordingly
   field_data.resize(rlen*zlen*philen*implen*gradlen);
 
-  size_t count = 0;
+  int count = 0;
   PointType junk;
 
   while (!is.eof()){
