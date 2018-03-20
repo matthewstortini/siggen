@@ -1,10 +1,13 @@
 import numpy as np
-import cython
+import cython, os
 
 class PySiggen:
 
   def __init__(self, geometry_type, conf_file):
-    self.setup = PySetup(conf_file.encode('utf-8'))
+    self.conf_file = conf_file
+    self.conf_path = os.path.dirname(self.conf_file)
+
+    self.setup = PySetup(self.conf_file.encode('utf-8'))
 
     if geometry_type == "PPC":
       self.geometry = PPCGeometry(self.setup)
@@ -101,7 +104,12 @@ class PySiggen:
     self.detector.trapping_constant = trap_const
 
   def GetFieldName(self):
-    return self.detector.get_field_name()
+    return os.path.join(self.conf_path, self.detector.get_field_name())
+  def GetWpotName(self):
+    return os.path.join(self.conf_path, self.detector.get_wpot_name())
+
+  def GetDeadLayer(self):
+    return self.detector.get_dead_layer()
 
   #Stuff that actually requires work
 

@@ -35,7 +35,7 @@ class Detector
     //charge trapping -- exponential in time model (q = q_0 * e^(-t/tau))
     double trapping_constant = -1; // -1: no trapping
 
-    float Li_thickness = 0; //Literally nothing is using this right now, I'll stick it here for now.
+    float Li_thickness = 0;
 
     //field-gen related...
     float xtal_grid=0;            // grid size in mm for field files (either 0.5 or 0.1 mm)
@@ -89,12 +89,14 @@ class Detector
     inline float get_impurity(){return impurity_z0;}
     inline float get_impurity_gradient(){return impurity_gradient;}
     inline float get_xtal_HV(){return xtal_HV;}
+    inline float get_dead_layer(){return Li_thickness;}
 
     inline float get_nsegments(){return geometry.get_nsegments();}
     inline float get_trapping(){return trapping_constant;  }
     inline void set_trapping(double trap_c){ trapping_constant = trap_c;  }
 
     inline std::string get_field_name(){return field_name;}
+    inline std::string get_wpot_name(){return wp_name;}
 
     void set_impurity_avg(float imp, float impgrad);
     void set_impurity_z0(float imp, float impgrad);

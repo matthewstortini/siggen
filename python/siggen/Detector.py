@@ -31,8 +31,9 @@ class Detector:
         self.read_impurity_range()
 
     self.nsegments=self.siggenInst.GetNumSegments()
-    self.detector_radius = self.siggenInst.GetMaxRadius()
-    self.detector_length = self.siggenInst.GetMaxZ()
+
+    self.detector_radius = np.round(self.siggenInst.GetMaxRadius() - self.siggenInst.GetDeadLayer(),2)
+    self.detector_length = np.round(self.siggenInst.GetMaxZ() - self.siggenInst.GetDeadLayer(),2)
 
     self.num_steps_out = self.siggenInst.GetNumSteps()
 
@@ -141,10 +142,10 @@ class Detector:
         #   print("Warning: can currently only read impurity information from binary field files")
           return
 
-      conf_dir, __ = os.path.split(self.conf_file)
-      efield_file_path = os.path.join(conf_dir, efield_file)
+    #   conf_dir, __ = os.path.split(self.conf_file)
+    #   efield_file_path = os.path.join(conf_dir, efield_file)
 
-      with open(efield_file_path, "rb") as fin:
+      with open(efield_file, "rb") as fin:
           header_len, = struct.unpack('i', fin.read(4))
           header = fin.read(header_len)
           root = ET.fromstring(header.decode("ascii"))
@@ -157,7 +158,12 @@ class Detector:
                   self.imp_grad_lims = [ float(var.find("min").text), float(var.find("max").text) ]
       return
 
-  def solve_fields(self, meshmult, impAvgRange, gradientRange, wp_name = "wpot.field", ef_name="ev.field"):
+  def solve_fields(self, meshmult, impAvgRange, gradientRange, wp_name = None, ef_name=None):
+
+    if wp_name is None:
+        wp_name = self.siggenInst.GetWpotName()
+    if ef_name is None:
+        ef_name = self.siggenInst.GetFieldName()
 
     nr = int(self.detector_radius*meshmult+1)
     nz = int(self.detector_length*meshmult+1)

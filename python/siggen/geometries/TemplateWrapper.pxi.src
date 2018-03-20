@@ -73,6 +73,10 @@ cdef class DetectorWrapper_{DetectorType}:
     return self.cobj.get_xtal_HV()
   def get_field_name(self):
     return self.cobj.get_field_name().decode('UTF-8')
+  def get_wpot_name(self):
+    return self.cobj.get_wpot_name().decode('UTF-8')
+  def get_dead_layer(self):
+    return self.cobj.get_dead_layer()
 
   #Getters and setters
 

@@ -69,8 +69,9 @@ cdef extern from "Siggen.h" namespace "Siggen":
     float get_impurity()
     float get_impurity_gradient()
     float get_xtal_HV()
+    float get_dead_layer()
     string get_field_name()
-
+    string get_wpot_name()
 
     void set_trapping(double trap_c)
     void set_impurity_z0(float imp, float grad)
