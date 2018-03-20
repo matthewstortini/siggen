@@ -1,6 +1,7 @@
 #include "Utils.h"
 #include <fstream>
 #include <iostream>
+#include <string.h>
 #include <string>
 #include <sstream>
 #include <stdlib.h>
@@ -148,7 +149,7 @@ int Field<PointType>::read_binary_data(std::string file_name,  GeometryType& geo
   //Now resize the field data accordingly
   field_data.resize(rlen*zlen*philen*implen*gradlen);
 
-  int count = 0;
+  size_t count = 0;
   PointType junk;
 
   while (!is.eof()){
