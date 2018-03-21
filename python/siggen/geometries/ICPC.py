@@ -12,7 +12,7 @@ from ..Detector import Detector
 
 class ICPC(Detector):
   def __init__(self, conf_file, **kwargs):
-    super().__init__("ICPC", conf_file, **kwargs)
+    super(ICPC, self).__init__("ICPC", conf_file, **kwargs)
 
     self.r_core = 5
     self.z_core = 25

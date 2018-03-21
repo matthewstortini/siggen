@@ -17,7 +17,7 @@ from ..Detector import Detector
 
 class PPC(Detector):
   def __init__(self, conf_file, **kwargs):
-    super().__init__("PPC", conf_file, **kwargs)
+    super(PPC, self).__init__("PPC", conf_file, **kwargs)
 
     (self.detector_radius, self.detector_length) = np.floor( [self.detector_radius*10, self.detector_length*10] )/10.
 

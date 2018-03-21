@@ -119,6 +119,11 @@ class PySiggen:
       raise ValueError("Values would create a positive impurity at z_max!")
 
     self.detector.set_impurity_avg( imp,  grad)
+  def SetImpurityEnds(self, float imp_0, float imp_max):
+    avg = 0.5*(imp_0+imp_max)
+    grad = (imp_max - imp_0)/(self.geometry.xtal_length/10)
+
+    self.detector.set_impurity_avg( avg,  grad)
 
   def SetImpurityZ0(self, float imp, float grad):
     self.detector.set_impurity_z0( imp,  grad)

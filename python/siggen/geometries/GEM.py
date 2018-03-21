@@ -17,7 +17,7 @@ from ..Detector import Detector
 
 class GEM(Detector):
   def __init__(self, conf_file, maxWfOutputLength= 500, **kwargs):
-    super().__init__("PPC", conf_file, **kwargs)
+    super(GEM, self).__init__().__init__("PPC", conf_file, **kwargs)
 
     (self.detector_radius, self.detector_length) = np.floor( [self.detector_radius*10, self.detector_length*10] )/10.
 
