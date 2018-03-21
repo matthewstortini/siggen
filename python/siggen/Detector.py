@@ -16,7 +16,7 @@ from ._siggen import PySiggen
 
 #Does all the interfacing with siggen for you, stores/loads lookup tables, and does electronics shaping
 
-class Detector:
+class Detector(object):
   def __init__(self,  detector_geometry, conf_file, num_steps_calc=None, wf_padding=0, maxWfOutputLength = 1000, verbose=False, doInit=True):
 
     self.siggenInst = PySiggen(detector_geometry, conf_file)
