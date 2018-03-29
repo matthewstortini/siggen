@@ -154,8 +154,10 @@ class Detector(object):
               name = var.get('name')
               if name == "impurity_avg":
                   self.imp_avg_lims = [ float(var.find("min").text), float(var.find("max").text) ]
+                  self.imp_avg_points = np.linspace(self.imp_avg_lims[0], self.imp_avg_lims[-1],  float(var.find("num").text))
               elif name == "impurity_grad":
                   self.imp_grad_lims = [ float(var.find("min").text), float(var.find("max").text) ]
+                  self.imp_grad_points = np.linspace(self.imp_grad_lims[0], self.imp_grad_lims[-1],  float(var.find("num").text))
       return
 
   def solve_fields(self, meshmult, impAvgRange, gradientRange, wp_name = None, ef_name=None):

@@ -55,7 +55,7 @@ if do_cython:
 
 setup(
     name = "siggen",
-    version="0.0.1",
+    version="0.0.2",
     author="Ben Shanks",
     author_email="benjamin.shanks@gmail.com",
     ext_modules =extensions,

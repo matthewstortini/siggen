@@ -27,6 +27,8 @@ class PPC(Detector):
 
     self.padded_siggen_data = np.zeros(self.total_steps, dtype='f4', order="C")
 
+    self.lp_order = 2
+
   def GetWaveform(self, r, phi, z, energy=1):
       #Overload Detector method to return a 1-D vector (since we only have one electrode)
       wf = super().GetWaveform(r,phi,z,energy)
@@ -138,8 +140,15 @@ class PPC(Detector):
     temp_wf_sig[extra_t0_pad+len(siggen_wf):] = siggen_wf[-1]
 
     #low-pass filter
-    temp_wf_sig = signal.lfilter(self.lp_num, self.lp_den, temp_wf_sig)
-    temp_wf_sig /= (np.sum(self.lp_num)/np.sum(self.lp_den))
+    if self.lp_order == 2:
+        temp_wf_sig = signal.lfilter(self.lp_num, self.lp_den, temp_wf_sig)
+        temp_wf_sig /= (np.sum(self.lp_num)/np.sum(self.lp_den))
+    elif self.lp_order == 4:
+        temp_wf_sig = signal.lfilter(self.lp_num[0], self.lp_den[0], temp_wf_sig)
+        temp_wf_sig /= (np.sum(self.lp_num[0])/np.sum(self.lp_den[0]))
+        temp_wf_sig = signal.lfilter(self.lp_num[1], self.lp_den[1], temp_wf_sig)
+        temp_wf_sig /= (np.sum(self.lp_num[1])/np.sum(self.lp_den[1]))
+    else: raise ValueError("Only 2nd and 4th order low pass transfer functions currently supported")
 
     #hi-pass filter
     temp_wf_sig= signal.lfilter(self.hp_num, self.hp_den, temp_wf_sig, axis=-1)
