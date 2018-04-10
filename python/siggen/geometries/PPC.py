@@ -28,10 +28,9 @@ class PPC(Detector):
 
     self.padded_siggen_data = np.zeros(self.total_steps, dtype='f4', order="C")
 
-    self.lp_order = 2
-    self.hp_order = 2
-    self.smoothing_type = 0
-    self.overshoot = 0
+    self.smoothing_type = 0 #gaussian
+
+    self.digital_filters = []
 
   def GetWaveform(self, r, phi, z, energy=1):
       #Overload Detector method to return a 1-D vector (since we only have one electrode)
@@ -133,6 +132,11 @@ class PPC(Detector):
     sim_wf = self.ProcessWaveform(self.padded_siggen_data, align_point,align_percent, numSamples)
 
     return sim_wf
+
+########################################################################################################
+  def AddDigitalFilter(self, filter):
+      self.digital_filters.append(filter)
+
 ########################################################################################################
   def ProcessWaveform(self, siggen_wf,  align_point, align_percent, outputLength):
     interpType = "linear"
@@ -151,29 +155,8 @@ class PPC(Detector):
     temp_wf_sig[extra_t0_pad:len(siggen_wf)+extra_t0_pad] = siggen_wf
     temp_wf_sig[extra_t0_pad+len(siggen_wf):] = siggen_wf[-1]
 
-    #low-pass filter
-    if self.lp_order == 2:
-        temp_wf_sig = signal.lfilter(self.lp_num, self.lp_den, temp_wf_sig)
-        temp_wf_sig /= (np.sum(self.lp_num)/np.sum(self.lp_den))
-    elif self.lp_order == 4:
-        temp_wf_sig = signal.lfilter(self.lp_num[0], self.lp_den[0], temp_wf_sig)
-        temp_wf_sig /= (np.sum(self.lp_num[0])/np.sum(self.lp_den[0]))
-        temp_wf_sig = signal.lfilter(self.lp_num[1], self.lp_den[1], temp_wf_sig)
-        temp_wf_sig /= (np.sum(self.lp_num[1])/np.sum(self.lp_den[1]))
-    else: raise ValueError("Only 2nd and 4th order low pass transfer functions currently supported")
-
-    if self.overshoot:
-        temp_wf_sig += signal.lfilter(self.overshoot_num, self.overshoot_den, self.overshoot_frac*temp_wf_sig)
-
-    #hi-pass filter
-    if self.hp_order == 0:
-        pass
-    elif self.hp_order == 2:
-        temp_wf_sig= signal.lfilter(self.hp_num, self.hp_den, temp_wf_sig, axis=-1)
-    elif self.hp_order == 4:
-        temp_wf_sig= signal.lfilter(self.hp_num[0], self.hp_den[0], temp_wf_sig, axis=-1)
-        temp_wf_sig= signal.lfilter(self.hp_num[1], self.hp_den[1], temp_wf_sig, axis=-1)
-    else: raise ValueError("Only 2nd and 4th order hi pass transfer functions currently supported; you have {}".format(self.hp_order))
+    for filter in self.digital_filters:
+        temp_wf_sig = filter.apply_to_signal(temp_wf_sig)
 
     smax_idx = np.argmax(temp_wf_sig)
     smax = temp_wf_sig[smax_idx]
