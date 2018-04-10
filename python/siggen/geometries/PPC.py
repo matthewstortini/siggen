@@ -4,6 +4,7 @@ import numpy as np
 try:
     from scipy import  signal, ndimage
     from scipy.interpolate import interp1d
+    from scipy import special
 except ImportError:
     pass
 try:
@@ -29,6 +30,8 @@ class PPC(Detector):
 
     self.lp_order = 2
     self.hp_order = 2
+    self.smoothing_type = 0
+    self.overshoot = 0
 
   def GetWaveform(self, r, phi, z, energy=1):
       #Overload Detector method to return a 1-D vector (since we only have one electrode)
@@ -92,7 +95,7 @@ class PPC(Detector):
 #     sim_wf = self.ProcessWaveform(sig_wf[0,:], align_point,align_percent, numSamples)
 
 ###########################################################################################################################
-  def MakeSimWaveform(self, r,phi,z,scale, align_point, align_percent, numSamples, smoothing=None, e_smoothing=None):
+  def MakeSimWaveform(self, r,phi,z,scale, align_point, align_percent, numSamples, smoothing=None, e_smoothing=None, skew=None):
     hole_wf = self.MakeWaveform(r, phi, z, 1)
     if hole_wf is None:
       return None
@@ -102,12 +105,20 @@ class PPC(Detector):
     self.padded_siggen_data[len(hole_wf[0,:]):] = hole_wf[0,-1]
 
     if smoothing is not None:
-      ndimage.filters.gaussian_filter1d(self.padded_siggen_data, smoothing, output=self.padded_siggen_data, mode="nearest")
+      if self.smoothing_type == 0:
+          ndimage.filters.gaussian_filter1d(self.padded_siggen_data, smoothing, output=self.padded_siggen_data, mode="nearest")
+      elif self.smoothing_type == 1:
+          window = skew_norm(np.linspace(-200,100,301),  a=skew, w=smoothing )
+
+          pad = len(window)
+          wf_pad = np.pad(self.padded_siggen_data, (pad,pad), 'constant', constant_values=(0, self.padded_siggen_data[-1]))
+          wf_pad= signal.convolve(wf_pad, window, 'same')
+          self.padded_siggen_data = wf_pad[pad:-pad]
 
     electron_wf = self.MakeWaveform(r, phi, z, -1)
 
-    if e_smoothing is not None:
-      ndimage.filters.gaussian_filter1d(electron_wf[0,:], e_smoothing, output=electron_wf[0,:], mode="nearest")
+    # if e_smoothing is not None:
+    #   ndimage.filters.gaussian_filter1d(electron_wf[0,:], e_smoothing, output=electron_wf[0,:], mode="nearest")
 
     if electron_wf is  None:
       return None
@@ -150,6 +161,9 @@ class PPC(Detector):
         temp_wf_sig = signal.lfilter(self.lp_num[1], self.lp_den[1], temp_wf_sig)
         temp_wf_sig /= (np.sum(self.lp_num[1])/np.sum(self.lp_den[1]))
     else: raise ValueError("Only 2nd and 4th order low pass transfer functions currently supported")
+
+    if self.overshoot:
+        temp_wf_sig += signal.lfilter(self.overshoot_num, self.overshoot_den, self.overshoot_frac*temp_wf_sig)
 
     #hi-pass filter
     if self.hp_order == 0:
@@ -473,3 +487,13 @@ class PPC(Detector):
               mat_full[i,j] = wpot(Point(r,z))
 
         return mat_full
+
+def pdf(x):
+    return 1/np.sqrt(2*np.pi) * np.exp(-x**2/2)
+
+def cdf(x):
+    return (1 + special.erf(x/np.sqrt(2))) / 2
+
+def skew_norm(x,e=0,w=1,a=0):
+    t = (x-e) / w
+    return 2 / w * pdf(t) * cdf(a*t)
