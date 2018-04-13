@@ -19,6 +19,9 @@ from ._siggen import PySiggen
 class Detector(object):
   def __init__(self,  detector_geometry, conf_file, num_steps_calc=None, wf_padding=0, maxWfOutputLength = 1000, verbose=False, doInit=True):
 
+    if not os.path.isfile(conf_file):
+        raise FileNotFoundError("Conf file {} not found".format(conf_file))
+
     self.siggenInst = PySiggen(detector_geometry, conf_file)
     self.conf_file = conf_file
 
