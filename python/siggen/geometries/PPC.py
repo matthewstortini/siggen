@@ -137,6 +137,9 @@ class PPC(Detector):
   def AddDigitalFilter(self, filter):
       self.digital_filters.append(filter)
 
+  def RemoveDigitalFilter(self, filter):
+      self.digital_filters.remove(filter)
+
 ########################################################################################################
   def ProcessWaveform(self, siggen_wf,  align_point, align_percent, outputLength):
     interpType = "linear"
