@@ -1,5 +1,5 @@
 #!/usr/local/bin/python
-
+import sys
 import numpy as np
 try:
     from scipy import  signal, ndimage
@@ -216,7 +216,7 @@ class PPC(Detector):
         print( len(self.output_wf) )
         print( num_samples_to_fill)
         print( sampled_idxs)
-        exit(0)
+        sys.exit()
 
     return self.output_wf[:outputLength]
 

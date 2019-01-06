@@ -1,5 +1,5 @@
 #!/usr/local/bin/python
-
+import sys
 import numpy as np
 try:
     from scipy import  signal, interpolate, ndimage
@@ -135,6 +135,6 @@ class ICPC(Detector):
         print( start_idx)
         print( num_samples_to_fill)
         print( sampled_idxs)
-        exit(0)
+        sys.exit()
 
     return processed_siggen_data

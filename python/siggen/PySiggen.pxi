@@ -1,3 +1,4 @@
+import sys
 import numpy as np
 import cython, os
 
@@ -23,7 +24,7 @@ class PySiggen:
       self.siggen = SignalGeneratorWrapper_ICPC(self.detector, self.setup)
     else:
       print("Detector geometry {} is not implemented!".format(geometry_type))
-      exit(0)
+      sys.exit()
 
   @cython.boundscheck(False)
   def MakeSignal(self, float x, float y, float z, double q, np.ndarray[np.float32_t, ndim=1] signal_array not None):
